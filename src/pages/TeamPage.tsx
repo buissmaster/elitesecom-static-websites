@@ -80,7 +80,7 @@ const leadersData: Leader[] = [
     role: "Co-Founder",
     tag: "Co-Founder",
     badgeBg: "bg-indigo-500",
-    image: "/ceo-portrait-original.png",
+    image: "/co-founder.png",
     bio: "Harmit directs strategic scale and automation platforms within ElitesEcom. Specializing in high-volume operations across Myntra, Ajio, and Meesho, his focus centers on crafting scalable infrastructure designed for modern enterprise growth.",
     linkedin: "https://www.linkedin.com/in/harmit-vaghasiya-033bb1348/",
     gradient: "from-indigo-600 via-purple-600 to-amber-400",

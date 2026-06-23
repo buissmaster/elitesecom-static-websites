@@ -286,7 +286,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 lg:p-14">
             <h2 className="font-heading font-bold text-3xl text-white mb-4">

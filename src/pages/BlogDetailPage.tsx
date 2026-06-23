@@ -1034,7 +1034,7 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
         </section>
       )}
       {/* CTA */}
-      <section className="py-20">
+      <section className="pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="motion-cta-card relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 lg:p-14">
             <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gold/20 blur-3xl motion-float-soft" />

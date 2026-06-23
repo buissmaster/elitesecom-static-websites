@@ -7,7 +7,7 @@ interface FAQPageProps {
 
 export function FAQPage({ onNavigate }: FAQPageProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>();
 
   useEffect(() => {
     setIsVisible(true);
@@ -220,7 +220,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       </section>
 
       {/* Still Have Questions */}
-      <section className="py-16 bg-[#FAFAF7]">
+      <section className="pb-16 bg-[#FAFAF7]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-2xl p-10 sm:p-12 border border-slate-200 shadow-lg">
             <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-6">

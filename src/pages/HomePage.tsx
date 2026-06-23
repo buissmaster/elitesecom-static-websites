@@ -345,7 +345,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => {
                   window.location.hash = "/aboutus?section=certificates";
                 }}
-                className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all"
+                className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit"
               >
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-semibold text-slate-800">
@@ -470,7 +470,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => {
                   window.location.hash = "/aboutus?section=certificates";
                 }}
-                className="mt-4 flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all"
+                className="mt-4 flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit justify-self-center"
               >
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-semibold text-slate-800">
@@ -512,7 +512,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <div key={`a-${i.name}`} className="flex-shrink-0 w-[200px]">
                     <div className="flex flex-col items-center">
                       {/* Logo Badge — ~25% outside, ~75% inside */}
-                      <div className="w-[72px] h-[72px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-10 p-3">
+                      <div className="w-[60px] h-[60px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-[32px] p-1.5">
                         <img
                           src={i.logo}
                           alt={i.name}
@@ -563,7 +563,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <div key={`b-${i.name}`} className="flex-shrink-0 w-[200px]">
                     <div className="flex flex-col items-center">
                       {/* Logo Badge — ~25% outside, ~75% inside */}
-                      <div className="w-[72px] h-[72px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-10 p-3">
+                      <div className="w-[60px] h-[60px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-[32px] p-1.5">
                         <img
                           src={i.logo}
                           alt={i.name}
@@ -629,7 +629,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Features Section */}
       <section
         ref={featuresRef}
-        className="relative overflow-hidden py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50"
+        className="relative overflow-hidden pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50"
       >
         {/* Extremely slow, smooth background breathing */}
         <motion.div
@@ -739,7 +739,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20 relative overflow-hidden">
+      <section className="py-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* Mobile: single column with explicit order / Desktop: 2-col grid */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">

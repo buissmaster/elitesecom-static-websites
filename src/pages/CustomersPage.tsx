@@ -615,7 +615,7 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
       </section>
 
       {/* ═══════ 3. JOIN OUR HAPPY CUSTOMERS + Logo Wall (was 4th, now 3rd) ═══════ */}
-      <section className="py-16 bg-[#F8F4EC]">
+      <section className="py-10 bg-[#F8F4EC]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl  mb-4">
             Join Our Happy Customers
@@ -670,7 +670,7 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
       </section>
 
       {/* ═══════ 4. TESTIMONIALS — What Our Clients Say (was 3rd, now 4th) ═══════ */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-14 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl  mb-6">

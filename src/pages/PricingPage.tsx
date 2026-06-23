@@ -285,7 +285,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
   return (
     <div className="relative min-h-[calc(100vh-76px)] overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
       {/* Hero Section */}
-      <section className="relative py-10 sm:py-12 lg:py-16">
+      <section className="relative pt-10">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute top-10 right-[10%] w-64 h-64 bg-lavender-200/20 rounded-full blur-3xl" />
           <div className="absolute bottom-10 left-[8%] w-80 h-80 bg-gold-200/20 rounded-full blur-3xl" />
@@ -325,7 +325,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl  mb-4">
             Still Have Questions?

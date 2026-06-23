@@ -242,7 +242,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
       </section>
 
       {/* ═══ INTEGRATIONS GRID ═══ */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
+      <section className="relative py-14 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/50 to-white" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[5%] right-[10%] w-72 h-72 bg-slate-200/30 rounded-full blur-[80px]" />
@@ -306,7 +306,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
       {/* ═══════════════════════════════════════════ */}
       {/* ═══ FEATURES SECTION — Why Choose Us ═══ */}
       {/* ═══════════════════════════════════════════ */}
-      <section className="py-24 bg-[#FAF9F6] relative overflow-hidden">
+      <section className="py-14 bg-[#FAF9F6] relative overflow-hidden">
         {/* Subtle yellow radial glow behind heading */}
         <div className="absolute inset-0 pointer-events-none">
           <div

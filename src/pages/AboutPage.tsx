@@ -280,7 +280,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       {/* What We Offer — kept same */}
       <section
         ref={offerRef}
-        className="py-16 bg-slate-50/50 relative overflow-hidden"
+        className="pb-16 pt-10 bg-slate-50/50 relative overflow-hidden"
       >
         {/* Soft background glow behind center package */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-gold/5 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -362,108 +362,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Certifications */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl ">
-              Certifications &{" "}
-              <span className="text-[#F4B400]">Compliance</span>
-            </h2>
-
-            <p className="mt-4 text-slate-500 max-w-2xl mx-auto">
-              Our commitment to security, ethics and responsible AI practices.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <a
-              href="/certificates/iso-27001.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <img
-                src="/certificates/iso-27001.jpg"
-                alt="ISO 27001"
-                className="w-full h-[420px] object-cover"
-              />
-
-              <div className="p-5">
-                <h3 className="font-bold text-xl ">
-                  ISO/IEC 27001:2022
-                </h3>
-
-                <p className="text-slate-500 mt-2">
-                  Information Security Management System
-                </p>
-
-                <span className="inline-flex mt-4 text-[#F4B400] font-semibold">
-                  View Certificate →
-                </span>
-              </div>
-            </a>
-
-            <a
-              href="/Certifications/ISO_27001_2022.jpeg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <img
-                src="/Certifications/ISO_27001_2022.jpeg"
-                alt="ISO 37001"
-                className="w-full h-[420px] object-cover"
-              />
-
-              <div className="p-5">
-                <h3 className="font-bold text-xl ">
-                  ISO 37001:2025
-                </h3>
-
-                <p className="text-slate-500 mt-2">
-                  Anti-Bribery Management System
-                </p>
-
-                <span className="inline-flex mt-4 text-[#F4B400] font-semibold">
-                  View Certificate →
-                </span>
-              </div>
-            </a>
-
-            <a
-              href="/certificates/iso-42001.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <img
-                src="/certificates/iso-42001.jpg"
-                alt="ISO 42001"
-                className="w-full h-[420px] object-cover"
-              />
-
-              <div className="p-5">
-                <h3 className="font-bold text-xl ">
-                  ISO/IEC 42001:2023
-                </h3>
-
-                <p className="text-slate-500 mt-2">
-                  Artificial Intelligence Management System
-                </p>
-
-                <span className="inline-flex mt-4 text-[#F4B400] font-semibold">
-                  View Certificate →
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section> */}
-
       <section
         id="certificates"
-        className="py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
+        className="py-16 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

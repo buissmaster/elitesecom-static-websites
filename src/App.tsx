@@ -19,6 +19,7 @@ import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { RefundPage } from "./pages/RefundPage";
 import { TeamPage } from "./pages/TeamPage";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -129,6 +130,21 @@ function App() {
       </AnimatePresence>
       <Footer currentPage={currentPage} onNavigate={handleNavigate} />
       <SiteEnhancements />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            fontFamily: "Inter, system-ui, sans-serif",
+            borderRadius: "12px",
+            fontSize: "13px",
+            fontWeight: "500",
+          },
+          classNames: {
+            success: "border border-amber-200 bg-amber-50 text-amber-900 [&>[data-icon]]:text-amber-500",
+            error: "border border-rose-200 bg-rose-50 text-rose-900 [&>[data-icon]]:text-rose-500",
+          },
+        }}
+      />
     </div>
   );
 }

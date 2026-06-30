@@ -11,6 +11,8 @@ import {
   CheckSquare,
   Headphones,
   Laptop,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -66,7 +68,7 @@ const leadersData: Leader[] = [
   {
     id: 1,
     name: "Meet Vaghasiya",
-    role: "Chief Executive Officer & Founder",
+    role: "CEO & Founder",
     tag: "Founder",
     badgeBg: "bg-emerald-500",
     image: "/ceo-portrait-original.png",
@@ -94,32 +96,6 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
-
-  // Wheel-driven card switching: only fires when section is in view
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      // Only intercept when the section occupies most of the viewport
-      if (rect.top > 100 || rect.bottom < 100) return;
-
-      const goingDown = e.deltaY > 0;
-      const goingUp = e.deltaY < 0;
-
-      if (goingDown && activeIndex < leadersData.length - 1) {
-        e.preventDefault();
-        setDirection(1);
-        setActiveIndex((prev) => Math.min(prev + 1, leadersData.length - 1));
-      } else if (goingUp && activeIndex > 0) {
-        e.preventDefault();
-        setDirection(-1);
-        setActiveIndex((prev) => Math.max(prev - 1, 0));
-      }
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, [activeIndex]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -497,173 +473,114 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
               </p>
             </div>
 
-            {/* Card viewport — fixed height, one card visible at a time */}
+            {/* Premium CSS Track Slider — fixed height, smooth sliding track */}
             <div
-              className="relative w-full max-w-4xl mx-auto"
+              className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl"
               style={{ height: "420px" }}
             >
-              <AnimatePresence mode="wait" initial={false} custom={direction}>
-                {leadersData.map((leader, idx) =>
-                  idx === activeIndex ? (
-                    // Find this inside your leadersData.map block:
-                    <motion.div
-                      key={leader.id}
-                      custom={direction}
-                      initial={(dir: number) => ({
-                        opacity: 0,
-                        y: dir > 0 ? 40 : -40,
-                        scale: 0.97,
-                        filter: "blur(4px)",
-                      })}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        filter: "blur(0px)",
-                      }}
-                      exit={(dir: number) => ({
-                        opacity: 0,
-                        y: dir > 0 ? -24 : 24,
-                        scale: 0.94,
-                        filter: "blur(3px)",
-                      })}
-                      transition={{
-                        duration: 0.35, // ⚡ Speed up from 0.65s
-                        ease: "backOut", // ⚡ Or use [0.25, 1, 0.5, 1] for a clean, fast slide
-                      }}
-                      className="absolute inset-0 flex flex-col sm:flex-row bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-[0_8px_32px_rgba(139,92,246,0.08),0_24px_64px_rgba(15,23,42,0.06)]"
-                    >
-                      {/* Image — springs in with slight extra delay */}
-                      <motion.div
-                        className="w-full sm:w-2/5 h-52 sm:h-full relative overflow-hidden bg-slate-100 flex-shrink-0"
-                        initial={{ opacity: 0, x: direction > 0 ? -16 : 16 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.7,
-                          ease: [0.16, 1, 0.3, 1],
-                          delay: 0.08,
-                        }}
-                      >
-                        <img
-                          src={leader.image}
-                          alt={`${leader.name} — ${leader.role}`}
-                          className="absolute inset-0 w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/5 via-transparent to-white/5" />
-                        {/* Badge */}
-                        <motion.div
-                          className="absolute top-4 left-5 z-20"
-                          initial={{ opacity: 0, y: -8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{
-                            duration: 0.5,
-                            ease: [0.16, 1, 0.3, 1],
-                            delay: 0.22,
-                          }}
-                        >
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md text-purple-700 text-xs font-bold shadow-sm">
-                            <span
-                              className={`w-2 h-2 rounded-full ${leader.badgeBg} animate-pulse`}
-                            />
-                            {leader.tag}
-                          </span>
-                        </motion.div>
-                      </motion.div>
-
-                      {/* Content — staggered storytelling sequence */}
-                      <div className="w-full sm:w-3/5 p-6 sm:p-8 flex flex-col justify-between bg-white">
-                        <div>
-                          {/* Name */}
-                          <motion.h3
-                            className="font-heading font-bold text-2xl text-slate-900 mb-1"
-                            initial={{ opacity: 0, y: 14 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                              duration: 0.55,
-                              ease: [0.16, 1, 0.3, 1],
-                              delay: 0.1,
-                            }}
-                          >
-                            {leader.name}
-                          </motion.h3>
-
-                          {/* Role */}
-                          <motion.p
-                            className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-4"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                              duration: 0.5,
-                              ease: [0.16, 1, 0.3, 1],
-                              delay: 0.18,
-                            }}
-                          >
-                            {leader.role}
-                          </motion.p>
-
-                          {/* Bio */}
-                          <motion.p
-                            className="text-slate-600 text-sm leading-relaxed"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                              duration: 0.55,
-                              ease: [0.16, 1, 0.3, 1],
-                              delay: 0.26,
-                            }}
-                          >
-                            {leader.bio}
-                          </motion.p>
-                        </div>
-
-                        {/* Footer */}
-                        <motion.div
-                          className="flex items-center justify-between pt-4 border-t border-slate-100 mt-6"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{
-                            duration: 0.5,
-                            ease: "easeOut",
-                            delay: 0.36,
-                          }}
-                        >
-                          <span className="text-xs text-slate-400 font-medium">
-                            Get in touch
-                          </span>
-                          <a
-                            href={leader.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm"
-                            aria-label={`${leader.name} LinkedIn`}
-                          >
-                            <Linkedin className="w-4 h-4" />
-                          </a>
-                        </motion.div>
+              <div 
+                className="flex h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              >
+                {leadersData.map((leader, idx) => (
+                  <div 
+                    key={leader.id} 
+                    className="w-full h-full flex-shrink-0 flex flex-col sm:flex-row bg-white border border-slate-200 shadow-[0_8px_32px_rgba(139,92,246,0.08),0_24px_64px_rgba(15,23,42,0.06)]"
+                  >
+                    {/* Image */}
+                    <div className="w-full sm:w-2/5 h-52 sm:h-full relative overflow-hidden bg-slate-100 flex-shrink-0">
+                      <img
+                        src={leader.image}
+                        alt={`${leader.name} — ${leader.role}`}
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/5 via-transparent to-white/5" />
+                      {/* Badge */}
+                      <div className="absolute top-4 left-5 z-20">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md text-purple-700 text-xs font-bold shadow-sm">
+                          <span
+                            className={`w-2 h-2 rounded-full ${leader.badgeBg} animate-pulse`}
+                          />
+                          {leader.tag}
+                        </span>
                       </div>
-                    </motion.div>
-                  ) : null,
-                )}
-              </AnimatePresence>
+                    </div>
+
+                    {/* Content */}
+                    <div className="w-full sm:w-3/5 p-6 sm:p-8 flex flex-col justify-between bg-white">
+                      <div>
+                        {/* Name */}
+                        <h3 className="font-heading font-bold text-2xl text-slate-900 mb-1">
+                          {leader.name}
+                        </h3>
+
+                        {/* Role */}
+                        <p className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-4">
+                          {leader.role}
+                        </p>
+
+                        {/* Bio */}
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                          {leader.bio}
+                        </p>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-6">
+                        <span className="text-xs text-slate-400 font-medium">
+                          Get in touch
+                        </span>
+                        <a
+                          href={leader.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm"
+                          aria-label={`${leader.name} LinkedIn`}
+                        >
+                          <Linkedin className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Dot indicators */}
-            <div className="flex gap-3 items-center">
-              {leadersData.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setDirection(idx > activeIndex ? 1 : -1);
-                    setActiveIndex(idx);
-                  }}
-                  className={`rounded-full transition-all duration-300 ${
-                    idx === activeIndex
-                      ? "w-6 h-2.5 bg-purple-600"
-                      : "w-2.5 h-2.5 bg-slate-300 hover:bg-purple-300"
-                  }`}
-                  aria-label={`View ${leadersData[idx].name}`}
-                />
-              ))}
+            {/* Slider Controls */}
+            <div className="flex gap-6 items-center">
+              <button 
+                onClick={() => setActiveIndex(prev => Math.max(0, prev - 1))}
+                disabled={activeIndex === 0}
+                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 hover:bg-purple-50 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-all cursor-pointer disabled:cursor-not-allowed"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <div className="flex gap-3 items-center">
+                {leadersData.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setDirection(idx > activeIndex ? 1 : -1);
+                      setActiveIndex(idx);
+                    }}
+                    className={`rounded-full transition-all duration-500 ${
+                      idx === activeIndex
+                        ? "w-8 h-2.5 bg-purple-600 shadow-md shadow-purple-600/30"
+                        : "w-2.5 h-2.5 bg-slate-300 hover:bg-purple-300"
+                    }`}
+                    aria-label={`View slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button 
+                onClick={() => setActiveIndex(prev => Math.min(leadersData.length - 1, prev + 1))}
+                disabled={activeIndex === leadersData.length - 1}
+                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 hover:bg-purple-50 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-all cursor-pointer disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </section>

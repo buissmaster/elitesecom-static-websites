@@ -21,6 +21,7 @@ import {
   Star,
   Sparkles,
   ShieldCheck,
+  Server,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -83,6 +84,12 @@ const features: Feature[] = [
     title: "Secure & Reliable",
     description:
       "Enterprise-grade security with 99.9% uptime. Your data stays protected with full regulatory compliance.",
+  },
+  {
+    icon: Server,
+    title: "Dedicated Server Infrastructure",
+    description:
+      "Powered by 20+ dedicated AWS servers to ensure high uptime, fast processing, enterprise-grade security, and reliable performance for your growing ecommerce business.",
   },
 ];
 
@@ -627,114 +634,118 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Features Section */}
-      <section
-        ref={featuresRef}
-        className="relative overflow-hidden pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50"
-      >
-        {/* Extremely slow, smooth background breathing */}
-        <motion.div
-          animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.15, 0.35, 0.15],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-[25%] left-[35%] -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-yellow-400 blur-[140px] pointer-events-none"
-        />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto mb-20"
-          >
-            <span className="inline-flex items-center rounded-full bg-yellow-100 text-yellow-700 px-4 py-1 text-sm font-semibold mb-5">
-              Why Choose Us
-            </span>
-
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-              Why Choose <span className="text-yellow-500">ElitesEcom?</span>
+      <section className=" bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-6">
+              Why Choose <span className="text-gold-500">ElitesEcom?</span>
             </h2>
-
-            <p className="mt-5 text-lg text-slate-600">
-              Powerful features designed to transform your e-commerce
-              operations.
+            <p className="text-lg text-slate-600">
+              Powerful features designed to transform your e-commerce operations
             </p>
-          </motion.div>
+          </div>
 
-          {/* Grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.1,
-                },
-              },
-            }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
-          >
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+          <div ref={featuresRef}>
+            {/* Desktop: Accordion Cards Row */}
+            <div className="hidden lg:flex flex-row gap-2 lg:gap-3 items-stretch justify-center h-[300px]">
+              {features.map((feature, index) => {
+                const FeatureIcon = feature.icon;
+                const isExpanded = activeFeature === index;
 
-              return (
-                <motion.div
-                  key={feature.title}
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm hover:shadow-xl hover:shadow-yellow-500/10  transition-all duration-500"
-                >
-                  {/* Auto Animation: Slow Moving Spotlight */}
-                  <motion.div
-                    animate={{
-                      x: ["-50%", "50%", "-50%"],
-                      y: ["-50%", "50%", "-50%"],
-                    }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "linear",
-                      delay: index * 1.5,
-                    }}
-                    className="absolute -inset-[100%] z-0 pointer-events-none opacity-40"
+                return (
+                  <div
+                    key={feature.title}
+                    onClick={() => setActiveFeature(isExpanded ? -1 : index)}
+                    className={`relative cursor-pointer rounded-xl border border-slate-100 overflow-hidden ${featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                     style={{
-                      background:
-                        "radial-gradient(circle at center, rgba(250, 204, 21, 0.15) 0%, transparent 30%)",
+                      transitionDelay: `${200 + index * 60}ms`,
+                      flex: isExpanded ? "0 0 30%" : "1 1 0%",
+                      minWidth: isExpanded ? "220px" : "50px",
+                      maxWidth: isExpanded ? "260px" : "100px",
+                      zIndex: isExpanded ? 20 : 10 - index,
+                      backgroundColor: "white",
+                      boxShadow: isExpanded
+                        ? "0 20px 40px -10px rgba(0, 0, 0, 0.2)"
+                        : "0 2px 4px -1px rgba(0, 0, 0, 0.08)",
+                      transition:
+                        "flex 0.35s cubic-bezier(0.4, 0, 0.2, 1), min-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease",
                     }}
-                  />
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center p-3">
+                      <div className="flex flex-col items-center justify-center text-center">
+                        <div
+                          className={`rounded-lg bg-gold-100 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isExpanded ? "w-12 h-12 bg-gradient-to-br from-gold to-gold-500" : "w-8 h-8"}`}
+                        >
+                          <FeatureIcon
+                            className={`transition-all duration-300 ${isExpanded ? "w-6 h-6 text-slate-900" : "w-4 h-4 text-gold-600"}`}
+                          />
+                        </div>
 
-                  {/* Icon Container with elegant hover color inversion */}
-                  <div className="relative z-10 mb-6">
-                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 border border-yellow-100 group-hover:bg-gradient-to-br group-hover:from-yellow-400 group-hover:to-yellow-500 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-yellow-500/30 group-hover:-translate-y-1">
-                      <Icon className="h-6 w-6 text-yellow-600 group-hover:text-white transition-colors duration-500" />
+                        <div
+                          className={`mt-3 transition-opacity duration-100 ${isExpanded ? "opacity-0 pointer-events-none absolute" : "opacity-100"}`}
+                        >
+                          <h4
+                            className="font-bold text-slate-900 text-xs text-center leading-tight"
+                            style={{
+                              writingMode: "vertical-rl",
+                              textOrientation: "mixed",
+                              transform: "rotate(180deg)",
+                              letterSpacing: "0.02em",
+                            }}
+                          >
+                            {feature.title}
+                          </h4>
+                        </div>
+
+                        <div
+                          className={`flex flex-col items-center justify-center text-center mt-3 transition-opacity duration-150 ${isExpanded ? "opacity-100" : "opacity-0 pointer-events-none absolute"}`}
+                          style={{
+                            transitionDelay: isExpanded ? "0.15s" : "0s",
+                          }}
+                        >
+                          <h4 className="font-bold text-slate-900 text-xl text-center">
+                            {feature.title}
+                          </h4>
+                          <p className="text-slate-500 text-[13px] text-center leading-snug px-3 max-w-[210px] mt-3">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                );
+              })}
+            </div>
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-yellow-600 transition-colors duration-500">
-                      {feature.title}
-                    </h3>
-                    <p className="text-slate-500 leading-relaxed text-sm">
-                      {feature.description}
-                    </p>
+            {/* Mobile Grid */}
+            <div className="grid grid-cols-2 gap-3 lg:hidden">
+              {features.map((feature, index) => {
+                const FeatureIcon = feature.icon;
+                return (
+                  <div
+                    key={feature.title}
+                    className={`relative rounded-xl border border-slate-100 overflow-hidden bg-white p-4 shadow-sm ${featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                    style={{
+                      transitionDelay: `${200 + index * 60}ms`,
+                      transition: "all 0.5s ease",
+                    }}
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-10 h-10 rounded-lg bg-gold-100 flex items-center justify-center mb-2">
+                        <FeatureIcon className="w-5 h-5 text-gold-600" />
+                      </div>
+                      <h4 className="font-bold text-slate-900 text-sm leading-tight mb-1">
+                        {feature.title}
+                      </h4>
+                      <p className="text-slate-500 text-xs leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 

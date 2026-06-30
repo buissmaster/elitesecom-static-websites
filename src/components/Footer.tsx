@@ -52,7 +52,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
               className="mb-5 focus:outline-none opacity-90 hover:opacity-100 transition-opacity"
             >
               <img
-                src="/elitesecom-full-logo.png"
+                src="/elitesecom-full-white-logo.png"
                 alt="ElitesEcom"
                 className="h-10 w-auto object-contain"
               />
@@ -204,7 +204,13 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                             : "text-slate-400"
                         }`}
                       >
-                        <item.icon className="w-4 h-4 text-slate-500 group-hover:text-gold transition-colors duration-200 shrink-0" />
+                        <item.icon
+                          className={`w-4 h-4 group-hover:text-gold transition-colors duration-200 shrink-0 ${
+                            currentPage === item.page
+                              ? "text-gold"
+                              : "text-slate-500"
+                          }`}
+                        />
                         <span>{item.name}</span>
                       </button>
                     </li>

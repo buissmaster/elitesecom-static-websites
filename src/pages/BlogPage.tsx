@@ -143,7 +143,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src="/blog main.jpeg"
+                    src="/blog main.png"
                     alt="Featured"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

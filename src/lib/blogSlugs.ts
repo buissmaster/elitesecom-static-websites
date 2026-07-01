@@ -53,7 +53,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Solution for Growing Businesses",
     readTime: "8 min",
     date: "June 17, 2026",
-    image: "/blog main.jpeg",
+    image: "/blog main.png",
   },
   // Seller Problems (8)
   {
@@ -65,7 +65,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 18, 2026",
-    image: "/seller problem blog/Seller problem 1.png",
+    image: "/seller problem blog/Seller problem 1.jpeg",
   },
   {
     id: "sp2",
@@ -78,7 +78,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "8 min",
     date: "May 16, 2026",
-    image: "/seller problem blog/Seller problem 2.png",
+    image: "/seller problem blog/Seller problem 2.jpeg",
   },
   {
     id: "sp3",
@@ -89,7 +89,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/seller problem blog/Seller problem 3.png",
+    image: "/seller problem blog/Seller problem 3.jpeg",
   },
   {
     id: "sp4",
@@ -100,7 +100,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 12, 2026",
-    image: "/seller problem blog/Seller problem 4.png",
+    image: "/seller problem blog/Seller problem 4.jpeg",
   },
   {
     id: "sp5",
@@ -302,7 +302,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 6, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 6.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 6.jpeg",
   },
   {
     id: "sd7",
@@ -313,7 +313,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 4, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 7.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 7.jpeg",
   },
   {
     id: "sd8",
@@ -324,7 +324,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 2, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 8.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 8.jpeg",
   },
 
   // Warehouse (8)
@@ -370,7 +370,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/Warehouse blog/Warehouse 4.png",
+    image: "/Warehouse blog/Warehouse 4.jpeg",
   },
   {
     id: "wh5",
@@ -403,7 +403,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/Warehouse blog/Warehouse 7.png",
+    image: "/Warehouse blog/Warehouse 7.jpeg",
   },
   {
     id: "wh8",
@@ -427,7 +427,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/Inventory blog/Inventory 1.jpeg",
+    image: "/Inventory blog/Inventory 1.png",
   },
   {
     id: "inv2",
@@ -449,7 +449,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 10, 2026",
-    image: "/Inventory blog/Inventory 3.jpeg",
+    image: "/Inventory blog/Inventory 3.png",
   },
   {
     id: "inv4",
@@ -460,7 +460,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "7 min",
     date: "May 8, 2026",
-    image: "/Inventory blog/Inventory 4.jpeg",
+    image: "/Inventory blog/Inventory 4.png",
   },
   {
     id: "inv5",
@@ -550,7 +550,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 7, 2026",
-    image: "/OMS blog/OMS 4.jpeg",
+    image: "/OMS blog/OMS 4.png",
   },
   {
     id: "oms5",
@@ -561,7 +561,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 5, 2026",
-    image: "/OMS blog/OMS 5.jpeg",
+    image: "/OMS blog/OMS 5.png",
   },
   {
     id: "oms6",
@@ -673,7 +673,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "Apr 30, 2026",
-    image: "/Returns blog/Returns 7.jpeg",
+    image: "/Returns blog/Returns 7.png",
   },
   {
     id: "ret8",
@@ -708,7 +708,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "7 min",
     date: "May 9, 2026",
-    image: "/Growth blog/Growth 2.jpeg",
+    image: "/Growth blog/Growth 2.png",
   },
   {
     id: "gr3",
@@ -730,7 +730,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "5 min",
     date: "May 5, 2026",
-    image: "/Growth blog/Growth 4.jpeg",
+    image: "/Growth blog/Growth 4.png",
   },
   {
     id: "gr5",
@@ -741,7 +741,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "7 min",
     date: "May 3, 2026",
-    image: "/Growth blog/Growth 5.jpeg",
+    image: "/Growth blog/Growth 5.png",
   },
   {
     id: "gr6",
@@ -798,7 +798,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "9 min",
     date: "May 10, 2026",
-    image: "/Comparisons blog/Comparisons 2.jpeg",
+    image: "/Comparisons blog/Comparisons 2.png",
   },
   {
     id: "cmp3",

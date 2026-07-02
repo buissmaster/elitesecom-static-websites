@@ -368,7 +368,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Character wrapper — sized to image, no background, no box */}
               <div className="relative mx-auto" style={{ maxWidth: "100%" }}>
                 <img
-                  src="/hero-home.png"
+                  src="/Hero-final.png"
                   alt="ElitesEcom Character"
                   className="w-full max-w-[320px] sm:max-w-[370px] lg:max-w-[430px] xl:max-w-[500px] 2xl:max-w-[550px] animate-float"
                   style={{ display: "block" }}

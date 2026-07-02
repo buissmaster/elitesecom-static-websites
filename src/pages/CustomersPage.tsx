@@ -347,7 +347,7 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      top: "30%",
+                      top: "15%",
                       left: "35%",
                       transform: "translate(-50%, -50%)",
                       objectFit: "contain",
@@ -361,8 +361,8 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
                   <div
                     className="absolute z-20 flex items-center gap-3 transition-all duration-500"
                     style={{
-                      top: 10,
-                      right: 15,
+                      top: 20,
+                      right: -150,
                       background: "rgba(255,255,255,0.92)",
                       backdropFilter: "blur(10px)",
                       borderRadius: 28,
@@ -464,7 +464,7 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
                       // bottom: -45,
                       // right: -90,
                       bottom: 20,
-                      right: 10,
+                      right: -180,
                       background: "rgba(255,255,255,0.92)",
                       backdropFilter: "blur(10px)",
                       borderRadius: 28,

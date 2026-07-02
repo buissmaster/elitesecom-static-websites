@@ -156,7 +156,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Amazon",
       subtitle: "Global Marketplace",
-      logo: "/hp-logo-amazon.png",
+      logo: "/logo-amazon.png",
       bg: "#FFF7ED",
       border: "#FED7AA",
       text: "#EA580C",
@@ -170,7 +170,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Flipkart",
       subtitle: "India's Favorite",
-      logo: "/hp-logo-flipkart.png",
+      logo: "/logo-flipkart.png",
       bg: "#EFF6FF",
       border: "#BFDBFE",
       text: "#2563EB",
@@ -184,7 +184,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Myntra",
       subtitle: "Fashion Destination",
-      logo: "/hp-logo-myntra.png",
+      logo: "/logo-myntra.png",
       bg: "#FFF1F2",
       border: "#FECDD3",
       text: "#DB2777",
@@ -198,7 +198,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Shopify",
       subtitle: "Build Your Store",
-      logo: "/hp-logo-shopify.png",
+      logo: "/logo-shopify.png",
       bg: "#F0FDF4",
       border: "#BBF7D0",
       text: "#16A34A",
@@ -212,7 +212,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Ajio",
       subtitle: "Trendy Fashion",
-      logo: "/hp-logo-ajio.png",
+      logo: "/logo-ajio.png",
       bg: "#F0F9FF",
       border: "#BAE6FD",
       text: "#0891B2",
@@ -226,7 +226,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Meesho",
       subtitle: "Reseller Platform",
-      logo: "/hp-logo-meesho.png",
+      logo: "/logo-meesho.png",
       bg: "#FAF5FF",
       border: "#E9D5FF",
       text: "#9333EA",

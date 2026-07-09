@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
+import axios from "axios";
 
 interface ContactPageProps {
   onNavigate: (page: string) => void;
@@ -21,16 +23,31 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", mobile: "", message: "" });
-    }, 1500);
+    // console.log("Form data:", formData);
+    const url =
+      "https://krljwwj3qkhqmlq3aqw76xnttm0mcsgp.lambda-url.ap-south-1.on.aws/";
+    const payload = {
+      actionType: "contactUs",
+      name: formData.name,
+      email: formData.email,
+      phone_no: formData.mobile,
+      message: "ElitesEcom " + formData.message,
+    };
+    try {
+      const response = await axios.post(url, payload);
+      console.log(response);
+      if (response.status == 200) {
+        toast.success(
+          "Thank you for ContactUs. We'll Getting back to you shortly",
+        );
+        setFormData({ name: "", email: "", mobile: "", message: "" });
+      }
+    } catch (error) {
+      toast.error("There was an error in Submit Form. Please try again");
+      console.log(error);
+    }
   };
 
   const branches = [
@@ -142,7 +159,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                             setFormData({ ...formData, mobile: e.target.value })
                           }
                           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all"
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 XXXXXXXXXX"
                         />
                       </div>
                       <div>

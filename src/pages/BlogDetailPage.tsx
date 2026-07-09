@@ -770,7 +770,7 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
           className="absolute inset-0 h-full w-full object-cover scale-[1.04] motion-kenburns opacity-90"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(245,184,0,0.24),transparent_28%),linear-gradient(105deg,rgba(15,23,42,0.92)_0%,rgba(15,23,42,0.76)_42%,rgba(15,23,42,0.34)_100%)]" />
-        <div className="absolute left-[6%] top-[20%] h-28 w-28 rounded-full border border-white/15 motion-orbit opacity-70" />
+        {/* <div className="absolute left-[6%] top-[20%] h-28 w-28 rounded-full border border-white/15 motion-orbit opacity-70" /> */}
         <div className="absolute bottom-[18%] right-[10%] h-20 w-20 rounded-3xl border border-gold/30 bg-gold/10 blur-[1px] motion-float-soft" />
 
         <div className="relative z-10 flex min-h-[520px] lg:min-h-[620px] items-end px-4 pb-10 pt-20 sm:px-6 lg:px-8 lg:pb-16">

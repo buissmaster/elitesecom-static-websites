@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
+import axios from "axios";
 
 interface DemoPageProps {
   onNavigate: (page: string) => void;
@@ -159,9 +160,9 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { demoType?: string; preferredTime?: string } = {};
-    if (!formData.demoType) {
-      newErrors.demoType = "Please choose how you'd like your demo.";
-    }
+    // if (!formData.demoType) {
+    //   newErrors.demoType = "Please choose how you'd like your demo.";
+    // }
     if (!formData.preferredTime) {
       newErrors.preferredTime = "Please select a time slot.";
     }
@@ -171,29 +172,37 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
       return;
     }
 
-    console.log("Form data:", formData);
+    // console.log("Form data:", formData);
     const url =
       "https://krljwwj3qkhqmlq3aqw76xnttm0mcsgp.lambda-url.ap-south-1.on.aws/";
     const payload = { formData };
+    // const payload = {
+    //   actionType: "requestDemo",
+    //   name: formData.name,
+    //   mobileNumber: formData.phone,
+    //   company: formData.company,
+    //   email: formData.email,
+    //   time: formData.preferredTime,
+    //   date: formData.preferredDate,
+    //   message: "ElitesEcom " + formData.message,
+    //   isDemoTaken: false,
+    // };
     try {
       setIsSubmitting(true);
-      // const response = await fetch(url, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(payload),
-      // });
-      if (true) {
+      const response = await axios.post(url, payload);
+      if (response.status === 200) {
         toast.success("Thank you! We'll get back to you shortly.");
-        // setFormData({
-        //   name: "",
-        //   email: "",
-        //   company: "",
-        //   phone: "",
-        //   preferredDate: "",
-        //   preferredTime: "",
-        //   demoType: "",
-        //   message: "",
-        // });
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          preferredDate: "",
+          preferredTime: "",
+          demoType: "",
+          message: "",
+        });
+
         setSubmitted(true);
       } else {
         toast.error(
@@ -328,7 +337,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                           </AlertTitle>
                           <AlertDescription className="text-[11px] text-rose-700 font-medium">
                             Please choose how you'd like your demo and a time
-                            slot before proceeding.
+                            slot before proceeding.Send us a Message
                           </AlertDescription>
                         </div>
                       </Alert>
@@ -427,7 +436,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                               })
                             }
                             className="w-full px-4 py-2.5 text-xs text-slate-800 placeholder-slate-400 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 outline-none transition-all"
-                            placeholder="+91 98765 43210"
+                            placeholder="+91 XXXXXXXXXX"
                           />
                         </div>
                       </div>
@@ -436,7 +445,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                     <hr className="border-slate-100" />
 
                     {/* Format Selector Row */}
-                    <div>
+                    {/* <div>
                       <label className="flex items-center justify-between text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-2">
                         <span>How would you like your demo? *</span>
                         {formErrors.demoType && (
@@ -491,7 +500,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                       </div>
                     </div>
 
-                    <hr className="border-slate-100" />
+                    <hr className="border-slate-100" /> */}
 
                     {/* Scheduling Blocks Group */}
                     <div className="space-y-4">

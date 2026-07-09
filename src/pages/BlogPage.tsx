@@ -246,22 +246,23 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                   <article
                     key={post.slug}
                     onClick={() => goToBlog(post.slug)}
-                    className={`group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                    className={`flex flex-col justify-between group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                     style={{ transitionDelay: `${Math.min(idx * 50, 300)}ms` }}
                   >
-                    <div className="relative h-40 overflow-hidden">
-                      <img
-                        src={img}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <span
-                        className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/90"
-                        style={{ color: c.color }}
-                      >
-                        {post.category}
-                      </span>
-                    </div>
+                    <div className="">
+                      <div className="relative h-40 overflow-hidden">
+                        <img
+                          src={img}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <span
+                          className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/90"
+                          style={{ color: c.color }}
+                        >
+                          {post.category}
+                        </span>
+                      </div>
                     <div className="p-4">
                       <h3 className="font-bold  mb-2 group-hover:text-gold-600 transition-colors text-sm line-clamp-2">
                         {post.title}
@@ -269,12 +270,15 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                       <p className="text-slate-500 text-xs line-clamp-2 mb-3">
                         {post.subtitle}
                       </p>
-                      <div className="flex items-center justify-between pt-2 border-t border-slate-100">
-                        <span className="text-[11px] text-slate-400 flex items-center gap-1">
+                    </div>
+                    </div>
+                    <div className="p-4">
+                      <div className="flex items-center justify-end pt-2 border-t border-slate-100">
+                        {/* <span className="text-[11px] text-slate-400 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {post.readTime}
-                        </span>
-                        <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
+                        </span> */}
+                        <ChevronRight className="float-right w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
                       </div>
                     </div>
                   </article>

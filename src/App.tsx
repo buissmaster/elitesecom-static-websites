@@ -26,7 +26,8 @@ function App() {
 
   useEffect(() => {
     const handleLocationChange = () => {
-      const path = window.location.pathname;
+      const path =
+        window.location.pathname.replace(/\/+$/, "") || "/";
 
       if (path.startsWith("/Blog/")) {
         setCurrentPage("blogdetail");

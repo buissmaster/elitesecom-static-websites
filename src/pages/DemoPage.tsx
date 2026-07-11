@@ -18,6 +18,12 @@ import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
 import axios from "axios";
 
+const toDateKey = (date: Date) =>
+  `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+const today = new Date();
+const todayKey = toDateKey(today);
+
 interface DemoPageProps {
   onNavigate: (page: string) => void;
 }
@@ -27,16 +33,15 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const datePickerRef = useRef<HTMLDivElement>(null);
 
-  // Default calendar viewing state set to June 2026 as seen in image_46593b.png
-  const [currentYear, setCurrentYear] = useState(2026);
-  const [currentMonth, setCurrentMonth] = useState(5); // 0-indexed, 5 = June
+  const [currentYear, setCurrentYear] = useState(today.getFullYear());
+  const [currentMonth, setCurrentMonth] = useState(today.getMonth());
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     phone: "",
-    preferredDate: "",
+    preferredDate: todayKey,
     preferredTime: "",
     demoType: "",
     message: "",
@@ -119,6 +124,12 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
     new Date(year, month + 1, 0).getDate();
   const getFirstDayOfMonth = (year: number, month: number) =>
     new Date(year, month, 1).getDay();
+  const getDateKey = (year: number, month: number, day: number) =>
+    `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const isPastDate = (year: number, month: number, day: number) =>
+    getDateKey(year, month, day) < todayKey;
+  const isViewingCurrentMonth =
+    currentYear === today.getFullYear() && currentMonth === today.getMonth();
 
   const daysInMonth = getDaysInMonth(currentYear, currentMonth);
   const firstDayIndex = getFirstDayOfMonth(currentYear, currentMonth);
@@ -134,10 +145,33 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
   }
 
   const handleDateSelect = (day: number) => {
-    const formattedDate = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-    setFormData({ ...formData, preferredDate: formattedDate });
+    if (isPastDate(currentYear, currentMonth, day)) return;
+
+    const formattedDate = getDateKey(currentYear, currentMonth, day);
+    setFormData((prev) => ({
+      ...prev,
+      preferredDate: formattedDate,
+      preferredTime:
+        isTimeOptionDisabled(prev.preferredTime, formattedDate) ? "" : prev.preferredTime,
+    }));
     setShowDatePicker(false);
   };
+
+  const isTimeOptionDisabled = (timeId: string, selectedDate = formData.preferredDate) => {
+    if (!timeId || selectedDate !== todayKey) return false;
+
+    const now = new Date();
+    const minutesNow = now.getHours() * 60 + now.getMinutes();
+    const slotEndMinutes: Record<string, number> = {
+      morning: 12 * 60 + 30,
+      afternoon: 18 * 60,
+    };
+
+    return minutesNow >= (slotEndMinutes[timeId] ?? Number.POSITIVE_INFINITY);
+  };
+  const areTodaySlotsFull =
+    formData.preferredDate === todayKey &&
+    timeOptions.every((option) => isTimeOptionDisabled(option.id));
 
   const changeMonth = (direction: "prev" | "next") => {
     if (direction === "prev") {
@@ -175,7 +209,8 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
     // console.log("Form data:", formData);
     const url =
       "https://krljwwj3qkhqmlq3aqw76xnttm0mcsgp.lambda-url.ap-south-1.on.aws/";
-    const payload = { formData };
+    const payload = { ...formData };
+    // console.log("payload", payload);
     // const payload = {
     //   actionType: "requestDemo",
     //   name: formData.name,
@@ -197,7 +232,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
           email: "",
           company: "",
           phone: "",
-          preferredDate: "",
+          preferredDate: todayKey,
           preferredTime: "",
           demoType: "",
           message: "",
@@ -541,7 +576,8 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                                 <button
                                   type="button"
                                   onClick={() => changeMonth("prev")}
-                                  className="p-1 rounded-lg hover:bg-slate-100 text-slate-600"
+                                  disabled={isViewingCurrentMonth}
+                                  className="p-1 rounded-lg text-slate-600 hover:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300 disabled:hover:bg-transparent"
                                 >
                                   <ChevronLeft className="w-4 h-4" />
                                 </button>
@@ -573,16 +609,27 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                                 const formattedCellDate = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
                                 const isCurrentSelection =
                                   formData.preferredDate === formattedCellDate;
+                                const isToday = formattedCellDate === todayKey;
+                                const disabledDate = isPastDate(
+                                  currentYear,
+                                  currentMonth,
+                                  day,
+                                );
 
                                 return (
                                   <button
                                     key={`day-${day}`}
                                     type="button"
                                     onClick={() => handleDateSelect(day)}
+                                    disabled={disabledDate}
                                     className={`py-1.5 text-xs rounded-lg font-medium transition-all ${
                                       isCurrentSelection
                                         ? "bg-amber-500 text-white font-bold shadow-sm shadow-amber-500/20"
-                                        : "text-slate-700 hover:bg-amber-50 hover:text-amber-700"
+                                        : disabledDate
+                                          ? "cursor-not-allowed text-slate-300 line-through"
+                                          : isToday
+                                            ? "border border-amber-400 text-amber-700 bg-amber-50"
+                                            : "text-slate-700 hover:bg-amber-50 hover:text-amber-700"
                                     }`}
                                   >
                                     {day}
@@ -611,10 +658,12 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                           {timeOptions.map((option) => {
                             const isSelected =
                               formData.preferredTime === option.id;
+                            const isDisabled = isTimeOptionDisabled(option.id);
                             return (
                               <button
                                 key={option.id}
                                 type="button"
+                                disabled={isDisabled}
                                 onClick={() => {
                                   setFormData({
                                     ...formData,
@@ -625,7 +674,13 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                                     preferredTime: undefined,
                                   }));
                                 }}
-                                className={`flex items-center justify-between p-3 rounded-xl border text-left transition-all ${isSelected ? "border-amber-500 bg-amber-50/40" : "border-slate-200 hover:bg-slate-50"}`}
+                                className={`flex items-center justify-between p-3 rounded-xl border text-left transition-all ${
+                                  isDisabled
+                                    ? "cursor-not-allowed border-slate-200 bg-slate-100/70 opacity-60"
+                                    : isSelected
+                                      ? "border-amber-500 bg-amber-50/40"
+                                      : "border-slate-200 hover:bg-slate-50"
+                                }`}
                               >
                                 <div className="flex items-center gap-2.5">
                                   <span className="text-sm leading-none">
@@ -636,7 +691,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                                       {option.title}
                                     </span>
                                     <span className="text-[10px] text-slate-500">
-                                      {option.subtitle}
+                                      {isDisabled ? "Slot completed" : option.subtitle}
                                     </span>
                                   </div>
                                 </div>
@@ -651,6 +706,12 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                             );
                           })}
                         </div>
+                        {areTodaySlotsFull && (
+                          <p className="mt-2 text-[11px] font-semibold text-rose-600">
+                            Today's demo slots are full. Please select another
+                            date to book your demo.
+                          </p>
+                        )}
                       </div>
                     </div>
 

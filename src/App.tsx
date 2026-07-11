@@ -25,14 +25,14 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const fullHash = window.location.hash.replace("#", "") || "/";
-      const hash = fullHash.split("?")[0];
-      // Check for blog detail pages: blog/some-id
-      if (hash.startsWith("Blog/")) {
+    const handleLocationChange = () => {
+      const path = window.location.pathname;
+
+      if (path.startsWith("/Blog/")) {
         setCurrentPage("blogdetail");
         return;
       }
+
       const pageMap: Record<string, string> = {
         "/": "home",
         "/ourservices": "services",
@@ -41,7 +41,6 @@ function App() {
         "/aboutus": "about",
         "/faqs": "faqs",
         "/Blog": "blog",
-        Blog: "blog",
         "/pricing": "pricing",
         "/contactus": "contact",
         "/requestdemo": "demo",
@@ -50,38 +49,47 @@ function App() {
         "/RefundPolicy": "refund",
         "/team": "team",
       };
-      setCurrentPage(pageMap[hash] || "home");
+
+      setCurrentPage(pageMap[path] || "home");
     };
 
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange();
+    window.addEventListener("popstate", handleLocationChange);
 
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    handleLocationChange();
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
   }, []);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
 
     const pathMap: Record<string, string> = {
-      home: "#/",
-      services: "#/ourservices",
-      integration: "#/integration",
-      customers: "#/customer",
-      about: "#/aboutus",
-      faqs: "#/faqs",
-      blog: "#/Blog",
-      pricing: "#/pricing",
-      contact: "#/contactus",
-      demo: "#/requestdemo",
-      terms: "#/terms",
-      privacy: "#/privacy",
-      refund: "#/RefundPolicy",
-      team: "#/team",
+      home: "/",
+      services: "/ourservices",
+      integration: "/integration",
+      customers: "/customer",
+      about: "/aboutus",
+      faqs: "/faqs",
+      blog: "/Blog",
+      pricing: "/pricing",
+      contact: "/contactus",
+      demo: "/requestdemo",
+      terms: "/terms",
+      privacy: "/privacy",
+      refund: "/RefundPolicy",
+      team: "/team",
     };
 
-    const path = pathMap[page] || "#/";
-    window.location.hash = path.replace("#", "");
-    window.scrollTo(0, 0);
+    const path = pathMap[page] || "/";
+
+    window.history.pushState({}, "", path);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const renderPage = () => {
@@ -140,8 +148,10 @@ function App() {
             fontWeight: "500",
           },
           classNames: {
-            success: "border border-amber-200 bg-amber-50 text-amber-900 [&>[data-icon]]:text-amber-500",
-            error: "border border-rose-200 bg-rose-50 text-rose-900 [&>[data-icon]]:text-rose-500",
+            success:
+              "border border-amber-200 bg-amber-50 text-amber-900 [&>[data-icon]]:text-amber-500",
+            error:
+              "border border-rose-200 bg-rose-50 text-rose-900 [&>[data-icon]]:text-rose-500",
           },
         }}
       />

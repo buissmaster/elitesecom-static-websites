@@ -22,6 +22,48 @@ interface BlogPageProps {
   onNavigate?: (page: string) => void;
 }
 
+function LazyBlogImage({ src, alt }: { src: string; alt: string }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper || shouldLoad) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "160px 0px" },
+    );
+
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+  }, [shouldLoad]);
+
+  return (
+    <div ref={wrapperRef} className="absolute inset-0 bg-slate-100">
+      {shouldLoad && (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+      )}
+    </div>
+  );
+}
+
 export function BlogPage({ onNavigate }: BlogPageProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -101,8 +143,8 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
   const goToBlog = (slug: string) => {
     sessionStorage.setItem("blogCategory", activeCategory);
     sessionStorage.setItem("blogScroll", String(window.scrollY));
-    window.location.hash = `#Blog/${slug}`;
-    window.scrollTo(0, 0);
+    window.history.pushState({}, "", `Blog/${slug}`);
+    window.dispatchEvent(new PopStateEvent("popstate"));
   };
 
   /* ═══════════════════════════════════════════════════════════ */
@@ -251,10 +293,9 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                   >
                     <div className="">
                       <div className="relative h-40 overflow-hidden">
-                        <img
+                        <LazyBlogImage
                           src={img}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                         <span
                           className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/90"

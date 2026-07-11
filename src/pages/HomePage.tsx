@@ -57,7 +57,7 @@ const features: Feature[] = [
   },
   {
     icon: FileText,
-    title: "One Click Label",
+    title: "One Click Label Generation",
     description:
       "Generate shipping labels instantly across all platforms. Compatible with every major courier — one click, zero hassle.",
   },
@@ -350,7 +350,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               <div
                 onClick={() => {
-                  window.location.hash = "/aboutus?section=certificates";
+                  window.history.pushState(
+                    {},
+                    "",
+                    "/aboutus?section=certificates",
+                  );
+                  window.dispatchEvent(new PopStateEvent("popstate"));
                 }}
                 className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit"
               >
@@ -475,7 +480,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
               <div
                 onClick={() => {
-                  window.location.hash = "/aboutus?section=certificates";
+                  window.history.pushState(
+                    {},
+                    "",
+                    "/aboutus?section=certificates",
+                  );
+                  window.dispatchEvent(new PopStateEvent("popstate"));
                 }}
                 className="mt-4 flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit justify-self-center"
               >

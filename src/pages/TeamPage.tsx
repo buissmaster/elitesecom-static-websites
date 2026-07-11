@@ -454,7 +454,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
             <div className="absolute -bottom-40 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-blue-200/30 to-purple-200/30 rounded-full blur-[130px]" />
           </div>
 
-          <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center gap-10">
+          <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center gap-2">
             {/* Section Header */}
             <div className="text-center max-w-3xl">
               <span className="inline-block text-xs font-bold text-purple-600 uppercase tracking-[0.3em] mb-3">
@@ -475,11 +475,10 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
 
             {/* Premium CSS Track Slider — fixed height, smooth sliding track */}
             <div
-              className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl"
-              style={{ height: "420px" }}
+              className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl h-[590px] sm:h-[420px]"
             >
               <div 
-                className="flex h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="flex h-full w-full items-stretch transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}
               >
                 {leadersData.map((leader, idx) => (
@@ -488,7 +487,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                     className="w-full h-full flex-shrink-0 flex flex-col sm:flex-row bg-white border border-slate-200 shadow-[0_8px_32px_rgba(139,92,246,0.08),0_24px_64px_rgba(15,23,42,0.06)]"
                   >
                     {/* Image */}
-                    <div className="w-full sm:w-2/5 h-52 sm:h-full relative overflow-hidden bg-slate-100 flex-shrink-0">
+                    <div className="w-full sm:w-2/5 h-56 sm:h-full relative overflow-hidden bg-slate-100 flex-shrink-0">
                       <img
                         src={leader.image}
                         alt={`${leader.name} — ${leader.role}`}
@@ -507,7 +506,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                     </div>
 
                     {/* Content */}
-                    <div className="w-full sm:w-3/5 p-6 sm:p-8 flex flex-col justify-between bg-white">
+                    <div className="w-full sm:w-3/5 min-h-0 flex-1 overflow-y-auto p-6 sm:p-8 flex flex-col justify-between bg-white">
                       <div>
                         {/* Name */}
                         <h3 className="font-heading font-bold text-2xl text-slate-900 mb-1">

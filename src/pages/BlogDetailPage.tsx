@@ -652,21 +652,20 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
   /* ── Parse slug from URL ── handles both new slugs and old IDs */
   useEffect(() => {
     const loadBlog = () => {
-      const hash = window.location.hash;
-      const slugPart = hash.replace("#Blog/", "").replace("#/Blog/", "");
+      const slugPart = window.location.pathname.split("/Blog/")[1] || "";
 
       let blog: BlogEntry | undefined;
 
-      /* Try slug lookup first */
+      // Try slug lookup first
       blog = findBlogBySlug(slugPart);
 
-      /* If not found, try old ID lookup */
+      // If not found, try old ID lookup
       if (!blog) {
         const byId = findBlogById(slugPart);
         if (byId) blog = byId;
       }
 
-      /* Final fallback */
+      // Final fallback
       if (!blog) blog = allBlogEntries[0];
 
       setEntry(blog);
@@ -675,8 +674,12 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
     };
 
     loadBlog();
-    window.addEventListener("hashchange", loadBlog);
-    return () => window.removeEventListener("hashchange", loadBlog);
+
+    window.addEventListener("popstate", loadBlog);
+
+    return () => {
+      window.removeEventListener("popstate", loadBlog);
+    };
   }, []);
 
   const isClickScrolling = useRef(false);
@@ -721,14 +724,18 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
 
   const goBack = () => {
     const savedScroll = sessionStorage.getItem("blogScroll") || "0";
-    window.location.hash = "#/Blog";
+
+    window.history.pushState({}, "", "/Blog");
+    window.dispatchEvent(new PopStateEvent("popstate"));
+
     setTimeout(() => {
-      window.scrollTo(0, parseInt(savedScroll));
+      window.scrollTo(0, parseInt(savedScroll, 10));
     }, 100);
   };
 
   const goToBlog = (slug: string) => {
-    window.location.hash = `#Blog/${slug}`;
+    window.history.pushState({}, "", `/Blog/${slug}`);
+    window.dispatchEvent(new PopStateEvent("popstate"));
     window.scrollTo(0, 0);
   };
 
@@ -1018,7 +1025,7 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  {/* <div className="p-4">
+                  <div className="p-4">
                     <h4 className="font-semibold  group-hover:text-gold-600 transition-colors line-clamp-2 text-sm">
                       {post.title}
                     </h4>
@@ -1026,7 +1033,7 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
                       <Clock className="w-3 h-3" />
                       {post.readTime}
                     </span>
-                  </div> */}
+                  </div>
                 </article>
               ))}
             </div>

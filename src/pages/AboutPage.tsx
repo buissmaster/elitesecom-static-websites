@@ -32,9 +32,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   const offerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const hash = window.location.hash;
+    const params = new URLSearchParams(window.location.search);
 
-    if (hash.includes("section=certificates")) {
+    if (params.get("section") === "certificates") {
       setTimeout(() => {
         document
           .getElementById("certificates")

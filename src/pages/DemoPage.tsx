@@ -151,13 +151,17 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
     setFormData((prev) => ({
       ...prev,
       preferredDate: formattedDate,
-      preferredTime:
-        isTimeOptionDisabled(prev.preferredTime, formattedDate) ? "" : prev.preferredTime,
+      preferredTime: isTimeOptionDisabled(prev.preferredTime, formattedDate)
+        ? ""
+        : prev.preferredTime,
     }));
     setShowDatePicker(false);
   };
 
-  const isTimeOptionDisabled = (timeId: string, selectedDate = formData.preferredDate) => {
+  const isTimeOptionDisabled = (
+    timeId: string,
+    selectedDate = formData.preferredDate,
+  ) => {
     if (!timeId || selectedDate !== todayKey) return false;
 
     const now = new Date();
@@ -209,19 +213,20 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
     // console.log("Form data:", formData);
     const url =
       "https://krljwwj3qkhqmlq3aqw76xnttm0mcsgp.lambda-url.ap-south-1.on.aws/";
-    const payload = { ...formData };
-    // console.log("payload", payload);
-    // const payload = {
-    //   actionType: "requestDemo",
-    //   name: formData.name,
-    //   mobileNumber: formData.phone,
-    //   company: formData.company,
-    //   email: formData.email,
-    //   time: formData.preferredTime,
-    //   date: formData.preferredDate,
-    //   message: "ElitesEcom " + formData.message,
-    //   isDemoTaken: false,
-    // };
+    const payload = {
+      actionType: "requestDemo",
+      name: formData.name,
+      mobileNumber: formData.phone,
+      company: formData.company,
+      email: formData.email,
+      time: formData.preferredTime,
+      date: formData.preferredDate,
+      message: "ElitesEcom " + formData.message,
+      isDemoTaken: false,
+      productCount: 0,
+      chaneelsSelling: 0,
+      orderCount: 0,
+    };
     try {
       setIsSubmitting(true);
       const response = await axios.post(url, payload);
@@ -691,7 +696,9 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                                       {option.title}
                                     </span>
                                     <span className="text-[10px] text-slate-500">
-                                      {isDisabled ? "Slot completed" : option.subtitle}
+                                      {isDisabled
+                                        ? "Slot completed"
+                                        : option.subtitle}
                                     </span>
                                   </div>
                                 </div>

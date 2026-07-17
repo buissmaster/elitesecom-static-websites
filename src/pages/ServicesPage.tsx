@@ -291,9 +291,9 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
           />
 
           {/* Small decorative dots */}
-          <div className="absolute top-[35%] left-[15%] w-1.5 h-1.5 rounded-full bg-purple-300/40" />
+          {/* <div className="absolute top-[35%] left-[15%] w-1.5 h-1.5 rounded-full bg-purple-300/40" />
           <div className="absolute bottom-[25%] right-[15%] w-2 h-2 rounded-full bg-blue-300/40" />
-          <div className="absolute top-[55%] left-[8%] w-1 h-1 rounded-full bg-emerald-300/40" />
+          <div className="absolute top-[55%] left-[8%] w-1 h-1 rounded-full bg-emerald-300/40" /> */}
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

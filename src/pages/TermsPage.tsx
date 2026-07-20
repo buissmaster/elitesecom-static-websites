@@ -11,7 +11,7 @@ export function TermsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-gold-50">
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -27,14 +27,14 @@ export function TermsPage() {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-0">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  1. Acceptance of Terms
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                 ❖ Acceptance of Terms
+                </h4>
                 <p className="text-slate-600">
                   By accessing and using ElitesEcom's services, you agree to be
                   bound by these Terms and Conditions. If you do not agree to
@@ -43,9 +43,9 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  2. Description of Services
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Description of Services
+                </h4>
                 <p className="text-slate-600">
                   ElitesEcom provides e-commerce order management software as a
                   service (SaaS) that enables businesses to manage inventory,
@@ -55,7 +55,7 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">3. User Accounts</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ User Accounts</h4>
                 <p className="text-slate-600">
                   To use our services, you must create an account. You are
                   responsible for maintaining the confidentiality of your
@@ -65,7 +65,7 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">4. Payment Terms</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Payment Terms</h4>
                 <p className="text-slate-600">
                   All fees are exclusive of taxes. You are responsible for
                   paying all applicable taxes. Payments are non-refundable
@@ -74,7 +74,7 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">5. Data Ownership</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Data Ownership</h4>
                 <p className="text-slate-600">
                   You retain ownership of all data you upload to our platform.
                   We only use your data to provide and improve our services.
@@ -82,9 +82,9 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  6. Service Level Agreement
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Service Level Agreement
+                </h4>
                 <p className="text-slate-600">
                   We strive to maintain 99.9% uptime. In case of service
                   interruptions, we will make reasonable efforts to restore
@@ -93,7 +93,7 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">7. Termination</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Termination</h4>
                 <p className="text-slate-600">
                   Either party may terminate the agreement with 30 days written
                   notice. Upon termination, your access to the service will be
@@ -102,9 +102,9 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  8. Limitation of Liability
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Limitation of Liability
+                </h4>
                 <p className="text-slate-600">
                   ElitesEcom shall not be liable for any indirect, incidental,
                   special, or consequential damages arising out of or in
@@ -113,7 +113,7 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">9. Governing Law</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Governing Law</h4>
                 <p className="text-slate-600">
                   These terms shall be governed by and construed in accordance
                   with the laws of India. Any disputes shall be subject to the
@@ -122,9 +122,9 @@ export function TermsPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  10. Changes to Terms
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Changes to Terms
+                </h4>
                 <p className="text-slate-600">
                   We reserve the right to modify these terms at any time. We
                   will notify you of any material changes via email or through

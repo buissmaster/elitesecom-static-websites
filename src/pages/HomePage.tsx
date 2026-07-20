@@ -195,6 +195,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
         { Icon: Tag, b: "10%", r: "10%", s: 16 },
       ],
     },
+
+    {
+      name: "Nykaa",
+      subtitle: "Beauty & Wellness",
+      logo: "/logo-nykaa.png",
+      bg: "#FAF5FF",
+      border: "#f8c3d7",
+      text: "#FC2779",
+      deco: [
+        { Icon: ShoppingCart, t: "10%", l: "8%", s: 24 },
+        { Icon: Package, b: "14%", r: "10%", s: 20 },
+        { Icon: Store, t: "54%", r: "8%", s: 18 },
+        { Icon: Tag, b: "10%", l: "12%", s: 16 },
+      ],
+    },
     {
       name: "Shopify",
       subtitle: "Build Your Store",
@@ -223,6 +238,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
         { Icon: Heart, b: "10%", l: "10%", s: 16 },
       ],
     },
+
+    {
+      name: "Snapdeal",
+      subtitle: "Value Shopping",
+      logo: "/logo-snapdeal.png",
+      bg: "#FFF1F2",
+      border: "#FECDD3",
+      text: "#E40046",
+      deco: [
+        { Icon: ShoppingBag, t: "10%", r: "8%", s: 24 },
+        { Icon: Heart, b: "14%", l: "10%", s: 20 },
+        { Icon: Sparkles, t: "54%", l: "8%", s: 18 },
+        { Icon: Tag, b: "10%", r: "10%", s: 16 },
+      ],
+    },
     {
       name: "Meesho",
       subtitle: "Reseller Platform",
@@ -237,6 +267,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         { Icon: Tag, b: "10%", l: "12%", s: 16 },
       ],
     },
+    
   ];
 
   return (

@@ -11,7 +11,7 @@ export function RefundPage() {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-gold-50">
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -27,12 +27,12 @@ export function RefundPage() {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-0">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
               <section>
-                <h2 className="text-2xl font-bold  mb-4">1. Overview</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Overview</h4>
                 <p className="text-slate-600">
                   At ElitesEcom, we strive to provide the best service possible.
                   If you are not satisfied with our services, we offer refunds
@@ -41,7 +41,7 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">2. Free Trial</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Free Trial</h4>
                 <p className="text-slate-600">
                   We offer a 14-day free trial for all new users. No credit card
                   is required to start the trial. During this period, you can
@@ -50,9 +50,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  3. Monthly Subscriptions
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Monthly Subscriptions
+                </h4>
                 <p className="text-slate-600 mb-4">
                   For monthly subscription plans:
                 </p>
@@ -71,9 +71,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  4. Annual Subscriptions
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Annual Subscriptions
+                </h4>
                 <p className="text-slate-600 mb-4">
                   For annual subscription plans:
                 </p>
@@ -88,9 +88,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  5. Eligible Refund Reasons
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                 ❖ Eligible Refund Reasons
+                </h4>
                 <p className="text-slate-600 mb-4">
                   Refunds may be granted for the following reasons:
                 </p>
@@ -107,9 +107,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  6. Non-Refundable Items
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Non-Refundable Items
+                </h4>
                 <p className="text-slate-600 mb-4">
                   The following are not eligible for refunds:
                 </p>
@@ -123,7 +123,7 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">7. Refund Process</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Refund Process</h4>
                 <p className="text-slate-600 mb-4">To request a refund:</p>
                 <ol className="list-decimal list-inside text-slate-600 space-y-2">
                   <li>Contact our support team at contact@elitesecom.ai</li>
@@ -139,7 +139,7 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">8. Refund Method</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Refund Method</h4>
                 <p className="text-slate-600">
                   Refunds will be issued to the original payment method used for
                   the purchase. Depending on your payment provider, it may take
@@ -148,9 +148,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  9. Service Termination
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Service Termination
+                </h4>
                 <p className="text-slate-600">
                   Upon refund approval, your access to the service will be
                   terminated. You are responsible for exporting any data before
@@ -159,9 +159,9 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  10. Changes to This Policy
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Changes to This Policy
+                </h4>
                 <p className="text-slate-600">
                   We reserve the right to modify this Refund Policy at any time.
                   Changes will be effective immediately upon posting on our
@@ -170,7 +170,7 @@ export function RefundPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">11. Contact Us</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Contact Us</h4>
                 <p className="text-slate-600">
                   If you have any questions about our Refund Policy, please
                   contact us:

@@ -11,7 +11,7 @@ export function PrivacyPage() {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-gold-50">
+      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -27,12 +27,12 @@ export function PrivacyPage() {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-0">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
               <section>
-                <h2 className="text-2xl font-bold  mb-4">1. Introduction</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Introduction</h4>
                 <p className="text-slate-600">
                   ElitesEcom ("we," "our," or "us") is committed to protecting
                   your privacy. This Privacy Policy explains how we collect,
@@ -42,9 +42,9 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  2. Information We Collect
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Information We Collect
+                </h4>
                 <p className="text-slate-600 mb-4">
                   We collect the following types of information:
                 </p>
@@ -69,9 +69,9 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  3. How We Use Your Information
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ How We Use Your Information
+                </h4>
                 <p className="text-slate-600 mb-4">
                   We use your information to:
                 </p>
@@ -85,7 +85,7 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">4. Data Security</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Data Security</h4>
                 <p className="text-slate-600">
                   We implement appropriate technical and organizational measures
                   to protect your data against unauthorized access, alteration,
@@ -95,7 +95,7 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">5. Data Sharing</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Data Sharing</h4>
                 <p className="text-slate-600">
                   We do not sell your personal information. We may share your
                   data with:
@@ -108,7 +108,7 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">6. Your Rights</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Your Rights</h4>
                 <p className="text-slate-600 mb-4">You have the right to:</p>
                 <ul className="list-disc list-inside text-slate-600 space-y-2">
                   <li>Access your personal data</li>
@@ -120,7 +120,7 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">7. Cookies</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Cookies</h4>
                 <p className="text-slate-600">
                   We use cookies to enhance your experience on our platform. You
                   can control cookie settings through your browser preferences.
@@ -128,9 +128,9 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  8. Third-Party Services
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Third-Party Services
+                </h4>
                 <p className="text-slate-600">
                   Our platform may contain links to third-party websites. We are
                   not responsible for the privacy practices of these websites.
@@ -138,9 +138,9 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  9. Children's Privacy
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Children's Privacy
+                </h4>
                 <p className="text-slate-600">
                   Our services are not intended for children under 13. We do not
                   knowingly collect personal information from children.
@@ -148,9 +148,9 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">
-                  10. Changes to This Policy
-                </h2>
+                <h4 className="text-[20px] font-bold  mb-4">
+                  ❖ Changes to This Policy
+                </h4>
                 <p className="text-slate-600">
                   We may update this Privacy Policy from time to time. We will
                   notify you of any changes by posting the new policy on this
@@ -159,7 +159,7 @@ export function PrivacyPage() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold  mb-4">11. Contact Us</h2>
+                <h4 className="text-[20px] font-bold  mb-4">❖ Contact Us</h4>
                 <p className="text-slate-600">
                   If you have any questions about this Privacy Policy, please
                   contact us at:

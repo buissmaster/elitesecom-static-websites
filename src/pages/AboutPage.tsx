@@ -17,9 +17,9 @@ import {
   ShoppingCart,
   Users,
   LayoutDashboard,
+  ShieldCheck,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { ShieldCheck, FileBadge2 } from "lucide-react";
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;
@@ -119,6 +119,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Confirms our commitment to protecting information assets through internationally recognized security controls, risk management practices, cybersecurity measures, and secure operational processes.",
       preview: "/Certifications/ISO_27001_2022.jpeg",
       file: "/Certifications/ISO_27001_2022.jpeg",
+      image: "/Certifications/iso 2000.png",
       type: "image",
     },
     {
@@ -128,6 +129,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Ensures ethical business conduct and robust controls to prevent bribery across sales, procurement, partnerships, and all organizational operations.",
       preview: "/Certifications/ISO 37001 - OMSVISION SOLUTION LLP.jpg",
       file: "/Certifications/ISO 37001 - OMSVISION SOLUTION LLP.pdf",
+      image: "/Certifications/iso 37001.png",
       type: "pdf",
     },
     {
@@ -137,6 +139,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Demonstrates our commitment to the responsible development, deployment, monitoring, and governance of AI-powered solutions while ensuring transparency, security, and regulatory compliance.",
       preview: "/Certifications/ISO IEC 42001 - OMSVISION SOLUTION LLP.jpg",
       file: "/Certifications/ISO IEC 42001 - OMSVISION SOLUTION LLP.pdf",
+      image: "/Certifications/iso 42001.png",
       type: "pdf",
     },
   ];
@@ -398,33 +401,32 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
           <div className="grid md:grid-cols-3 gap-8">
             {certificates.map((cert, index) => (
-              <motion.a
+              <motion.article
                 key={cert.title}
-                href={cert.file}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                }}
+                transition={
+                  {
+                    // duration: 0.6,
+                    // delay: index * 0.15,
+                  }
+                }
                 whileHover={{
                   y: -12,
-                  scale: 1.02,
+                  // scale: 1.02,
                 }}
-                className="group relative bg-white rounded-[28px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                className="group relative bg-white rounded-[28px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-100"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-100/0 via-amber-100/0 to-amber-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* <div className="overflow-hidden bg-slate-100">
+                <div className="relative overflow-hidden bg-slate-50 border-b border-slate-100 p-5">
                   <img
-                    src={cert.preview}
-                    alt={cert.title}
-                    className="w-full h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    src={cert.image}
+                    alt={`${cert.title} certification`}
+                    className="w-full h-[220px] object-contain transition-transform duration-700 group-hover:scale-105"
                   />
-                </div> */}
+                </div>
 
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{cert.title}</h3>
@@ -439,7 +441,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                     {cert.description}
                   </p>
 
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <span className="text-[#F4B400] font-semibold">
                       View Certificate
                     </span>
@@ -447,11 +449,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                     <div className="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center group-hover:bg-amber-100 transition-colors">
                       →
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" />
-              </motion.a>
+              </motion.article>
             ))}
           </div>
         </div>

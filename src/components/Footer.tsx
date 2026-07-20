@@ -261,7 +261,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
             </a>
 
             <a
-              href="https://facebook.com/elitesecom"
+              href="https://www.facebook.com/people/Elitesecomai/61574797291262/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"

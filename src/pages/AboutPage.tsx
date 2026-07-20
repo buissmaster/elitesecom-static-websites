@@ -119,7 +119,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Confirms our commitment to protecting information assets through internationally recognized security controls, risk management practices, cybersecurity measures, and secure operational processes.",
       preview: "/Certifications/ISO_27001_2022.jpeg",
       file: "/Certifications/ISO_27001_2022.jpeg",
-      image: "/Certifications/iso 2000.png",
+      image: "/Certifications/iso 27001.png",
       type: "image",
     },
     {

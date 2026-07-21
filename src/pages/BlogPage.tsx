@@ -15,8 +15,11 @@ import {
   ChevronLeft,
   Tag,
   LayoutGrid,
+  Calculator,
 } from "lucide-react";
 import { getCategoryArticles, allBlogEntries } from "../lib/blogSlugs";
+import { getBlogDetailPath } from "../lib/routes";
+import { TopicClusterHub } from "@/components/TopicClusterHub";
 
 interface BlogPageProps {
   onNavigate?: (page: string) => void;
@@ -92,7 +95,10 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
   useEffect(() => {
     setIsVisible(true);
     window.scrollTo(0, 0);
-    document.title = "Blog | ElitesEcom - E-Commerce Knowledge Hub";
+    const savedCategory = sessionStorage.getItem("blogCategory");
+    if (savedCategory) {
+      setActiveCategory(savedCategory);
+    }
     setTimeout(checkCatScroll, 200);
   }, []);
 
@@ -106,6 +112,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
     { name: "Inventory", icon: BarChart3 },
     { name: "OMS", icon: Settings },
     { name: "Returns", icon: RefreshCw },
+    { name: "Reconciliation", icon: Calculator },
     { name: "Growth", icon: TrendingUp },
     { name: "Comparisons", icon: Award },
   ];
@@ -118,6 +125,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
     Inventory: { color: "#16A34A", bg: "#F0FDF4" },
     OMS: { color: "#9333EA", bg: "#FAF5FF" },
     Returns: { color: "#DB2777", bg: "#FFF1F2" },
+    Reconciliation: { color: "#059669", bg: "#ECFDF5" },
     Growth: { color: "#F5B800", bg: "#FFFBEB" },
     Comparisons: { color: "#0891B2", bg: "#F0F9FF" },
   };
@@ -140,10 +148,24 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
       ? allBlogEntries
       : getCategoryArticles(activeCategory);
 
-  const goToBlog = (slug: string) => {
+  const goToBlog = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    slug: string,
+  ) => {
+    if (
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    ) {
+      return;
+    }
+
+    event.preventDefault();
     sessionStorage.setItem("blogCategory", activeCategory);
     sessionStorage.setItem("blogScroll", String(window.scrollY));
-    window.history.pushState({}, "", `Blog/${slug}`);
+    window.history.pushState({}, "", getBlogDetailPath(slug));
     window.dispatchEvent(new PopStateEvent("popstate"));
   };
 
@@ -165,23 +187,22 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                 <Zap className="w-4 h-4" /> E-Commerce Knowledge Hub
               </div>
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px]  leading-tight">
-                E-Commerce
-                <br />
-                Operations
-                <br />
-                <span className="text-gold-500">Knowledge Hub</span>
+                OMS, Reconciliation &{" "}
+                <span className="text-gold-500">Operations Guides</span>
               </h1>
               <p className="text-slate-500 text-lg max-w-md leading-relaxed">
-                Expert guides, seller insights, operational strategies, and
-                industry best practices to help brands scale efficiently.
+                Expert content on order management systems, payment
+                reconciliation, warehouse management, and multichannel inventory
+                for Indian marketplace sellers.
               </p>
             </div>
             <div
               className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
             >
-              <div
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer border border-slate-100"
-                onClick={() => goToBlog(allBlogEntries[0].slug)}
+              <a
+                href={getBlogDetailPath(allBlogEntries[0].slug)}
+                onClick={(event) => goToBlog(event, allBlogEntries[0].slug)}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer border border-slate-100 block"
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
@@ -208,11 +229,20 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                     </span>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      <TopicClusterHub
+        activeCategory={activeCategory}
+        onSelectCategory={(category) => {
+          setActiveCategory(category);
+          sessionStorage.setItem("blogCategory", category);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      />
 
       {/* CATEGORY PILLS */}
       <section className="py-3 border-y border-slate-100 bg-white/80 backdrop-blur-sm">
@@ -285,9 +315,10 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                 // const img = catImages[post.category] || "/blog-hero-new.jpg";
                 const img = post?.image || "/blog-hero-new.jpg";
                 return (
-                  <article
+                  <a
                     key={post.slug}
-                    onClick={() => goToBlog(post.slug)}
+                    href={getBlogDetailPath(post.slug)}
+                    onClick={(event) => goToBlog(event, post.slug)}
                     className={`flex flex-col justify-between group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                     style={{ transitionDelay: `${Math.min(idx * 50, 300)}ms` }}
                   >
@@ -322,7 +353,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                         <ChevronRight className="float-right w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
                       </div>
                     </div>
-                  </article>
+                  </a>
                 );
               })}
             </div>

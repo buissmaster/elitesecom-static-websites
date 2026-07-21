@@ -14,7 +14,11 @@ import {
   Shield,
   FileText,
   ChevronDown,
+  ArrowLeftRight,
 } from "lucide-react";
+import { AppLink } from "./AppLink";
+import { FOOTER_SOCIAL_LINKS } from "@/lib/brandProfiles";
+import { Linkedin } from "lucide-react";
 
 interface FooterProps {
   currentPage: string;
@@ -47,8 +51,10 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
           {/* LEFT — Brand Branding & Description */}
           <div className="lg:col-span-5 flex flex-col items-start w-full">
-            <button
-              onClick={() => handleNavClick("home")}
+            <AppLink
+              page="home"
+              onNavigate={handleNavClick}
+              aria-label="ElitesEcom home"
               className="mb-5 focus:outline-none opacity-90 hover:opacity-100 transition-opacity"
             >
               <img
@@ -56,16 +62,15 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                 alt="ElitesEcom"
                 className="h-10 w-auto object-contain"
               />
-            </button>
+            </AppLink>
             {/* Removed max-w-[340px] so it spans nicely */}
             <h3 className="text-white font-semibold text-lg md:text-xl leading-snug mb-3 w-full">
-              One-click solution for e-commerce businesses
+              Order Management System (OMS) for ecommerce sellers
             </h3>
-            {/* Removed max-w-[360px] so it fills the available column space */}
             <p className="text-sm text-slate-400 leading-relaxed w-full">
-              Making order management effortless for businesses of all sizes. At
-              Elitesecom, we believe in saving your time, reducing errors, and
-              delivering smarter solutions for your e-commerce success.
+              Elitesecom OMS simplifies multichannel order management, payment
+              reconciliation, return reconciliation, inventory sync, and
+              warehouse operations — so you can scale without operational chaos.
             </p>
           </div>
 
@@ -98,15 +103,21 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                     { name: "About us", page: "about", icon: Info },
                     { name: "Blog", page: "blog", icon: Rss },
                     { name: "Faqs", page: "faqs", icon: MessageCircle },
+                    {
+                      name: "OMS Comparisons",
+                      page: "comparisonsHub",
+                      icon: ArrowLeftRight,
+                    },
                   ].map((item) => (
                     <li key={item.page}>
-                      <button
-                        onClick={() => handleNavClick(item.page)}
+                      <AppLink
+                        page={item.page}
+                        onNavigate={handleNavClick}
                         className="group flex items-center gap-3 text-sm text-slate-400 hover:text-gold transition-colors duration-200 w-full text-left"
                       >
                         <item.icon className="w-4 h-4 text-slate-500 group-hover:text-gold transition-colors duration-200 shrink-0" />
                         <span>{item.name}</span>
-                      </button>
+                      </AppLink>
                     </li>
                   ))}
                 </ul>
@@ -150,22 +161,24 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                     </a>
                   </li>
                   <li>
-                    <button
-                      onClick={() => handleNavClick("contact")}
+                    <AppLink
+                      page="demo"
+                      onNavigate={handleNavClick}
                       className="group flex items-center gap-3 text-sm text-slate-400 hover:text-gold transition-colors duration-200 w-full text-left"
                     >
                       <Monitor className="w-4 h-4 text-slate-500 group-hover:text-gold transition-colors duration-200 shrink-0" />
                       <span>Request a Demo</span>
-                    </button>
+                    </AppLink>
                   </li>
                   <li>
-                    <button
-                      onClick={() => handleNavClick("contact")}
+                    <AppLink
+                      page="contact"
+                      onNavigate={handleNavClick}
                       className="group flex items-center gap-3 text-sm text-slate-400 hover:text-gold transition-colors duration-200 w-full text-left"
                     >
                       <Headphones className="w-4 h-4 text-slate-500 group-hover:text-gold transition-colors duration-200 shrink-0" />
                       <span>Talk to Us</span>
-                    </button>
+                    </AppLink>
                   </li>
                 </ul>
               </div>
@@ -195,9 +208,9 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                     { name: "Refund Policy", page: "refund", icon: FileText },
                   ].map((item) => (
                     <li key={item.page}>
-                      <button
-                        onClick={() => handleNavClick(item.page)}
-                        // className="group flex items-center gap-3 text-sm text-slate-400 hover:text-gold transition-colors duration-200 w-full text-left"
+                      <AppLink
+                        page={item.page}
+                        onNavigate={handleNavClick}
                         className={`group flex items-center gap-3 text-sm hover:text-gold transition-all duration-300 ${
                           currentPage === item.page
                             ? "text-gold"
@@ -212,7 +225,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                           }`}
                         />
                         <span>{item.name}</span>
-                      </button>
+                      </AppLink>
                     </li>
                   ))}
                 </ul>
@@ -231,48 +244,34 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
             Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-6">
-            <a
-              href="https://instagram.com/elitesecom.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:-translate-y-0.5 transition-transform duration-200"
-            >
-              <img
-                src="/social-ig-v2.png"
-                alt="Instagram"
-                className="w-6 h-6 object-contain"
-              />
-            </a>
-
-            <a
-              href="https://youtube.com/@elitesecom"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="hover:-translate-y-0.5 transition-transform duration-200"
-            >
-              <img
-                src="/social-yt-v2.png"
-                alt="YouTube"
-                className="w-6 h-6 object-contain"
-              />
-            </a>
-
-            <a
-              href="https://www.facebook.com/people/Elitesecomai/61574797291262/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="hover:-translate-y-0.5 transition-transform duration-200"
-            >
-              <img
-                src="/social-fb-v2.png"
-                alt="Facebook"
-                className="w-6 h-6 object-contain"
-              />
-            </a>
+          <div className="flex items-center gap-5">
+            {FOOTER_SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.key}
+                href={social.href}
+                target="_blank"
+                rel="me noopener noreferrer"
+                aria-label={social.label}
+                title={social.label}
+                className="hover:-translate-y-0.5 transition-transform duration-200 text-slate-400 hover:text-gold"
+              >
+                {social.key === "linkedin" ? (
+                  <Linkedin className="w-6 h-6" />
+                ) : (
+                  <img
+                    src={
+                      social.key === "youtube"
+                        ? "/social-yt-v2.png"
+                        : social.key === "instagram"
+                          ? "/social-ig-v2.png"
+                          : "/social-fb-v2.png"
+                    }
+                    alt={social.label}
+                    className="w-6 h-6 object-contain"
+                  />
+                )}
+              </a>
+            ))}
           </div>
         </div>
       </div>

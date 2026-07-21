@@ -44,6 +44,7 @@ const plans: Plan[] = [
       "Unlimited E-commerce Channels",
       "Up to 1 Lakh SKU's",
       "Up to 3 Users",
+      "Payment & return reconciliation",
       "Basic support",
       "Email notifications",
     ],
@@ -77,6 +78,7 @@ const plans: Plan[] = [
       "Unlimited Warehouses",
       "Unlimited Users",
       "Priority support",
+      "Payment & return reconciliation",
       "Advanced analytics",
       "API access",
     ],
@@ -297,12 +299,13 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
             className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px]  mb-4 leading-tight">
-              Flexible <span className="text-gold-500">Plans</span> for Every
-              Stage
+              <span className="text-gold-500">OMS</span> Pricing — Order
+              Management System Plans
             </h1>
             <p className="text-base sm:text-lg text-slate-500 leading-relaxed">
-              Choose a plan that fits your business. You can always upgrade or
-              switch later.
+              Affordable order management system plans with payment
+              reconciliation, return reconciliation, and multichannel order
+              management. Upgrade as your business scales.
             </p>
           </div>
         </div>

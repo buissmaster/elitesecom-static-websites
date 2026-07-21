@@ -74,7 +74,7 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Accounting & Reconciliation",
     description:
-      "Automated financial tracking, reporting, and payment reconciliation. Keep your books accurate with minimal effort. Integrate with popular accounting software for seamless financial management.",
+      "Automated payment reconciliation, return reconciliation, and accounting for ecommerce sellers. Match marketplace settlements to orders, generate invoices, and keep books accurate with Elitesecom OMS.",
     features: [
       "Auto-invoice generation",
       "Payment reconciliation",
@@ -313,7 +313,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
               }`}
               style={{ color: "#94a3b8" }}
             >
-              Our Services
+              Our OMS Services
             </span>
 
             {/* Main Heading */}
@@ -324,10 +324,10 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   : "opacity-0 translate-y-6"
               }`}
             >
-              Powerful Features for <br className="hidden sm:block" />
-              Your <span className="text-gold">E-Commerce</span>{" "}
+              Order Management System{" "}
+              <span className="text-gold">Features</span> &{" "}
               <br className="hidden sm:block" />
-              Business
+              Reconciliation Tools
             </h1>
 
             {/* Subheading */}
@@ -338,8 +338,9 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Comprehensive solutions designed to streamline your operations,
-              boost efficiency, and accelerate growth.
+              Complete OMS capabilities — multichannel order management, payment
+              reconciliation, return reconciliation, inventory management, and
+              warehouse management system (WMS).
             </p>
           </div>
         </div>

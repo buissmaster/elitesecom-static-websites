@@ -822,6 +822,62 @@ export const allBlogEntries: BlogEntry[] = [
     date: "May 6, 2026",
     image: "/Comparisons blog/Comparisons 4.jpeg",
   },
+  // Reconciliation (5)
+  {
+    id: "rec1",
+    slug: makeSlug("amazon-payment-reconciliation-guide-for-sellers"),
+    title: "Amazon Payment Reconciliation Guide for Sellers",
+    subtitle:
+      "Step-by-step guide to matching Amazon settlements, fees, and payouts with your orders using automated payment reconciliation.",
+    category: "Reconciliation",
+    readTime: "9 min",
+    date: "July 15, 2026",
+    image: "/Marketplaces blog/Marketplaces 1.jpeg",
+  },
+  {
+    id: "rec2",
+    slug: makeSlug("flipkart-settlement-and-reconciliation-explained"),
+    title: "Flipkart Settlement & Reconciliation Explained",
+    subtitle:
+      "Understand Flipkart payment cycles, commission deductions, and how to automate settlement reconciliation with EliteOMS.",
+    category: "Reconciliation",
+    readTime: "8 min",
+    date: "July 12, 2026",
+    image: "/Marketplaces blog/Marketplaces 2.jpeg",
+  },
+  {
+    id: "rec3",
+    slug: makeSlug("meesho-payout-reconciliation-guide"),
+    title: "Meesho Payout Reconciliation Guide",
+    subtitle:
+      "How to reconcile Meesho payouts, track unsettled orders, and recover revenue lost to fee discrepancies.",
+    category: "Reconciliation",
+    readTime: "7 min",
+    date: "July 10, 2026",
+    image: "/Marketplaces blog/Marketplaces 3.jpeg",
+  },
+  {
+    id: "rec4",
+    slug: makeSlug("return-reconciliation-vs-payment-reconciliation"),
+    title: "Return Reconciliation vs Payment Reconciliation",
+    subtitle:
+      "Learn the difference between return reconciliation and payment reconciliation — and why ecommerce sellers need both.",
+    category: "Reconciliation",
+    readTime: "6 min",
+    date: "July 8, 2026",
+    image: "/Returns blog/Returns 1.jpeg",
+  },
+  {
+    id: "rec5",
+    slug: makeSlug("gst-reconciliation-for-marketplace-sellers"),
+    title: "GST Reconciliation for Marketplace Sellers",
+    subtitle:
+      "A practical guide to GST reconciliation for Amazon, Flipkart, and multichannel sellers — TCS, invoices, and compliance.",
+    category: "Reconciliation",
+    readTime: "10 min",
+    date: "July 5, 2026",
+    image: "/Returns blog/Returns 2.jpeg",
+  },
 ];
 
 /* ── Lookup helpers ── */

@@ -25,6 +25,9 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { AppLink } from "@/components/AppLink";
+import { TopicClusterHub } from "@/components/TopicClusterHub";
+import { ALTERNATIVE_PAGE_REGISTRY } from "@/lib/alternativePages";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -65,7 +68,7 @@ const features: Feature[] = [
     icon: Calculator,
     title: "Accounting & Reconciliation",
     description:
-      "Automate financial tracking, reporting, and payment reconciliation. Keep your books accurate with minimal effort.",
+      "Automate payment reconciliation, return reconciliation, and accounting. Match marketplace payouts to orders and keep financial records accurate with minimal manual effort.",
   },
   {
     icon: BarChart3,
@@ -306,9 +309,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[1.15] ">
-                  Your Entire{" "}
-                  <span className="text-gold-500">Order Workflow</span> is
-                  Managed In <span className="text-gold-500">One Place</span>
+                  Best <span className="text-gold-500">Order Management System</span>{" "}
+                  (OMS) for Multichannel Ecommerce
                 </h1>
               </div>
 
@@ -317,9 +319,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Streamline your inventory tracking with ElitesEcom's
-                  multichannel order and warehouse management system. Manage
-                  your entire order workflow in one place.
+                  Elitesecom OMS helps ecommerce sellers manage multichannel
+                  orders, payment reconciliation, return reconciliation,
+                  inventory, and warehouse operations — all from one dashboard.
+                  Integrate Amazon, Flipkart, Shopify, Meesho & more.
                 </p>
               </div>
 
@@ -790,6 +793,87 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      {/* OMS & Reconciliation — keyword-rich content for SEO */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4">
+              Why Sellers Choose Elitesecom{" "}
+              <span className="text-gold-500">Order Management System</span>
+            </h2>
+            <p className="text-slate-600 leading-relaxed">
+              A complete ecommerce OMS built for Indian multichannel sellers —
+              from order processing to reconciliation.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-heading font-bold text-xl mb-3">
+                Multichannel Order Management
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Centralize orders from Amazon, Flipkart, Meesho, Shopify, and
+                20+ channels in one order management system. Route, fulfill, and
+                track every order without switching dashboards.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-xl mb-3">
+                Payment & Return Reconciliation
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Automate payment reconciliation against marketplace settlements
+                and handle return reconciliation with accurate refund tracking.
+                Reduce financial discrepancies and save hours of manual work.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-xl mb-3">
+                Inventory & Warehouse Management
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Sync inventory across channels in real time and run warehouse
+                operations with built-in WMS — pick, pack, ship, and prevent
+                overselling during peak sale events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
+              Compare Elitesecom OMS vs Other Platforms
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Side-by-side comparisons with {ALTERNATIVE_PAGE_REGISTRY.length}{" "}
+              OMS, ERP, and logistics tools — Unicommerce, EasyEcom, Vinculum,
+              Shiprocket, Zoho, Odoo, and more.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <AppLink
+              page="comparisonsHub"
+              onNavigate={onNavigate}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-gold hover:text-slate-900 transition-all"
+            >
+              View all OMS comparisons
+              <ArrowRight className="w-5 h-5" />
+            </AppLink>
+          </div>
+        </div>
+      </section>
+
+      <TopicClusterHub
+        variant="home"
+        onSelectCategory={(category) => {
+          sessionStorage.setItem("blogCategory", category);
+          onNavigate("blog");
+        }}
+      />
+
       {/* CTA Section */}
       <section className="py-10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -820,7 +904,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               <img
                 src="/cta-3d-clean.png"
-                alt=""
+                alt="Elitesecom order management system dashboard"
                 className="relative z-10 animate-float-breath"
               />
             </div>

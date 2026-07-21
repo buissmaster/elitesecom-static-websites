@@ -171,13 +171,14 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
                 20+ Platform Integrations
               </div>
               <h1 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl  leading-[1.1]">
-                Connect Your <span className="text-gold">Store</span> to Leading{" "}
-                <span className="text-gold">Platforms</span>
+                OMS Integrations for{" "}
+                <span className="text-gold">Multichannel</span> Order{" "}
+                <span className="text-gold">Management</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Seamlessly integrate with Amazon, Flipkart, Myntra, Shopify and
-                more. Manage all your sales channels from one powerful
-                dashboard.
+                Connect your order management system to Amazon, Flipkart, Myntra,
+                Shopify and more. Sync orders, inventory reconciliation, and
+                fulfillment from one OMS dashboard.
               </p>
             </div>
 

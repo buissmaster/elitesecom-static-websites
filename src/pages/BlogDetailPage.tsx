@@ -33,6 +33,7 @@ const catImages: Record<string, string> = {
   Returns: "/blog-cat-returns.jpg",
   Growth: "/blog-cat-growth.jpg",
   Comparisons: "/blog-cat-compare.jpg",
+  Reconciliation: "/Returns blog/Returns 3.jpeg",
 };
 
 const catColors: Record<string, string> = {
@@ -45,6 +46,7 @@ const catColors: Record<string, string> = {
   Returns: "#DB2777",
   Growth: "#F5B800",
   Comparisons: "#0891B2",
+  Reconciliation: "#059669",
 };
 
 /* ── Unique text sections per article ── */
@@ -550,6 +552,133 @@ function getArticleContent(entry: BlogEntry) {
         ],
       },
     },
+    Reconciliation: {
+      "amazon-payment-reconciliation-guide-for-sellers": {
+        sections: [
+          {
+            title: "Why Amazon Payment Reconciliation Matters",
+            text: "Amazon settlements include order payments, referral fees, FBA charges, refunds, and adjustments spread across multiple reports. Without automated payment reconciliation, sellers lose 2–5% of GMV to unmatched deductions, duplicate fees, and delayed payout discrepancies.",
+          },
+          {
+            title: "Key Amazon Reports to Reconcile",
+            text: "Reconcile Order Reports, Settlement Reports, and Remittance Details against your OMS order ledger. Match each order ID to its payout line, flag short payments, and track unsettled orders still pending in Amazon's payment cycle.",
+          },
+          {
+            title: "Automating Reconciliation with EliteOMS",
+            text: "EliteOMS imports Amazon settlement data, matches it to fulfilled orders automatically, and highlights commission overcharges, missing credits, and refund mismatches. Finance teams save 15–20 hours per month while recovering lost revenue.",
+          },
+        ],
+        proTip:
+          "Run payment reconciliation weekly during sale events — Amazon fee structures change dynamically and manual spreadsheets cannot keep up at peak volume.",
+        takeaways: [
+          "Match settlements to order IDs, not just totals",
+          "Track FBA fees and referral commissions separately",
+          "Automate reconciliation before month-end close",
+          "Investigate unsettled orders older than 14 days",
+          "Use OMS reconciliation to recover 2–5% GMV",
+        ],
+      },
+      "flipkart-settlement-and-reconciliation-explained": {
+        sections: [
+          {
+            title: "How Flipkart Settlements Work",
+            text: "Flipkart pays sellers on a settlement cycle after deducting commissions, shipping charges, return refunds, and penalties. Each settlement file contains hundreds of line items that must be matched against your order management system.",
+          },
+          {
+            title: "Common Flipkart Reconciliation Issues",
+            text: "Sellers frequently face commission calculation errors, missing return credits, shipping fee overcharges, and penalty deductions without clear order mapping. Manual Excel reconciliation breaks down above 500 orders per month.",
+          },
+          {
+            title: "Flipkart Reconciliation with EliteOMS",
+            text: "EliteOMS syncs Flipkart orders in real time and auto-matches settlement payouts to order records. Discrepancies are flagged instantly so your team can raise claims before Flipkart's dispute window closes.",
+          },
+        ],
+        proTip:
+          "Always reconcile Flipkart returns separately — return refunds often appear in a different settlement cycle than the original order payment.",
+        takeaways: [
+          "Understand Flipkart's settlement cycle timing",
+          "Map every deduction to a specific order ID",
+          "Separate payment reconciliation from return reconciliation",
+          "Automate before scaling past 1,000 orders/month",
+          "Recover lost revenue through systematic claim tracking",
+        ],
+      },
+      "meesho-payout-reconciliation-guide": {
+        sections: [
+          {
+            title: "Meesho Payout Structure",
+            text: "Meesho payouts combine order values minus platform fees, shipping adjustments, and return deductions. Reseller and supplier models have different fee structures, making manual reconciliation especially complex for high-volume sellers.",
+          },
+          {
+            title: "Tracking Unsettled Meesho Orders",
+            text: "Unsettled orders — delivered but not yet paid — are a major blind spot. EliteOMS tracks order status against payout status and alerts you when orders remain unsettled beyond expected payment windows.",
+          },
+          {
+            title: "Automated Meesho Reconciliation",
+            text: "Connect Meesho to EliteOMS for automatic payout matching, fee validation, and return credit tracking. Reduce finance team workload while improving payout accuracy across your Meesho catalog.",
+          },
+        ],
+        proTip:
+          "Meesho return rates can spike during festive sales — run return reconciliation daily during Meesho sale events.",
+        takeaways: [
+          "Track unsettled orders separately from settled payouts",
+          "Validate platform fees against Meesho's fee schedule",
+          "Reconcile returns in the same cycle when possible",
+          "Use OMS alerts for overdue payouts",
+          "Scale Meesho operations without adding finance headcount",
+        ],
+      },
+      "return-reconciliation-vs-payment-reconciliation": {
+        sections: [
+          {
+            title: "What is Payment Reconciliation?",
+            text: "Payment reconciliation matches marketplace payouts and settlements to your fulfilled orders. It answers: 'Did I receive the correct amount for every order I shipped?' This includes verifying commissions, shipping fees, and net payout amounts.",
+          },
+          {
+            title: "What is Return Reconciliation?",
+            text: "Return reconciliation tracks returned orders, refund amounts, restocking status, and return-related fee reversals. It answers: 'Was I correctly credited for every return, and is my inventory accurately updated?'",
+          },
+          {
+            title: "Why You Need Both",
+            text: "Payment and return reconciliation are interconnected but distinct processes. A returned order affects both your payout (payment reconciliation) and your inventory (return reconciliation). EliteOMS handles both in one platform, eliminating spreadsheet chaos.",
+          },
+        ],
+        proTip:
+          "Sellers who only reconcile payments but ignore returns typically discover 1–3% inventory and revenue gaps during annual audits.",
+        takeaways: [
+          "Payment reconciliation = payout vs orders shipped",
+          "Return reconciliation = refunds vs returns received",
+          "Both are required for accurate P&L",
+          "Automate both processes in your OMS",
+          "Run reconciliation weekly minimum, daily during sales",
+        ],
+      },
+      "gst-reconciliation-for-marketplace-sellers": {
+        sections: [
+          {
+            title: "GST Challenges for Marketplace Sellers",
+            text: "Marketplace sellers must reconcile GST on every transaction including TCS (Tax Collected at Source), TDS deductions, interstate vs intrastate supplies, and credit notes for returns. Each marketplace reports differently, creating compliance complexity.",
+          },
+          {
+            title: "TCS and Invoice Matching",
+            text: "Amazon, Flipkart, and other marketplaces deduct TCS and issue tax invoices. Your GST reconciliation must match marketplace tax reports with your GSTR-1 filings and ensure credit notes for returns are properly accounted.",
+          },
+          {
+            title: "GST Reconciliation with EliteOMS",
+            text: "EliteOMS generates reconciliation reports aligned with marketplace tax data, helping finance teams validate TCS credits, match invoices to orders, and prepare accurate GST filings without manual data extraction.",
+          },
+        ],
+        proTip:
+          "Reconcile GST monthly but validate TCS credits quarterly — mismatches compound quickly across multiple marketplaces.",
+        takeaways: [
+          "Track TCS separately for each marketplace",
+          "Match credit notes to return reconciliation data",
+          "Automate invoice generation from OMS order data",
+          "Validate interstate vs intrastate tax treatment",
+          "Use OMS reports for GSTR-1 preparation",
+        ],
+      },
+    },
     Growth: {
       "how-to-scale-from-100-orders-to-10000-orders-monthly": {
         sections: [
@@ -670,7 +799,6 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
 
       setEntry(blog);
       window.scrollTo(0, 0);
-      document.title = `${blog.title} | ElitesEcom Blog`;
     };
 
     loadBlog();

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
-import { PageTransition } from "./components/PageTransition";
 import { SiteEnhancements } from "./components/SiteEnhancements";
+import { SeoHead } from "./components/SeoHead";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
 import { IntegrationPage } from "./pages/IntegrationPage";
@@ -19,73 +19,65 @@ import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { RefundPage } from "./pages/RefundPage";
 import { TeamPage } from "./pages/TeamPage";
+import { AlternativePage } from "./pages/AlternativePage";
+import { ComparisonsHubPage } from "./pages/ComparisonsHubPage";
+import { getAlternativeConfigByPageKey } from "./lib/alternativePages";
 import { Toaster } from "./components/ui/sonner";
+import {
+  allBlogEntries,
+  findBlogById,
+  findBlogBySlug,
+  type BlogEntry,
+} from "./lib/blogSlugs";
+import {
+  getBlogSlugFromPath,
+  getPageFromPath,
+  getPathForPage,
+} from "./lib/routes";
+
+function resolveBlogEntry(slug: string | null): BlogEntry | null {
+  if (!slug) return null;
+
+  return (
+    findBlogBySlug(slug) ??
+    findBlogById(slug) ??
+    null
+  );
+}
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
+  const [blogEntry, setBlogEntry] = useState<BlogEntry | null>(null);
+
+  const syncRouteFromLocation = useCallback(() => {
+    const page = getPageFromPath(window.location.pathname);
+    setCurrentPage(page);
+
+    if (page === "blogdetail") {
+      const slug = getBlogSlugFromPath(window.location.pathname);
+      setBlogEntry(resolveBlogEntry(slug) ?? allBlogEntries[0] ?? null);
+      return;
+    }
+
+    setBlogEntry(null);
+  }, []);
 
   useEffect(() => {
-    const handleLocationChange = () => {
-      const path =
-        window.location.pathname.replace(/\/+$/, "") || "/";
-
-      if (path.startsWith("/Blog/")) {
-        setCurrentPage("blogdetail");
-        return;
-      }
-
-      const pageMap: Record<string, string> = {
-        "/": "home",
-        "/ourservices": "services",
-        "/integration": "integration",
-        "/customer": "customers",
-        "/aboutus": "about",
-        "/faqs": "faqs",
-        "/Blog": "blog",
-        "/pricing": "pricing",
-        "/contactus": "contact",
-        "/requestdemo": "demo",
-        "/terms": "terms",
-        "/privacy": "privacy",
-        "/RefundPolicy": "refund",
-        "/team": "team",
-      };
-
-      setCurrentPage(pageMap[path] || "home");
-    };
-
-    window.addEventListener("popstate", handleLocationChange);
-
-    handleLocationChange();
+    window.addEventListener("popstate", syncRouteFromLocation);
+    syncRouteFromLocation();
 
     return () => {
-      window.removeEventListener("popstate", handleLocationChange);
+      window.removeEventListener("popstate", syncRouteFromLocation);
     };
-  }, []);
+  }, [syncRouteFromLocation]);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
 
-    const pathMap: Record<string, string> = {
-      home: "/",
-      services: "/ourservices",
-      integration: "/integration",
-      customers: "/customer",
-      about: "/aboutus",
-      faqs: "/faqs",
-      blog: "/Blog",
-      pricing: "/pricing",
-      contact: "/contactus",
-      demo: "/requestdemo",
-      terms: "/terms",
-      privacy: "/privacy",
-      refund: "/RefundPolicy",
-      team: "/team",
-    };
-
-    const path = pathMap[page] || "/";
+    const path = getPathForPage(page);
 
     window.history.pushState({}, "", path);
+    syncRouteFromLocation();
 
     window.scrollTo({
       top: 0,
@@ -125,18 +117,28 @@ function App() {
         return <RefundPage />;
       case "team":
         return <TeamPage onNavigate={handleNavigate} />;
-      default:
+      case "comparisonsHub":
+        return <ComparisonsHubPage onNavigate={handleNavigate} />;
+      default: {
+        const alternativeConfig = getAlternativeConfigByPageKey(currentPage);
+        if (alternativeConfig) {
+          return (
+            <AlternativePage
+              config={alternativeConfig}
+              onNavigate={handleNavigate}
+            />
+          );
+        }
         return <HomePage onNavigate={handleNavigate} />;
+      }
     }
   };
 
   return (
     <div className="min-h-screen">
+      <SeoHead page={currentPage} blogEntry={blogEntry} />
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <AnimatePresence mode="wait">
-        {/* <PageTransition pageKey={currentPage}>{renderPage()}</PageTransition> */}
-        {renderPage()}
-      </AnimatePresence>
+      <AnimatePresence mode="wait">{renderPage()}</AnimatePresence>
       <Footer currentPage={currentPage} onNavigate={handleNavigate} />
       <SiteEnhancements />
       <Toaster

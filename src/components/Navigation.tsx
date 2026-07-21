@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AppLink } from "./AppLink";
 
 interface NavigationProps {
   currentPage: string;
@@ -29,6 +30,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: "Our Team", page: "team" },
     { name: "FAQs", page: "faqs" },
     { name: "Blog", page: "blog" },
+    { name: "Compare", page: "comparisonsHub" },
     { name: "Pricing", page: "pricing" },
   ];
 
@@ -50,6 +52,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
         }`}
       >
         <nav
+          aria-label="Main navigation"
           className={`w-full pointer-events-auto transition-all duration-500 backdrop-blur-[18px] ${
             isScrolled
               ? "max-w-[1150px] shadow-[0_8px_32px_rgba(0,0,0,0.06)] rounded-[40px] px-2 py-2"
@@ -62,8 +65,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             }`}
           >
             {/* Logo */}
-            <button
-              onClick={() => handleNavClick("home")}
+            <AppLink
+              page="home"
+              onNavigate={handleNavClick}
+              aria-label="ElitesEcom home"
               className="flex items-center flex-shrink-0 z-20 outline-none hover:scale-105 active:scale-95 transition-transform duration-300"
             >
               <img
@@ -71,7 +76,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 alt="ElitesEcom"
                 className="h-6 lg:h-7 w-auto object-contain"
               />
-            </button>
+            </AppLink>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center justify-center flex-1">
@@ -82,14 +87,18 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 {navLinks.map((link) => {
                   const isActive =
                     currentPage === link.page ||
-                    (currentPage === "blogdetail" && link.page === "blog");
+                    (currentPage === "blogdetail" && link.page === "blog") ||
+                    (link.page === "comparisonsHub" &&
+                      (currentPage === "comparisonsHub" ||
+                        currentPage.endsWith("Alt")));
                   const isHovered = hoveredPage === link.page;
                   const hasPill = hoveredPage ? isHovered : isActive;
 
                   return (
-                    <button
+                    <AppLink
                       key={link.page}
-                      onClick={() => handleNavClick(link.page)}
+                      page={link.page}
+                      onNavigate={handleNavClick}
                       onMouseEnter={() => setHoveredPage(link.page)}
                       className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${
                         hasPill
@@ -97,7 +106,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                           : "text-slate-600 hover:text-slate-900"
                       }`}
                     >
-                      {/* Sliding Pill */}
                       {hasPill && (
                         <motion.div
                           layoutId="nav-sliding-pill"
@@ -111,7 +119,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       )}
 
                       <span className="relative z-10 block">{link.name}</span>
-                    </button>
+                    </AppLink>
                   );
                 })}
               </div>
@@ -119,16 +127,19 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
 
             {/* Desktop Contact */}
             <div className="flex items-center gap-2">
-              <button
-                onClick={() => handleNavClick("contact")}
+              <AppLink
+                page="contact"
+                onNavigate={handleNavClick}
                 className="site-shell-cta relative px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-slate-900/20 hover:bg-gold hover:text-slate-900 outline-none hidden lg:block"
               >
                 Contact Us
-              </button>
+              </AppLink>
 
               {/* Mobile Hamburger */}
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(true)}
+                aria-label="Open menu"
                 className="lg:hidden p-2 rounded-full hover:bg-slate-100 border border-transparent hover:border-slate-200 transition-all duration-300"
               >
                 <Menu className="w-6 h-6 text-slate-700" />
@@ -176,7 +187,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 />
 
                 <button
+                  type="button"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  aria-label="Close menu"
                   className="p-2 rounded-lg hover:bg-slate-100"
                 >
                   <X className="w-6 h-6" />
@@ -187,7 +200,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               <div className="p-6">
                 <div className="space-y-2">
                   {navLinks.map((link, index) => (
-                    <motion.button
+                    <motion.div
                       key={link.page}
                       initial={{
                         opacity: 0,
@@ -200,41 +213,25 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       transition={{
                         delay: 0.1 + index * 0.06,
                       }}
-                      onClick={() => handleNavClick(link.page)}
-                      className={`w-full text-left px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 hover:bg-slate-100 hover:translate-x-2 active:scale-[0.98] ${
-                        currentPage === link.page ||
-                        (currentPage === "blogdetail" && link.page === "blog")
-                          ? "bg-gold/10 text-yellow-600"
-                          : "text-slate-700"
-                      }`}
                     >
-                      {link.name}
-                    </motion.button>
+                      <AppLink
+                        page={link.page}
+                        onNavigate={handleNavClick}
+                        className={`block w-full text-left px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 hover:bg-slate-100 hover:translate-x-2 active:scale-[0.98] ${
+                          currentPage === link.page ||
+                          (currentPage === "blogdetail" && link.page === "blog") ||
+                          (link.page === "comparisonsHub" &&
+                            (currentPage === "comparisonsHub" ||
+                              currentPage.endsWith("Alt")))
+                            ? "bg-gold/10 text-yellow-600"
+                            : "text-slate-700"
+                        }`}
+                      >
+                        {link.name}
+                      </AppLink>
+                    </motion.div>
                   ))}
                 </div>
-
-                {/* Contact Button */}
-                {/* <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 30,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 0.45,
-                  }}
-                  className="mt-8"
-                >
-                  <button
-                    onClick={() => handleNavClick("contact")}
-                    className="w-full py-4 rounded-full bg-gold  font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-                  >
-                    Contact Us
-                  </button>
-                </motion.div> */}
               </div>
             </motion.div>
           </>

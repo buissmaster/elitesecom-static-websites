@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Plus, X, ArrowRight, MessageCircle } from "lucide-react";
+import { AppLink } from "@/components/AppLink";
+import { faqCategories } from "@/lib/faqData";
 
 interface FAQPageProps {
   onNavigate: (page: string) => void;
@@ -14,76 +16,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
     window.scrollTo(0, 0);
   }, []);
 
-  const faqs = [
-    {
-      category: "General",
-      questions: [
-        {
-          q: "What is ElitesEcom?",
-          a: "ElitesEcom is India's largest e-commerce enablement SaaS platform that enables end-to-end management of e-commerce operations for brands, sellers, and logistics service provider firms.",
-        },
-        {
-          q: "Who can use ElitesEcom?",
-          a: "ElitesEcom is designed for e-commerce businesses of all sizes - from startups to enterprises. Whether you sell on one channel or multiple, ElitesEcom can help streamline your operations.",
-        },
-        {
-          q: "Is there a free trial available?",
-          a: "Yes, we offer a 14-day free trial for all new users. No credit card is required to start your trial.",
-        },
-      ],
-    },
-    {
-      category: "Features",
-      questions: [
-        {
-          q: "What channels does ElitesEcom integrate with?",
-          a: "ElitesEcom integrates with all major e-commerce platforms including Amazon, Flipkart, Myntra, Shopify, Ajio, Meesho, Snapdeal, Nykaa, FirstCry, Paytm, and many more.",
-        },
-        {
-          q: "Can I manage multiple warehouses?",
-          a: "Yes, ElitesEcom supports multi-warehouse management. You can track inventory across all locations and fulfill orders from the nearest warehouse.",
-        },
-        {
-          q: "Does ElitesEcom support B2B operations?",
-          a: "Yes, our Enterprise plan includes B2B features for businesses that sell to other businesses.",
-        },
-      ],
-    },
-    {
-      category: "Pricing & Billing",
-      questions: [
-        {
-          q: "How much does ElitesEcom cost?",
-          a: "We offer three plans: Startup (\u20b911,800/month), Growth (\u20b923,600/month), and Enterprise (\u20b959,000/month). All prices include GST.",
-        },
-        {
-          q: "Can I change my plan?",
-          a: "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
-        },
-        {
-          q: "What payment methods do you accept?",
-          a: "We accept all major credit cards, debit cards, UPI, net banking, and bank transfers.",
-        },
-      ],
-    },
-    {
-      category: "Support",
-      questions: [
-        {
-          q: "How do I get support?",
-          a: "We offer 24/7 customer support via email, phone, and chat. Growth and Enterprise plans also get priority support.",
-        },
-        {
-          q: "Is there onboarding assistance?",
-          a: "Yes, all new customers get free onboarding assistance to help set up their account and integrations.",
-        },
-        {
-          q: "Do you offer training?",
-          a: "Yes, we provide comprehensive training materials, video tutorials, and live training sessions for teams.",
-        },
-      ],
-    },
-  ];
+  const faqs = faqCategories;
 
   return (
     <div className="min-h-screen">
@@ -104,15 +37,13 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
 
             {/* Right: Text Content */}
             <div className="text-center lg:text-left order-1 lg:order-2">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px]  mb-3 leading-tight">
-                Frequently <span className="text-gold">Asked</span>
-              </h1>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px]  mb-5 leading-tight">
-                Questions
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px] mb-5 leading-tight">
+                OMS & <span className="text-gold">Reconciliation</span> FAQs
               </h1>
               <p className="text-base text-slate-500 max-w-md leading-relaxed">
-                Find answers to common questions about ElitesEcom and how our
-                platform can help streamline your e-commerce operations.
+                Answers about our order management system (OMS), payment
+                reconciliation, return reconciliation, inventory, and warehouse
+                management.
               </p>
             </div>
           </div>
@@ -234,13 +165,14 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
               you with any questions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button
-                onClick={() => onNavigate("contact")}
+              <AppLink
+                page="contact"
+                onNavigate={onNavigate}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gold  font-semibold hover:shadow-lg hover:shadow-gold/30 transition-all duration-300"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </AppLink>
               <a
                 href="mailto:contact@elitesecom.ai"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-slate-200 text-slate-700 font-semibold hover:border-gold hover:text-gold transition-all duration-300"

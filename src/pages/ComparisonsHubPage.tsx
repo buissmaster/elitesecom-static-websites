@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Scale } from "lucide-react";
 import { AppLink } from "@/components/AppLink";
 import {
@@ -22,6 +23,23 @@ export function ComparisonsHubPage({ onNavigate }: ComparisonsHubPageProps) {
   }, []);
 
   return (
+      <>
+    <Helmet>
+      <title>
+        Elitesecom OMS Comparison | Compare Leading OMS Platforms
+      </title>
+
+      <meta
+        name="description"
+        content="Compare Elitesecom OMS with leading OMS, ERP, and logistics platforms. Explore differences in order management, inventory, WMS, reconciliation, pricing, and multichannel ecommerce operations."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/comparison"
+      />
+    </Helmet>
+
     <div className="min-h-screen bg-white">
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10 pt-12 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,5 +202,6 @@ export function ComparisonsHubPage({ onNavigate }: ComparisonsHubPageProps) {
         </div>
       </section>
     </div>
+  </>
   );
 }

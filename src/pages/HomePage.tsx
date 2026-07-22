@@ -204,6 +204,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       name: "Nykaa",
       subtitle: "Beauty & Wellness",
       logo: "/logo-nykaa.png",
+      logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FAF5FF",
       border: "#f8c3d7",
       text: "#FC2779",
@@ -247,6 +248,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       name: "Snapdeal",
       subtitle: "Value Shopping",
       logo: "/logo-snapdeal.png",
+      logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FFF1F2",
       border: "#FECDD3",
       text: "#E40046",
@@ -261,6 +263,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       name: "Meesho",
       subtitle: "Reseller Platform",
       logo: "/logo-meesho.png",
+      logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FAF5FF",
       border: "#E9D5FF",
       text: "#9333EA",
@@ -584,6 +587,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                           src={i.logo}
                           alt={i.name}
                           className="w-full h-full object-contain"
+                          style={{ filter: i.logoShadow || "none" }}
                           loading="lazy"
                           draggable={false}
                         />
@@ -635,6 +639,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                           src={i.logo}
                           alt={i.name}
                           className="w-full h-full object-contain"
+                          style={{ filter: i.logoShadow || "none" }}
                           loading="lazy"
                           draggable={false}
                         />

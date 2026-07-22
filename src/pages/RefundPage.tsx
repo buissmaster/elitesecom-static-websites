@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 export function RefundPage() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,6 +9,21 @@ export function RefundPage() {
   }, []);
 
   return (
+     <>
+    <Helmet>
+      <title>Refund Policy | Elitesecom</title>
+
+      <meta
+        name="description"
+        content="Read Elitesecom's Refund Policy for Order Management System subscriptions, software services, billing, cancellations and refund eligibility."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/RefundPolicy"
+      />
+    </Helmet>
+
     <div className="min-h-screen ">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
@@ -192,5 +207,6 @@ export function RefundPage() {
         </div>
       </section>
     </div>
+   </> 
   );
 }

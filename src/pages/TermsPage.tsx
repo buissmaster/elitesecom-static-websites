@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 export function TermsPage() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,6 +9,21 @@ export function TermsPage() {
   }, []);
 
   return (
+     <>
+    <Helmet>
+      <title>Terms & Conditions | Elitesecom</title>
+
+      <meta
+        name="description"
+        content="Read the Terms & Conditions of Elitesecom for using our website, Order Management System, software services, subscriptions and platform."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/terms"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
@@ -146,5 +161,6 @@ export function TermsPage() {
         </div>
       </section>
     </div>
+   </> 
   );
 }

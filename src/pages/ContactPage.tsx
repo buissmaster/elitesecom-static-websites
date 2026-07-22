@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
@@ -63,6 +64,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   ];
 
   return (
+    
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-12 bg-gradient-to-br from-gold via-gold-400 to-gold-500 overflow-hidden">

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Check,
@@ -267,6 +268,21 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
   ];
 
   return (
+     <>
+    <Helmet>
+      <title>Request a Free Demo | Elitesecom Order Management System</title>
+
+      <meta
+        name="description"
+        content="Book a free demo of Elitesecom Order Management System and discover how to manage orders, inventory, warehouses, shipping and payment reconciliation from one powerful platform."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/requestdemo"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-12 bg-gradient-to-br from-gold via-gold-400 to-gold-500 overflow-hidden">
@@ -760,5 +776,6 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
         </div>
       </section>
     </div>
+   </> 
   );
 }

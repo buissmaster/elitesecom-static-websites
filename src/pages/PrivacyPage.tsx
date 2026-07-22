@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Helmet } from "react-helmet-async";
 export function PrivacyPage() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -9,6 +9,21 @@ export function PrivacyPage() {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Privacy Policy | Elitesecom</title>
+
+      <meta
+        name="description"
+        content="Read Elitesecom's Privacy Policy to understand how we collect, use, store and protect your information while using our website and Order Management System."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/privacy"
+      />
+    </Helmet>
+
     <div className="min-h-screen ">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
@@ -181,5 +196,6 @@ export function PrivacyPage() {
         </div>
       </section>
     </div>
+   </> 
   );
 }

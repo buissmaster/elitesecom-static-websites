@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, Component } from "react";
+import { Helmet } from "react-helmet-async";
 import type { ErrorInfo, ReactNode } from "react";
 
 import {
@@ -121,6 +122,21 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
 
   return (
     <ErrorBoundary>
+      <>
+      <Helmet>
+        <title>Our Team | Meet the Leadership at Elitesecom</title>
+
+        <meta
+          name="description"
+          content="Meet the leadership team behind Elitesecom. Learn about our founders and the experts driving innovation in ecommerce Order Management, Inventory Management, Warehouse Management and SaaS solutions."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.elitesecom.ai/team"
+        />
+      </Helmet>
+
       <div className="min-h-screen bg-slate-50 w-full overflow-x-hidden font-sans">
         {/* ═══════════════════════════════════════════ */}
         {/* ═══ HERO SECTION                          ═══ */}
@@ -584,6 +600,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
           </div>
         </section>
       </div>
+     </> 
     </ErrorBoundary>
   );
 }

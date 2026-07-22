@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Zap,
@@ -274,6 +275,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
   ];
 
   return (
+   <>
+    <Helmet>
+      <title>Order Management System (OMS) | Elitesecom</title>
+
+      <meta
+        name="description"
+        content="Elitesecom Order Management System helps ecommerce businesses manage multichannel orders, inventory, warehouses, shipping, payment reconciliation and marketplace integrations from one platform."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* ═══════════════ Hero Section ═══════════════ */}
       <section
@@ -931,5 +947,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
     </div>
+   </> 
   );
 }

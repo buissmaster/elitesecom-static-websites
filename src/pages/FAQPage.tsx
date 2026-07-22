@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Plus, X, ArrowRight, MessageCircle } from "lucide-react";
 import { AppLink } from "@/components/AppLink";
 import { faqCategories } from "@/lib/faqData";
@@ -19,6 +20,21 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
   const faqs = faqCategories;
 
   return (
+     <>
+    <Helmet>
+      <title>FAQs | Elitesecom Order Management System</title>
+
+      <meta
+        name="description"
+        content="Find answers to frequently asked questions about Elitesecom Order Management System, inventory management, warehouse management, marketplace integrations, payment reconciliation and ecommerce operations."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/faqs"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
@@ -184,5 +200,6 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
         </div>
       </section>
     </div>
+   </> 
   );
 }

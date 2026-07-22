@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Clock,
@@ -171,6 +172,21 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
 
   /* ═══════════════════════════════════════════════════════════ */
   return (
+    <>
+    <Helmet>
+      <title>eCommerce & OMS Blog | Elitesecom</title>
+
+      <meta
+        name="description"
+        content="Read the latest blogs on ecommerce growth, Order Management Systems, inventory management, warehouse operations, payment reconciliation and marketplace selling from Elitesecom."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/Blog"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* HERO */}
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
@@ -383,5 +399,6 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
         </div>
       </section>
     </div>
+   </> 
   );
 }

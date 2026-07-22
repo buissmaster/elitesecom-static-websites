@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   Target,
   TrendingUp,
@@ -145,7 +146,21 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
   return (
-    <div className="min-h-screen">
+   <>
+    <Helmet>
+      <title>About Elitesecom | Ecommerce OMS Software Company</title>
+
+      <meta
+        name="description"
+        content="Learn about Elitesecom and our mission to simplify ecommerce operations with Order Management, Warehouse Management, Inventory Management and Payment Reconciliation solutions."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/aboutus"
+      />
+    </Helmet>
+      <div className="min-h-screen">
       {/* Hero + Cards — Combined Section */}
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -481,5 +496,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
     </div>
+   </>
   );
 }

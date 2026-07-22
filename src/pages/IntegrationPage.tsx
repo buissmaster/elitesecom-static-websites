@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Link2,
@@ -149,6 +150,21 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Marketplace & Store Integrations | Elitesecom OMS</title>
+
+      <meta
+        name="description"
+        content="Integrate Amazon, Flipkart, Meesho, Shopify, WooCommerce, Myntra, AJIO and other ecommerce platforms with Elitesecom Order Management System to manage orders, inventory and operations from one dashboard."
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.elitesecom.ai/integration"
+      />
+    </Helmet>
+
     <div className="min-h-screen">
       {/* ═══ HERO SECTION ═══ */}
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
@@ -507,5 +523,6 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
         </div>
       </section>
     </div>
+   </> 
   );
 }

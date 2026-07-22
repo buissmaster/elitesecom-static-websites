@@ -55,13 +55,13 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           aria-label="Main navigation"
           className={`w-full pointer-events-auto transition-all duration-500 backdrop-blur-[18px] ${
             isScrolled
-              ? "max-w-[1150px] shadow-[0_8px_32px_rgba(0,0,0,0.06)] rounded-[40px] px-2 py-2"
+              ? "max-w-[1200px] shadow-[0_8px_32px_rgba(0,0,0,0.06)] rounded-[40px] px-0 py-2"
               : "max-w-full shadow-none rounded-none px-4 py-3 lg:py-5"
           }`}
         >
           <div
             className={`mx-auto flex items-center justify-between transition-all duration-500 ${
-              isScrolled ? "px-4 lg:px-6 max-w-full" : "max-w-[1280px] px-4"
+              isScrolled ? "px-4 lg:px-6 max-w-full" : "max-w-[1300px] px-4"
             }`}
           >
             {/* Logo */}
@@ -100,7 +100,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                       page={link.page}
                       onNavigate={handleNavClick}
                       onMouseEnter={() => setHoveredPage(link.page)}
-                      className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${
+                      className={`relative px-2 py-2 text-center text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${
                         hasPill
                           ? "text-slate-900"
                           : "text-slate-600 hover:text-slate-900"

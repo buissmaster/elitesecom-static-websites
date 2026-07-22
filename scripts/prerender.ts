@@ -14,7 +14,6 @@ import { staticRoutes } from "../src/lib/routes";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
-const port = 4173;
 
 const routes = [
   ...staticRoutes,
@@ -58,7 +57,10 @@ function resolveDistFile(urlPath: string): string {
   return path.join(distDir, "index.html");
 }
 
-function startPreviewServer(): Promise<ReturnType<typeof createServer>> {
+function startPreviewServer(): Promise<{
+  server: ReturnType<typeof createServer>;
+  port: number;
+}> {
   const server = createServer((req, res) => {
     const filePath = resolveDistFile(req.url ?? "/");
     const ext = path.extname(filePath);
@@ -68,8 +70,17 @@ function startPreviewServer(): Promise<ReturnType<typeof createServer>> {
     createReadStream(filePath).pipe(res);
   });
 
-  return new Promise((resolve) => {
-    server.listen(port, () => resolve(server));
+  return new Promise((resolve, reject) => {
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      server.off("error", reject);
+      const address = server.address();
+      if (!address || typeof address === "string") {
+        reject(new Error("Could not resolve preview server port."));
+        return;
+      }
+      resolve({ server, port: address.port });
+    });
   });
 }
 
@@ -84,6 +95,7 @@ function outputPathForRoute(route: string): string {
 async function prerenderRoute(
   page: Page,
   route: string,
+  port: number,
 ): Promise<void> {
   await page.goto(`http://127.0.0.1:${port}${route}`, {
     waitUntil: "domcontentloaded",
@@ -91,10 +103,15 @@ async function prerenderRoute(
   });
 
   await page.waitForFunction(
-    () =>
-      document.title.length > 0 &&
-      !!document.querySelector('meta[name="description"]')?.getAttribute("content"),
-    { timeout: 30000 },
+    () => {
+      const description = document
+        .querySelector('meta[name="description"]')
+        ?.getAttribute("content");
+      const title =
+        document.title || document.querySelector("title")?.textContent || "";
+      return title.length > 0 && !!description;
+    },
+    { timeout: 60000 },
   );
 
   const html = await page.content();
@@ -109,7 +126,7 @@ async function main() {
     throw new Error("dist/index.html not found. Run vite build first.");
   }
 
-  const server = await startPreviewServer();
+  const { server, port } = await startPreviewServer();
   const browser = await puppeteer.launch({
     headless: true,
     protocolTimeout: 180000,
@@ -118,7 +135,7 @@ async function main() {
 
   try {
     for (const route of routes) {
-      await prerenderRoute(page, route);
+      await prerenderRoute(page, route, port);
     }
   } finally {
     await page.close();

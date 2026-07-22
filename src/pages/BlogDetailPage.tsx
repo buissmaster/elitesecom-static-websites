@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   ArrowRight,
   Clock,
@@ -900,21 +899,6 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
   console.log("title:", entry?.title);
 
   return (
-  <>
-   <Helmet>
-    <title>{entry.title} | Elitesecom</title>
-
-    <meta
-      name="description"
-      content={entry.title}
-    />
-
-    <link
-      rel="canonical"
-      href={`https://www.elitesecom.ai/Blog/${entry.slug}`}
-    />
-   </Helmet>
-
     <div className="min-h-screen bg-white font-sans">
       {/* Hero Banner */}
       <section className="relative min-h-[520px] lg:min-h-[620px] overflow-hidden bg-slate-950">
@@ -1212,6 +1196,5 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
         </div>
       </section>
     </div>
-   </>
   );
 }

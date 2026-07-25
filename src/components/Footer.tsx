@@ -205,7 +205,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                   {[
                     { name: "Terms & conditions", page: "terms", icon: Tag },
                     { name: "Privacy & Policy", page: "privacy", icon: Shield },
-                    { name: "Refund Policy", page: "refund", icon: FileText },
+                    
                   ].map((item) => (
                     <li key={item.page}>
                       <AppLink

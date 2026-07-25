@@ -242,13 +242,13 @@ const pageSeo: Record<
       "Privacy policy for Elitesecom order management system (OMS) — how we protect your order, inventory, and reconciliation data.",
     keywords: "Elitesecom privacy, OMS data privacy",
   },
-  refund: {
-    path: "/RefundPolicy",
-    title: "Refund Policy | Elitesecom OMS Subscription",
-    description:
-      "Refund policy for Elitesecom order management system (OMS) subscription plans.",
-    keywords: "Elitesecom refund policy, OMS subscription refund",
-  },
+  // refund: {
+  //   path: "/RefundPolicy",
+  //   title: "Refund Policy | Elitesecom OMS Subscription",
+  //   description:
+  //     "Refund policy for Elitesecom order management system (OMS) subscription plans.",
+  //   keywords: "Elitesecom refund policy, OMS subscription refund",
+  // },
   team: {
     path: "/team",
     title: "Our Team | Elitesecom OMS & Ecommerce Operations Experts",

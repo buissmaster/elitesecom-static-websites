@@ -17,7 +17,6 @@ import { DemoPage } from "./pages/DemoPage";
 import { CustomersPage } from "./pages/CustomersPage";
 import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
-import { RefundPage } from "./pages/RefundPage";
 import { TeamPage } from "./pages/TeamPage";
 import { AlternativePage } from "./pages/AlternativePage";
 import { ComparisonsHubPage } from "./pages/ComparisonsHubPage";
@@ -113,8 +112,8 @@ function App() {
         return <TermsPage />;
       case "privacy":
         return <PrivacyPage />;
-      case "refund":
-        return <RefundPage />;
+      // case "refund":
+      //   return <RefundPage />;
       case "team":
         return <TeamPage onNavigate={handleNavigate} />;
       case "comparisonsHub":

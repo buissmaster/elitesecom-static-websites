@@ -26,10 +26,10 @@ export const faqCategories: FaqCategory[] = [
         q: "Who should use an order management system?",
         a: "Any ecommerce seller managing orders across multiple channels benefits from an OMS. Elitesecom is designed for startups, growing brands, and enterprises selling on marketplaces, D2C websites, and hybrid models.",
       },
-      {
-        q: "Is there a free trial for Elitesecom OMS?",
-        a: "Yes, we offer a 14-day free trial of our order management system. No credit card is required to explore multichannel order management, reconciliation, and warehouse features.",
-      },
+      // {
+      //   q: "Is there a free trial for Elitesecom OMS?",
+      //   a: "Yes, we offer a 14-day free trial of our order management system. No credit card is required to explore multichannel order management, reconciliation, and warehouse features.",
+      // },
     ],
   },
   {

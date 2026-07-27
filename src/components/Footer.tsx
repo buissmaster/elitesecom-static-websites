@@ -103,11 +103,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                     { name: "About us", page: "about", icon: Info },
                     { name: "Blog", page: "blog", icon: Rss },
                     { name: "Faqs", page: "faqs", icon: MessageCircle },
-                    {
-                      name: "OMS Comparisons",
-                      page: "comparisonsHub",
-                      icon: ArrowLeftRight,
-                    },
+                    
                   ].map((item) => (
                     <li key={item.page}>
                       <AppLink

@@ -50,7 +50,6 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: "Our Team", page: "team" },
     { name: "FAQs", page: "faqs" },
     { name: "Blog", page: "blog" },
-    { name: "Compare", page: "comparisonsHub" },
     { name: "Pricing", page: "pricing" },
   ];
 

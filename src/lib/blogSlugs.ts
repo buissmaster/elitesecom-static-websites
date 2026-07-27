@@ -46,14 +46,13 @@ export const allBlogEntries: BlogEntry[] = [
   {
     id: "hp1",
     slug: makeSlug("Solution for Growing Businesses"),
-    title:
-      "How to Manage Amazon, Flipkart, Meesho & Shopify Orders from One Dashboard",
+    title: "Manage Multi-Channel Orders from One Dashboard",
     subtitle:
       "How to Manage Amazon, Flipkart, Meesho & Shopify Orders from One Dashboard",
-    category: "Solution for Growing Businesses",
+    category: "Feature Guide",
     readTime: "8 min",
     date: "June 17, 2026",
-    image: "/blog main.png",
+    image: "/Blog page main.png",
   },
   // Seller Problems (8)
   {
@@ -65,42 +64,42 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 18, 2026",
-    image: "/seller problem blog/Seller problem 1.jpeg",
+    image: "/seller problem blog/sp 1.png",
   },
   {
     id: "sp2",
     slug: makeSlug(
       "how-to-handle-1000-orders-per-day-without-hiring-more-staff",
     ),
-    title: "How to Handle 1000+ Orders Per Day Without Hiring More Staff",
+    title: "How to Handle 1000+ Orders Per Day",
     subtitle:
       "Scale your order processing capacity through automation and smart workflows instead of adding headcount.",
     category: "Seller Problems",
     readTime: "8 min",
     date: "May 16, 2026",
-    image: "/seller problem blog/Seller problem 2.jpeg",
+    image: "/seller problem blog/sp 2.png",
   },
   {
     id: "sp3",
     slug: makeSlug("common-reasons-for-order-delays-and-how-to-fix-them"),
-    title: "Common Reasons for Order Delays and How to Fix Them",
+    title: "Common Order Delay Causes & Solutions",
     subtitle:
       "Identify the root causes of shipping delays and implement fixes that keep your customers happy.",
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/seller problem blog/Seller problem 3.jpeg",
+    image: "/seller problem blog/sp 3.png",
   },
   {
     id: "sp4",
     slug: makeSlug("why-your-inventory-never-matches-marketplace-stock"),
-    title: "Why Your Inventory Never Matches Marketplace Stock",
+    title: "Marketplace Inventory Mismatch",
     subtitle:
       "Solve inventory synchronization issues that lead to stock mismatches across sales channels.",
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 12, 2026",
-    image: "/seller problem blog/Seller problem 4.jpeg",
+    image: "/seller problem blog/sp 4.png",
   },
   {
     id: "sp5",
@@ -111,7 +110,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 10, 2026",
-    image: "/seller problem blog/Seller problem 5.png",
+    image: "/seller problem blog/sp 5.png",
   },
   {
     id: "sp6",
@@ -122,7 +121,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 8, 2026",
-    image: "/seller problem blog/Seller problem 6.png",
+    image: "/seller problem blog/sp 6.png",
   },
   {
     id: "sp7",
@@ -133,7 +132,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 6, 2026",
-    image: "/seller problem blog/Seller problem 7.png",
+    image: "/seller problem blog/sp 7.png",
   },
   {
     id: "sp8",
@@ -144,20 +143,20 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 4, 2026",
-    image: "/seller problem blog/Seller problem 8.png",
+    image: "/seller problem blog/sp 8.png",
   },
 
   // Marketplaces (8)
   {
     id: "mp1",
     slug: makeSlug("amazon-inventory-management-guide-for-sellers"),
-    title: "Amazon Inventory Management Guide for Sellers",
+    title: "Amazon Inventory Management Guide",
     subtitle:
       "Master Amazon inventory management with proven strategies for Buy Box eligibility and stock optimization.",
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 17, 2026",
-    image: "/Marketplace blog/Marketplaces 1.png",
+    image: "/Marketplace blog/Marketplace 1.png",
   },
   {
     id: "mp2",
@@ -167,8 +166,8 @@ export const allBlogEntries: BlogEntry[] = [
       "Optimize your Flipkart operations with these seller-tested order management techniques.",
     category: "Marketplaces",
     readTime: "6 min",
-    date: "May 15, 2026",
-    image: "/Marketplace blog/Marketplaces 2.png",
+    date: "May 15, 2026",  
+    image: "/Marketplace blog/Marketplace 2.png",
   },
   {
     id: "mp3",
@@ -179,18 +178,18 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 13, 2026",
-    image: "/Marketplace blog/Marketplaces 3.png",
+    image: "/Marketplace blog/Marketplace 3.png",
   },
   {
     id: "mp4",
     slug: makeSlug("how-to-manage-multiple-marketplaces-from-one-dashboard"),
-    title: "How to Manage Multiple Marketplaces from One Dashboard",
+    title: "Multi-Channel Marketplace Management Guide",
     subtitle:
       "Consolidate your marketplace operations into a single unified management platform.",
     category: "Marketplaces",
     readTime: "8 min",
     date: "May 11, 2026",
-    image: "/Marketplace blog/Marketplaces 4.png",
+    image: "/Marketplace blog/Marketplace 4.png",
   },
   {
     id: "mp5",
@@ -201,7 +200,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 9, 2026",
-    image: "/Marketplace blog/Marketplaces 5.png",
+    image: "/Marketplace blog/Marketplace 5.png",
   },
   {
     id: "mp6",
@@ -212,29 +211,29 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 7, 2026",
-    image: "/Marketplace blog/Marketplaces 6.png",
+    image: "/Marketplace blog/Marketplace 6.png",
   },
   {
     id: "mp7",
     slug: makeSlug("how-top-marketplace-sellers-automate-operations"),
-    title: "How Top Marketplace Sellers Automate Operations",
+    title: "Marketplace Operations Best Practices",
     subtitle:
       "Discover the automation strategies used by top marketplace sellers to handle high volumes.",
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 5, 2026",
-    image: "/Marketplace blog/Marketplaces 7.png",
+    image: "/Marketplace blog/Marketplace 7.png",
   },
   {
     id: "mp8",
     slug: makeSlug("multi-marketplace-selling-challenges-and-solutions"),
-    title: "Multi-Marketplace Selling Challenges and Solutions",
+    title: "Multi-Marketplace Selling Guide",
     subtitle:
       "Navigate the complexities of selling on multiple platforms with practical solutions.",
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 3, 2026",
-    image: "/Marketplace blog/Marketplaces 8.png",
+    image: "/Marketplace blog/Marketplace 8.png",
   },
 
   // Shopify & D2C (8)
@@ -269,12 +268,12 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 12, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 3.png",
+    image: "/Shopify & D2C blog/Shopify & D2C  3.png",
   },
   {
     id: "sd4",
     slug: makeSlug("website-vs-marketplace-orders-managing-both-efficiently"),
-    title: "Website vs Marketplace Orders: Managing Both Efficiently",
+    title: "Website vs Marketplace Order Management",
     subtitle:
       "Balance your direct website sales with marketplace orders using unified workflows.",
     category: "Shopify & D2C",
@@ -302,18 +301,18 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 6, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 6.jpeg",
+    image: "/Shopify & D2C blog/Shopify & D2C 6.png",
   },
   {
     id: "sd7",
     slug: makeSlug("how-fast-growing-d2c-brands-automate-fulfillment"),
-    title: "How Fast-Growing D2C Brands Automate Fulfillment",
+    title: "D2C Fulfillment Automation Guide",
     subtitle:
       "Learn how successful D2C brands automate their fulfillment operations at scale.",
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 4, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 7.jpeg",
+    image: "/Shopify & D2C blog/Shopify & D2C 7.png",
   },
   {
     id: "sd8",
@@ -324,7 +323,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 2, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 8.jpeg",
+    image: "/Shopify & D2C blog/Shopify & D2C 8.png",
   },
 
   // Warehouse (8)
@@ -337,7 +336,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 15, 2026",
-    image: "/Warehouse blog/Warehouse 1.png",
+    image: "/Warehouse blog/WH 1.png",
   },
   {
     id: "wh2",
@@ -348,7 +347,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "7 min",
     date: "May 13, 2026",
-    image: "/Warehouse blog/Warehouse 2.png",
+    image: "/Warehouse blog/WH 2.png",
   },
   {
     id: "wh3",
@@ -359,7 +358,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "6 min",
     date: "May 11, 2026",
-    image: "/Warehouse blog/Warehouse 3.png",
+    image: "/Warehouse blog/WH 3.png",
   },
   {
     id: "wh4",
@@ -370,7 +369,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/Warehouse blog/Warehouse 4.jpeg",
+    image: "/Warehouse blog/WH 4.png",
   },
   {
     id: "wh5",
@@ -381,7 +380,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "6 min",
     date: "May 7, 2026",
-    image: "/Warehouse blog/Warehouse 5.png",
+    image: "/Warehouse blog/WH 5.png",
   },
   {
     id: "wh6",
@@ -392,7 +391,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "7 min",
     date: "May 5, 2026",
-    image: "/Warehouse blog/Warehouse 6.png",
+    image: "/Warehouse blog/WH 6.png",
   },
   {
     id: "wh7",
@@ -403,18 +402,18 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/Warehouse blog/Warehouse 7.jpeg",
+    image: "/Warehouse blog/WH 7.png",
   },
   {
     id: "wh8",
     slug: makeSlug("smart-warehouse-management-strategies"),
-    title: "Smart Warehouse Management Strategies",
+    title: "Warehouse Management Best Practices",
     subtitle:
       "Implement smart strategies that transform your warehouse into a competitive advantage.",
     category: "Warehouse",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/Warehouse blog/Warehouse 8.png",
+    image: "/Warehouse blog/WH 8.png",
   },
 
   // Inventory (8)
@@ -427,7 +426,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/Inventory blog/Inventory 1.png",
+    image: "/Inventory blog/Inv 1.png",
   },
   {
     id: "inv2",
@@ -438,7 +437,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "6 min",
     date: "May 12, 2026",
-    image: "/Inventory blog/Inventory 2.jpeg",
+    image: "/Inventory blog/Inv 2.png",
   },
   {
     id: "inv3",
@@ -449,29 +448,29 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 10, 2026",
-    image: "/Inventory blog/Inventory 3.png",
+    image: "/Inventory blog/Inv 3.png",
   },
   {
     id: "inv4",
     slug: makeSlug("inventory-forecasting-for-ecommerce"),
-    title: "Inventory Forecasting for eCommerce",
+    title: "eCommerce Inventory Forecasting Guide",
     subtitle:
       "Use data-driven forecasting to maintain optimal stock levels across all channels.",
     category: "Inventory",
     readTime: "7 min",
     date: "May 8, 2026",
-    image: "/Inventory blog/Inventory 4.png",
+    image: "/Inventory blog/Inv 4.png",
   },
   {
     id: "inv5",
     slug: makeSlug("inventory-planning-during-sale-seasons"),
-    title: "Inventory Planning During Sale Seasons",
+    title: "Sale Season Inventory Planning",
     subtitle:
       "Strategies for preparing your inventory before major sale events and festive seasons.",
     category: "Inventory",
     readTime: "6 min",
     date: "May 6, 2026",
-    image: "/Inventory blog/Inventory 5.jpeg",
+    image: "/Inventory blog/Inv 5.png",
   },
   {
     id: "inv6",
@@ -482,7 +481,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 4, 2026",
-    image: "/Inventory blog/Inventory 6.jpeg",
+    image: "/Inventory blog/Inv 6.png",
   },
   {
     id: "inv7",
@@ -493,31 +492,31 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "6 min",
     date: "May 2, 2026",
-    image: "/Inventory blog/Inventory 7.jpeg",
+    image: "/Inventory blog/Inv 7.png",
   },
   {
     id: "inv8",
     slug: makeSlug("real-time-inventory-tracking-benefits"),
-    title: "Real-Time Inventory Tracking Benefits",
+    title: "Real-Time Inventory Tracking Guide",
     subtitle:
       "Discover how real-time inventory visibility transforms your operational efficiency.",
     category: "Inventory",
     readTime: "5 min",
     date: "Apr 30, 2026",
-    image: "/Inventory blog/Inventory 8.jpeg",
+    image: "/Inventory blog/Inv 8.png",
   },
 
   // OMS (8)
   {
     id: "oms1",
     slug: makeSlug("advanced-oms-features-every-growing-business-needs"),
-    title: "Advanced OMS Features Every Growing Business Needs",
+    title: "Advanced OMS Features Guide",
     subtitle:
       "The essential OMS features that power scalable ecommerce operations.",
     category: "OMS",
     readTime: "7 min",
     date: "May 13, 2026",
-    image: "/OMS blog/OMS 1.jpeg",
+    image: "/OMS blog/oms 1.png",
   },
   {
     id: "oms2",
@@ -528,7 +527,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 11, 2026",
-    image: "/OMS blog/OMS 2.jpeg",
+    image: "/OMS blog/oms 2.png",
   },
   {
     id: "oms3",
@@ -539,7 +538,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/OMS blog/OMS 3.jpeg",
+    image: "/OMS blog/oms 3.png",
   },
   {
     id: "oms4",
@@ -550,7 +549,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 7, 2026",
-    image: "/OMS blog/OMS 4.png",
+    image: "/OMS blog/oms 4.png",
   },
   {
     id: "oms5",
@@ -561,7 +560,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 5, 2026",
-    image: "/OMS blog/OMS 5.png",
+    image: "/OMS blog/oms 5.png",
   },
   {
     id: "oms6",
@@ -572,7 +571,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/OMS blog/OMS 6.jpeg",
+    image: "/OMS blog/oms 6.png",
   },
   {
     id: "oms7",
@@ -583,7 +582,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/OMS blog/OMS 7.jpeg",
+    image: "/OMS blog/oms 7.png",
   },
   {
     id: "oms8",
@@ -594,7 +593,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "Apr 29, 2026",
-    image: "/OMS blog/OMS 8.jpeg",
+    image: "/OMS blog/oms 8.png",
   },
 
   // Returns (8)
@@ -607,7 +606,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 12, 2026",
-    image: "/Returns blog/Returns 1.jpeg",
+    image: "/Returns blog/Return 1.png",
   },
   {
     id: "ret2",
@@ -618,7 +617,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "5 min",
     date: "May 10, 2026",
-    image: "/Returns blog/Returns 2.jpeg",
+    image: "/Returns blog/Return 2.png",
   },
   {
     id: "ret3",
@@ -629,18 +628,18 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 8, 2026",
-    image: "/Returns blog/Returns 3.jpeg",
+    image: "/Returns blog/Return 3.png",
   },
   {
     id: "ret4",
     slug: makeSlug("managing-refunds-efficiently"),
-    title: "Managing Refunds Efficiently",
+    title: "Refund Management Guide",
     subtitle:
       "Streamline your refund process to improve cash flow and customer experience.",
     category: "Returns",
     readTime: "5 min",
     date: "May 6, 2026",
-    image: "/Returns blog/Returns 4.jpeg",
+    image: "/Returns blog/Return 4.png",
   },
   {
     id: "ret5",
@@ -651,97 +650,97 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 4, 2026",
-    image: "/Returns blog/Returns 5.jpeg",
+    image: "/Returns blog/Return 5.png",
   },
   {
     id: "ret6",
     slug: makeSlug("return-analytics-for-ecommerce-businesses"),
-    title: "Return Analytics for eCommerce Businesses",
+    title: "eCommerce Return Analytics Guide",
     subtitle:
       "Use return data analytics to uncover insights and drive operational improvements.",
     category: "Returns",
     readTime: "5 min",
     date: "May 2, 2026",
-    image: "/Returns blog/Returns 6.jpeg",
+    image: "/Returns blog/Return 6.png",
   },
   {
     id: "ret7",
     slug: makeSlug("how-oms-simplifies-return-management"),
-    title: "How OMS Simplifies Return Management",
+    title: "OMS Return Management Guide",
     subtitle:
       "Modern OMS features that automate and streamline the entire returns process.",
     category: "Returns",
     readTime: "6 min",
     date: "Apr 30, 2026",
-    image: "/Returns blog/Returns 7.png",
+    image: "/Returns blog/Return 7.png",
   },
   {
     id: "ret8",
     slug: makeSlug("return-rate-reduction-strategies"),
-    title: "Return Rate Reduction Strategies",
+    title: "Return Rate Reduction Guide",
     subtitle:
       "A comprehensive toolkit of strategies to systematically reduce your return rates.",
     category: "Returns",
     readTime: "7 min",
     date: "Apr 28, 2026",
-    image: "/Returns blog/Returns 8.jpeg",
+    image: "/Returns blog/Return 8.png",
   },
 
   // Growth (8)
   {
     id: "gr1",
     slug: makeSlug("how-to-scale-from-100-orders-to-10000-orders-monthly"),
-    title: "How to Scale From 100 Orders to 10,000 Orders Monthly",
+    title: "Scale eCommerce Orders Efficiently",
     subtitle:
       "The operational roadmap for scaling order volume without losing control.",
     category: "Growth",
     readTime: "8 min",
     date: "May 11, 2026",
-    image: "/Growth blog/Growth 1.jpeg",
+    image: "/Growth blog/GR 1.png",
   },
   {
     id: "gr2",
     slug: makeSlug("building-an-operations-team-for-ecommerce"),
-    title: "Building an Operations Team for eCommerce",
+    title: "eCommerce Operations Team Guide",
     subtitle:
       "Structure and hire the right operations team as your ecommerce business grows.",
     category: "Growth",
     readTime: "7 min",
     date: "May 9, 2026",
-    image: "/Growth blog/Growth 2.png",
+    image: "/Growth blog/GR 2.png",
   },
   {
     id: "gr3",
     slug: makeSlug("key-metrics-every-ecommerce-business-should-monitor"),
-    title: "Key Metrics Every eCommerce Business Should Monitor",
+    title: "Essential eCommerce Business KPIs",
     subtitle:
       "The essential KPIs that tell you if your operations are healthy and scalable.",
     category: "Growth",
     readTime: "6 min",
     date: "May 7, 2026",
-    image: "/Growth blog/Growth 3.jpeg",
+    image: "/Growth blog/GR 3.png",
   },
   {
     id: "gr4",
     slug: makeSlug("how-automation-increases-profit-margins"),
-    title: "How Automation Increases Profit Margins",
+    title: "Automation for Higher Profit Margins",
     subtitle:
       "Quantify the financial impact of operational automation on your bottom line.",
     category: "Growth",
     readTime: "5 min",
     date: "May 5, 2026",
-    image: "/Growth blog/Growth 4.png",
+    image: "/Growth blog/GR 4.png",
   },
   {
     id: "gr5",
     slug: makeSlug("ecommerce-growth-strategies-for-indian-sellers"),
-    title: "eCommerce Growth Strategies for Indian Sellers",
+    title: "Growth Strategies for Indian eCommerce Sellers",
     subtitle:
       "Tailored growth strategies for sellers operating in the Indian ecommerce market.",
     category: "Growth",
     readTime: "7 min",
     date: "May 3, 2026",
-    image: "/Growth blog/Growth 5.png",
+    image: "/Growth blog/GR 5.png",
   },
   {
     id: "gr6",
@@ -752,29 +751,29 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/Growth blog/Growth 6.jpeg",
+    image: "/Growth blog/GR 6.png",
   },
   {
     id: "gr7",
     slug: makeSlug("operational-efficiency-framework-for-sellers"),
-    title: "Operational Efficiency Framework for Sellers",
+    title: "Operational Efficiency Guide",
     subtitle:
       "A systematic framework for measuring and improving operational efficiency.",
     category: "Growth",
     readTime: "7 min",
     date: "Apr 29, 2026",
-    image: "/Growth blog/Growth 7.jpeg",
+    image: "/Growth blog/GR 7.png",
   },
   {
     id: "gr8",
     slug: makeSlug("how-successful-brands-manage-growth"),
-    title: "How Successful Brands Manage Growth",
+    title: "How Successful Brands Scale",
     subtitle:
       "Case study insights from brands that scaled successfully without breaking operations.",
     category: "Growth",
     readTime: "6 min",
     date: "Apr 27, 2026",
-    image: "/Growth blog/Growth 8.jpeg",
+    image: "/Growth blog/GR 8.png",
   },
 
   // Comparisons (4)
@@ -787,18 +786,18 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "10 min",
     date: "May 12, 2026",
-    image: "/Comparisons blog/Comparisons 1.jpeg",
+    image: "/Comparisons blog/CMP 1.png",
   },
   {
     id: "cmp2",
     slug: makeSlug("oms-vs-warehouse-management-system-wms"),
-    title: "OMS vs Warehouse Management System (WMS)",
+    title: "OMS vs WMS Comparison",
     subtitle:
       "Understand how OMS and WMS differ, complement each other, and work together in modern ecommerce.",
     category: "Comparisons",
     readTime: "9 min",
     date: "May 10, 2026",
-    image: "/Comparisons blog/Comparisons 2.png",
+    image: "/Comparisons blog/CMP 2.png",
   },
   {
     id: "cmp3",
@@ -809,30 +808,30 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "8 min",
     date: "May 8, 2026",
-    image: "/Comparisons blog/Comparisons 3.jpeg",
+    image: "/Comparisons blog/CMP 3.png",
   },
   {
     id: "cmp4",
     slug: makeSlug("oms-vs-excel-based-operations-management"),
-    title: "OMS vs Excel-Based Operations Management",
+    title: "OMS vs Excel Comparison",
     subtitle:
       "Why growing businesses outgrow spreadsheets and when to make the switch to a proper OMS.",
     category: "Comparisons",
     readTime: "7 min",
     date: "May 6, 2026",
-    image: "/Comparisons blog/Comparisons 4.jpeg",
+    image: "/Comparisons blog/CMP 4.png",
   },
   // Reconciliation (5)
   {
     id: "rec1",
     slug: makeSlug("amazon-payment-reconciliation-guide-for-sellers"),
-    title: "Amazon Payment Reconciliation Guide for Sellers",
+    title: "Amazon Payment Reconciliation Guide",
     subtitle:
       "Step-by-step guide to matching Amazon settlements, fees, and payouts with your orders using automated payment reconciliation.",
     category: "Reconciliation",
     readTime: "9 min",
     date: "July 15, 2026",
-    image: "/Marketplaces blog/Marketplaces 1.jpeg",
+    image: "/Reco blogs/Reco 1.png",
   },
   {
     id: "rec2",
@@ -843,7 +842,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "8 min",
     date: "July 12, 2026",
-    image: "/Marketplaces blog/Marketplaces 2.jpeg",
+    image: "/Reco blogs/Reco 2.png",
   },
   {
     id: "rec3",
@@ -854,7 +853,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "7 min",
     date: "July 10, 2026",
-    image: "/Marketplaces blog/Marketplaces 3.jpeg",
+    image: "/Reco blogs/Reco 3.png",
   },
   {
     id: "rec4",
@@ -865,7 +864,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "6 min",
     date: "July 8, 2026",
-    image: "/Returns blog/Returns 1.jpeg",
+    image: "/Reco blogs/Reco 4.png",
   },
   {
     id: "rec5",
@@ -875,8 +874,11 @@ export const allBlogEntries: BlogEntry[] = [
       "A practical guide to GST reconciliation for Amazon, Flipkart, and multichannel sellers — TCS, invoices, and compliance.",
     category: "Reconciliation",
     readTime: "10 min",
+
+
+    
     date: "July 5, 2026",
-    image: "/Returns blog/Returns 2.jpeg",
+    image: "/Reco blogs/Reco 5.png",
   },
 ];
 

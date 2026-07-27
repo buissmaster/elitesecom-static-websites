@@ -19,7 +19,6 @@ import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TeamPage } from "./pages/TeamPage";
 import { AlternativePage } from "./pages/AlternativePage";
-import { ComparisonsHubPage } from "./pages/ComparisonsHubPage";
 import { getAlternativeConfigByPageKey } from "./lib/alternativePages";
 import { Toaster } from "./components/ui/sonner";
 import {
@@ -114,10 +113,11 @@ function App() {
         return <PrivacyPage />;
       // case "refund":
       //   return <RefundPage />;
+    
       case "team":
         return <TeamPage onNavigate={handleNavigate} />;
-      case "comparisonsHub":
-        return <ComparisonsHubPage onNavigate={handleNavigate} />;
+      // case "comparisonsHub":
+      //   return <ComparisonsHubPage onNavigate={handleNavigate} />;
       default: {
         const alternativeConfig = getAlternativeConfigByPageKey(currentPage);
         if (alternativeConfig) {

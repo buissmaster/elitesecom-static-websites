@@ -119,16 +119,16 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
   ];
 
   const catColors: Record<string, { color: string; bg: string }> = {
-    "Seller Problems": { color: "#EA580C", bg: "#FFF7ED" },
-    Marketplaces: { color: "#2563EB", bg: "#EFF6FF" },
-    "Shopify & D2C": { color: "#16A34A", bg: "#F0FDF4" },
-    Warehouse: { color: "#EA580C", bg: "#FFF7ED" },
-    Inventory: { color: "#16A34A", bg: "#F0FDF4" },
-    OMS: { color: "#9333EA", bg: "#FAF5FF" },
-    Returns: { color: "#DB2777", bg: "#FFF1F2" },
-    Reconciliation: { color: "#059669", bg: "#ECFDF5" },
-    Growth: { color: "#F5B800", bg: "#FFFBEB" },
-    Comparisons: { color: "#0891B2", bg: "#F0F9FF" },
+    "Seller Problems": { color: "#EA580C", bg: "#bddaf2" },
+    Marketplaces: { color: "#2563EB", bg: "#d0e3d6" },
+    "Shopify & D2C": { color: "#16A34A", bg: "#d0b8ea" },
+    Warehouse: { color: "#EA580C", bg: "#e9e8e9" },
+    Inventory: { color: "#16A34A", bg: "#fbefe0" },
+    OMS: { color: "#9333EA", bg: "#837e8d" },
+    Returns: { color: "#DB2777", bg: "#a6cbc3" },
+    Reconciliation: { color: "#059669", bg: "#d4d9db" },
+    Growth: { color: "#F5B800", bg: "#ccc2c0" },
+    Comparisons: { color: "#0891B2", bg: "#b1c2e3" },
   };
 
   const catImages: Record<string, string> = {
@@ -148,6 +148,12 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
     activeCategory === "All"
       ? allBlogEntries
       : getCategoryArticles(activeCategory);
+
+  const featuredPost = allBlogEntries[0];
+  const featuredColor = catColors[featuredPost.category] || {
+    color: "#2563EB",
+    bg: "#EFF6FF",
+  };
 
   const goToBlog = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -216,33 +222,80 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
             >
               <a
-                href={getBlogDetailPath(allBlogEntries[0].slug)}
-                onClick={(event) => goToBlog(event, allBlogEntries[0].slug)}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer border border-slate-100 block"
+                href={getBlogDetailPath(featuredPost.slug)}
+                onClick={(event) => goToBlog(event, featuredPost.slug)}
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer block"
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src="/blog main.png"
-                    alt="Featured"
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold  text-xs font-bold">
-                    Featured Guide
-                  </span>
+
+                  {/* Scaled overlay: copy of the small-card left black panel (2×) */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {/* Logo: equal padding from top and left */}
+                    <img
+                      src="/logo-white.png"
+                      alt="Elitesecom"
+                      className="absolute w-28 left-4 top-4"
+                      style={{
+                        // keep image rendering untouched
+                      }}
+                    />
+
+                    {/* Badge: directly below the logo with consistent spacing */}
+                    <span
+                      className="absolute inline-flex items-center rounded-full px-4 py-2 text-[13px] font-semibold"
+                      style={{
+                        left: 16,
+                        top: 60,
+                        backgroundColor: "#DBEAFE",
+                        color: "#1E3A8A",
+                      }}
+                    >
+                      Feature Guide
+                    </span>
+
+                    {/* Headline block: exact 4-line layout, left-aligned, constrained from diagonal edge */}
+                    <div
+                      className="absolute font-bold text-white text-left"
+                      style={{
+                        left: 16,
+                        top: 110, // moved upward to sit ~16-20px below the badge
+                        right: 50, // maintain 40-50px padding from diagonal edge
+                        fontSize: "22px",
+                        lineHeight: 1.22,
+                        whiteSpace: "normal",
+                        display: "block",
+                      }}
+                    >
+                      <div>Manage Multi-</div>
+                      <div>Channel Orders</div>
+                      <div>from One</div>
+                      <div>Dashboard</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg  mb-2 group-hover:text-gold-600 transition-colors">
-                    How to Manage Amazon, Flipkart, Meesho & Shopify Orders from
-                    One Dashboard
+                <div className="p-4">
+                  <span
+                    className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold mb-3"
+                    style={{
+                      color: featuredColor.color,
+                      backgroundColor: featuredColor.bg,
+                    }}
+                  >
+                    {featuredPost.category}
+                  </span>
+                  <h3 className="font-bold mb-2 group-hover:text-gold-600 transition-colors text-sm line-clamp-2">
+                    {featuredPost.title}
                   </h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500 flex items-center gap-1">
-                      <Clock className="w-3 h-3" />8 Min Read
-                    </span>
-                    <span className="flex items-center gap-1 text-sm font-semibold text-gold group-hover:gap-2 transition-all">
-                      Read Article <ArrowRight className="w-4 h-4" />
-                    </span>
+                  <p className="text-slate-500 text-xs line-clamp-2 mb-3">
+                    {featuredPost.subtitle}
+                  </p>
+                  <div className="flex justify-end mt-1">
+                    <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </a>
@@ -322,7 +375,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               </p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
               {filteredArticles.map((post, idx) => {
                 const c = catColors[post.category] || {
                   color: "#2563EB",
@@ -330,44 +383,91 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                 };
                 // const img = catImages[post.category] || "/blog-hero-new.jpg";
                 const img = post?.image || "/blog-hero-new.jpg";
+                const useOverlayLayout = true;
+
                 return (
                   <a
                     key={post.slug}
                     href={getBlogDetailPath(post.slug)}
                     onClick={(event) => goToBlog(event, post.slug)}
-                    className={`flex flex-col justify-between group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                    className={`flex flex-col group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                     style={{ transitionDelay: `${Math.min(idx * 50, 300)}ms` }}
                   >
-                    <div className="">
-                      <div className="relative h-40 overflow-hidden">
+                    <div className="flex flex-col h-full">
+                      <div className="relative aspect-[16/9] overflow-hidden">
                         <LazyBlogImage
                           src={img}
                           alt={post.title}
                         />
-                        <span
+           {useOverlayLayout && (
+  <div className="absolute inset-0">
+
+    {/* Logo */}
+    <img
+      src="/logo-white.png"
+      alt="Elitesecom"
+      className="absolute w-14 left-2 top-5"
+    />
+
+    {/* Category Pill */}
+   <span
+  className="absolute rounded-full px-2 py-[2px] text-[8px] font-semibold text-slate-900"
+  style={{
+    backgroundColor: c.bg,
+    left: "8px",
+    top: "50px",
+  }}
+>
+  {post.category}
+</span>
+
+    {/* Heading */}
+    <h3
+      className="absolute text-white font-bold leading-tight"
+      style={{
+        left: "12px",
+        top: "76px",
+        fontSize: "11px",
+        maxWidth: "82px",
+      }}
+    >
+      {post.title}
+    </h3>
+
+  </div>
+)}
+            {/* <span
                           className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-white/90"
                           style={{ color: c.color }}
                         >
                           {post.category}
-                        </span>
+                        </span> */}
                       </div>
                     <div className="p-4">
-                      <h3 className="font-bold  mb-2 group-hover:text-gold-600 transition-colors text-sm line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-slate-500 text-xs line-clamp-2 mb-3">
+                       {!useOverlayLayout && (
+                    <span
+                     className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold mb-3"
+                     style={{
+                       color: c.color,
+                       backgroundColor: c.bg,
+                     }}
+                   >
+                     {post.category}
+                   </span>
+                  )}
+
+                      {!useOverlayLayout && (
+                        <h3 className="font-bold mb-2 group-hover:text-gold-600 transition-colors text-sm line-clamp-2">
+                         {post.title}
+                        </h3>
+                      )}
+                      <p className="text-slate-500 text-xs line-clamp-2 mb-1">
                         {post.subtitle}
                       </p>
-                    </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-end pt-2 border-t border-slate-100">
-                        {/* <span className="text-[11px] text-slate-400 flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {post.readTime}
-                        </span> */}
-                        <ChevronRight className="float-right w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
+                      <div className="flex justify-end">
+                        <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
                       </div>
+                    </div>
                     </div>
                   </a>
                 );

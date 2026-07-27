@@ -82,22 +82,19 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`sticky left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ${
-          isScrolled ? "top-4 lg:top-6 px-4" : "top-0 px-0"
-        }`}
+        className={`sticky left-0 right-0 z-50 flex justify-center pointer-events-none transition-all duration-500 ${isScrolled ? "top-4 lg:top-6 px-4" : "top-0 px-0"
+          }`}
       >
         <nav
           aria-label="Main navigation"
-          className={`w-full pointer-events-auto transition-all duration-500 backdrop-blur-[18px] ${
-            isScrolled
+          className={`w-full pointer-events-auto transition-all duration-500 backdrop-blur-[18px] ${isScrolled
               ? "max-w-[1200px] shadow-[0_8px_32px_rgba(0,0,0,0.06)] rounded-[40px] px-0 py-2"
               : "max-w-full shadow-none rounded-none px-4 py-3 lg:py-5"
-          }`}
+            }`}
         >
           <div
-            className={`mx-auto flex items-center justify-between transition-all duration-500 ${
-              isScrolled ? "px-4 lg:px-6 max-w-full" : "max-w-[1300px] px-4"
-            }`}
+            className={`mx-auto flex items-center justify-between transition-all duration-500 ${isScrolled ? "px-4 lg:px-6 max-w-full" : "max-w-[1300px] px-4"
+              }`}
           >
             {/* Logo */}
             <AppLink
@@ -148,11 +145,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                               isDropdownOpen ? null : link.page,
                             )
                           }
-                          className={`relative inline-flex items-center gap-1 px-3 py-2 text-center text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${
-                            hasPill
+                          className={`relative inline-flex items-center gap-1 px-3 py-2 text-center text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${hasPill
                               ? "text-slate-900"
                               : "text-slate-600 hover:text-slate-900"
-                          }`}
+                            }`}
                         >
                           {hasPill && (
                             <motion.div
@@ -167,9 +163,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                           )}
                           <span className="relative z-10">{link.name}</span>
                           <ChevronDown
-                            className={`relative z-10 w-3.5 h-3.5 transition-transform duration-200 ${
-                              isDropdownOpen ? "rotate-180" : ""
-                            }`}
+                            className={`relative z-10 w-3.5 h-3.5 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""
+                              }`}
                           />
                         </button>
 
@@ -180,7 +175,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: 8 }}
                               transition={{ duration: 0.18 }}
-                              className="absolute left-0 top-full z-50 mt-2 min-w-[180px] rounded-2xl border border-slate-200/80 bg-white p-2 shadow-[0_12px_40px_rgba(15,23,42,0.12)]"
+                              className="absolute left-0 top-full z-50 mt-2 min-w-[180px] rounded-2xl border border-slate-200/80 bg-white p-2 shadow-[0_12px_40px_rgba(15,23,42,0.12)] before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3"
                               role="menu"
                             >
                               {link.children?.map((child) => (
@@ -189,11 +184,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                                   page={child.page}
                                   onNavigate={handleNavClick}
                                   role="menuitem"
-                                  className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
-                                    isChildActive(child)
+                                  className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${isChildActive(child)
                                       ? "bg-gold/15 text-slate-900"
                                       : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
-                                  }`}
+                                    }`}
                                 >
                                   {child.name}
                                 </AppLink>
@@ -214,11 +208,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                         setHoveredPage(link.page);
                         setOpenDesktopDropdown(null);
                       }}
-                      className={`relative px-3 py-2 text-center text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${
-                        hasPill
+                      className={`relative px-3 py-2 text-center text-sm font-semibold rounded-full transition-colors duration-300 active:scale-95 outline-none ${hasPill
                           ? "text-slate-900"
                           : "text-slate-600 hover:text-slate-900"
-                      }`}
+                        }`}
                     >
                       {hasPill && (
                         <motion.div
@@ -343,17 +336,15 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                                   isOpen ? null : link.page,
                                 )
                               }
-                              className={`flex w-full items-center justify-between px-4 py-3.5 text-left text-base font-medium transition-all duration-300 rounded-xl hover:bg-slate-100 active:scale-[0.98] ${
-                                isLinkActive(link)
+                              className={`flex w-full items-center justify-between px-4 py-3.5 text-left text-base font-medium transition-all duration-300 rounded-xl hover:bg-slate-100 active:scale-[0.98] ${isLinkActive(link)
                                   ? "bg-gold/10 text-yellow-600 font-semibold"
                                   : "text-slate-700"
-                              }`}
+                                }`}
                             >
                               <span>{link.name}</span>
                               <ChevronDown
-                                className={`w-4 h-4 transition-transform duration-200 ${
-                                  isOpen ? "rotate-180" : ""
-                                }`}
+                                className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                                  }`}
                               />
                             </button>
 
@@ -372,11 +363,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                                         key={`${child.page}-${child.name}`}
                                         page={child.page}
                                         onNavigate={handleNavClick}
-                                        className={`block w-full rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:bg-slate-100 ${
-                                          isChildActive(child)
+                                        className={`block w-full rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:bg-slate-100 ${isChildActive(child)
                                             ? "bg-gold/10 text-yellow-600 font-semibold"
                                             : "text-slate-600"
-                                        }`}
+                                          }`}
                                       >
                                         {child.name}
                                       </AppLink>
@@ -390,11 +380,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                           <AppLink
                             page={link.page}
                             onNavigate={handleNavClick}
-                            className={`block w-full text-left px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-300 hover:bg-slate-100 hover:translate-x-1 active:scale-[0.98] ${
-                              isLinkActive(link)
+                            className={`block w-full text-left px-4 py-3.5 rounded-xl text-base font-medium transition-all duration-300 hover:bg-slate-100 hover:translate-x-1 active:scale-[0.98] ${isLinkActive(link)
                                 ? "bg-gold/10 text-yellow-600 font-semibold"
                                 : "text-slate-700"
-                            }`}
+                              }`}
                           >
                             {link.name}
                           </AppLink>

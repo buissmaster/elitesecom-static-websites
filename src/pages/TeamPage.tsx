@@ -473,13 +473,13 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
           <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center gap-2">
             {/* Section Header */}
             <div className="text-center max-w-3xl">
-              <span className="inline-block text-xs font-bold text-purple-600 uppercase tracking-[0.3em] mb-3">
+              <span className="inline-block text-xs font-bold text-gold-600 uppercase tracking-[0.3em] mb-3">
                 Our Leadership
               </span>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-950 mb-4 tracking-tight">
                 Meet the{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Visionaries
+                <span className="bg-gradient-to-r from-gold-600 to-gold-600 bg-clip-text text-transparent">
+                  Visionariess
                 </span>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">

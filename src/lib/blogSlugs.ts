@@ -166,7 +166,7 @@ export const allBlogEntries: BlogEntry[] = [
       "Optimize your Flipkart operations with these seller-tested order management techniques.",
     category: "Marketplaces",
     readTime: "6 min",
-    date: "May 15, 2026",  
+    date: "May 15, 2026",
     image: "/Marketplace blog/Marketplace 2.png",
   },
   {
@@ -516,7 +516,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 13, 2026",
-    image: "/OMS blog/oms 1.png",
+    image: "/oms-blog/oms 1.png",
   },
   {
     id: "oms2",
@@ -527,7 +527,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 11, 2026",
-    image: "/OMS blog/oms 2.png",
+    image: "/oms-blog/oms 2.png",
   },
   {
     id: "oms3",
@@ -538,7 +538,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/OMS blog/oms 3.png",
+    image: "/oms-blog/oms 3.png",
   },
   {
     id: "oms4",
@@ -549,7 +549,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 7, 2026",
-    image: "/OMS blog/oms 4.png",
+    image: "/oms-blog/oms 4.png",
   },
   {
     id: "oms5",
@@ -560,7 +560,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 5, 2026",
-    image: "/OMS blog/oms 5.png",
+    image: "/oms-blog/oms 5.png",
   },
   {
     id: "oms6",
@@ -571,7 +571,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/OMS blog/oms 6.png",
+    image: "/oms-blog/oms 6.png",
   },
   {
     id: "oms7",
@@ -582,7 +582,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/OMS blog/oms 7.png",
+    image: "/oms-blog/oms 7.png",
   },
   {
     id: "oms8",
@@ -593,7 +593,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "Apr 29, 2026",
-    image: "/OMS blog/oms 8.png",
+    image: "/oms-blog/oms 8.png",
   },
 
   // Returns (8)
@@ -875,8 +875,6 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "10 min",
 
-
-    
     date: "July 5, 2026",
     image: "/Reco blogs/Reco 5.png",
   },
@@ -887,7 +885,12 @@ const slugToEntry = new Map(allBlogEntries.map((e) => [e.slug, e]));
 const idToEntry = new Map(allBlogEntries.map((e) => [e.id, e]));
 
 export function findBlogBySlug(slug: string): BlogEntry | undefined {
-  return slugToEntry.get(slug);
+  if (!slug) return undefined;
+
+  // Strip trailing slashes that production servers might append
+  const cleanSlug = slug.replace(/\/+$/, "");
+
+  return slugToEntry.get(cleanSlug);
 }
 
 export function findBlogById(id: string): BlogEntry | undefined {

@@ -39,10 +39,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     {
       name: "Services",
       page: "services",
-      children: [
-        { name: "Service", page: "services" },
-        { name: "Compare", page: "comparisonsHub" },
-      ],
+      // children: [
+      //   { name: "Service", page: "services" },
+      //   { name: "Compare", page: "comparisonsHub" },
+      // ],
     },
     { name: "Integration", page: "integration" },
     { name: "Customer", page: "customers" },
@@ -168,7 +168,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                           />
                         </button>
 
-                        <AnimatePresence>
+                        {/* <AnimatePresence>
                           {isDropdownOpen && (
                             <motion.div
                               initial={{ opacity: 0, y: 8 }}
@@ -194,7 +194,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                               ))}
                             </motion.div>
                           )}
-                        </AnimatePresence>
+                        </AnimatePresence> */}
                       </div>
                     );
                   }

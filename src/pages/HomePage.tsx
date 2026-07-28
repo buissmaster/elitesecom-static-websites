@@ -712,7 +712,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div ref={featuresRef}>
             {/* Desktop: Accordion Cards Row */}
-            <div className="hidden lg:flex flex-row gap-2 lg:gap-3 items-stretch justify-center h-[300px]">
+            <div
+              className="hidden lg:flex flex-row gap-2 lg:gap-3 items-stretch justify-center h-[300px]"
+              onMouseEnter={() => setIsHoveredFeatures(true)}
+              onMouseLeave={() => setIsHoveredFeatures(false)}
+            >
               {features.map((feature, index) => {
                 const FeatureIcon = feature.icon;
                 const isExpanded = activeFeature === index;
@@ -720,6 +724,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 return (
                   <div
                     key={feature.title}
+                    onMouseEnter={() => setActiveFeature(index)}
                     onClick={() => setActiveFeature(isExpanded ? -1 : index)}
                     className={`relative cursor-pointer rounded-xl border border-slate-100 overflow-hidden ${featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                     style={{
@@ -827,62 +832,36 @@ export function HomePage({ onNavigate }: HomePageProps) {
               from order processing to reconciliation.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-heading font-bold text-xl mb-3">
-                Multichannel Order Management
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Centralize orders from Amazon, Flipkart, Meesho, Shopify, and
-                20+ channels in one order management system. Route, fulfill, and
-                track every order without switching dashboards.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading font-bold text-xl mb-3">
-                Payment & Return Reconciliation
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Automate payment reconciliation against marketplace settlements
-                and handle return reconciliation with accurate refund tracking.
-                Reduce financial discrepancies and save hours of manual work.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading font-bold text-xl mb-3">
-                Inventory & Warehouse Management
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Sync inventory across channels in real time and run warehouse
-                operations with built-in WMS — pick, pack, ship, and prevent
-                overselling during peak sale events.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 bg-white border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
-              Compare Elitesecom OMS vs Other Platforms
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Side-by-side comparisons with {ALTERNATIVE_PAGE_REGISTRY.length}{" "}
-              OMS, ERP, and logistics tools — Unicommerce, EasyEcom, Vinculum,
-              Shiprocket, Zoho, Odoo, and more.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <AppLink
-              page="comparisonsHub"
-              onNavigate={onNavigate}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-semibold hover:bg-gold hover:text-slate-900 transition-all"
-            >
-              View all OMS comparisons
-              <ArrowRight className="w-5 h-5" />
-            </AppLink>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Multichannel Order Management",
+                description:
+                  "Centralize orders from Amazon, Flipkart, Meesho, Shopify, and 20+ channels in one order management system. Route, fulfill, and track every order without switching dashboards.",
+              },
+              {
+                title: "Payment & Return Reconciliation",
+                description:
+                  "Automate payment reconciliation against marketplace settlements and handle return reconciliation with accurate refund tracking. Reduce financial discrepancies and save hours of manual work.",
+              },
+              {
+                title: "Inventory & Warehouse Management",
+                description:
+                  "Sync inventory across channels in real time and run warehouse operations with built-in WMS — pick, pack, ship, and prevent overselling during peak sale events.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <h3 className="font-heading font-bold text-xl mb-3 text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -278,24 +278,12 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                     </div>
                   </div>
                 </div>
-                <div className="p-4">
-                  <span
-                    className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-semibold mb-3"
-                    style={{
-                      color: featuredColor.color,
-                      backgroundColor: featuredColor.bg,
-                    }}
-                  >
-                    {featuredPost.category}
-                  </span>
-                  <h3 className="font-bold mb-2 group-hover:text-gold-600 transition-colors text-sm line-clamp-2">
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-slate-500 text-xs line-clamp-2 mb-3">
-                    {featuredPost.subtitle}
-                  </p>
-                  <div className="flex justify-end mt-1">
-                    <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
+                <div className="px-4 py-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-slate-500 text-xs leading-5 line-clamp-3 pr-2">
+                      {featuredPost.subtitle}
+                    </p>
+                    <ChevronRight className="w-4 h-4 mt-0.5 shrink-0 text-slate-300 group-hover:text-gold group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </a>

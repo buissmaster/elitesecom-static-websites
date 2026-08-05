@@ -115,6 +115,20 @@ const serviceCards: ServiceCardData[] = [
     glowColor: "rgba(249,115,22,0.15)",
   },
   {
+    title: "Listing Management",
+    description:
+      "Create, update, and manage product listings across multiple marketplaces from one centralized platform. Keep product information consistent, reduce manual effort, and publish listings faster.",
+    features: [
+      "Bulk listing creation & updates",
+      "marketplace listing sync",
+      "Inventory & price synchronization",
+      "Product attribute optimization",
+    ],
+    hero: "/listing.png",
+    color: "#F5B800",
+    glowColor: "rgba(245,184,0,0.15)",
+  },
+  {
     title: "Security & Compliance",
     description:
       "Enterprise-grade security with 99.9% uptime guarantee. Your data is protected with industry-standard encryption and security protocols. Stay compliant with all regulations.",

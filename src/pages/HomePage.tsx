@@ -952,13 +952,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
               aria-label="Explore Kedara"
               className="group flex flex-col h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gold-300 overflow-hidden"
             >
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-3">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#f5b800] mb-3">
                 KEDARA
               </span>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-[#0f0f0f]">
                 Smart Packing &amp; Compliance Station
               </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+              <p className="text-[#0f0f0f] leading-relaxed text-sm sm:text-base mb-6">
                 Record, verify, and protect every order with intelligent packing evidence.
               </p>
              
@@ -970,7 +970,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                />
               </div>
                <br />
-               <span className="inline-flex items-center gap-2 text-gold font-semibold mb-8">
+               <span className="inline-flex items-center gap-2 text-[#f5b800] font-semibold mb-8">
                 Explore Kedara
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
@@ -983,13 +983,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
               aria-label="Explore Elites Studio"
               className="group flex flex-col h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gold-300 overflow-hidden"
             >
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-3">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#f5b800] mb-3">
                 ELITES STUDIO
               </span>
-              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-[#0f0f0f]">
                 AI Product Photography for Ecommerce
               </h3>
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+              <p className="text-[#0f0f0f] leading-relaxed text-sm sm:text-base mb-6">
                 Create professional, marketplace-ready product visuals without expensive traditional photoshoots.
               </p>
              
@@ -1001,7 +1001,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                />
               </div>
                <br />
-               <span className="inline-flex items-center gap-2 text-gold font-semibold mb-8">
+               <span className="inline-flex items-center gap-2 text-[#f5b800] font-semibold mb-8">
                 Explore Elites Studio
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>

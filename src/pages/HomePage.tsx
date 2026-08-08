@@ -23,6 +23,7 @@ import {
   Sparkles,
   ShieldCheck,
   Server,
+  Camera,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -930,6 +931,86 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      {/* Featured Solutions Section */}
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4 text-slate-900">
+              Looking Beyond Order Management?
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+              Explore more solutions built to support every stage of your ecommerce operations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <a
+              href="https://www.kedaratechnologies.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Kedara"
+              className="group flex flex-col h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gold-300 overflow-hidden"
+            >
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-3">
+                KEDARA
+              </span>
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
+                Smart Packing &amp; Compliance Station
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+                Record, verify, and protect every order with intelligent packing evidence.
+              </p>
+             
+             <div className="relative mt-auto w-full aspect-[2/1] rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-100">
+                <img
+                 src="/smartpacking.png"
+                 alt="Kedara Technologies"
+                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               />
+              </div>
+               <br />
+               <span className="inline-flex items-center gap-2 text-gold font-semibold mb-8">
+                Explore Kedara
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </a>
+
+            <a
+              href="https://studio.elitesecom.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Explore Elites Studio"
+              className="group flex flex-col h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-gold-300 overflow-hidden"
+            >
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold-600 mb-3">
+                ELITES STUDIO
+              </span>
+              <h3 className="font-heading font-bold text-2xl sm:text-3xl mb-3 text-slate-900">
+                AI Product Photography for Ecommerce
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+                Create professional, marketplace-ready product visuals without expensive traditional photoshoots.
+              </p>
+             
+              <div className="relative mt-auto w-full aspect-[2/1] rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-100">
+                <img
+                 src="/elites-studio.png"
+                 alt="Elites Studio"
+                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               />
+              </div>
+               <br />
+               <span className="inline-flex items-center gap-2 text-gold font-semibold mb-8">
+                Explore Elites Studio
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
    </> 
   );

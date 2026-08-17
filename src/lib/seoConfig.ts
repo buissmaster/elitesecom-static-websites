@@ -5,10 +5,7 @@ import {
   SAME_AS_URLS,
 } from "./brandProfiles";
 import { allFaqItems } from "./faqData";
-import {
-  COMPARISONS_HUB,
-  getAlternativeConfigByPageKey,
-} from "./alternativePages";
+
 import {
   DEFAULT_OG_IMAGE,
   SITE_NAME,
@@ -319,15 +316,6 @@ const pageSeo: Record<
     keywords:
       "Increff alternative, Increff vs Elitesecom OMS, OMS India, marketplace order management, payment reconciliation",
   },
-  comparisonsHub: {
-    path: COMPARISONS_HUB.path,
-    title:
-      "OMS Comparisons 2026 | Elitesecom vs Unicommerce, EasyEcom & 10+ Platforms",
-    description:
-      "Compare Elitesecom OMS with Unicommerce, EasyEcom, Vinculum, Browntape, Shiprocket, eVanik, Zoho, Odoo, NetSuite, and more. Side-by-side pricing, reconciliation, and WMS.",
-    keywords:
-      "OMS comparison India, Unicommerce vs Elitesecom, EasyEcom alternative, order management system comparison, ecommerce OMS India",
-  },
   evanikAlt: {
     path: "/evanik-alternative",
     title: "Best eVanik Alternative 2026 | Elitesecom OMS & Reconciliation",
@@ -428,27 +416,17 @@ function getPageJsonLd(page: string): Record<string, unknown>[] {
   }
 
   const config = pageSeo[page] ?? pageSeo.home;
-  const alternativeConfig = getAlternativeConfigByPageKey(page);
 
-  const breadcrumbs: { name: string; path: string }[] = alternativeConfig
-    ? [
-        { name: "Home", path: "/" },
-        { name: "OMS Comparisons", path: COMPARISONS_HUB.path },
-        {
-          name: alternativeConfig.metaAngle.replace(/^./, (c) => c.toUpperCase()),
-          path: config.path,
-        },
-      ]
-    : [
-        { name: "Home", path: "/" },
-        {
-          name: config.title.split("|")[0]?.trim() ?? page,
-          path: config.path,
-        },
-      ];
+  const breadcrumbs: { name: string; path: string }[] = [
+    { name: "Home", path: "/" },
+    {
+      name: config.title.split("|")[0]?.trim() ?? page,
+      path: config.path,
+    },
+  ];
   jsonLd.push(breadcrumbSchema(breadcrumbs));
 
-  if (["services", "pricing", "demo", "comparisonsHub"].includes(page)) {
+  if (["services", "pricing", "demo"].includes(page)) {
     jsonLd.push(softwareApplicationSchema);
   }
 

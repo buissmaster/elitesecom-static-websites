@@ -1,6 +1,5 @@
 /** Central route map — keep URLs unchanged for production SEO. */
 import {
-  COMPARISONS_HUB,
   getAlternativePageToPath,
   getAlternativePathToPage,
   getAlternativeStaticRoutes,
@@ -27,9 +26,7 @@ export const pageToPath: Record<string, string> = {
   demo: "/requestdemo",
   terms: "/terms",
   privacy: "/privacy",
-  refund: "/RefundPolicy",
   team: "/team",
-  [COMPARISONS_HUB.pageKey]: COMPARISONS_HUB.path,
   ...alternativePageToPath,
 };
 
@@ -46,9 +43,7 @@ export const pathToPage: Record<string, string> = {
   "/requestdemo": "demo",
   "/terms": "terms",
   "/privacy": "privacy",
-  "/RefundPolicy": "refund",
   "/team": "team",
-  [COMPARISONS_HUB.path]: COMPARISONS_HUB.pageKey,
   ...alternativePathToPage,
 };
 
@@ -89,8 +84,6 @@ export const staticRoutes: string[] = [
   "/requestdemo",
   "/terms",
   "/privacy",
-  "/RefundPolicy",
   "/team",
-  COMPARISONS_HUB.path,
   ...getAlternativeStaticRoutes(),
 ];

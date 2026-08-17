@@ -1,10 +1,27 @@
+/// <reference types="node" />
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { allBlogEntries } from "../src/lib/blogSlugs";
-import { SITE_URL, staticRoutes } from "../src/lib/routes";
+import { SITE_URL } from "../src/lib/routes";
 
 const lastmod = new Date().toISOString();
 const publicDir = resolve(process.cwd(), "public");
+
+const MAIN_STATIC_ROUTES = [
+  "/",
+  "/ourservices",
+  "/integration",
+  "/customer",
+  "/aboutus",
+  "/team",
+  "/faqs",
+  "/Blog",
+  "/pricing",
+  "/contactus",
+  "/requestdemo",
+  "/terms",
+  "/privacy",
+];
 
 function xmlEscape(value: string): string {
   return value
@@ -34,7 +51,7 @@ function urlEntry(path: string, priority = "0.8", changefreq = "weekly"): string
 const blogRoutes = allBlogEntries.map((entry) => `/Blog/${entry.slug}`);
 
 const urls = [
-  ...staticRoutes.map((route) =>
+  ...MAIN_STATIC_ROUTES.map((route) =>
     urlEntry(route, route === "/" ? "1.0" : "0.8"),
   ),
   ...blogRoutes.map((route) => urlEntry(route, "0.7", "monthly")),
@@ -60,5 +77,5 @@ writeFileSync(resolve(publicDir, "sitemap-0.xml"), sitemap, "utf8");
 writeFileSync(resolve(publicDir, "sitemap.xml"), sitemapIndex, "utf8");
 
 console.log(
-  `Generated sitemap with ${staticRoutes.length} static routes and ${blogRoutes.length} blog posts.`,
+  `Generated sitemap with ${MAIN_STATIC_ROUTES.length} static routes and ${blogRoutes.length} blog posts.`,
 );

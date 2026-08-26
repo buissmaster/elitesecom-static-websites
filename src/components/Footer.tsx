@@ -12,9 +12,7 @@ import {
   Headphones,
   Tag,
   Shield,
-  FileText,
   ChevronDown,
-  ArrowLeftRight,
 } from "lucide-react";
 import { AppLink } from "./AppLink";
 import { FOOTER_SOCIAL_LINKS } from "@/lib/brandProfiles";

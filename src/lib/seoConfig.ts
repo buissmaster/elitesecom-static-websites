@@ -239,124 +239,13 @@ const pageSeo: Record<
       "Privacy policy for Elitesecom order management system (OMS) — how we protect your order, inventory, and reconciliation data.",
     keywords: "Elitesecom privacy, OMS data privacy",
   },
-  // refund: {
-  //   path: "/RefundPolicy",
-  //   title: "Refund Policy | Elitesecom OMS Subscription",
-  //   description:
-  //     "Refund policy for Elitesecom order management system (OMS) subscription plans.",
-  //   keywords: "Elitesecom refund policy, OMS subscription refund",
-  // },
+ 
   team: {
     path: "/team",
     title: "Our Team | Elitesecom OMS & Ecommerce Operations Experts",
     description:
       "Meet the team behind Elitesecom — India's order management system (OMS) for multichannel order processing and reconciliation.",
     keywords: "Elitesecom team, OMS experts, ecommerce operations team",
-  },
-  unicommerceAlt: {
-    path: "/unicommerce-alternative",
-    title:
-      "Best Unicommerce Alternative 2026 | Elitesecom OMS & Reconciliation",
-    description:
-      "Compare Elitesecom OMS vs Unicommerce. Transparent INR pricing, built-in payment & return reconciliation, multichannel OMS and WMS for Indian marketplace sellers.",
-    keywords:
-      "Unicommerce alternative, Unicommerce vs Elitesecom OMS, OMS India, payment reconciliation, UniReco alternative, ecommerce OMS",
-  },
-  easyecomAlt: {
-    path: "/easyecom-alternative",
-    title:
-      "Best EasyEcom Alternative 2026 | Elitesecom OMS with INR Pricing",
-    description:
-      "Compare Elitesecom OMS vs EasyEcom for order management, payment reconciliation, and WMS. Transparent GST-inclusive pricing for Indian ecommerce sellers.",
-    keywords:
-      "EasyEcom alternative, EasyEcom vs Elitesecom OMS, OMS comparison, EasyReco alternative, reconciliation software India",
-  },
-  vinculumAlt: {
-    path: "/vinculum-alternative",
-    title:
-      "Best Vinculum Alternative 2026 | Elitesecom OMS & Reconciliation",
-    description:
-      "Compare Elitesecom OMS vs Vinculum Vin eRetail. Published INR pricing, built-in payment reconciliation, and multichannel OMS for Indian marketplace sellers.",
-    keywords:
-      "Vinculum alternative, Vinculum vs Elitesecom OMS, Vin OMS alternative, payment reconciliation, ecommerce OMS India",
-  },
-  browntapeAlt: {
-    path: "/browntape-alternative",
-    title:
-      "Best Browntape Alternative 2026 | Ginesys OMS vs Elitesecom OMS",
-    description:
-      "Compare Elitesecom OMS vs Browntape (Ginesys OMS). Flat INR pricing, built-in reconciliation, and higher order limits for Indian marketplace sellers.",
-    keywords:
-      "Browntape alternative, Ginesys OMS alternative, Browntape vs Elitesecom OMS, multichannel OMS India",
-  },
-  anchantoAlt: {
-    path: "/anchanto-alternative",
-    title:
-      "Best Anchanto Alternative 2026 | Elitesecom OMS for India Sellers",
-    description:
-      "Compare Elitesecom OMS vs Anchanto SelluSeller. India-native OMS with published pricing, payment reconciliation, and WMS for marketplace sellers.",
-    keywords:
-      "Anchanto alternative, SelluSeller alternative, Anchanto vs Elitesecom OMS, OMS India, multichannel order management",
-  },
-  shiprocketAlt: {
-    path: "/shiprocket-alternative",
-    title:
-      "Shiprocket OMS Alternative 2026 | Full Elitesecom OMS Platform",
-    description:
-      "Outgrown Shiprocket logistics? Elitesecom OMS adds inventory sync, marketplace reconciliation, and WMS — beyond shipping aggregation.",
-    keywords:
-      "Shiprocket OMS alternative, Shiprocket vs Elitesecom OMS, full OMS India, payment reconciliation, warehouse management",
-  },
-  increffAlt: {
-    path: "/increff-alternative",
-    title:
-      "Best Increff Alternative 2026 | Elitesecom OMS for Multichannel Sellers",
-    description:
-      "Compare Elitesecom OMS vs Increff. Transparent pricing for marketplace and D2C brands who need OMS and reconciliation without fashion merchandising modules.",
-    keywords:
-      "Increff alternative, Increff vs Elitesecom OMS, OMS India, marketplace order management, payment reconciliation",
-  },
-  evanikAlt: {
-    path: "/evanik-alternative",
-    title: "Best eVanik Alternative 2026 | Elitesecom OMS & Reconciliation",
-    description:
-      "Compare Elitesecom OMS vs eVanik OWS. Dedicated infrastructure, ISO certifications, and published INR pricing with built-in payment reconciliation.",
-    keywords:
-      "eVanik alternative, eVanik vs Elitesecom OMS, OMS reconciliation India, marketplace order management",
-  },
-  omsguruAlt: {
-    path: "/omsguru-alternative",
-    title: "Best OMSGuru Alternative 2026 | Elitesecom OMS with Reconciliation",
-    description:
-      "Outgrown OMSGuru? Elitesecom OMS adds payment reconciliation, WMS, and 50,000-order Growth plans for scaling marketplace sellers.",
-    keywords:
-      "OMSGuru alternative, OMSGuru vs Elitesecom OMS, SMB OMS India, payment reconciliation",
-  },
-  zohoInventoryAlt: {
-    path: "/zoho-inventory-alternative",
-    title:
-      "Zoho Inventory Alternative 2026 | Marketplace OMS | Elitesecom",
-    description:
-      "Compare Elitesecom OMS vs Zoho Inventory for Amazon, Flipkart, and Meesho sellers. Marketplace reconciliation and WMS beyond basic inventory tracking.",
-    keywords:
-      "Zoho Inventory alternative, Zoho vs Elitesecom OMS, marketplace OMS India, multichannel inventory",
-  },
-  odooAlt: {
-    path: "/odoo-alternative",
-    title: "Odoo OMS Alternative 2026 | Elitesecom Marketplace Operations",
-    description:
-      "Compare Elitesecom OMS vs Odoo for ecommerce. Focused marketplace OMS and reconciliation without ERP customization projects.",
-    keywords:
-      "Odoo OMS alternative, Odoo vs Elitesecom OMS, marketplace order management, ERP alternative India",
-  },
-  netsuiteAlt: {
-    path: "/netsuite-alternative",
-    title:
-      "NetSuite OMS Alternative 2026 | Elitesecom for Marketplace Brands",
-    description:
-      "Compare Elitesecom OMS vs NetSuite ERP. Fast marketplace onboarding, built-in reconciliation, and published pricing for Indian ecommerce sellers.",
-    keywords:
-      "NetSuite OMS alternative, NetSuite vs Elitesecom OMS, enterprise ERP alternative, marketplace OMS India",
   },
 };
 

@@ -29,7 +29,6 @@ import {
 import { motion } from "framer-motion";
 import { AppLink } from "@/components/AppLink";
 import { TopicClusterHub } from "@/components/TopicClusterHub";
-import { ALTERNATIVE_PAGE_REGISTRY } from "@/lib/alternativePages";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -558,8 +557,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl  mb-6">
-              Elites Your E-Commerce In{" "}
-              <span className="text-gold-500">Just One Click</span>
+              Manage Orders, Inventory & Ecommerce Operations from{" "}
+              <span className="text-gold-500">One Platform</span>
             </h2>
             <p className="text-lg text-slate-600">
               Strong e-commerce API interfaces with all major marketplaces and

@@ -368,9 +368,9 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Complete OMS capabilities — multichannel order management, payment
-              reconciliation, return reconciliation, inventory management, and
-              warehouse management system (WMS).
+              ElitesEcom provides ecommerce management software designed to 
+              centralize orders, inventory, warehouses, shipping, reconciliation, listings, 
+              analytics, and marketplace operations from one platform.
             </p>
           </div>
         </div>

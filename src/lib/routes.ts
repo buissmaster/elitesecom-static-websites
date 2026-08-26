@@ -1,16 +1,8 @@
 /** Central route map — keep URLs unchanged for production SEO. */
-import {
-  getAlternativePageToPath,
-  getAlternativePathToPage,
-  getAlternativeStaticRoutes,
-} from "./alternativePages";
 
 export const SITE_URL = "https://www.elitesecom.ai";
 export const SITE_NAME = "Elitesecom";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/Logo/oms.png`;
-
-const alternativePageToPath = getAlternativePageToPath();
-const alternativePathToPage = getAlternativePathToPage();
 
 export const pageToPath: Record<string, string> = {
   home: "/",
@@ -27,7 +19,6 @@ export const pageToPath: Record<string, string> = {
   terms: "/terms",
   privacy: "/privacy",
   team: "/team",
-  ...alternativePageToPath,
 };
 
 export const pathToPage: Record<string, string> = {
@@ -44,7 +35,6 @@ export const pathToPage: Record<string, string> = {
   "/terms": "terms",
   "/privacy": "privacy",
   "/team": "team",
-  ...alternativePathToPage,
 };
 
 export function getPathForPage(page: string): string {
@@ -85,5 +75,4 @@ export const staticRoutes: string[] = [
   "/terms",
   "/privacy",
   "/team",
-  ...getAlternativeStaticRoutes(),
 ];

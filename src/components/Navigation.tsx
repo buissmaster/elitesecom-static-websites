@@ -53,16 +53,11 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: "Pricing", page: "pricing" },
   ];
 
-  const isComparePage =
-    currentPage === "comparisonsHub" || currentPage.endsWith("Alt");
-
   const isLinkActive = (link: NavLink) =>
     currentPage === link.page ||
-    (currentPage === "blogdetail" && link.page === "blog") ||
-    (link.page === "services" && isComparePage);
+    (currentPage === "blogdetail" && link.page === "blog");
 
   const isChildActive = (child: NavChild) => {
-    if (child.page === "comparisonsHub") return isComparePage;
     if (child.page === "services") return currentPage === "services";
     return currentPage === child.page;
   };

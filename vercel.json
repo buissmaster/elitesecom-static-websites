@@ -1,6 +1,13 @@
 {
   "trailingSlash": false,
 
+  "routes": [
+    {
+      "src": "^/(?:unicommerce-alternative|easyecom-alternative|vinculum-alternative|browntape-alternative|anchanto-alternative|shiprocket-alternative|increff-alternative|evanik-alternative|omsguru-alternative|zoho-inventory-alternative|odoo-alternative|netsuite-alternative)(?:/index\\.html)?/?$",
+      "status": 410
+    }
+  ],
+
   "rewrites": [
     { "source": "/ourservices", "destination": "/ourservices/index.html" },
     { "source": "/integration", "destination": "/integration/index.html" },
@@ -15,18 +22,6 @@
     { "source": "/terms", "destination": "/terms/index.html" },
     { "source": "/privacy", "destination": "/privacy/index.html" },
     { "source": "/team", "destination": "/team/index.html" },
-    { "source": "/unicommerce-alternative", "destination": "/unicommerce-alternative/index.html" },
-    { "source": "/easyecom-alternative", "destination": "/easyecom-alternative/index.html" },
-    { "source": "/vinculum-alternative", "destination": "/vinculum-alternative/index.html" },
-    { "source": "/browntape-alternative", "destination": "/browntape-alternative/index.html" },
-    { "source": "/anchanto-alternative", "destination": "/anchanto-alternative/index.html" },
-    { "source": "/shiprocket-alternative", "destination": "/shiprocket-alternative/index.html" },
-    { "source": "/increff-alternative", "destination": "/increff-alternative/index.html" },
-    { "source": "/evanik-alternative", "destination": "/evanik-alternative/index.html" },
-    { "source": "/omsguru-alternative", "destination": "/omsguru-alternative/index.html" },
-    { "source": "/zoho-inventory-alternative", "destination": "/zoho-inventory-alternative/index.html" },
-    { "source": "/odoo-alternative", "destination": "/odoo-alternative/index.html" },
-    { "source": "/netsuite-alternative", "destination": "/netsuite-alternative/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

@@ -130,7 +130,7 @@ function breadcrumbSchema(
       name: item.name,
       item: absoluteUrl(item.path),
     })),
-  };
+  };  
 }
 
 const pageSeo: Record<

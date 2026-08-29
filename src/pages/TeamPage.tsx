@@ -83,7 +83,7 @@ const leadersData: Leader[] = [
     role: "Co-Founder",
     tag: "Co-Founder",
     badgeBg: "bg-indigo-500",
-    image: "/co-founder.png",
+    image: "/harmit-vaghasiya.jpg",
     bio: "Harmit directs strategic scale and automation platforms within ElitesEcom. Specializing in high-volume operations across Myntra, Ajio, and Meesho, his focus centers on crafting scalable infrastructure designed for modern enterprise growth.",
     linkedin: "https://www.linkedin.com/in/harmit-vaghasiya-033bb1348/",
     gradient: "from-indigo-600 via-purple-600 to-amber-400",
@@ -507,9 +507,12 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                       <img
                         src={leader.image}
                         alt={`${leader.name} — ${leader.role}`}
+                        width={1369}
+                        height={2048}
+                        loading="eager"
+                        decoding="sync"
                         className="absolute inset-0 w-full h-full object-cover object-top"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-black/5 via-transparent to-white/5" />
                       {/* Badge */}
                       <div className="absolute top-4 left-5 z-20">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md text-purple-700 text-xs font-bold shadow-sm">

@@ -12,8 +12,6 @@ import {
   CheckSquare,
   Headphones,
   Laptop,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
@@ -83,8 +81,8 @@ const leadersData: Leader[] = [
     role: "Co-Founder",
     tag: "Co-Founder",
     badgeBg: "bg-indigo-500",
-    image: "/harmit-vaghasiya.jpg",
-    bio: "Harmit directs strategic scale and automation platforms within ElitesEcom. Specializing in high-volume operations across Myntra, Ajio, and Meesho, his focus centers on crafting scalable infrastructure designed for modern enterprise growth.",
+    image: "/founder.jpg",
+    bio: "Harmit directs strategic scale and technology platforms at ElitesEcom, specializing in high-volume operations across Myntra, AJIO, and Meesho. With expertise in e-commerce operations, Order Management Systems (OMS), inventory management, marketplace integration, and SaaS solutions, he focuses on helping online sellers efficiently manage orders, inventory, warehouses, and multiple sales channels. His approach combines operational strategy with scalable technology to streamline e-commerce processes, improve order accuracy, and drive sustainable business growth.",
     linkedin: "https://www.linkedin.com/in/harmit-vaghasiya-033bb1348/",
     gradient: "from-indigo-600 via-purple-600 to-amber-400",
   },
@@ -94,8 +92,6 @@ const leadersData: Leader[] = [
 
 export function TeamPage({ onNavigate }: TeamPageProps) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -489,116 +485,68 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
               </p>
             </div>
 
-            {/* Premium CSS Track Slider — fixed height, smooth sliding track */}
-            <div
-              className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl h-[590px] sm:h-[420px]"
-            >
-              <div 
-                className="flex h-full w-full items-stretch transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-              >
-                {leadersData.map((leader, idx) => (
-                  <div 
-                    key={leader.id} 
-                    className="w-full h-full flex-shrink-0 flex flex-col sm:flex-row bg-white border border-slate-200 shadow-[0_8px_32px_rgba(139,92,246,0.08),0_24px_64px_rgba(15,23,42,0.06)]"
-                  >
-                    {/* Image */}
-                    <div className="w-full sm:w-2/5 h-56 sm:h-full relative overflow-hidden bg-slate-100 flex-shrink-0">
-                      <img
-                        src={leader.image}
-                        alt={`${leader.name} — ${leader.role}`}
-                        width={1369}
-                        height={2048}
-                        loading="eager"
-                        decoding="sync"
-                        className="absolute inset-0 w-full h-full object-cover object-top"
-                      />
-                      {/* Badge */}
-                      <div className="absolute top-4 left-5 z-20">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-md text-purple-700 text-xs font-bold shadow-sm">
-                          <span
-                            className={`w-2 h-2 rounded-full ${leader.badgeBg} animate-pulse`}
-                          />
+            {/* Leadership profiles */}
+            <div className="w-full max-w-[1080px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch gap-7 lg:gap-8">
+              {leadersData.map((leader) => (
+                <article
+                  key={leader.id}
+                  className="w-full h-full flex flex-col bg-white border border-slate-200 rounded-[24px] overflow-hidden shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="w-full p-5 pb-0">
+                    <div className="relative w-full h-[330px]">
+                      <div className="w-full h-full overflow-hidden rounded-[20px] bg-slate-100">
+                        <img
+                          src={leader.image}
+                          alt={`${leader.name} — ${leader.role}`}
+                          width={1369}
+                          height={2048}
+                          loading="eager"
+                          decoding="sync"
+                          className={`w-full h-full object-cover ${
+                            leader.id === 2
+                              ? "object-[center_50%]"
+                              : "object-[center_20%]"
+                          }`}
+                        />
+                      </div>
+
+                      <div className="absolute -bottom-3 left-3 z-20 pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white text-purple-700 text-xs font-bold shadow-sm ring-1 ring-slate-100">
+                          <span className={`w-2 h-2 rounded-full ${leader.badgeBg} animate-pulse`} />
                           {leader.tag}
                         </span>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Content */}
-                    <div className="w-full sm:w-3/5 min-h-0 flex-1 overflow-y-auto p-6 sm:p-8 flex flex-col justify-between bg-white">
-                      <div>
-                        {/* Name */}
-                        <h3 className="font-heading font-bold text-2xl text-slate-900 mb-1">
-                          {leader.name}
-                        </h3>
+                  <div className="min-w-0 flex-1 flex flex-col p-6 sm:p-7">
+                    <div>
+                      <h3 className="font-heading font-bold text-[24px] lg:text-[28px] leading-tight text-slate-900 mb-2">
+                        {leader.name}
+                      </h3>
+                      <p className="text-xs font-bold text-purple-600 uppercase tracking-[0.14em] mb-5">
+                        {leader.role}
+                      </p>
+                      <p className="text-sm leading-relaxed text-slate-600">
+                        {leader.bio}
+                      </p>
+                    </div>
 
-                        {/* Role */}
-                        <p className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-4">
-                          {leader.role}
-                        </p>
-
-                        {/* Bio */}
-                        <p className="text-slate-600 text-sm leading-relaxed">
-                          {leader.bio}
-                        </p>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-6">
-                        <span className="text-xs text-slate-400 font-medium">
-                          Get in touch
-                        </span>
-                        <a
-                          href={leader.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm"
-                          aria-label={`${leader.name} LinkedIn`}
-                        >
-                          <Linkedin className="w-4 h-4" />
-                        </a>
-                      </div>
+                    <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between">
+                      <span className="text-sm text-slate-500 font-medium">Get in touch</span>
+                      <a
+                        href={leader.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm"
+                        aria-label={`${leader.name} LinkedIn`}
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </a>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Slider Controls */}
-            <div className="flex gap-6 items-center">
-              <button 
-                onClick={() => setActiveIndex(prev => Math.max(0, prev - 1))}
-                disabled={activeIndex === 0}
-                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 hover:bg-purple-50 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-all cursor-pointer disabled:cursor-not-allowed"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <div className="flex gap-3 items-center">
-                {leadersData.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setDirection(idx > activeIndex ? 1 : -1);
-                      setActiveIndex(idx);
-                    }}
-                    className={`rounded-full transition-all duration-500 ${
-                      idx === activeIndex
-                        ? "w-8 h-2.5 bg-purple-600 shadow-md shadow-purple-600/30"
-                        : "w-2.5 h-2.5 bg-slate-300 hover:bg-purple-300"
-                    }`}
-                    aria-label={`View slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button 
-                onClick={() => setActiveIndex(prev => Math.min(leadersData.length - 1, prev + 1))}
-                disabled={activeIndex === leadersData.length - 1}
-                className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-purple-600 hover:border-purple-300 hover:bg-purple-50 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-400 transition-all cursor-pointer disabled:cursor-not-allowed"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+                </article>
+              ))}
             </div>
           </div>
         </section>

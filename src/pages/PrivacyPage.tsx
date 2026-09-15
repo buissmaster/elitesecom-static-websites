@@ -274,7 +274,7 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
                   We may also share data with legal authorities when required by
                   law, and with business partners when you have provided consent.
                 </p>
-       0       </section>
+              </section>
 
               <section>
                 <h4 className="text-[20px] font-bold  mb-4">❖ Data Retention</h4>

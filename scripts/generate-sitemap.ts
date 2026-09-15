@@ -21,6 +21,8 @@ const MAIN_STATIC_ROUTES = [
   "/requestdemo",
   "/terms",
   "/privacy",
+  "/security",
+  "/amazon-sp-api-security",
 ];
 
 function xmlEscape(value: string): string {

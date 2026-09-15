@@ -403,18 +403,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               <div
                 onClick={() => {
-                  window.history.pushState(
-                    {},
-                    "",
-                    "/aboutus?section=certificates",
-                  );
-                  window.dispatchEvent(new PopStateEvent("popstate"));
+                  onNavigate("security");
                 }}
                 className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit"
               >
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-semibold text-slate-800">
-                  Certifications & Compliance
+                  Security & Compliance
                 </span>
               </div>
             </div>
@@ -533,18 +528,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
               <div
                 onClick={() => {
-                  window.history.pushState(
-                    {},
-                    "",
-                    "/aboutus?section=certificates",
-                  );
-                  window.dispatchEvent(new PopStateEvent("popstate"));
+                  onNavigate("security");
                 }}
                 className="mt-4 flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 cursor-pointer hover:shadow-md transition-all w-fit justify-self-center"
               >
                 <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span className="text-sm font-semibold text-slate-800">
-                  Certifications & Compliance
+                  Security & Compliance
                 </span>
               </div>
             </div>

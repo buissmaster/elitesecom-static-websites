@@ -247,6 +247,22 @@ const pageSeo: Record<
       "Meet the team behind Elitesecom — India's order management system (OMS) for multichannel order processing and reconciliation.",
     keywords: "Elitesecom team, OMS experts, ecommerce operations team",
   },
+  security: {
+    path: "/security",
+    title: "Security & Compliance | SOC 2, ISO 27001 | EliteSecom",
+    description:
+      "Learn about EliteSecom's security and compliance practices, including SOC 2 Type II, ISO/IEC 27001:2022, VAPT, Amazon SP-API data protection and privacy.",
+    keywords:
+      "EliteSecom security, SOC 2 Type II, ISO 27001, VAPT, Amazon SP-API security, data protection, compliance",
+  },
+  "amazon-sp-api-security": {
+    path: "/amazon-sp-api-security",
+    title: "Amazon SP-API Security & Data Protection | Elitesecom",
+    description:
+      "Learn how Elitesecom protects and handles Amazon SP-API data, including Amazon PII, storage, transmission, access controls, retention, and deletion.",
+    keywords:
+      "Amazon SP-API security, Amazon data protection, Amazon PII, data retention, data deletion, access control, Elitesecom",
+  },
 };
 
 function getFaqSchema(): Record<string, unknown> {

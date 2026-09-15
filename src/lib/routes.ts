@@ -19,6 +19,8 @@ export const pageToPath: Record<string, string> = {
   terms: "/terms",
   privacy: "/privacy",
   team: "/team",
+  security: "/security",
+  "amazon-sp-api-security": "/amazon-sp-api-security",
 };
 
 export const pathToPage: Record<string, string> = {
@@ -35,6 +37,8 @@ export const pathToPage: Record<string, string> = {
   "/terms": "terms",
   "/privacy": "privacy",
   "/team": "team",
+  "/security": "security",
+  "/amazon-sp-api-security": "amazon-sp-api-security",
 };
 
 export function getPathForPage(page: string): string {
@@ -75,4 +79,6 @@ export const staticRoutes: string[] = [
   "/terms",
   "/privacy",
   "/team",
+  "/security",
+  "/amazon-sp-api-security",
 ];

@@ -12,6 +12,8 @@ import {
   Headphones,
   Tag,
   Shield,
+  ShieldCheck,
+  Database,
   ChevronDown,
 } from "lucide-react";
 import { AppLink } from "./AppLink";
@@ -199,7 +201,9 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                   {[
                     { name: "Terms & conditions", page: "terms", icon: Tag },
                     { name: "Privacy & Policy", page: "privacy", icon: Shield },
-                    
+                    { name: "Security", page: "security", icon: ShieldCheck },
+                    { name: "Amazon SP-API Security", page: "amazon-sp-api-security", icon: Database },
+
                   ].map((item) => (
                     <li key={item.page}>
                       <AppLink

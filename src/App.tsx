@@ -18,6 +18,8 @@ import { CustomersPage } from "./pages/CustomersPage";
 import { TermsPage } from "./pages/TermsPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TeamPage } from "./pages/TeamPage";
+import { SecurityPage } from "./pages/SecurityPage";
+import { AmazonSpApiSecurityPage } from "./pages/AmazonSpApiSecurityPage";
 import { Toaster } from "./components/ui/sonner";
 import {
   allBlogEntries,
@@ -108,12 +110,16 @@ function App() {
       case "terms":
         return <TermsPage />;
       case "privacy":
-        return <PrivacyPage />;
+        return <PrivacyPage onNavigate={handleNavigate} />;
       // case "refund":
       //   return <RefundPage />;
     
       case "team":
         return <TeamPage onNavigate={handleNavigate} />;
+      case "security":
+        return <SecurityPage onNavigate={handleNavigate} />;
+      case "amazon-sp-api-security":
+        return <AmazonSpApiSecurityPage onNavigate={handleNavigate} />;
       // case "comparisonsHub":
       //   return <ComparisonsHubPage onNavigate={handleNavigate} />;
       default:

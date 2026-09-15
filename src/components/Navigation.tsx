@@ -48,6 +48,14 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     { name: "Customer", page: "customers" },
     { name: "About Us", page: "about" },
     { name: "Our Team", page: "team" },
+    {
+      name: "Security",
+      page: "security",
+      children: [
+        { name: "Security & Compliance", page: "security" },
+        { name: "Amazon SP-API Security", page: "amazon-sp-api-security" },
+      ],
+    },
     { name: "FAQs", page: "faqs" },
     { name: "Blog", page: "blog" },
     { name: "Pricing", page: "pricing" },
@@ -163,7 +171,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                           />
                         </button>
 
-                        {/* <AnimatePresence>
+                        <AnimatePresence>
                           {isDropdownOpen && (
                             <motion.div
                               initial={{ opacity: 0, y: 8 }}
@@ -189,7 +197,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                               ))}
                             </motion.div>
                           )}
-                        </AnimatePresence> */}
+                        </AnimatePresence>
                       </div>
                     );
                   }

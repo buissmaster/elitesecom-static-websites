@@ -56,7 +56,7 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
               <section>
                 <h4 className="text-[20px] font-bold  mb-4">❖ Introduction</h4>
                 <p className="text-slate-600">
-                  ElitesEcom ("we," "our," or "us") is committed to protecting
+                  Elitesecom is committed to protecting
                   your privacy. This Privacy Policy explains how we collect,
                   use, disclose, and safeguard your information when you use our
                   services.

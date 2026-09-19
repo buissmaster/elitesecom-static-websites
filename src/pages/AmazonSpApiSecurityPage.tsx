@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   Shield,
   CheckCircle,
@@ -31,7 +30,7 @@ export function AmazonSpApiSecurityPage({
     {
       title: "What Amazon Restricted/PII Data May Be Accessed",
       description:
-        "EliteSecom may access customer information (such as names and shipping addresses) necessary for order fulfillment, shipping label generation, and customer service operations. This data is accessed only when authorized by the seller through the Amazon SP-API authorization process.",
+        "Elitesecom may access customer information (such as names and shipping addresses) necessary for order fulfillment, shipping label generation, and customer service operations. This data is accessed only when authorized by the seller through the Amazon SP-API authorization process.",
     },
     {
       title: "Why It Is Required",
@@ -39,14 +38,14 @@ export function AmazonSpApiSecurityPage({
         "This information is required to fulfill orders, generate shipping labels, provide customer support, and reconcile payments — all core functions of the order management system.",
     },
     {
-      title: "Which EliteSecom Functionality Requires It",
+      title: "Which Elitesecom Functionality Requires It",
       description:
         "Order processing, shipping label generation, customer communication, and payment reconciliation functionality may require access to this data.",
     },
     {
       title: "Who/What Can Access It",
       description:
-        "Access is restricted to authorized EliteSecom personnel and automated systems based on role-based access controls. All access is logged and audited.",
+        "Access is restricted to authorized Elitesecom personnel and automated systems based on role-based access controls. All access is logged and audited.",
     },
     {
       title: "How It Is Protected",
@@ -62,20 +61,6 @@ export function AmazonSpApiSecurityPage({
 
   return (
     <>
-      <Helmet>
-        <title>
-          Amazon SP-API Security & Data Protection | Elitesecom
-        </title>
-        <meta
-          name="description"
-          content="Learn how Elitesecom protects and handles Amazon SP-API data, including Amazon PII, storage, transmission, access controls, retention, and deletion."
-        />
-        <link
-          rel="canonical"
-          href="https://www.elitesecom.ai/amazon-sp-api-security"
-        />
-      </Helmet>
-
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
@@ -90,7 +75,7 @@ export function AmazonSpApiSecurityPage({
                 <span className="text-gold-500">Data Protection</span>
               </h1>
               <p className="text-lg text-slate-600">
-                Learn how EliteSecom handles and protects data received through
+                Learn how Elitesecom handles and protects data received through
                 Amazon Selling Partner API (SP-API), with a focus on security,
                 privacy, access control, retention, and responsible data handling.
               </p>
@@ -106,7 +91,7 @@ export function AmazonSpApiSecurityPage({
                 Amazon SP-API Security Overview
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
-                EliteSecom uses Amazon Selling Partner API (SP-API) to provide
+                Elitesecom uses Amazon Selling Partner API (SP-API) to provide
                 authorized ecommerce and order management functionality. We handle
                 Amazon data only for legitimate service purposes.
               </p>
@@ -132,7 +117,7 @@ export function AmazonSpApiSecurityPage({
                     <ChevronRight className="w-6 h-6 text-slate-400 rotate-90 md:rotate-0" />
                     <div className="bg-gold/10 rounded-xl px-6 py-4 border-2 border-gold/30">
                       <p className="font-semibold text-sm text-gold-700">
-                        EliteSecom
+                        Elitesecom
                       </p>
                     </div>
                     <ChevronRight className="w-6 h-6 text-slate-400 rotate-90 md:rotate-0" />
@@ -205,7 +190,7 @@ export function AmazonSpApiSecurityPage({
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
                         <span>
-                          Role-based access to Amazon data within EliteSecom
+                          Role-based access to Amazon data within Elitesecom
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
@@ -264,7 +249,7 @@ export function AmazonSpApiSecurityPage({
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
                 Description of the Amazon-related data actually processed by
-                EliteSecom.
+                Elitesecom.
               </p>
             </div>
 
@@ -411,7 +396,7 @@ export function AmazonSpApiSecurityPage({
                 Amazon SP-API Compliance
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
-                EliteSecom's commitment to responsible handling of Amazon SP-API
+                Elitesecom's commitment to responsible handling of Amazon SP-API
                 data and applicable requirements.
               </p>
             </div>
@@ -473,7 +458,7 @@ export function AmazonSpApiSecurityPage({
                     Amazon SP-API Security Inquiries
                   </h2>
                   <p className="text-slate-600 mb-6">
-                    For questions about EliteSecom's Amazon SP-API security and
+                    For questions about Elitesecom's Amazon SP-API security and
                     data handling practices, please contact:
                   </p>
                   <a

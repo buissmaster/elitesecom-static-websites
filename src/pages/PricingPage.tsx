@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet-async";
 import { Check, ArrowRight, Sparkles, Zap, Building2, Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
@@ -330,20 +329,6 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
 
   return (
     <>
-      <Helmet>
-        <title>OMS Pricing Plans | Elitesecom</title>
-
-        <meta
-          name="description"
-          content="Choose the right Elitesecom Order Management System pricing plan for your ecommerce business with scalable features for growing brands."
-        />
-
-        <link
-          rel="canonical"
-          href="https://www.elitesecom.ai/pricing"
-        />
-      </Helmet>
-
     <div className="relative min-h-[calc(100vh-76px)] overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
       {/* Hero Section */}
       <section className="relative pt-10">

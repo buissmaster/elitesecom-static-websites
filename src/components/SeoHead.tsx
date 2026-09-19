@@ -24,18 +24,22 @@ function upsertMeta(
 }
 
 function upsertCanonical(href: string) {
-  let element = document.head.querySelector(
-    'link[rel="canonical"]',
-  ) as HTMLLinkElement | null;
+  const [element, ...duplicates] = Array.from(
+    document.head.querySelectorAll('link[rel="canonical"]'),
+  ) as HTMLLinkElement[];
 
-  if (!element) {
-    element = document.createElement("link");
-    element.setAttribute("rel", "canonical");
-    element.setAttribute("data-seo-managed", "true");
-    document.head.appendChild(element);
+  duplicates.forEach((duplicate) => duplicate.remove());
+
+  let canonical = element;
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    canonical.setAttribute("data-seo-managed", "true");
+    document.head.appendChild(canonical);
   }
 
-  element.setAttribute("href", href);
+  canonical.setAttribute("href", href);
 }
 
 function upsertJsonLd(jsonLd: Record<string, unknown> | Record<string, unknown>[]) {

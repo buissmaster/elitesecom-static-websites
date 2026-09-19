@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 
 interface ServicesPageProps {
@@ -284,20 +283,6 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
 
   return (
    <>
-    <Helmet>
-      <title>Our Services | Elitesecom Order Management System</title>
-
-      <meta
-        name="description"
-        content="Explore Elitesecom's ecommerce solutions including Order Management System, Inventory Management, Warehouse Management, Payment Reconciliation, Shipping Management, Returns Management and Marketplace Integrations."
-      />
-
-      <link
-        rel="canonical"
-        href="https://www.elitesecom.ai/ourservices"
-      />
-    </Helmet>
-
     <div className="">
       {/* ═══ Hero ═══ */}
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">

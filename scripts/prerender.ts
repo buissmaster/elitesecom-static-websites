@@ -97,21 +97,29 @@ async function prerenderRoute(
   route: string,
   port: number,
 ): Promise<void> {
+  const expectedCanonical = `https://www.elitesecom.ai${
+    route === "/" ? "/" : route
+  }`;
+
   await page.goto(`http://127.0.0.1:${port}${route}`, {
     waitUntil: "domcontentloaded",
     timeout: 120000,
   });
 
   await page.waitForFunction(
-    () => {
+    (canonicalUrl) => {
       const description = document
         .querySelector('meta[name="description"]')
         ?.getAttribute("content");
       const title =
         document.title || document.querySelector("title")?.textContent || "";
-      return title.length > 0 && !!description;
+      const canonical = document
+        .querySelector('link[rel="canonical"]')
+        ?.getAttribute("href");
+      return title.length > 0 && !!description && canonical === canonicalUrl;
     },
     { timeout: 60000 },
+    expectedCanonical,
   );
 
   const html = await page.content();

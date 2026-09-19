@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";

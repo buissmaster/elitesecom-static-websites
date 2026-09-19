@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   Shield,
   CheckCircle,
@@ -69,15 +68,6 @@ export function SecurityPage({ onNavigate }: SecurityPageProps) {
 
   return (
     <>
-      <Helmet>
-        <title>Security & Compliance | SOC 2, ISO 27001 | Elitesecom</title>
-        <meta
-          name="description"
-          content="Learn about Elitesecom's security and compliance practices, including SOC 2 Type II, ISO/IEC 27001:2022, VAPT, Amazon SP-API data protection and privacy."
-        />
-        <link rel="canonical" href="https://www.elitesecom.ai/security" />
-      </Helmet>
-
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
@@ -546,4 +536,3 @@ export function SecurityPage({ onNavigate }: SecurityPageProps) {
     </>
   );
 }
-

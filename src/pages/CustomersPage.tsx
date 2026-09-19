@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import {
   Quote,
   Star,
@@ -216,20 +215,6 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
 
   return (
     <>
-    <Helmet>
-      <title>Our Customers | Trusted by eCommerce Businesses | Elitesecom</title>
-
-      <meta
-        name="description"
-        content="See how ecommerce businesses trust Elitesecom Order Management System to simplify multichannel order management, inventory tracking, warehouse operations and payment reconciliation."
-      />
-
-      <link
-        rel="canonical"
-        href="https://www.elitesecom.ai/customer"
-      />
-    </Helmet>
-
     <div className="">
       <section
         className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50/30"

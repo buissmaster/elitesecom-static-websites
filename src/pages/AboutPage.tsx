@@ -189,9 +189,13 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               {/* Character */}
               <div className="relative z-10 flex items-end justify-center">
                 <img
-                  src="/about-character.png"
-                  alt="ElitesEcom Business Professional"
+                  src="/about-character- 800w.webp"
+                  srcSet="/about-character- 400w.webp 400w, /about-character- 800w.webp 800w, /about-character- 1600w.webp 1600w"
+                  sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                  alt="ElitesEcom business professional character representing the company's mission and values in e-commerce operations"
                   className="w-auto max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] max-h-[420px] lg:max-h-[480px] object-contain"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
 

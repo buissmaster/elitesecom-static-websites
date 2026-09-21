@@ -339,9 +339,13 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
                   }}
                 >
                   <img
-                    src="/customer-hero-char.png"
-                    alt="Person working on laptop"
+                    src="/customer-hero-800w.webp"
+                    srcSet="/customer-hero-400w.webp 400w, /customer-hero-800w.webp 800w, /customer-hero-1600w.webp 1600w"
+                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                    alt="Customer success story illustration showing business professional working on laptop with order management system dashboard"
                     className="h-[320px] lg:h-[420px] xl:h-[460px] w-auto object-contain"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
 
@@ -467,12 +471,16 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
                     }}
                   />
                   <img
-                    src="/customer-hero-char.png"
-                    alt="Person working on laptop"
+                    src="/customer-hero-800w.webp"
+                    srcSet="/customer-hero-400w.webp 400w, /customer-hero-800w.webp 800w, /customer-hero-1600w.webp 1600w"
+                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                    alt="Customer success story illustration showing business professional working on laptop with order management system dashboard"
                     className="w-full h-full object-contain relative z-10"
                     style={{
                       filter: "drop-shadow(0 12px 24px rgba(15,42,68,0.08))",
                     }}
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
 

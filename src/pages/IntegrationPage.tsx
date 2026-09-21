@@ -188,10 +188,14 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
               className={`order-2 lg:order-none lg:row-span-3 flex items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
             >
               <img
-                src="/integration-hero-transparent.png"
-                alt="E-commerce marketplace integration hub"
+                src="/integration-hero-800w.webp"
+                srcSet="/integration-hero-400w.webp 400w, /integration-hero-800w.webp 800w, /integration-hero-1600w.webp 1600w"
+                sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                alt="E-commerce marketplace integration hub showing connections to Amazon, Flipkart, Myntra, Shopify and other platforms"
                 className="w-full max-w-[280px] sm:max-w-[380px] lg:max-w-[540px] h-auto object-contain animate-float-3d select-none"
                 draggable={false}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 

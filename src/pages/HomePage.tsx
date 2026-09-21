@@ -406,10 +406,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Character wrapper — sized to image, no background, no box */}
               <div className="relative mx-auto" style={{ maxWidth: "100%" }}>
                 <img
-                  src="/Hero-final.png"
-                  alt="ElitesEcom Character"
+                  src="/hero-homepage-800w.webp"
+                  srcSet="/hero-homepage-400w.webp 400w, /hero-homepage-800w.webp 800w, /hero-homepage-1600w.webp 1600w"
+                  sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                  alt="ElitesEcom order management system character illustration showing multichannel e-commerce operations"
                   className="w-full max-w-[320px] sm:max-w-[370px] lg:max-w-[430px] xl:max-w-[500px] 2xl:max-w-[550px] animate-float"
                   style={{ display: "block" }}
+                  loading="eager"
+                  fetchPriority="high"
                 />
 
                 {/* Top Floating Card: +47% Efficiency — near upper-right of character, ~24px gap */}

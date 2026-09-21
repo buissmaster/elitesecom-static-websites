@@ -61,9 +61,14 @@ function upsertJsonLd(jsonLd: Record<string, unknown> | Record<string, unknown>[
 interface SeoHeadProps {
   page: string;
   blogEntry?: BlogEntry | null;
+  heroImagePreload?: {
+    href: string;
+    imagesrcset: string;
+    imagesizes: string;
+  } | null;
 }
 
-export function SeoHead({ page, blogEntry }: SeoHeadProps) {
+export function SeoHead({ page, blogEntry, heroImagePreload }: SeoHeadProps) {
   useEffect(() => {
     const seo = getSeoConfig(page, blogEntry);
 
@@ -81,6 +86,14 @@ export function SeoHead({ page, blogEntry }: SeoHeadProps) {
     upsertMeta("name", "twitter:image", seo.ogImage ?? seo.canonical);
     upsertCanonical(seo.canonical);
 
+    if (heroImagePreload) {
+      upsertImagePreload(
+        heroImagePreload.href,
+        heroImagePreload.imagesrcset,
+        heroImagePreload.imagesizes,
+      );
+    }
+
     if (seo.noindex) {
       upsertMeta("name", "robots", "noindex, nofollow");
     } else {
@@ -95,11 +108,33 @@ export function SeoHead({ page, blogEntry }: SeoHeadProps) {
     }
 
     document.dispatchEvent(new Event("render-event"));
-  }, [page, blogEntry]);
+  }, [page, blogEntry, heroImagePreload]);
 
   return null;
 }
 
 export function cleanupManagedSeoTags() {
   document.querySelectorAll(MANAGED_SELECTOR).forEach((node) => node.remove());
+}
+
+export function upsertImagePreload(
+  href: string,
+  imagesrcset: string,
+  imagesizes: string,
+) {
+  let element = document.head.querySelector(
+    `link[rel="preload"][as="image"][href="${href}"]`,
+  ) as HTMLLinkElement | null;
+
+  if (!element) {
+    element = document.createElement("link");
+    element.setAttribute("rel", "preload");
+    element.setAttribute("as", "image");
+    element.setAttribute("href", href);
+    element.setAttribute("data-seo-managed", "true");
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("imagesrcset", imagesrcset);
+  element.setAttribute("imagesizes", imagesizes);
 }

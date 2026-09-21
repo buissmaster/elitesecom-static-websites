@@ -30,9 +30,13 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
             {/* Left: Illustration */}
             <div className="relative mx-auto" style={{ maxWidth: "100%" }}>
               <img
-                src="/faq-hero-clean.png"
-                alt="FAQ Illustration"
+                src="/faq-hero-800.webp"
+                srcSet="/faq-hero-400.webp 400w, /faq-hero-800.webp 800w, /faq-hero-1600.webp 1600w"
+                sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                alt="FAQ help center illustration showing person with question marks and customer support"
                 className="w-full xs:max-w-[370px] sm:max-w-[600px] animate-float"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 

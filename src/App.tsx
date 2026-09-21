@@ -47,6 +47,55 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [blogEntry, setBlogEntry] = useState<BlogEntry | null>(null);
 
+  const heroImagePreload = (() => {
+    switch (currentPage) {
+      case "home":
+        return {
+          href: "/hero-homepage-800w.webp",
+          imagesrcset: "/hero-homepage-400w.webp 400w, /hero-homepage-800w.webp 800w, /hero-homepage-1600w.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "integration":
+        return {
+          href: "/integration-hero-800w.webp",
+          imagesrcset: "/integration-hero-400w.webp 400w, /integration-hero-800w.webp 800w, /integration-hero-1600w.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "customers":
+        return {
+          href: "/customer-hero-800w.webp",
+          imagesrcset: "/customer-hero-400w.webp 400w, /customer-hero-800w.webp 800w, /customer-hero-1600w.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "faqs":
+        return {
+          href: "/faq-hero-800.webp",
+          imagesrcset: "/faq-hero-400.webp 400w, /faq-hero-800.webp 800w, /faq-hero-1600.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "team":
+        return {
+          href: "/team-hero-800.webp",
+          imagesrcset: "/team-hero-400.webp 400w, /team-hero-800.webp 800w, /team-hero-1600.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "about":
+        return {
+          href: "/about-character- 800w.webp",
+          imagesrcset: "/about-character- 400w.webp 400w, /about-character- 800w.webp 800w, /about-character- 1600w.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      case "blog":
+        return {
+          href: "/blog-main-800.webp",
+          imagesrcset: "/blog-main-400.webp 400w, /blog-main-800.webp 800w, /blog-main-1600.webp 1600w",
+          imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
+        };
+      default:
+        return null;
+    }
+  })();
+
   const syncRouteFromLocation = useCallback(() => {
     const page = getPageFromPath(window.location.pathname);
     setCurrentPage(page);
@@ -129,7 +178,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <SeoHead page={currentPage} blogEntry={blogEntry} />
+      <SeoHead page={currentPage} blogEntry={blogEntry} heroImagePreload={heroImagePreload} />
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <AnimatePresence mode="wait">{renderPage()}</AnimatePresence>
       <Footer currentPage={currentPage} onNavigate={handleNavigate} />

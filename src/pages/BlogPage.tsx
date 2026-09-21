@@ -213,9 +213,13 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={featuredPost.image}
+                    src="/blog-main-800.webp"
+                    srcSet="/blog-main-400.webp 400w, /blog-main-800.webp 800w, /blog-main-1600.webp 1600w"
+                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
                     alt={featuredPost.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="eager"
+                    fetchPriority="high"
                   />
 
                   {/* Scaled overlay: copy of the small-card left black panel (2×) */}

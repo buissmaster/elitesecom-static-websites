@@ -234,9 +234,13 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                   }}
                 >
                   <img
-                    src="/ceo-v3.png"
-                    alt="Meet Vaghasiya — CEO of ElitesEcom with analytics tablet"
+                    src="/team-hero-800.webp"
+                    srcSet="/team-hero-400.webp 400w, /team-hero-800.webp 800w, /team-hero-1600.webp 1600w"
+                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
+                    alt="ElitesEcom CEO Meet Vaghasiya with analytics tablet showing team leadership and business strategy"
                     className="h-[360px] sm:h-[400px] lg:h-[500px] w-auto object-contain"
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 </div>
 

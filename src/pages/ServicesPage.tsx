@@ -353,7 +353,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              ElitesEcom provides ecommerce management software designed to 
+              Elitesecom provides ecommerce management software designed to 
               centralize orders, inventory, warehouses, shipping, reconciliation, listings, 
               analytics, and marketplace operations from one platform.
             </p>

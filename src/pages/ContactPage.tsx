@@ -290,7 +290,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                     Request a Demo
                   </h3>
                   <p className="text-slate-700">
-                    See ElitesEcom in action with a personalized demo
+                    See Elitesecom in action with a personalized demo
                   </p>
                 </div>
                 <button

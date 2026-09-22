@@ -58,7 +58,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
               className="mb-5 focus:outline-none opacity-90 hover:opacity-100 transition-opacity"
             >
               <img
-                src="/elitesecom-full-white-logo.png"
+                src="/elitesecom-full-white-logo.webp"
                 alt="ElitesEcom"
                 className="h-10 w-auto object-contain"
               />
@@ -259,10 +259,10 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                   <img
                     src={
                       social.key === "youtube"
-                        ? "/social-yt-v2.png"
+                        ? "/social-yt-v2.webp"
                         : social.key === "instagram"
-                          ? "/social-ig-v2.png"
-                          : "/social-fb-v2.png"
+                          ? "/social-ig-v2.webp"
+                          : "/social-fb-v2.webp"
                     }
                     alt={social.label}
                     className="w-6 h-6 object-contain"

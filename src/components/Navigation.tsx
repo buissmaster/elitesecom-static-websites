@@ -107,7 +107,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               className="flex items-center flex-shrink-0 z-20 outline-none hover:scale-105 active:scale-95 transition-transform duration-300"
             >
               <img
-                src="/elitesecom-full-black-logo.png"
+                src="/elitesecom-full-black-logo.webp"
                 alt="ElitesEcom"
                 className="h-6 lg:h-7 w-auto object-contain"
               />

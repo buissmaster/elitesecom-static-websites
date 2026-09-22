@@ -304,7 +304,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
       name: formData.name,
       email: formData.email,
       phone_no: formData.mobile,
-      message: "ElitesEcom " + formData.message,
+      message: "Elitesecom " + formData.message,
     };
     try {
       setIsSubmitting(true);
@@ -514,7 +514,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
               <div className="bg-gradient-to-r from-gold to-gold-500 rounded-3xl p-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-left">
                   <h3 className="font-heading font-semibold text-xl mb-1">Request a Demo</h3>
-                  <p className="text-slate-700">See ElitesEcom in action with a personalized demo</p>
+                  <p className="text-slate-700">See Elitesecom in action with a personalized demo</p>
                 </div>
                 <button onClick={() => onNavigate("demo")} className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors shrink-0">
                   Book Demo

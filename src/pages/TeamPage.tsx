@@ -70,7 +70,7 @@ const leadersData: Leader[] = [
     tag: "Founder",
     badgeBg: "bg-emerald-500",
     image: "/ceo-portrait-original.png",
-    bio: "Meet Vaghasiya is the visionary Founder and CEO of ElitesEcom, bringing over 10 years of expertise in e-commerce, marketplace operations, and SaaS technology. He has successfully helped thousands of brands streamline and scale their online businesses across leading platforms such as Amazon, Flipkart, Myntra, Ajio, and Meesho. With a strong focus on automation, strategic growth, and operational excellence, his mission is to simplify e-commerce operations and empower businesses with scalable, technology-driven solutions.",
+    bio: "Meet Vaghasiya is the visionary Founder and CEO of Elitesecom, bringing over 10 years of expertise in e-commerce, marketplace operations, and SaaS technology. He has successfully helped thousands of brands streamline and scale their online businesses across leading platforms such as Amazon, Flipkart, Myntra, Ajio, and Meesho. With a strong focus on automation, strategic growth, and operational excellence, his mission is to simplify e-commerce operations and empower businesses with scalable, technology-driven solutions.",
     linkedin: "https://www.linkedin.com/in/meet-vaghasiya-a44610226/",
     gradient: "from-amber-400 via-purple-600 to-indigo-600",
   },
@@ -81,7 +81,7 @@ const leadersData: Leader[] = [
     tag: "Co-Founder",
     badgeBg: "bg-indigo-500",
     image: "/founder.jpg",
-    bio: "Harmit directs strategic scale and technology platforms at ElitesEcom, specializing in high-volume operations across Myntra, AJIO, and Meesho. With expertise in e-commerce operations, Order Management Systems (OMS), inventory management, marketplace integration, and SaaS solutions, he focuses on helping online sellers efficiently manage orders, inventory, warehouses, and multiple sales channels. His approach combines operational strategy with scalable technology to streamline e-commerce processes, improve order accuracy, and drive sustainable business growth.",
+    bio: "Harmit directs strategic scale and technology platforms at Elitesecom, specializing in high-volume operations across Myntra, AJIO, and Meesho. With expertise in e-commerce operations, Order Management Systems (OMS), inventory management, marketplace integration, and SaaS solutions, he focuses on helping online sellers efficiently manage orders, inventory, warehouses, and multiple sales channels. His approach combines operational strategy with scalable technology to streamline e-commerce processes, improve order accuracy, and drive sustainable business growth.",
     linkedin: "https://www.linkedin.com/in/harmit-vaghasiya-033bb1348/",
     gradient: "from-indigo-600 via-purple-600 to-amber-400",
   },
@@ -170,7 +170,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold-700 text-sm font-medium">
                   <Users className="w-4 h-4" />
-                  Meet the People Behind ElitesEcom
+                  Meet the People Behind Elitesecom
                 </div>
 
                 {/* Headline */}
@@ -237,7 +237,7 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
                     src="/team-hero-800.webp"
                     srcSet="/team-hero-400.webp 400w, /team-hero-800.webp 800w, /team-hero-1600.webp 1600w"
                     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
-                    alt="ElitesEcom CEO Meet Vaghasiya with analytics tablet showing team leadership and business strategy"
+                    alt="Elitesecom CEO Meet Vaghasiya with analytics tablet showing team leadership and business strategy"
                     className="h-[360px] sm:h-[400px] lg:h-[500px] w-auto object-contain"
                     loading="eager"
                     fetchPriority="high"

@@ -119,7 +119,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Confirms our commitment to protecting information assets through internationally recognized security controls, risk management practices, cybersecurity measures, and secure operational processes.",
       preview: "/Certifications/ISO_27001_2022.jpeg",
       file: "/Certifications/ISO_27001_2022.jpeg",
-      image: "/Certifications/iso 27001.png",
+      image: "/Certifications/iso-27001.webp",
       type: "image",
     },
     {
@@ -129,7 +129,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Ensures ethical business conduct and robust controls to prevent bribery across sales, procurement, partnerships, and all organizational operations.",
       preview: "/Certifications/ISO 37001 - OMSVISION SOLUTION LLP.jpg",
       file: "/Certifications/ISO 37001 - OMSVISION SOLUTION LLP.pdf",
-      image: "/Certifications/iso 37001.png",
+      image: "/Certifications/iso-37001.webp",
       type: "pdf",
     },
     {
@@ -139,7 +139,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         "Demonstrates our commitment to the responsible development, deployment, monitoring, and governance of AI-powered solutions while ensuring transparency, security, and regulatory compliance.",
       preview: "/Certifications/ISO IEC 42001 - OMSVISION SOLUTION LLP.jpg",
       file: "/Certifications/ISO IEC 42001 - OMSVISION SOLUTION LLP.pdf",
-      image: "/Certifications/iso 42001.png",
+      image: "/Certifications/iso-42001.webp",
       type: "pdf",
     },
   ];
@@ -189,8 +189,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               {/* Character */}
               <div className="relative z-10 flex items-end justify-center">
                 <img
-                  src="/about-character- 800w.webp"
-                  srcSet="/about-character- 400w.webp 400w, /about-character- 800w.webp 800w, /about-character- 1600w.webp 1600w"
+                  src="/about-character-800w.webp"
+                  srcSet="/about-character-400w.webp 400w, /about-character-800w.webp 800w, /about-character-1600w.webp 1600w"
                   sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
                   alt="ElitesEcom business professional character representing the company's mission and values in e-commerce operations"
                   className="w-auto max-w-[340px] sm:max-w-[400px] lg:max-w-[460px] max-h-[420px] lg:max-h-[480px] object-contain"
@@ -301,20 +301,20 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             <div className="relative flex items-center justify-center gap-4 sm:gap-6 lg:gap-0 mb-5">
               {/* Left package */}
               <img
-                src="/3d-parcel.png?v=3"
+                src="/3d-parcel.webp?v=3"
                 alt=""
                 className="w-16 h-16 sm:w-20 sm:h-20 lg:w-32 lg:h-32 lg:absolute lg:-left-20 lg:top-4 animate-float-gentle drop-shadow-lg"
                 style={{ animationDelay: "0.5s" }}
               />
               {/* Center package — main */}
               <img
-                src="/3d-parcel.png?v=3"
+                src="/3d-parcel.webp?v=3"
                 alt="3D Parcel"
                 className="w-28 h-28 sm:w-36 sm:h-36 lg:w-56 lg:h-56 mx-auto animate-float-gentle drop-shadow-xl relative z-10"
               />
               {/* Right package */}
               <img
-                src="/3d-parcel.png?v=3"
+                src="/3d-parcel.webp?v=3"
                 alt=""
                 className="w-16 h-16 sm:w-20 sm:h-20 lg:w-32 lg:h-32 lg:absolute lg:-right-20 lg:top-2 animate-float-gentle drop-shadow-lg"
                 style={{ animationDelay: "1s" }}

@@ -360,7 +360,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     {[1, 2, 3, 4].map((i) => (
                       <img
                         key={i}
-                        src={`/team-${i}.jpg`}
+                        src={`/team-${i}.webp`}
                         alt={`User ${i}`}
                         className="w-10 h-10 rounded-full border-2 border-white object-cover"
                       />
@@ -491,7 +491,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   {[1, 2, 3, 4].map((i) => (
                     <img
                       key={i}
-                      src={`/team-${i}.jpg`}
+                      src={`/team-${i}.webp`}
                       alt={`User ${i}`}
                       className="w-10 h-10 rounded-full border-2 border-white object-cover"
                     />
@@ -682,7 +682,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-6">
-              Why Choose <span className="text-gold-500">ElitesEcom?</span>
+              Why Choose <span className="text-gold-500">Elitesecom?</span>
             </h2>
             <p className="text-lg text-slate-600">
               Powerful features designed to transform your e-commerce operations
@@ -864,7 +864,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Stop Wasting Time On Stubborn Management
               </h2>
               <p className="text-base sm:text-lg text-slate-600">
-                Sign Up With ElitesEcom & Elites Your E-Commerce Business. Get
+                Sign Up With Elitesecom & Elites Your E-Commerce Business. Get
                 started today and see the difference.
               </p>
             </div>
@@ -882,7 +882,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               />
 
               <img
-                src="/cta-3d-clean.png"
+                src="/cta-3d-clean.webp"
                 alt="Elitesecom order management system dashboard"
                 className="relative z-10 animate-float-breath"
               />
@@ -942,7 +942,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
              
              <div className="relative mt-auto w-full aspect-[2/1] rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-100">
                 <img
-                 src="/smartpacking.png"
+                 src="/smartpacking.webp"
                  alt="Kedara Technologies"
                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                />
@@ -973,7 +973,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
              
               <div className="relative mt-auto w-full aspect-[2/1] rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-100">
                 <img
-                 src="/elites-studio.png"
+                 src="/elites-studio.webp"
                  alt="Elites Studio"
                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                />

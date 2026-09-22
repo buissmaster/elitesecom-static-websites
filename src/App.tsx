@@ -81,8 +81,8 @@ function App() {
         };
       case "about":
         return {
-          href: "/about-character- 800w.webp",
-          imagesrcset: "/about-character- 400w.webp 400w, /about-character- 800w.webp 800w, /about-character- 1600w.webp 1600w",
+          href: "/about-character-800w.webp",
+          imagesrcset: "/about-character-400w.webp 400w, /about-character-800w.webp 800w, /about-character-1600w.webp 1600w",
           imagesizes: "(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px",
         };
       case "blog":

@@ -209,8 +209,8 @@ export function TeamPage({ onNavigate }: TeamPageProps) {
               <div
                 className={`relative flex items-center justify-center order-2 h-[400px] sm:h-[480px] lg:h-[580px] transition-all duration-1000 delay-300 ${
                   isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-10"
+                    ? "translate-x-0"
+                    : "translate-x-10"
                 }`}
               >
                 {/* Soft branded glow behind CEO */}

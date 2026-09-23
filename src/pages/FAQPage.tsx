@@ -25,7 +25,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
       <section className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gold/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center transition-all duration-700 ${isVisible ? "translate-y-0" : "translate-y-8"}`}
           >
             {/* Left: Illustration */}
             <div className="relative mx-auto" style={{ maxWidth: "100%" }}>
@@ -41,7 +41,7 @@ export function FAQPage({ onNavigate }: FAQPageProps) {
             </div>
 
             {/* Right: Text Content */}
-            <div className="text-center lg:text-left order-1 lg:order-2">
+            <div className={`text-center lg:text-left order-1 lg:order-2 transition-opacity duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px] mb-5 leading-tight">
                 OMS & <span className="text-gold">Reconciliation</span> FAQs
               </h1>

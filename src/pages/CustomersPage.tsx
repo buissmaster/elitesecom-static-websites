@@ -271,7 +271,7 @@ export function CustomersPage({ onNavigate: _onNavigate }: CustomersPageProps) {
 
             {/* ═════ RIGHT COLUMN: Character + Floating Cards ═════ */}
             <div
-              className={`relative flex items-center justify-center order-2 lg:col-span-7 xl:col-span-6 w-full h-[450px] sm:h-[520px] lg:h-[580px] transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+              className={`relative flex items-center justify-center order-2 lg:col-span-7 xl:col-span-6 w-full h-[450px] sm:h-[520px] lg:h-[580px] transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0" : "translate-x-10"}`}
             >
               {/* Desktop Layout: Character + Absolute Floating Cards (Adjusted coordinates to completely fix clipping layout edge issues) */}
               <div className="relative hidden md:flex items-center justify-center w-[450px] h-[450px] lg:w-[500px] lg:h-[500px]">

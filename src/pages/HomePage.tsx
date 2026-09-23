@@ -401,7 +401,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
             {/* ═════ RIGHT COLUMN: Character + Floating Cards ═════ */}
             <div
-              className={`relative flex items-center justify-center transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
+              className={`relative flex items-center justify-center transition-all duration-1000 delay-500 ${isVisible ? "translate-x-0" : "translate-x-20"}`}
             >
               {/* Character wrapper — sized to image, no background, no box */}
               <div className="relative mx-auto" style={{ maxWidth: "100%" }}>

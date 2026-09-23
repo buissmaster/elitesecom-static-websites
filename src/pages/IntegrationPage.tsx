@@ -185,7 +185,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
 
             {/* IMAGE — mobile: order-2 (between text and buttons), desktop: right column */}
             <div
-              className={`order-2 lg:order-none lg:row-span-3 flex items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+              className={`order-2 lg:order-none lg:row-span-3 flex items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0" : "translate-x-10"}`}
             >
               <img
                 src="/integration-hero-800w.webp"

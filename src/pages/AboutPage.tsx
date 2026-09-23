@@ -184,7 +184,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
             {/* RIGHT: 3D Character with exactly 4 floating glass cards */}
             <div
-              className={`relative flex items-end justify-center min-h-[380px] lg:min-h-[440px] -mb-8 lg:-mb-10 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+              className={`relative flex items-end justify-center min-h-[380px] lg:min-h-[440px] -mb-8 lg:-mb-10 transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0" : "translate-x-10"}`}
             >
               {/* Character */}
               <div className="relative z-10 flex items-end justify-center">

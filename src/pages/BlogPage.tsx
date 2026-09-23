@@ -204,7 +204,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               </p>
             </div>
             <div
-              className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
+              className={`transition-all duration-700 delay-200 ${isVisible ? "translate-x-0" : "translate-x-8"}`}
             >
               <a
                 href={getBlogDetailPath(featuredPost.slug)}

@@ -368,6 +368,31 @@ function getArticleContent(entry: BlogEntry) {
           "Measure and optimize daily processing metrics",
         ],
       },
+      "common-reasons-for-order-delays-and-how-to-fix-them": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The most common delay causes, in order of frequency: order confirmation lag (an order sits unconfirmed longer than the marketplace SLA allows), inventory mismatch (stock shown as available isn't actually on the shelf), label generation bottlenecks (manual label creation during high-volume periods), and courier handoff delays (orders ready but not picked up on schedule). Each of these is individually small but compounds — a 2-hour confirmation delay plus a mispicked item plus a missed courier pickup window easily becomes a 2-day delay.",
+          },
+          {
+            title: "Best Practices",
+            text: "Confirm orders on a fixed, frequent schedule (ideally automated) rather than reactively, since confirmation lag is usually the first domino. Cross-check available stock against physical stock regularly, not just when a mismatch causes a problem. Batch label generation during predictable high-volume windows (post-sale-event, post-marketing-push) rather than processing labels one at a time as orders trickle in.",
+          },
+          {
+            title: "Implementation",
+            text: "Track your last 20 delayed orders and note where in the process each one actually broke down — confirmation, inventory, labeling, or courier handoff. This usually reveals one specific stage causing the majority of delays, rather than delays being evenly spread across all four causes. From there, automating that specific stage (most commonly order confirmation or label generation) removes the biggest single source of delay.",
+          },
+        ],
+        proTip:
+          "Delays are rarely one big failure — they're usually 3-4 small gaps stacking together. Fixing the first gap in the chain (usually order confirmation) often prevents the rest from compounding.",
+        takeaways: [
+          "Order confirmation lag is usually the first and most common delay cause",
+          "Cross-check available vs. physical stock regularly, not just after a mismatch occurs",
+          "Batch label generation during predictable high-volume windows",
+          "Track where delays actually originate before assuming the cause",
+          "Automating the earliest-stage bottleneck often prevents delays from compounding further",
+        ],
+      },
     },
     Inventory: {
       "inventory-forecasting-for-ecommerce": {
@@ -733,6 +758,412 @@ function getArticleContent(entry: BlogEntry) {
         ],
       },
     },
+    Marketplaces: {
+      "how-top-marketplace-sellers-automate-operations": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Across Amazon, Flipkart, and Meesho, the operational tasks that scale worst manually are the same everywhere: confirming orders within SLA, generating shipping labels, and keeping stock counts accurate across every platform. Sellers who automate these three specifically free up the most time, since these are also the tasks most likely to cause customer-facing problems (missed SLAs, wrong labels, overselling) when done manually at volume.",
+          },
+          {
+            title: "Best Practices",
+            text: "Automate order confirmation first — it's usually the simplest to set up and has the most direct impact on SLA compliance. Batch label generation on a schedule rather than one order at a time. Set inventory sync to real-time (not batch) for your highest-velocity SKUs specifically, since that's where manual tracking fails first.",
+          },
+          {
+            title: "Implementation",
+            text: "Track how much manual time your team spends weekly on these three tasks specifically — most sellers underestimate it until they measure. From there, an OMS that automates order confirmation, label generation, and inventory sync across every connected marketplace removes the majority of that manual load in one implementation.",
+          },
+        ],
+        proTip:
+          "Sellers who automate order confirmation alone typically see the fastest ROI — it's the single task most likely to cause an SLA miss if handled manually during a busy period.",
+        takeaways: [
+          "Automate order confirmation, label generation, and inventory sync first — these cause the most manual strain",
+          "Real-time sync matters most for your highest-velocity SKUs",
+          "Measure actual time spent on these tasks before assuming automation isn't worth it",
+          "Batch label generation rather than processing one at a time",
+          "Order confirmation automation usually delivers the fastest ROI",
+        ],
+      },
+      "multi-marketplace-selling-challenges-and-solutions": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The three compounding risks of multi-marketplace selling: inventory desync (stock shown as available on one platform when it's already sold on another), SLA conflicts (each marketplace has different confirmation windows, making a single manual workflow impossible to keep up with all of them), and fragmented reconciliation (payment reports from Amazon, Flipkart, and Meesho each use different formats, making manual matching error-prone as the number of platforms grows).",
+          },
+          {
+            title: "Best Practices",
+            text: "Treat inventory as one pool synced across every platform, not separate counts per marketplace. Build your order-confirmation workflow around the tightest SLA window among your platforms, so no single marketplace gets neglected. Standardize how you track reconciliation internally, even if each marketplace's raw report format differs, so your team works from one consistent internal view.",
+          },
+          {
+            title: "Implementation",
+            text: "Start by listing your current SLA windows and payment cycles for each marketplace you sell on side by side — this reveals exactly where a single manual process is most likely to fail. A unified OMS handles inventory sync, order routing by platform-specific SLA, and reconciliation across all connected marketplaces from one system, removing the need to juggle each platform's quirks manually.",
+          },
+        ],
+        proTip:
+          "The more marketplaces you add, the more a single missed sync or SLA becomes inevitable with manual processes — multi-marketplace selling is exactly where automation stops being optional.",
+        takeaways: [
+          "Inventory desync, SLA conflicts, and fragmented reconciliation compound as you add marketplaces",
+          "Treat inventory as one synced pool, not separate per-platform counts",
+          "Build workflows around your tightest SLA window, not an average",
+          "Standardize reconciliation tracking internally despite different report formats per platform",
+          "Automation becomes necessary, not optional, past 2-3 marketplaces",
+        ],
+      },
+      "amazon-inventory-management-guide-for-sellers": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Amazon's algorithm tracks stockout frequency, not just current availability, when deciding Buy Box eligibility. A seller who oscillates between in-stock and out-of-stock repeatedly signals unreliability to Amazon's system, even if each individual stockout is brief. Combined with FBA's own storage and replenishment rules, this means inventory management on Amazon is less about \"how much stock do I have\" and more about \"how consistently do I keep it available.\"",
+          },
+          {
+            title: "Best Practices",
+            text: "Set reorder points based on your actual lead time plus a buffer, not a flat \"reorder at 20 units\" rule — a SKU with a 3-day supplier lead time needs a very different buffer than one with a 3-week lead time. For FBA sellers, monitor your Inventory Performance Index (IPI) score specifically, since a low IPI can trigger storage limits that create stockouts you didn't see coming. Separate your fast-moving SKUs from slow movers and review them on different cadences — daily for top sellers, weekly for the long tail.",
+          },
+          {
+            title: "Implementation",
+            text: "Start by pulling your last 90 days of Amazon sales velocity per SKU and comparing it against your current reorder points — most sellers find their reorder points were set once and never revisited as sales patterns changed. From there, real-time inventory sync connected directly to Seller Central prevents the two failure modes that hurt Buy Box eligibility most: unexpected stockouts and overselling from unsynced multi-channel stock.",
+          },
+        ],
+        proTip:
+          "A single well-timed stockout during a high-velocity period can cost more in lost Buy Box ranking than weeks of steady sales can rebuild — treat inventory buffers on your top 20% of SKUs as non-negotiable.",
+        takeaways: [
+          "Set reorder points based on actual lead time, not a flat number across all SKUs",
+          "Monitor your Inventory Performance Index (IPI) score, not just stock levels",
+          "Review fast-moving SKUs daily, slow movers weekly",
+          "Sync inventory in real time if selling on Amazon alongside other channels",
+          "Treat stockouts on top-selling SKUs as a Buy Box risk, not just a sales miss",
+        ],
+      },
+      "how-to-manage-multiple-marketplaces-from-one-dashboard": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Not every marketplace task benefits equally from consolidation. Order confirmation and inventory sync are the two functions where manual, panel-by-panel work causes real damage (missed SLAs, overselling). Listing optimization and customer service, by contrast, often still need platform-specific attention, since Amazon's search algorithm and Meesho's catalog rules work differently. A unified dashboard should consolidate the first category fully and support — not replace — platform-specific work on the second.",
+          },
+          {
+            title: "Best Practices",
+            text: "Route every order through one queue regardless of source marketplace, so your team works one list, not four. Set a single inventory threshold per SKU that triggers reorder across every channel simultaneously, rather than tracking stock separately per platform. Keep a lightweight platform-specific checklist for listing quality (each marketplace has different image, title, and attribute rules) even after consolidating operations.",
+          },
+          {
+            title: "Implementation",
+            text: "Audit how many hours your team currently spends switching between marketplace panels in a typical week — this number is usually higher than expected once tracked honestly. A unified OMS connects to each marketplace's API, pulling every order into one queue and pushing inventory updates back out to all platforms simultaneously, which is the part that actually eliminates the manual switching cost.",
+          },
+        ],
+        proTip:
+          "Consolidation saves the most time on inventory and order syncing — don't expect it to eliminate platform-specific listing work, since Amazon, Flipkart, and Meesho each still require their own catalog compliance.",
+        takeaways: [
+          "Consolidate order queues and inventory sync first — these cause the most operational damage when manual",
+          "Keep platform-specific attention on listings, since catalog rules differ per marketplace",
+          "Track how many hours are actually spent switching panels before assuming consolidation is worth it",
+          "Set one inventory threshold per SKU that triggers across all channels at once",
+          "A unified OMS should support platform-specific work, not eliminate it",
+        ],
+      },
+      "marketplace-inventory-sync-explained": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "There are two common approaches to multi-marketplace inventory: batch sync (updates pushed on a schedule, e.g. every 30-60 minutes) and true real-time sync (updates pushed the instant a sale is confirmed). Batch sync feels \"good enough\" until a high-velocity SKU sells out on one platform during the gap between syncs — at which point it's still shown as available on every other platform, creating an oversold order that has to be manually cancelled.",
+          },
+          {
+            title: "Best Practices",
+            text: "For your top 10-20% of SKUs by sales velocity, insist on true real-time sync — the gap window is where overselling actually happens, and it happens disproportionately on your best sellers. For slower-moving SKUs, batch sync every 15-30 minutes is usually sufficient and less resource-intensive. Always maintain a small safety buffer (even 1-2 units) on your fastest SKUs specifically to absorb any sync delay, however small.",
+          },
+          {
+            title: "Implementation",
+            text: "Check whether your current setup (if any) syncs inventory in real time or on a batch schedule — many sellers assume real-time sync when they're actually on a 30-60 minute batch cycle. An OMS connected directly to each marketplace's API via webhooks (not scheduled polling) achieves true real-time sync, decrementing stock across every connected platform the moment an order is confirmed anywhere.",
+          },
+        ],
+        proTip:
+          "Overselling almost always happens on your fastest-moving SKUs during high-traffic periods — that's exactly when sync delays matter most and when the cost of a cancelled order (to your seller rating) is highest.",
+        takeaways: [
+          "Batch sync creates a real gap window where overselling can happen",
+          "Prioritize true real-time sync for your top 10-20% of SKUs by velocity",
+          "Keep a small safety buffer on fastest-moving SKUs to absorb sync delays",
+          "Check whether your current sync is truly real-time or just frequent batch updates",
+          "Webhook-based sync (not scheduled polling) is what achieves genuine real-time updates",
+        ],
+      },
+      "common-marketplace-selling-mistakes": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The most damaging mistakes aren't visible immediately — they're the ones that erode margin slowly. Underpricing to compete on visibility without accounting for marketplace commission and shipping costs is the most common; a seller can be \"winning\" on order volume while actually losing money per unit. The second is treating each marketplace's return policy as identical to their own, when Meesho, Flipkart, and Amazon each have different return windows and cost-absorption rules. The third is failing to track payment reconciliation from day one, which means discrepancies pile up before a seller even knows to look for them.",
+          },
+          {
+            title: "Best Practices",
+            text: "Calculate true landed cost per order (product cost + marketplace commission + shipping + expected return rate) before setting prices, not after. Read each marketplace's specific return and RTO policy rather than assuming they're the same — Meesho's return handling, for example, differs meaningfully from Flipkart's. Start reconciling payments against orders from your very first sale, even manually, so discrepancies are caught in week one, not month three.",
+          },
+          {
+            title: "Implementation",
+            text: "Pull your last 30 days of orders across all marketplaces you sell on and calculate actual margin per order after all fees and returns — many first-time sellers are surprised by what this reveals. From there, an OMS with built-in reconciliation flags mismatches automatically as they happen, rather than requiring a manual audit after the fact.",
+          },
+        ],
+        proTip:
+          "The sellers who avoid these mistakes aren't the ones with better products — they're the ones who checked their true per-order margin before scaling volume, not after.",
+        takeaways: [
+          "Calculate true landed cost (including commission, shipping, expected returns) before pricing",
+          "Learn each marketplace's specific return/RTO policy — they are not interchangeable",
+          "Start payment reconciliation from your first sale, not after volume grows",
+          "Check actual margin per order regularly, not just total revenue",
+          "Catch discrepancies early — they compound and become harder to trace over time",
+        ],
+      },
+      "meesho-seller-operations-guide": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Meesho's Supplier Panel handles listing, order confirmation, and basic tracking — but three things happen outside that panel that catch most sellers off guard: payment settlement doesn't automatically match against original order value, returns get deducted from payouts without clear flagging, and there's no built-in way to sync inventory if you're also selling on Flipkart or Amazon. Sellers processing under 50 orders a day can usually manage this manually. Past that, the panel alone isn't enough.",
+          },
+          {
+            title: "Best Practices",
+            text: "Confirm every order within Meesho's SLA window (typically 24–48 hours) to protect your fulfillment-rate score. Reconcile payments weekly against Meesho's settlement report rather than waiting for month-end, so return deductions and commission adjustments don't pile up unexplained. If you sell on multiple marketplaces, check stock levels across all panels before confirming any order — overselling the same SKU is one of the fastest ways to tank your seller rating on two platforms at once.",
+          },
+          {
+            title: "Implementation",
+            text: "Start by pulling your last 30 days of Meesho settlement reports and manually matching five orders against their payouts — this shows you exactly where the gaps are (commission deductions, RTO charges, delivery date mismatches). If that reconciliation is already eating more than an hour a week, that's your signal to automate it. An OMS connected to the Meesho Supplier Panel API can auto-match settlements, flag return-related deductions, and sync inventory across every marketplace you sell on in real time.",
+          },
+        ],
+        proTip:
+          "Most sellers don't lose money on Meesho from low prices — they lose it from unreconciled return deductions they never caught. A 5-minute weekly settlement check catches this before it compounds.",
+        takeaways: [
+          "Confirm orders within the SLA window to protect your seller rating",
+          "Reconcile payments weekly, not monthly",
+          "Match every return against its original order before assuming it's a loss",
+          "Sync inventory in real time if selling on more than one marketplace",
+          "Automate reconciliation once manual matching takes over an hour a week",
+        ],
+      },
+    },
+    "Shopify & D2C": {
+      "shopify-inventory-management-explained": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Shopify tracks inventory accurately for orders placed directly through your store, but it has no native awareness of stock committed elsewhere unless explicitly connected. A brand selling on Shopify plus even one marketplace needs a system that treats Shopify as one sales channel among several, not the single source of truth — otherwise, a marketplace sale won't decrement Shopify's count, and vice versa, creating the exact overselling risk multi-channel sellers most want to avoid.",
+          },
+          {
+            title: "Best Practices",
+            text: "Use Shopify's location feature properly if you have multiple warehouses or fulfillment points — treating all stock as one undifferentiated pool causes fulfillment routing errors. Set low-stock alerts meaningfully below your actual reorder point (not at zero), so there's time to act before a stockout, not after. If selling on any other channel alongside Shopify, connect real inventory sync rather than relying on manual updates or Shopify's app-store integrations that update on a delay.",
+          },
+          {
+            title: "Implementation",
+            text: "Check whether your current inventory count in Shopify matches your actual physical stock right now — for most multi-channel sellers, it doesn't, and that gap is exactly what causes overselling. From there, a proper OMS syncs Shopify with every other channel in real time so a sale anywhere updates stock everywhere, rather than treating Shopify as an isolated system.",
+          },
+        ],
+        proTip:
+          "Shopify's own inventory tools are excellent for what they're built for — a single-channel store. The moment you add a second channel, inventory management becomes a cross-platform problem, not a Shopify problem.",
+        takeaways: [
+          "Shopify has no native awareness of stock sold on other channels unless connected",
+          "Use Shopify's location feature correctly if managing multiple warehouses",
+          "Set low-stock alerts well before your actual reorder point",
+          "Check for a live mismatch between Shopify's stock count and physical inventory",
+          "Sync inventory in real time the moment you sell on more than just Shopify",
+        ],
+      },
+      "how-d2c-brands-scale-operations-efficiently": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The jump from a founder-run operation to a scaled D2C brand usually breaks at a predictable point: when order volume exceeds what one or two people can manually track in a spreadsheet. Before that point, manual processes feel efficient because overhead is low. Past it, the same manual processes cause missed orders, inventory errors, and customer service backlogs — not because the team got worse, but because the volume outgrew the process.",
+          },
+          {
+            title: "Best Practices",
+            text: "Identify your own \"breaking point\" order volume — the number at which manual tracking started causing visible errors — rather than waiting to hit it before planning for it. Separate operational roles (fulfillment, customer service, inventory) even if one person currently wears multiple hats, so responsibilities are clear as you hire. Automate the parts of fulfillment that don't need human judgment (label generation, order confirmation, low-stock alerts) well before volume forces the issue.",
+          },
+          {
+            title: "Implementation",
+            text: "Look at your order volume trend over the last 6 months and estimate when you'll cross 500 and 2,000 monthly orders at current growth rate — these are the thresholds where most D2C brands report operational strain. Before reaching them, put inventory sync and order automation in place so the transition doesn't create a customer-facing backlog.",
+          },
+        ],
+        proTip:
+          "The brands that scale smoothly aren't the ones with the most funding — they're the ones who automated order and inventory processes before volume forced an emergency fix.",
+        takeaways: [
+          "Most operational breakdowns happen between 500 and 2,000 monthly orders",
+          "Identify your own breaking-point volume rather than waiting to hit it",
+          "Separate operational roles early, even if one person covers multiple for now",
+          "Automate label generation, order confirmation, and stock alerts before they become urgent",
+          "Plan for scale based on your actual growth trend, not current volume alone",
+        ],
+      },
+      "oms-for-shopify-stores-benefits-and-features": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "A dedicated OMS adds three things Shopify's native tools don't fully cover: real-time inventory sync with external marketplaces, automated fulfillment routing across multiple warehouses or 3PLs, and consolidated reconciliation if you sell anywhere besides your Shopify store. For a pure single-channel Shopify store with one fulfillment location, native tools are often sufficient — the need for a dedicated OMS scales directly with how many channels and locations you're managing.",
+          },
+          {
+            title: "Best Practices",
+            text: "Evaluate the need for an OMS against your actual complexity, not order volume alone — a single-channel store doing 2,000 orders a month may need less than a 3-channel store doing 500. Prioritize OMS features that solve your specific bottleneck (inventory sync if you're multi-channel, fulfillment routing if you're multi-warehouse) rather than adopting every feature at once. Keep Shopify as your storefront and let the OMS handle backend orchestration — don't try to replace Shopify's customer-facing functions.",
+          },
+          {
+            title: "Implementation",
+            text: "Map out every channel and fulfillment location currently feeding into or out of your Shopify store — if that map has more than one node on either side, that's your signal an OMS adds real value. From there, connect the OMS to Shopify's API alongside your other channels so order and inventory data flows through one system instead of being manually reconciled between platforms.",
+          },
+        ],
+        proTip:
+          "The right time to add an OMS isn't a specific order-volume number — it's the point where you're manually reconciling data between two or more systems on a regular basis.",
+        takeaways: [
+          "A dedicated OMS matters most once you add a second channel or fulfillment location",
+          "Complexity (channels + locations), not order volume alone, determines OMS need",
+          "Prioritize the specific feature that solves your actual bottleneck first",
+          "Keep Shopify as the storefront; let the OMS handle backend orchestration",
+          "Regular manual reconciliation between systems is the clearest signal it's time for an OMS",
+        ],
+      },
+      "website-vs-marketplace-orders-managing-both-efficiently": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Website orders (via Shopify or similar) give you full control over fulfillment timing and customer communication, but no built-in SLA enforcement — you set your own standards. Marketplace orders come with strict, platform-enforced SLAs, automated penalty systems for missed windows, and less flexibility in how you communicate with customers. A single workflow that doesn't account for this difference either over-polices your website orders or under-protects your marketplace fulfillment rate.",
+          },
+          {
+            title: "Best Practices",
+            text: "Set internal SLAs for website orders that match or beat your marketplace SLA commitments, so customer experience stays consistent regardless of channel. Prioritize marketplace order confirmation within their platform-enforced windows first, since missing these has direct rating consequences that missing a self-imposed website SLA doesn't. Keep inventory synced across both so a marketplace sale doesn't oversell a website order or vice versa.",
+          },
+          {
+            title: "Implementation",
+            text: "Compare your actual average fulfillment time for website orders against your marketplace orders over the last month — most sellers find an unintentional gap, often favoring one channel without meaning to. A unified system that pulls both website and marketplace orders into one queue, prioritized by actual SLA urgency rather than order source, closes this gap without requiring a completely separate process for each channel.",
+          },
+        ],
+        proTip:
+          "Marketplace SLA penalties are automatic and immediate; website customer dissatisfaction from slow fulfillment is quieter but compounds just as much in the long run through reviews and repeat purchase rates.",
+        takeaways: [
+          "Marketplace orders carry enforced SLA penalties; website orders don't, but still need consistent standards",
+          "Set internal website SLAs that match your marketplace commitments",
+          "Prioritize marketplace order confirmation first given automatic rating consequences",
+          "Sync inventory across both channels to prevent cross-channel overselling",
+          "Measure actual fulfillment time gaps between channels rather than assuming parity",
+        ],
+      },
+      "d2c-operations-management-guide": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Operational excellence for a D2C brand rests on three foundations built early, not added later: accurate inventory visibility (knowing real stock, not estimated stock), a repeatable fulfillment workflow (the same steps every time, regardless of who's doing them), and clear ownership of each operational function (someone specifically responsible for inventory, someone for fulfillment, even if it's the same person wearing multiple hats initially). Brands that delay building these foundations tend to hit a painful catch-up phase once growth outpaces ad hoc processes.",
+          },
+          {
+            title: "Best Practices",
+            text: "Build your fulfillment workflow as a documented, repeatable process from your first hire, not just founder intuition — this makes onboarding and scaling far smoother later. Track real inventory (physical counts, reconciled regularly) rather than relying solely on system counts that can drift from reality. Assign clear ownership even at small scale, so accountability doesn't get lost as the team grows.",
+          },
+          {
+            title: "Implementation",
+            text: "Document your current fulfillment process exactly as it happens today, step by step — most founder-run D2C brands discover the process only exists in someone's head, not written down anywhere. From there, an OMS that enforces this workflow consistently (regardless of who's executing it) and keeps inventory counts reconciled against reality removes the two most common points of operational drift as you scale.",
+          },
+        ],
+        proTip:
+          "The D2C brands that scale smoothly built their fulfillment process to be boring and repeatable early — the exciting, ad hoc version only works until volume makes it break.",
+        takeaways: [
+          "Build accurate inventory visibility, a repeatable workflow, and clear ownership before scaling, not after",
+          "Document fulfillment processes explicitly rather than relying on founder intuition",
+          "Reconcile system inventory against physical counts regularly",
+          "Assign clear operational ownership even at small team size",
+          "A boring, repeatable process scales better than an efficient but undocumented one",
+        ],
+      },
+      "omnichannel-selling-vs-multichannel-selling": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Multichannel selling treats each platform (Shopify, Amazon, Flipkart) as a separate operation with its own inventory count and order queue — simpler to start, but risk of overselling and fragmented data grows with each additional channel. Omnichannel selling connects every channel to one shared inventory and customer view, so a sale anywhere reflects everywhere instantly. Most brands start multichannel by necessity (adding platforms one at a time) and only become omnichannel once they connect those platforms through a unifying system.",
+          },
+          {
+            title: "Best Practices",
+            text: "If you're multichannel with 2 or fewer platforms and low order volume, the operational risk of separate systems may still be manageable manually. Past 2-3 channels or a few hundred monthly orders, the case for moving to a true omnichannel setup (shared inventory, unified order queue) grows quickly, since manual cross-checking no longer scales. Prioritize unifying inventory first — it's the highest-risk gap between multichannel and omnichannel operations.",
+          },
+          {
+            title: "Implementation",
+            text: "Assess how many channels you're currently selling on and whether your inventory counts across them are genuinely synced or just similar — many 'multichannel' sellers assume they're closer to omnichannel than they actually are. Moving to a real omnichannel setup means connecting every channel to one OMS that maintains a single, shared inventory and order view rather than separate counts per platform.",
+          },
+        ],
+        proTip:
+          "The gap between multichannel and omnichannel isn't about how many platforms you sell on — it's about whether those platforms share one source of truth for inventory and orders.",
+        takeaways: [
+          "Multichannel means separate operations per platform; omnichannel means one connected system",
+          "Manual multichannel management becomes risky past 2-3 channels or a few hundred monthly orders",
+          "Unifying inventory is the highest-priority step toward true omnichannel operations",
+          "Check whether your current setup is genuinely synced or just superficially similar across platforms",
+          "One OMS connecting every channel is what actually achieves omnichannel, not just adding more platforms",
+        ],
+      },
+      "how-fast-growing-d2c-brands-automate-fulfillment": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Fulfillment automation works best on tasks that follow consistent rules: which courier to assign based on pincode and weight, when to trigger a low-stock reorder, how to generate and print shipping labels in batch. Tasks that need human judgment — handling a damaged-item complaint, deciding how to resolve an unusual return — don't automate well and shouldn't be the first target. Brands that automate the rule-based tasks first free up their team's time for the judgment-based work that actually needs a person.",
+          },
+          {
+            title: "Best Practices",
+            text: "Start automation with courier/carrier assignment and label generation — these are the most rule-based and highest-volume repetitive tasks in most fulfillment workflows. Automate low-stock reorder triggers based on actual sales velocity, not a fixed calendar reminder. Keep a human in the loop for exceptions (damaged items, unusual return requests) rather than trying to automate judgment calls.",
+          },
+          {
+            title: "Implementation",
+            text: "List your fulfillment team's most repetitive daily tasks and sort them into 'follows a consistent rule' versus 'needs judgment' — the first category is where automation delivers immediate time savings. An OMS with rule-based courier assignment, automated label generation, and velocity-based reorder triggers handles the first category, freeing the team to focus on the second.",
+          },
+        ],
+        proTip:
+          "The fastest-scaling D2C brands automate the boring 80% of fulfillment decisions first, which is exactly what frees up the team's time for the 20% that actually requires a person's judgment.",
+        takeaways: [
+          "Automate rule-based tasks (courier assignment, label generation, reorder triggers) first",
+          "Keep judgment-based work (damaged items, unusual returns) with a human",
+          "Base reorder triggers on actual sales velocity, not a fixed schedule",
+          "Sort your team's current tasks into rule-based vs. judgment-based before automating",
+          "Automation should free the team for exception-handling, not replace it entirely",
+        ],
+      },
+      "common-d2c-scaling-challenges": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The three most common scaling challenges: inventory visibility breaking down (system counts drifting from physical reality as SKU count and order volume grow), fulfillment consistency slipping (the same order type handled differently depending on who's working that day), and customer service response time growing faster than the team, as more orders mean more support tickets without a proportional increase in support capacity. Each of these is manageable at low volume and becomes a real problem specifically during rapid growth phases.",
+          },
+          {
+            title: "Best Practices",
+            text: "Reconcile system inventory against physical counts on a fixed schedule, not just when a discrepancy is noticed. Document fulfillment steps so they're followed consistently regardless of who's executing them, rather than relying on tribal knowledge. Set up self-service or automated responses for the most common support questions (order status, return policy) so ticket volume doesn't scale linearly with order volume.",
+          },
+          {
+            title: "Implementation",
+            text: "Identify which of these three challenges is hitting hardest right now — most brands feel one more acutely than the others at any given growth stage. Addressing inventory visibility usually has the fastest payoff, since it prevents the customer-facing problems (overselling, wrong stock shown) that create support tickets and fulfillment errors downstream.",
+          },
+        ],
+        proTip:
+          "These three challenges tend to hit in a predictable order as you scale — inventory visibility first, then fulfillment consistency, then support capacity. Knowing which one is next lets you get ahead of it instead of reacting to it.",
+        takeaways: [
+          "Inventory visibility, fulfillment consistency, and support capacity are the three most common scaling challenges",
+          "Reconcile inventory on a fixed schedule, not reactively",
+          "Document fulfillment steps so they're consistent regardless of who executes them",
+          "Automate responses to common support questions before ticket volume outpaces team capacity",
+          "These challenges tend to hit in a predictable sequence as a brand scales",
+        ],
+      },
+    },
+    "Feature Guide": {
+      "solution-for-growing-businesses": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Each marketplace — Amazon Seller Central, Flipkart Seller Hub, Meesho Supplier Panel, and Shopify's admin — has its own order queue, its own inventory count, and its own SLA rules. A seller manually checking all four risks two specific failures: overselling the same SKU across platforms before stock updates everywhere, and missing an order confirmation window on one platform while focused on another. Neither shows up as a single big mistake — they show up as a slow leak of cancelled orders and lowered seller ratings across every platform at once.",
+          },
+          {
+            title: "Best Practices",
+            text: "Set a single source of truth for inventory count — one system every platform reads from and writes to, not four separate spreadsheets or panels. Confirm orders on a fixed schedule (e.g., every 2 hours) across all four platforms rather than reactively, so no single marketplace's SLA window gets missed while you're focused on another. Watch each platform's fulfillment-rate metric separately — Amazon, Flipkart, and Meesho each penalize missed SLAs differently, and a good score on one doesn't protect you on another.",
+          },
+          {
+            title: "Implementation",
+            text: "Start by logging into all four seller panels on the same day and noting your current stock count for your 10 best-selling SKUs on each — in most cases, at least one of the four will already be out of sync with the others. That gap is exactly what causes overselling. From there, a unified order management system connects to all four marketplace APIs directly, syncing inventory in real time so a sale on Shopify instantly updates stock on Amazon, Flipkart, and Meesho simultaneously, and pulls every order into one queue so nothing gets missed regardless of which platform it came from.",
+          },
+        ],
+        proTip:
+          "The most common multi-channel mistake isn't picking the wrong platform to focus on — it's assuming your inventory numbers already match across all four. Check that first, before anything else.",
+        takeaways: [
+          "Use one inventory source of truth across all four platforms, not four separate counts",
+          "Confirm orders on a fixed schedule so no single marketplace's SLA window gets missed",
+          "Track each platform's fulfillment rate separately — a good score on one doesn't protect the others",
+          "Check for inventory mismatches across platforms before assuming stock is accurate",
+          "Sync inventory in real time once you're managing more than 2 marketplaces simultaneously",
+        ],
+      },
+    },
   };
 
   /* Try to find specific text, fall back to generic */
@@ -1023,13 +1454,6 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
 
             {/* Main Content */}
             <article>
-              {/* Intro */}
-              <div className="motion-intro-card mb-8 rounded-3xl border border-slate-100 bg-gradient-to-br from-white via-slate-50/80 to-gold/5 p-6 shadow-sm">
-                <p className="text-lg font-medium leading-8 text-slate-600">
-                  {entry.subtitle}
-                </p>
-              </div>
-
               {/* Sections */}
               <div className="space-y-6">
                 {text.sections.map((section: any, idx: number) => (

@@ -48,7 +48,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("Solution for Growing Businesses"),
     title: "Manage Multi-Channel Orders from One Dashboard",
     subtitle:
-      "How to Manage Amazon, Flipkart, Meesho & Shopify Orders from One Dashboard",
+      "Sellers running Amazon, Flipkart, Meesho, and Shopify side by side typically lose 3-5% of potential revenue to overselling and missed orders caused by switching between four separate dashboards — here's how a unified view fixes that.",
     category: "Feature Guide",
     readTime: "8 min",
     date: "June 17, 2026",
@@ -84,7 +84,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("common-reasons-for-order-delays-and-how-to-fix-them"),
     title: "Common Order Delay Causes & Solutions",
     subtitle:
-      "Identify the root causes of shipping delays and implement fixes that keep your customers happy.",
+      "Order delays rarely come from a single big failure — they usually stack from three or four small, preventable gaps that compound into a missed delivery window.",
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 14, 2026",
@@ -152,7 +152,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("amazon-inventory-management-guide-for-sellers"),
     title: "Amazon Inventory Management Guide",
     subtitle:
-      "Master Amazon inventory management with proven strategies for Buy Box eligibility and stock optimization.",
+      "Amazon suppresses listings that go out of stock more than a few times in a short window — here's how inventory management actually protects your Buy Box eligibility, not just your stock count.",
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 17, 2026",
@@ -174,7 +174,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("meesho-seller-operations-guide"),
     title: "Meesho Seller Operations Guide",
     subtitle:
-      "Everything you need to know about managing your Meesho seller account efficiently.",
+      "Meesho had over 700,000 active sellers by late 2025 — here's how order, payment, and return operations actually work once you're past your first few dozen sales.",
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 13, 2026",
@@ -185,7 +185,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-to-manage-multiple-marketplaces-from-one-dashboard"),
     title: "Multi-Channel Marketplace Management Guide",
     subtitle:
-      "Consolidate your marketplace operations into a single unified management platform.",
+      "Sellers on 3+ marketplaces typically spend 8-10 hours a week just switching between seller panels — before they've processed a single order. Here's what actually needs consolidating, and what doesn't.",
     category: "Marketplaces",
     readTime: "8 min",
     date: "May 11, 2026",
@@ -196,7 +196,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("marketplace-inventory-sync-explained"),
     title: "Marketplace Inventory Sync Explained",
     subtitle:
-      "How real-time inventory synchronization works across Amazon, Flipkart, and other marketplaces.",
+      "Real-time inventory sync doesn't mean \"updates every hour\" — it means every marketplace reflects a sale within seconds, and the difference matters more than most sellers realize.",
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 9, 2026",
@@ -207,7 +207,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("common-marketplace-selling-mistakes"),
     title: "Common Marketplace Selling Mistakes",
     subtitle:
-      "Avoid these costly mistakes that new marketplace sellers make and learn how to fix them.",
+      "Most new marketplace sellers lose money in their first 90 days not from bad products, but from three specific operational mistakes that compound quietly until they show up as a cash flow problem.",
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 7, 2026",
@@ -218,7 +218,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-top-marketplace-sellers-automate-operations"),
     title: "Marketplace Operations Best Practices",
     subtitle:
-      "Discover the automation strategies used by top marketplace sellers to handle high volumes.",
+      "Top-performing marketplace sellers don't work harder than everyone else — they've automated the three specific tasks that eat the most manual hours: order confirmation, label generation, and stock sync.",
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 5, 2026",
@@ -229,7 +229,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("multi-marketplace-selling-challenges-and-solutions"),
     title: "Multi-Marketplace Selling Guide",
     subtitle:
-      "Navigate the complexities of selling on multiple platforms with practical solutions.",
+      "Selling on 3+ marketplaces multiplies your reach — and multiplies your operational risk in three specific ways most sellers don't anticipate until they've already hit them.",
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 3, 2026",
@@ -242,7 +242,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("shopify-inventory-management-explained"),
     title: "Shopify Inventory Management Explained",
     subtitle:
-      "A complete guide to managing inventory effectively on your Shopify store.",
+      "Shopify's native inventory tracking works well for a single-channel store — the problems start the moment you also sell on Amazon, Flipkart, or in a physical location alongside it.",
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 16, 2026",
@@ -253,7 +253,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-d2c-brands-scale-operations-efficiently"),
     title: "How D2C Brands Scale Operations Efficiently",
     subtitle:
-      "Strategies for direct-to-consumer brands to scale without operational chaos.",
+      "D2C brands rarely fail from lack of demand — most operational breakdowns happen specifically between 500 and 2,000 monthly orders, when manual processes that worked at low volume stop working overnight.",
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 14, 2026",
@@ -264,7 +264,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("oms-for-shopify-stores-benefits-and-features"),
     title: "OMS for Shopify Stores: Benefits and Features",
     subtitle:
-      "Why every growing Shopify store needs a dedicated Order Management System.",
+      "Shopify's own admin panel handles single-channel order management well — the case for a dedicated OMS starts the moment you add a second sales channel or your order volume outgrows manual fulfillment tracking.",
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 12, 2026",
@@ -275,7 +275,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("website-vs-marketplace-orders-managing-both-efficiently"),
     title: "Website vs Marketplace Order Management",
     subtitle:
-      "Balance your direct website sales with marketplace orders using unified workflows.",
+      "Website orders and marketplace orders look similar on the surface but follow different rules underneath — treating them identically is where most D2C brands' operational problems start.",
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 10, 2026",
@@ -286,7 +286,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("d2c-operations-management-guide"),
     title: "D2C Operations Management Guide",
     subtitle:
-      "Build operational excellence into your direct-to-consumer brand from day one.",
+      "D2C brands that build operational discipline before scaling avoid the most common failure mode: growing revenue faster than the systems needed to fulfill it.",
     category: "Shopify & D2C",
     readTime: "8 min",
     date: "May 8, 2026",
@@ -297,7 +297,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("omnichannel-selling-vs-multichannel-selling"),
     title: "Omnichannel Selling vs Multichannel Selling",
     subtitle:
-      "Understand the key differences and choose the right strategy for your brand.",
+      "Multichannel means selling on several platforms; omnichannel means those platforms share one unified view of inventory and customer data — the difference determines whether adding a new channel helps or hurts your operations.",
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 6, 2026",
@@ -308,7 +308,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-fast-growing-d2c-brands-automate-fulfillment"),
     title: "D2C Fulfillment Automation Guide",
     subtitle:
-      "Learn how successful D2C brands automate their fulfillment operations at scale.",
+      "Fast-growing D2C brands don't hire their way out of fulfillment bottlenecks — they automate the repetitive decisions first and hire for judgment-based work second.",
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 4, 2026",
@@ -319,7 +319,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("common-d2c-scaling-challenges"),
     title: "Common D2C Scaling Challenges",
     subtitle:
-      "Navigate the operational challenges that come with rapid D2C brand growth.",
+      "D2C brands rarely fail from a single big mistake while scaling — they usually stall from three specific, predictable challenges that hit almost every brand at a similar growth stage.",
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 2, 2026",

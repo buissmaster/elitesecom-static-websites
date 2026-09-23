@@ -221,51 +221,6 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                     loading="eager"
                     fetchPriority="high"
                   />
-
-                  {/* Scaled overlay: copy of the small-card left black panel (2×) */}
-                  <div className="absolute inset-0 pointer-events-none">
-                    {/* Logo: equal padding from top and left */}
-                    <img
-                      src="/logo-white.png"
-                      alt="Elitesecom"
-                      className="absolute w-28 left-4 top-4"
-                      style={{
-                        // keep image rendering untouched
-                      }}
-                    />
-
-                    {/* Badge: directly below the logo with consistent spacing */}
-                    <span
-                      className="absolute inline-flex items-center rounded-full px-4 py-2 text-[13px] font-semibold"
-                      style={{
-                        left: 16,
-                        top: 60,
-                        backgroundColor: "#DBEAFE",
-                        color: "#1E3A8A",
-                      }}
-                    >
-                      Feature Guide
-                    </span>
-
-                    {/* Headline block: exact 4-line layout, left-aligned, constrained from diagonal edge */}
-                    <div
-                      className="absolute font-bold text-white text-left"
-                      style={{
-                        left: 16,
-                        top: 110, // moved upward to sit ~16-20px below the badge
-                        right: 50, // maintain 40-50px padding from diagonal edge
-                        fontSize: "22px",
-                        lineHeight: 1.22,
-                        whiteSpace: "normal",
-                        display: "block",
-                      }}
-                    >
-                      <div>Manage Multi-</div>
-                      <div>Channel Orders</div>
-                      <div>from One</div>
-                      <div>Dashboard</div>
-                    </div>
-                  </div>
                 </div>
                 <div className="px-4 py-3">
                   <div className="flex items-start justify-between gap-3">

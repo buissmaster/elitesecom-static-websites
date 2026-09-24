@@ -221,7 +221,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
       email: formData.email,
       time: formData.preferredTime,
       date: formData.preferredDate,
-      message: "ElitesEcom " + formData.message,
+      message: "Elitesecom " + formData.message,
       isDemoTaken: false,
       productCount: 0,
       chaneelsSelling: 0,
@@ -259,7 +259,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
   };
 
   const benefits = [
-    "Personalized walkthrough of ElitesEcom tailored to your stack",
+    "Personalized walkthrough of Elitesecom tailored to your stack",
     "See how we solve your explicit workflow challenges",
     "Direct Q&A session with our senior product architects",
     "Clear overview of custom enterprise pricing & implementation",
@@ -286,7 +286,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
               Book Your <span className="text-white">Personalized</span> Demo
             </h1>
             <p className="text-lg text-slate-700">
-              See how ElitesEcom can help you grow your business in a profitable
+              See how Elitesecom can help you grow your business in a profitable
               manner
             </p>
           </div>
@@ -306,7 +306,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                   What You'll Get
                 </h2>
                 <p className="text-slate-500 text-xs">
-                  Everything you need to evaluate if ElitesEcom fits your
+                  Everything you need to evaluate if Elitesecom fits your
                   structural needs.
                 </p>
               </div>

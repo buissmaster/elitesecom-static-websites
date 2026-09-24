@@ -318,6 +318,126 @@ function getArticleContent(entry: BlogEntry) {
       },
     },
     "Seller Problems": {
+      "why-your-inventory-never-matches-marketplace-stock": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Inventory mismatches almost always trace back to one of three causes: unsynced multi-channel sales (a unit sold on one platform hasn't yet decremented stock shown on others), unrecorded damage or loss (items removed from sellable stock without a corresponding system update), or manual count errors during receiving or cycle counts. Treating a mismatch as 'the system is wrong' without identifying which of these three caused it means the same gap reappears repeatedly.",
+          },
+          {
+            title: "Best Practices",
+            text: "When you find a mismatch, trace it back to one of the three causes before adjusting the count — this tells you whether to fix a sync process, a damage-reporting process, or a counting process, not just the number itself. Run cycle counts on your top-selling SKUs more frequently than your long tail, since mismatches on high-velocity items cause the most damage (oversold orders) the fastest. Record damage and loss at the moment it happens, not in a batch update days later.",
+          },
+          {
+            title: "Implementation",
+            text: "Pick your 10 highest-velocity SKUs and do a physical count against system count today — this quickly reveals whether you have a sync problem, a damage-reporting gap, or a counting process issue. Real-time inventory sync across every channel addresses the most common cause (unsynced multi-channel sales) directly, while a simple damage-logging habit closes the second.",
+          },
+        ],
+        proTip: "A mismatch on a slow-moving SKU is an annoyance; the same mismatch on your best-seller is what causes an oversold order and a cancelled customer purchase — prioritize accuracy where it matters most.",
+        takeaways: [
+          "Mismatches trace back to unsynced sales, unrecorded damage/loss, or counting errors — identify which",
+          "Fix the underlying process, not just the number, when you find a gap",
+          "Cycle count high-velocity SKUs more often than the long tail",
+          "Log damage and loss immediately, not in a delayed batch",
+          "Real-time sync addresses the most common cause of mismatches directly",
+        ],
+      },
+      "the-hidden-cost-of-manual-order-processing": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The three hidden costs: staff time (hours spent on tasks a system could do automatically, valued at what that time could otherwise generate), error-driven costs (wrong items shipped, missed cancellations, double-fulfilled orders — each with a direct refund or reshipment cost), and opportunity cost (the growth held back because manual processes cap how much order volume a team can actually handle). None of these show up as an obvious expense, which is exactly why they go unaddressed longer than they should.",
+          },
+          {
+            title: "Best Practices",
+            text: "Calculate actual hours spent weekly on manual order tasks (confirmation, label generation, inventory checks) and multiply by a reasonable hourly cost — this converts an invisible cost into a real number worth comparing against automation pricing. Track fulfillment errors specifically caused by manual steps (not product issues) for a month to see the real refund/reshipment cost. Ask directly: what order volume would manual processes break at, and how close are you to that ceiling right now.",
+          },
+          {
+            title: "Implementation",
+            text: "Run this calculation for your own operation: current weekly manual hours × hourly cost + last month's manual-error-driven refunds = your current hidden cost of manual processing. Compare that monthly total against the cost of an OMS that automates the repetitive parts — for most sellers past a few hundred monthly orders, the automation cost is lower than the hidden cost it replaces.",
+          },
+        ],
+        proTip: "The opportunity cost is usually the largest of the three and the hardest to see — a team capped at handling 500 orders manually isn't just spending time, it's leaving growth on the table that a system could absorb without adding headcount.",
+        takeaways: [
+          "Manual processing costs show up as staff time, error-driven refunds, and capped growth",
+          "Calculate actual hours and error costs to convert a hidden cost into a real number",
+          "Compare that number directly against automation cost, not just intuition",
+          "Opportunity cost (growth capped by manual capacity) is often the largest, least visible factor",
+          "Past a few hundred monthly orders, automation typically costs less than the manual alternative",
+        ],
+      },
+      "how-to-reduce-order-errors-by-90": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Order errors cluster around a small number of failure points: picking errors (wrong item or wrong quantity pulled from the shelf), address errors (shipping label doesn't match the current order's delivery address, common when processing orders in batch), and confirmation errors (an order shipped after being cancelled or modified by the customer). Each has a specific, systematic fix rather than requiring a broad 'be more careful' approach.",
+          },
+          {
+            title: "Best Practices",
+            text: "Use barcode scanning at the pick stage to verify the correct item and quantity before it's packed, rather than relying on visual checks alone. Auto-generate shipping labels directly from the order record at time of packing, not from a pre-printed batch that can drift out of sync with last-minute order changes. Build a hard stop that prevents shipping an order that's been cancelled or modified after confirmation, rather than relying on staff to notice manually.",
+          },
+          {
+            title: "Implementation",
+            text: "Track your errors for two weeks and categorize each one as a picking, address, or confirmation error — this tells you which of the three fixes to prioritize first, since most sellers find one category dominates. Barcode-based pick verification and automated label generation directly address the two most common categories, typically without requiring a warehouse redesign.",
+          },
+        ],
+        proTip: "'Reduce errors by 90%' isn't about a single big fix — it's about closing the two or three specific gaps that cause the vast majority of errors, which are usually identifiable within a couple weeks of tracking.",
+        takeaways: [
+          "Picking, address, and confirmation errors account for most fulfillment mistakes",
+          "Barcode scanning at pick verifies correct item and quantity before packing",
+          "Generate labels from the live order record, not a pre-printed batch",
+          "Build a hard stop against shipping cancelled or modified orders",
+          "Track and categorize errors for two weeks to identify which fix to prioritize first",
+        ],
+      },
+      "why-growing-sellers-struggle-with-operations": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Growth adds complexity along several dimensions at once, not just order count: more SKUs (more inventory to track accurately), more channels (more systems to keep synced), and more team members (more people who need consistent processes, not just founder intuition). A process that worked fine at low complexity on all three dimensions can break down even at similar order volume once any one dimension multiplies — which is why 'we're struggling even though revenue only grew moderately' is a common, valid complaint.",
+          },
+          {
+            title: "Best Practices",
+            text: "Track complexity, not just revenue or order count, as you grow — specifically monitor SKU count, channel count, and team size as separate signals of operational risk. Standardize processes (documented, repeatable steps) before adding the next dimension of complexity, rather than adding channels or SKUs onto an already-strained ad hoc process. Revisit your tooling specifically when any one of these three dimensions doubles, even if overall revenue growth feels moderate.",
+          },
+          {
+            title: "Implementation",
+            text: "Compare your SKU count, channel count, and team size today against a year ago — often one of these three has grown disproportionately faster than the others and is the actual source of current strain, even if it's not the one getting blamed. Addressing the specific dimension causing strain (often inventory tooling for SKU growth, or an OMS for channel growth) is more effective than a broad 'we need to get more organized' response.",
+          },
+        ],
+        proTip: "When a growing seller says operations 'just feel harder now,' it's rarely one big problem — it's usually complexity that grew along a dimension nobody was specifically tracking.",
+        takeaways: [
+          "Complexity (SKUs, channels, team size), not just revenue, drives operational strain",
+          "Track each dimension separately rather than assuming growth is uniform",
+          "Standardize processes before adding the next layer of complexity",
+          "Revisit tooling when any single dimension doubles, even if revenue growth is moderate",
+          "Identify which specific dimension is actually causing current strain before responding broadly",
+        ],
+      },
+      "operational-bottlenecks-that-kill-ecommerce-growth": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "The most common growth-capping bottlenecks: fulfillment capacity (a warehouse or team that physically can't process more orders per day without breaking), inventory visibility (inaccurate stock counts that force conservative selling to avoid overselling, capping potential revenue), and decision latency (how long it takes to reorder stock, approve a return, or resolve an order issue — slow decisions create backlogs even when execution itself is fast). Identifying which is the actual constraint matters more than addressing all three equally.",
+          },
+          {
+            title: "Best Practices",
+            text: "Identify your true bottleneck by asking what would happen if demand doubled tomorrow — the process that would break first is your real constraint, not necessarily the one that feels most stressful day to day. Address fulfillment capacity through process efficiency (better picking routes, batch processing) before assuming more headcount is the only answer. Reduce decision latency by pre-setting rules for common decisions (reorder points, return approval thresholds) so they don't require a person's judgment every single time.",
+          },
+          {
+            title: "Implementation",
+            text: "Run the 'demand doubled tomorrow' thought experiment honestly against your fulfillment capacity, inventory visibility, and decision-making speed — this usually surfaces one clear answer rather than an even split across all three. Address that specific constraint first; fixing a non-bottleneck process, however inefficient it feels, won't actually increase your growth ceiling.",
+          },
+        ],
+        proTip: "Growth-capping bottlenecks are rarely the process that feels the most chaotic — they're the process that would break first under more volume, which isn't always the same thing.",
+        takeaways: [
+          "Fulfillment capacity, inventory visibility, and decision latency are the most common growth-capping bottlenecks",
+          "Identify the true constraint by asking what breaks first if demand doubled",
+          "Address fulfillment capacity through process efficiency before assuming headcount is the answer",
+          "Pre-set rules for common decisions to reduce latency without needing manual judgment each time",
+          "Fix the actual bottleneck, not just the process that feels most stressful day to day",
+        ],
+      },
       "why-sellers-lose-orders-during-sale-events": {
         sections: [
           {
@@ -759,6 +879,30 @@ function getArticleContent(entry: BlogEntry) {
       },
     },
     Marketplaces: {
+      "flipkart-order-management-best-practices": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: "Flipkart tracks two metrics closely tied to account health: Order Defect Rate (cancellations, returns, and negative feedback combined) and Late Shipment Rate (orders dispatched after the promised date). Both are visible in Seller Hub but often go unmonitored until they trigger a penalty or listing restriction. Unlike Amazon's Buy Box mechanics, Flipkart's ranking and visibility are tied more directly to these health metrics, making them worth tracking proactively rather than reactively.",
+          },
+          {
+            title: "Best Practices",
+            text: "Check your Order Defect Rate and Late Shipment Rate in Seller Hub weekly, not just when a penalty notice arrives. Confirm and dispatch orders as early as possible within your SLA window — Flipkart's late shipment tracking is strict and doesn't offer much grace. Set inventory buffers on fast-moving SKUs to avoid the cancellations that come from confirming an order you can't actually fulfill.",
+          },
+          {
+            title: "Implementation",
+            text: "Pull your last 30 days of Order Defect Rate and Late Shipment Rate from Seller Hub and identify which orders specifically drove each metric up — this usually reveals one or two recurring causes (a specific SKU, a specific fulfillment delay pattern) rather than a broad problem. An OMS connected to Flipkart's Seller API can auto-confirm orders within SLA and flag inventory risk before a sale is even confirmed, addressing both metrics at the source.",
+          },
+        ],
+        proTip: "A single week of elevated Late Shipment Rate can affect your account health score for months — catching and fixing the root cause quickly matters more than the size of the dip itself.",
+        takeaways: [
+          "Monitor Order Defect Rate and Late Shipment Rate weekly, not reactively",
+          "Confirm and dispatch orders as early as possible within the SLA window",
+          "Set inventory buffers on fast movers to prevent fulfillment-driven cancellations",
+          "Identify the specific recurring cause behind metric dips rather than assuming a broad issue",
+          "Address account health metrics quickly — their impact compounds over time",
+        ],
+      },
       "how-top-marketplace-sellers-automate-operations": {
         sections: [
           {

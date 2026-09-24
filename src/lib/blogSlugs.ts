@@ -95,7 +95,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("why-your-inventory-never-matches-marketplace-stock"),
     title: "Marketplace Inventory Mismatch",
     subtitle:
-      "Solve inventory synchronization issues that lead to stock mismatches across sales channels.",
+      "If your system says 20 units are in stock but you can only find 14 on the shelf, the gap isn't a counting error — it's usually one of three specific process failures.",
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 12, 2026",
@@ -106,7 +106,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("the-hidden-cost-of-manual-order-processing"),
     title: "The Hidden Cost of Manual Order Processing",
     subtitle:
-      "Calculate the true cost of manual workflows and discover how automation pays for itself.",
+      "Manual order processing doesn't show up as a line item on your P&L — but it costs real money through three specific, measurable leaks most sellers never calculate.",
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 10, 2026",
@@ -117,7 +117,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-to-reduce-order-errors-by-90"),
     title: "How to Reduce Order Errors by 90%",
     subtitle:
-      "Implement systematic checks and automated validation to dramatically reduce fulfillment mistakes.",
+      "Most fulfillment errors trace back to just two points in the process — picking the wrong item and shipping to the wrong address — and both are largely preventable with the right checks.",
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 8, 2026",
@@ -128,7 +128,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("why-growing-sellers-struggle-with-operations"),
     title: "Why Growing Sellers Struggle With Operations",
     subtitle:
-      "Learn why operational complexity increases with growth and how to stay ahead of the curve.",
+      "Operational strain doesn't scale linearly with order volume — it scales with complexity, which is why a seller doubling SKU count often struggles more than one doubling order volume alone.",
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 6, 2026",
@@ -139,7 +139,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("operational-bottlenecks-that-kill-ecommerce-growth"),
     title: "Operational Bottlenecks That Kill eCommerce Growth",
     subtitle:
-      "Identify and eliminate the operational bottlenecks preventing your business from scaling.",
+      "A single operational bottleneck can cap growth even when demand, product, and marketing are all working — because a business can only fulfill as fast as its slowest process allows.",
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 4, 2026",
@@ -163,7 +163,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("flipkart-order-management-best-practices"),
     title: "Flipkart Order Management Best Practices",
     subtitle:
-      "Optimize your Flipkart operations with these seller-tested order management techniques.",
+      "Flipkart's seller rating algorithm weighs order defect rate and late shipment rate more heavily than most sellers realize — here's what actually protects both.",
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 15, 2026",

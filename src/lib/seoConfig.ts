@@ -280,11 +280,55 @@ function getFaqSchema(): Record<string, unknown> {
   };
 }
 
+function toIsoDate(value: string): string | undefined {
+  const isoMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.trim());
+  if (isoMatch) {
+    const [, yearText, monthText, dayText] = isoMatch;
+    const year = Number(yearText);
+    const month = Number(monthText);
+    const day = Number(dayText);
+    const date = new Date(Date.UTC(year, month - 1, day));
+    return date.getUTCFullYear() === year &&
+      date.getUTCMonth() === month - 1 &&
+      date.getUTCDate() === day
+      ? value.trim()
+      : undefined;
+  }
+
+  const displayMatch = /^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/.exec(
+    value.trim(),
+  );
+  if (!displayMatch) return undefined;
+
+  const [, monthText, dayText, yearText] = displayMatch;
+  const monthNames = [
+    "january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december",
+  ];
+  const month = monthNames.indexOf(monthText.toLowerCase());
+  const year = Number(yearText);
+  const day = Number(dayText);
+  if (month < 0) return undefined;
+
+  const date = new Date(Date.UTC(year, month, day));
+  if (
+    date.getUTCFullYear() !== year ||
+    date.getUTCMonth() !== month ||
+    date.getUTCDate() !== day
+  ) {
+    return undefined;
+  }
+
+  return date.toISOString().slice(0, 10);
+}
+
 function getArticleSchema(blog: BlogEntry): Record<string, unknown> {
   const articleUrl = absoluteUrl(getBlogDetailPath(blog.slug));
-  const imageUrl = blog.image.startsWith("http")
-    ? blog.image
-    : `${SITE_URL}${blog.image.startsWith("/") ? blog.image : `/${blog.image}`}`;
+  const imagePath = blog.image?.trim();
+  const imageUrl = imagePath
+    ? new URL(imagePath, `${SITE_URL}/`).href
+    : DEFAULT_OG_IMAGE;
+  const datePublished = toIsoDate(blog.date);
 
   return {
     "@context": "https://schema.org",
@@ -292,7 +336,7 @@ function getArticleSchema(blog: BlogEntry): Record<string, unknown> {
     headline: blog.title,
     description: blog.subtitle,
     image: imageUrl,
-    datePublished: blog.date,
+    ...(datePublished ? { datePublished } : {}),
     author: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -302,7 +346,7 @@ function getArticleSchema(blog: BlogEntry): Record<string, unknown> {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: DEFAULT_OG_IMAGE,
+        url: `${SITE_URL}/elitesecom-full-black-logo.webp`,
       },
     },
     mainEntityOfPage: {

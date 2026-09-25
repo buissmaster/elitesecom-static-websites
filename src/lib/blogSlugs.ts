@@ -35,6 +35,16 @@ export interface BlogEntry {
   image: string;
 }
 
+export function getBlogImageSrcSet(image: string): string | undefined {
+  const match = /^(.*)-1600\.webp$/i.exec(image);
+  if (!match) return undefined;
+
+  const [, basePath] = match;
+  return [400, 800, 1600]
+    .map((width) => `${encodeURI(`${basePath}-${width}.webp`)} ${width}w`)
+    .join(", ");
+}
+
 const _allSlugs: string[] = [];
 function makeSlug(title: string): string {
   const slug = generateSlug(title, _allSlugs);
@@ -52,7 +62,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Feature Guide",
     readTime: "8 min",
     date: "June 17, 2026",
-    image: "/Blog page main.png",
+    image: "/Blog page main-1600.webp",
   },
   // Seller Problems (8)
   {
@@ -64,7 +74,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 18, 2026",
-    image: "/seller problem blog/sp 1.png",
+    image: "/seller problem blog/sp 1-1600.webp",
   },
   {
     id: "sp2",
@@ -77,7 +87,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "8 min",
     date: "May 16, 2026",
-    image: "/seller problem blog/sp 2.png",
+    image: "/seller problem blog/sp 2-1600.webp",
   },
   {
     id: "sp3",
@@ -88,7 +98,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/seller problem blog/sp 3.png",
+    image: "/seller problem blog/sp 3-1600.webp",
   },
   {
     id: "sp4",
@@ -99,7 +109,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 12, 2026",
-    image: "/seller problem blog/sp 4.png",
+    image: "/seller problem blog/sp 4-1600.webp",
   },
   {
     id: "sp5",
@@ -110,7 +120,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 10, 2026",
-    image: "/seller problem blog/sp 5.png",
+    image: "/seller problem blog/sp 5-1600.webp",
   },
   {
     id: "sp6",
@@ -121,7 +131,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "5 min",
     date: "May 8, 2026",
-    image: "/seller problem blog/sp 6.png",
+    image: "/seller problem blog/sp 6-1600.webp",
   },
   {
     id: "sp7",
@@ -132,7 +142,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 6, 2026",
-    image: "/seller problem blog/sp 7.png",
+    image: "/seller problem blog/sp 7-1600.webp",
   },
   {
     id: "sp8",
@@ -143,7 +153,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 4, 2026",
-    image: "/seller problem blog/sp 8.png",
+    image: "/seller problem blog/sp 8-1600.webp",
   },
 
   // Marketplaces (8)
@@ -156,7 +166,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 17, 2026",
-    image: "/Marketplace blog/Marketplace 1.png",
+    image: "/Marketplace blog/Marketplace 1-1600.webp",
   },
   {
     id: "mp2",
@@ -167,7 +177,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 15, 2026",
-    image: "/Marketplace blog/Marketplace 2.png",
+    image: "/Marketplace blog/Marketplace 2-1600.webp",
   },
   {
     id: "mp3",
@@ -178,7 +188,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 13, 2026",
-    image: "/Marketplace blog/Marketplace 3.png",
+    image: "/Marketplace blog/Marketplace 3-1600.webp",
   },
   {
     id: "mp4",
@@ -189,7 +199,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "8 min",
     date: "May 11, 2026",
-    image: "/Marketplace blog/Marketplace 4.png",
+    image: "/Marketplace blog/Marketplace 4-1600.webp",
   },
   {
     id: "mp5",
@@ -200,7 +210,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 9, 2026",
-    image: "/Marketplace blog/Marketplace 5.png",
+    image: "/Marketplace blog/Marketplace 5-1600.webp",
   },
   {
     id: "mp6",
@@ -211,7 +221,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "5 min",
     date: "May 7, 2026",
-    image: "/Marketplace blog/Marketplace 6.png",
+    image: "/Marketplace blog/Marketplace 6-1600.webp",
   },
   {
     id: "mp7",
@@ -222,7 +232,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "7 min",
     date: "May 5, 2026",
-    image: "/Marketplace blog/Marketplace 7.png",
+    image: "/Marketplace blog/Marketplace 7-1600.webp",
   },
   {
     id: "mp8",
@@ -233,7 +243,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 3, 2026",
-    image: "/Marketplace blog/Marketplace 8.png",
+    image: "/Marketplace blog/Marketplace 8-1600.webp",
   },
 
   // Shopify & D2C (8)
@@ -246,7 +256,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 16, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 1.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 1-1600.webp",
   },
   {
     id: "sd2",
@@ -257,7 +267,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 14, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 2.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 2-1600.webp",
   },
   {
     id: "sd3",
@@ -268,7 +278,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 12, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C  3.png",
+    image: "/Shopify & D2C blog/Shopify & D2C  3-1600.webp",
   },
   {
     id: "sd4",
@@ -279,7 +289,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 10, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 4.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 4-1600.webp",
   },
   {
     id: "sd5",
@@ -290,7 +300,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "8 min",
     date: "May 8, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 5.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 5-1600.webp",
   },
   {
     id: "sd6",
@@ -301,7 +311,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "5 min",
     date: "May 6, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 6.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 6-1600.webp",
   },
   {
     id: "sd7",
@@ -312,7 +322,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "7 min",
     date: "May 4, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 7.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 7-1600.webp",
   },
   {
     id: "sd8",
@@ -323,7 +333,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 2, 2026",
-    image: "/Shopify & D2C blog/Shopify & D2C 8.png",
+    image: "/Shopify & D2C blog/Shopify & D2C 8-1600.webp",
   },
 
   // Warehouse (8)
@@ -336,7 +346,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 15, 2026",
-    image: "/Warehouse blog/WH 1.png",
+    image: "/Warehouse blog/WH 1-1600.webp",
   },
   {
     id: "wh2",
@@ -347,7 +357,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "7 min",
     date: "May 13, 2026",
-    image: "/Warehouse blog/WH 2.png",
+    image: "/Warehouse blog/WH 2-1600.webp",
   },
   {
     id: "wh3",
@@ -358,7 +368,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "6 min",
     date: "May 11, 2026",
-    image: "/Warehouse blog/WH 3.png",
+    image: "/Warehouse blog/WH 3-1600.webp",
   },
   {
     id: "wh4",
@@ -369,7 +379,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/Warehouse blog/WH 4.png",
+    image: "/Warehouse blog/WH 4-1600.webp",
   },
   {
     id: "wh5",
@@ -380,7 +390,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "6 min",
     date: "May 7, 2026",
-    image: "/Warehouse blog/WH 5.png",
+    image: "/Warehouse blog/WH 5-1600.webp",
   },
   {
     id: "wh6",
@@ -391,7 +401,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "7 min",
     date: "May 5, 2026",
-    image: "/Warehouse blog/WH 6.png",
+    image: "/Warehouse blog/WH 6-1600.webp",
   },
   {
     id: "wh7",
@@ -402,7 +412,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/Warehouse blog/WH 7.png",
+    image: "/Warehouse blog/WH 7-1600.webp",
   },
   {
     id: "wh8",
@@ -413,7 +423,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Warehouse",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/Warehouse blog/WH 8.png",
+    image: "/Warehouse blog/WH 8-1600.webp",
   },
 
   // Inventory (8)
@@ -426,7 +436,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 14, 2026",
-    image: "/Inventory blog/Inv 1.png",
+    image: "/Inventory blog/Inv 1-1600.webp",
   },
   {
     id: "inv2",
@@ -437,7 +447,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "6 min",
     date: "May 12, 2026",
-    image: "/Inventory blog/Inv 2.png",
+    image: "/Inventory blog/Inv 2-1600.webp",
   },
   {
     id: "inv3",
@@ -448,7 +458,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 10, 2026",
-    image: "/Inventory blog/Inv 3.png",
+    image: "/Inventory blog/Inv 3-1600.webp",
   },
   {
     id: "inv4",
@@ -459,7 +469,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "7 min",
     date: "May 8, 2026",
-    image: "/Inventory blog/Inv 4.png",
+    image: "/Inventory blog/Inv 4-1600.webp",
   },
   {
     id: "inv5",
@@ -470,7 +480,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "6 min",
     date: "May 6, 2026",
-    image: "/Inventory blog/Inv 5.png",
+    image: "/Inventory blog/Inv 5-1600.webp",
   },
   {
     id: "inv6",
@@ -481,7 +491,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "May 4, 2026",
-    image: "/Inventory blog/Inv 6.png",
+    image: "/Inventory blog/Inv 6-1600.webp",
   },
   {
     id: "inv7",
@@ -492,7 +502,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "6 min",
     date: "May 2, 2026",
-    image: "/Inventory blog/Inv 7.png",
+    image: "/Inventory blog/Inv 7-1600.webp",
   },
   {
     id: "inv8",
@@ -503,7 +513,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Inventory",
     readTime: "5 min",
     date: "Apr 30, 2026",
-    image: "/Inventory blog/Inv 8.png",
+    image: "/Inventory blog/Inv 8-1600.webp",
   },
 
   // OMS (8)
@@ -516,7 +526,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 13, 2026",
-    image: "/oms-blog/oms 1.png",
+    image: "/oms-blog/oms 1-1600.webp",
   },
   {
     id: "oms2",
@@ -527,7 +537,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 11, 2026",
-    image: "/oms-blog/oms 2.png",
+    image: "/oms-blog/oms 2-1600.webp",
   },
   {
     id: "oms3",
@@ -538,7 +548,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 9, 2026",
-    image: "/oms-blog/oms 3.png",
+    image: "/oms-blog/oms 3-1600.webp",
   },
   {
     id: "oms4",
@@ -549,7 +559,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "May 7, 2026",
-    image: "/oms-blog/oms 4.png",
+    image: "/oms-blog/oms 4-1600.webp",
   },
   {
     id: "oms5",
@@ -560,7 +570,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 5, 2026",
-    image: "/oms-blog/oms 5.png",
+    image: "/oms-blog/oms 5-1600.webp",
   },
   {
     id: "oms6",
@@ -571,7 +581,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "5 min",
     date: "May 3, 2026",
-    image: "/oms-blog/oms 6.png",
+    image: "/oms-blog/oms 6-1600.webp",
   },
   {
     id: "oms7",
@@ -582,7 +592,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/oms-blog/oms 7.png",
+    image: "/oms-blog/oms 7-1600.webp",
   },
   {
     id: "oms8",
@@ -593,7 +603,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "OMS",
     readTime: "7 min",
     date: "Apr 29, 2026",
-    image: "/oms-blog/oms 8.png",
+    image: "/oms-blog/oms 8-1600.webp",
   },
 
   // Returns (8)
@@ -606,7 +616,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 12, 2026",
-    image: "/Returns blog/Return 1.png",
+    image: "/Returns blog/Return 1-1600.webp",
   },
   {
     id: "ret2",
@@ -617,7 +627,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "5 min",
     date: "May 10, 2026",
-    image: "/Returns blog/Return 2.png",
+    image: "/Returns blog/Return 2-1600.webp",
   },
   {
     id: "ret3",
@@ -628,7 +638,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 8, 2026",
-    image: "/Returns blog/Return 3.png",
+    image: "/Returns blog/Return 3-1600.webp",
   },
   {
     id: "ret4",
@@ -639,7 +649,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "5 min",
     date: "May 6, 2026",
-    image: "/Returns blog/Return 4.png",
+    image: "/Returns blog/Return 4-1600.webp",
   },
   {
     id: "ret5",
@@ -650,7 +660,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "May 4, 2026",
-    image: "/Returns blog/Return 5.png",
+    image: "/Returns blog/Return 5-1600.webp",
   },
   {
     id: "ret6",
@@ -661,7 +671,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "5 min",
     date: "May 2, 2026",
-    image: "/Returns blog/Return 6.png",
+    image: "/Returns blog/Return 6-1600.webp",
   },
   {
     id: "ret7",
@@ -672,7 +682,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "6 min",
     date: "Apr 30, 2026",
-    image: "/Returns blog/Return 7.png",
+    image: "/Returns blog/Return 7-1600.webp",
   },
   {
     id: "ret8",
@@ -683,7 +693,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Returns",
     readTime: "7 min",
     date: "Apr 28, 2026",
-    image: "/Returns blog/Return 8.png",
+    image: "/Returns blog/Return 8-1600.webp",
   },
 
   // Growth (8)
@@ -696,7 +706,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "8 min",
     date: "May 11, 2026",
-    image: "/Growth blog/GR 1.png",
+    image: "/Growth blog/GR 1-1600.webp",
   },
   {
     id: "gr2",
@@ -707,7 +717,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "7 min",
     date: "May 9, 2026",
-    image: "/Growth blog/GR 2.png",
+    image: "/Growth blog/GR 2-1600.webp",
   },
   {
     id: "gr3",
@@ -718,7 +728,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "6 min",
     date: "May 7, 2026",
-    image: "/Growth blog/GR 3.png",
+    image: "/Growth blog/GR 3-1600.webp",
   },
   {
     id: "gr4",
@@ -729,7 +739,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "5 min",
     date: "May 5, 2026",
-    image: "/Growth blog/GR 4.png",
+    image: "/Growth blog/GR 4-1600.webp",
   },
   {
     id: "gr5",
@@ -740,7 +750,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "7 min",
     date: "May 3, 2026",
-    image: "/Growth blog/GR 5.png",
+    image: "/Growth blog/GR 5-1600.webp",
   },
   {
     id: "gr6",
@@ -751,7 +761,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "6 min",
     date: "May 1, 2026",
-    image: "/Growth blog/GR 6.png",
+    image: "/Growth blog/GR 6-1600.webp",
   },
   {
     id: "gr7",
@@ -762,7 +772,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "7 min",
     date: "Apr 29, 2026",
-    image: "/Growth blog/GR 7.png",
+    image: "/Growth blog/GR 7-1600.webp",
   },
   {
     id: "gr8",
@@ -773,7 +783,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Growth",
     readTime: "6 min",
     date: "Apr 27, 2026",
-    image: "/Growth blog/GR 8.png",
+    image: "/Growth blog/GR 8-1600.webp",
   },
 
   // Comparisons (4)
@@ -786,7 +796,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "10 min",
     date: "May 12, 2026",
-    image: "/Comparisons blog/CMP 1.png",
+    image: "/Comparisons blog/CMP 1-1600.webp",
   },
   {
     id: "cmp2",
@@ -797,7 +807,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "9 min",
     date: "May 10, 2026",
-    image: "/Comparisons blog/CMP 2.png",
+    image: "/Comparisons blog/CMP 2-1600.webp",
   },
   {
     id: "cmp3",
@@ -808,7 +818,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "8 min",
     date: "May 8, 2026",
-    image: "/Comparisons blog/CMP 3.png",
+    image: "/Comparisons blog/CMP 3-1600.webp",
   },
   {
     id: "cmp4",
@@ -819,7 +829,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Comparisons",
     readTime: "7 min",
     date: "May 6, 2026",
-    image: "/Comparisons blog/CMP 4.png",
+    image: "/Comparisons blog/CMP 4-1600.webp",
   },
   // Reconciliation (5)
   {
@@ -831,7 +841,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "9 min",
     date: "July 15, 2026",
-    image: "/Reco blogs/Reco 1.png",
+    image: "/Reco blogs/Reco 1-1600.webp",
   },
   {
     id: "rec2",
@@ -842,7 +852,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "8 min",
     date: "July 12, 2026",
-    image: "/Reco blogs/Reco 2.png",
+    image: "/Reco blogs/Reco 2-1600.webp",
   },
   {
     id: "rec3",
@@ -853,7 +863,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "7 min",
     date: "July 10, 2026",
-    image: "/Reco blogs/Reco 3.png",
+    image: "/Reco blogs/Reco 3-1600.webp",
   },
   {
     id: "rec4",
@@ -864,7 +874,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Reconciliation",
     readTime: "6 min",
     date: "July 8, 2026",
-    image: "/Reco blogs/Reco 4.png",
+    image: "/Reco blogs/Reco 4-1600.webp",
   },
   {
     id: "rec5",
@@ -876,7 +886,7 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "10 min",
 
     date: "July 5, 2026",
-    image: "/Reco blogs/Reco 5.png",
+    image: "/Reco blogs/Reco 5-1600.webp",
   },
 ];
 

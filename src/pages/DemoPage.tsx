@@ -485,64 +485,6 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
 
                     <hr className="border-slate-100" />
 
-                    {/* Format Selector Row */}
-                    {/* <div>
-                      <label className="flex items-center justify-between text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-2">
-                        <span>How would you like your demo? *</span>
-                        {formErrors.demoType && (
-                          <span className="text-rose-500 normal-case font-semibold animate-pulse">
-                            {formErrors.demoType}
-                          </span>
-                        )}
-                      </label>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {demoOptions.map((option) => {
-                          const Icon = option.icon;
-                          const isSelected = formData.demoType === option.id;
-                          return (
-                            <button
-                              key={option.id}
-                              type="button"
-                              onClick={() => {
-                                setFormData({
-                                  ...formData,
-                                  demoType: option.id,
-                                });
-                                setFormErrors((prev) => ({
-                                  ...prev,
-                                  demoType: undefined,
-                                }));
-                              }}
-                              className={`group text-left p-3.5 rounded-xl border transition-all ${isSelected ? "border-amber-500 bg-amber-50/40 ring-2 ring-amber-500/10" : "border-slate-200 hover:border-slate-300 hover:bg-slate-50"}`}
-                            >
-                              <div className="flex items-center gap-3">
-                                <div
-                                  className={`w-9 h-9 rounded-lg flex items-center justify-center transition-colors ${isSelected ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"}`}
-                                >
-                                  <Icon className="w-4 h-4" />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <h4 className="text-xs font-bold text-slate-900">
-                                    {option.title}
-                                  </h4>
-                                  <p className="text-[11px] text-slate-500 truncate">
-                                    {option.subtitle}
-                                  </p>
-                                </div>
-                                {isSelected && (
-                                  <div className="w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center">
-                                    <Check className="w-2.5 h-2.5 text-white stroke-[3]" />
-                                  </div>
-                                )}
-                              </div>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <hr className="border-slate-100" /> */}
-
                     {/* Scheduling Blocks Group */}
                     <div className="space-y-4">
                       {/* Fully Custom Date Picker Element */}

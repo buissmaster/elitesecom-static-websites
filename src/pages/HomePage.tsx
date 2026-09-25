@@ -159,7 +159,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Amazon",
       subtitle: "Global Marketplace",
-      logo: "/logo-amazon.png",
+      logo: "/logo-amazon.webp",
       bg: "#FFF7ED",
       border: "#FED7AA",
       text: "#EA580C",
@@ -173,7 +173,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Flipkart",
       subtitle: "India's Favorite",
-      logo: "/logo-flipkart.png",
+      logo: "/logo-flipkart.webp",
       bg: "#EFF6FF",
       border: "#BFDBFE",
       text: "#2563EB",
@@ -187,7 +187,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Myntra",
       subtitle: "Fashion Destination",
-      logo: "/logo-myntra.png",
+      logo: "/logo-myntra.webp",
       bg: "#FFF1F2",
       border: "#FECDD3",
       text: "#DB2777",
@@ -202,7 +202,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Nykaa",
       subtitle: "Beauty & Wellness",
-      logo: "/logo-nykaa.png",
+      logo: "/logo-nykaa.webp",
       logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FAF5FF",
       border: "#f8c3d7",
@@ -217,7 +217,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Shopify",
       subtitle: "Build Your Store",
-      logo: "/logo-shopify.png",
+      logo: "/logo-shopify.webp",
       bg: "#F0FDF4",
       border: "#BBF7D0",
       text: "#16A34A",
@@ -231,7 +231,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Ajio",
       subtitle: "Trendy Fashion",
-      logo: "/logo-ajio.png",
+      logo: "/logo-ajio.webp",
       bg: "#F0F9FF",
       border: "#BAE6FD",
       text: "#0891B2",
@@ -246,7 +246,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Snapdeal",
       subtitle: "Value Shopping",
-      logo: "/logo-snapdeal.png",
+      logo: "/logo-snapdeal.webp",
       logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FFF1F2",
       border: "#FECDD3",
@@ -261,7 +261,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Meesho",
       subtitle: "Reseller Platform",
-      logo: "/logo-meesho.png",
+      logo: "/logo-meesho.webp",
       logoShadow: "drop-shadow(0px 2px 4px rgba(0,0,0,0.25))",
       bg: "#FAF5FF",
       border: "#E9D5FF",

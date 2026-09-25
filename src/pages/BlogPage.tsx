@@ -17,7 +17,11 @@ import {
   LayoutGrid,
   Calculator,
 } from "lucide-react";
-import { getCategoryArticles, allBlogEntries } from "../lib/blogSlugs";
+import {
+  getBlogImageSrcSet,
+  getCategoryArticles,
+  allBlogEntries,
+} from "../lib/blogSlugs";
 import { getBlogDetailPath } from "../lib/routes";
 import { TopicClusterHub } from "@/components/TopicClusterHub";
 
@@ -25,7 +29,17 @@ interface BlogPageProps {
   onNavigate?: (page: string) => void;
 }
 
-function LazyBlogImage({ src, alt }: { src: string; alt: string }) {
+function LazyBlogImage({
+  src,
+  srcSet,
+  sizes,
+  alt,
+}: {
+  src: string;
+  srcSet?: string;
+  sizes?: string;
+  alt: string;
+}) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
@@ -57,6 +71,8 @@ function LazyBlogImage({ src, alt }: { src: string; alt: string }) {
       {shouldLoad && (
         <img
           src={src}
+          srcSet={srcSet}
+          sizes={sizes}
           alt={alt}
           loading="lazy"
           decoding="async"
@@ -329,6 +345,8 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                       <div className="relative aspect-[16/9] overflow-hidden">
                         <LazyBlogImage
                           src={img}
+                          srcSet={getBlogImageSrcSet(img)}
+                          sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc((100vw - 3rem) / 2), (max-width: 1280px) calc((100vw - 6rem) / 4), 290px"
                           alt={post.title}
                         />
            {useOverlayLayout && (

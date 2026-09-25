@@ -15,6 +15,7 @@ import {
   findBlogBySlug,
   findBlogById,
   allBlogEntries,
+  getBlogImageSrcSet,
   type BlogEntry,
 } from "../lib/blogSlugs";
 
@@ -1464,6 +1465,7 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
   // const color = catColors[entry.category] || '#2563EB';
   const color = catColors[entry.category] || "#2563EB";
   const image = entry.image || "/blog-hero-new.jpg";
+  const imageSrcSet = getBlogImageSrcSet(image);
   const text = getArticleContent(entry);
 
   const relatedPosts = allBlogEntries
@@ -1479,6 +1481,8 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
       <section className="relative min-h-[520px] lg:min-h-[620px] overflow-hidden bg-slate-950">
         <img
           src={image}
+          srcSet={imageSrcSet}
+          sizes="100vw"
           alt={entry.title}
           className="absolute inset-0 h-full w-full object-cover scale-[1.04] motion-kenburns opacity-90"
         />
@@ -1666,6 +1670,8 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
               >
                 <img
                   src={image}
+                  srcSet={imageSrcSet}
+                  sizes="(max-width: 1024px) calc(100vw - 2rem), 900px"
                   alt={entry.title}
                   className="w-full h-[420px] object-cover transition-transform duration-1000 hover:scale-105"
                 />
@@ -1707,19 +1713,22 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
               Related Articles
             </h2>
             <div className="grid sm:grid-cols-3 gap-6">
-              {relatedPosts.map((post) => (
-                <article
-                  key={post.slug}
-                  onClick={() => goToBlog(post.slug)}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer"
-                >
+              {relatedPosts.map((post) => {
+                const relatedImage =
+                  post.image ||
+                  catImages[post.category] ||
+                  "/blog-hero-new.jpg";
+                return (
+                  <article
+                    key={post.slug}
+                    onClick={() => goToBlog(post.slug)}
+                    className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 cursor-pointer"
+                  >
                   <div className="relative h-40 overflow-hidden">
                     <img
-                      src={
-                        post.image ||
-                        catImages[post.category] ||
-                        "/blog-hero-new.jpg"
-                      }
+                      src={relatedImage}
+                      srcSet={getBlogImageSrcSet(relatedImage)}
+                      sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1024px) calc((100vw - 4rem) / 3), 304px"
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -1733,8 +1742,9 @@ export function BlogDetailPage({ onNavigate }: BlogDetailProps) {
                       {post.readTime}
                     </span>
                   </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>

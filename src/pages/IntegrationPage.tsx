@@ -22,7 +22,7 @@ const integrations = [
     bgColor: "#FFF7ED",
     borderColor: "#FED7AA",
     cardAccent: "bg-orange-400",
-    logo: "/logo-amazon.png",
+    logo: "/logo-amazon.webp",
     category: "Marketplace",
   },
   {
@@ -33,7 +33,7 @@ const integrations = [
     bgColor: "#EFF6FF",
     borderColor: "#BFDBFE",
     cardAccent: "bg-blue-400",
-    logo: "/logo-flipkart.png",
+    logo: "/logo-flipkart.webp",
     category: "Marketplace",
   },
   {
@@ -44,7 +44,7 @@ const integrations = [
     bgColor: "#FFF1F2",
     borderColor: "#FECDD3",
     cardAccent: "bg-pink-400",
-    logo: "/logo-myntra.png",
+    logo: "/logo-myntra.webp",
     category: "Fashion",
   },
   {
@@ -55,7 +55,7 @@ const integrations = [
     bgColor: "#F0FDF4",
     borderColor: "#BBF7D0",
     cardAccent: "bg-emerald-400",
-    logo: "/logo-shopify.png",
+    logo: "/logo-shopify.webp",
     category: "Platform",
   },
   {
@@ -65,7 +65,7 @@ const integrations = [
     bgColor: "#F8FAFC",
     borderColor: "#E2E8F0",
     cardAccent: "bg-slate-400",
-    logo: "/logo-ajio.png",
+    logo: "/logo-ajio.webp",
     category: "Fashion",
   },
   {
@@ -75,7 +75,7 @@ const integrations = [
     bgColor: "#FDF2F8",
     borderColor: "#FBCFE8",
     cardAccent: "bg-fuchsia-400",
-    logo: "/logo-meesho.png",
+    logo: "/logo-meesho.webp",
     category: "Social Commerce",
   },
   {
@@ -85,7 +85,7 @@ const integrations = [
     bgColor: "#FEF2F2",
     borderColor: "#FECACA",
     cardAccent: "bg-red-400",
-    logo: "/logo-snapdeal.png",
+    logo: "/logo-snapdeal.webp",
     category: "Marketplace",
   },
   {
@@ -95,7 +95,7 @@ const integrations = [
     bgColor: "#FFFBEB",
     borderColor: "#FDE68A",
     cardAccent: "bg-amber-400",
-    logo: "/logo-firstcry.png",
+    logo: "/logo-firstcry.webp",
     category: "Baby Care",
   },
   {
@@ -105,7 +105,7 @@ const integrations = [
     bgColor: "#FFF1F2",
     borderColor: "#FECDD3",
     cardAccent: "bg-rose-400",
-    logo: "/logo-nykaa.png",
+    logo: "/logo-nykaa.webp",
     category: "Beauty",
   },
   {
@@ -115,7 +115,7 @@ const integrations = [
     bgColor: "#F0F9FF",
     borderColor: "#BAE6FD",
     cardAccent: "bg-sky-400",
-    logo: "/logo-paytm.png",
+    logo: "/logo-paytm.webp",
     category: "Payments",
   },
   {
@@ -125,7 +125,7 @@ const integrations = [
     bgColor: "#FAF5FF",
     borderColor: "#E9D5FF",
     cardAccent: "bg-purple-400",
-    logo: "/logo-fynd.png",
+    logo: "/logo-fynd.webp",
     category: "Platform",
   },
   {
@@ -135,7 +135,7 @@ const integrations = [
     bgColor: "#EFF6FF",
     borderColor: "#BFDBFE",
     cardAccent: "bg-blue-400",
-    logo: "/logo-tatacliq.png",
+    logo: "/logo-tatacliq.webp",
     category: "Luxury",
   },
 ];

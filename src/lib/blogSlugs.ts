@@ -57,6 +57,22 @@ function makeSlug(title: string): string {
 
 export const allBlogEntries: BlogEntry[] = [
   {
+    id: "feature-oms-guide",
+    slug: makeSlug("what-is-an-order-management-system"),
+    title: "What Is an Order Management System (OMS)? Complete Guide",
+    subtitle:
+      "An Order Management System (OMS) is software that helps ecommerce businesses manage orders across sales channels from a centralized system. Instead of handling orders, inventory, fulfillment, returns, and reconciliation separately across different marketplace panels and internal tools, an OMS connects these processes into one operational workflow. As businesses sell across Amazon, Flipkart, Meesho, Myntra, Shopify, AJIO, and other channels, managing orders manually becomes increasingly complex. An OMS provides a centralized way to monitor and process orders while keeping inventory and fulfillment operations connected.",
+    category: "Feature Guide",
+    readTime: "18 min",
+    date: "October 1, 2026",
+    image: "/oms-blog.png",
+    seoTitle: "What Is an Order Management System (OMS)? Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn what an Order Management System (OMS) is, how it works, key features, benefits, and how OMS software helps ecommerce businesses manage orders, inventory, fulfillment, returns, and reconciliation.",
+    seoKeywords:
+      "Order Management System, Order Management System (OMS), what is an order management system, OMS software, ecommerce order management system, ecommerce OMS, order management software, order processing system, multichannel order management, omnichannel order management, inventory management, order fulfillment, warehouse management, returns management, payment reconciliation, return reconciliation, ecommerce order processing, marketplace order management, multichannel ecommerce, order management system for ecommerce, best order management system for ecommerce",
+  },
+  {
     id: "hp1",
     slug: makeSlug("Solution for Growing Businesses"),
     title: "Manage Multi-Channel Orders from One Dashboard",

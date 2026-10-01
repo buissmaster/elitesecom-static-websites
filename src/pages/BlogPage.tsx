@@ -229,8 +229,8 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src="/blog-main-800.webp"
-                    srcSet="/blog-main-400.webp 400w, /blog-main-800.webp 800w, /blog-main-1600.webp 1600w"
+                    src="/oms-blog.png"
+                    srcSet="/oms-blog.png 1920w"
                     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
                     alt={featuredPost.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -239,6 +239,9 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                   />
                 </div>
                 <div className="px-4 py-3">
+                  <h2 className="font-heading text-xl font-bold leading-tight mb-2 group-hover:text-gold-600 transition-colors">
+                    {featuredPost.title}
+                  </h2>
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-slate-500 text-xs leading-5 line-clamp-3 pr-2">
                       {featuredPost.subtitle}

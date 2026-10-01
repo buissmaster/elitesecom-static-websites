@@ -393,9 +393,9 @@ export function getSeoConfig(
   if (page === "blogdetail" && blogEntry) {
     const path = getBlogDetailPath(blogEntry.slug);
     return {
-      title: `${blogEntry.title} | OMS & Ecommerce Blog | Elitesecom`,
-      description: blogEntry.subtitle,
-      keywords:
+      title: blogEntry.seoTitle ?? `${blogEntry.title} | OMS & Ecommerce Blog | Elitesecom`,
+      description: blogEntry.metaDescription ?? blogEntry.subtitle,
+      keywords: blogEntry.seoKeywords ??
         "OMS, order management, ecommerce operations, reconciliation, inventory management, Elitesecom blog",
       canonical: absoluteUrl(path),
       ogImage: blogEntry.image.startsWith("http")

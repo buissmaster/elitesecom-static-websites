@@ -33,6 +33,9 @@ export interface BlogEntry {
   readTime: string;
   date: string;
   image: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  seoKeywords?: string;
 }
 
 export function getBlogImageSrcSet(image: string): string | undefined {
@@ -171,13 +174,18 @@ export const allBlogEntries: BlogEntry[] = [
   {
     id: "mp2",
     slug: makeSlug("flipkart-order-management-best-practices"),
-    title: "Flipkart Order Management Best Practices",
+    title: "Flipkart Order Management",
     subtitle:
-      "Flipkart's seller rating algorithm weighs order defect rate and late shipment rate more heavily than most sellers realize — here's what actually protects both.",
+      "Efficient Flipkart order management helps sellers process orders on time, maintain accurate inventory, reduce cancellations, and keep fulfillment operations organized as order volume grows.",
     category: "Marketplaces",
     readTime: "6 min",
     date: "May 15, 2026",
     image: "/Marketplace blog/Marketplace 2-1600.webp",
+    seoTitle: "Flipkart Order Management: Complete Guide for Sellers | Elitesecom",
+    metaDescription:
+      "Learn Flipkart order management best practices for processing orders, managing inventory, reducing cancellations, handling returns, and streamlining fulfillment.",
+    seoKeywords:
+      "Flipkart Order Management, Flipkart order management system, Flipkart order processing, Flipkart seller order management, Flipkart order fulfillment, Flipkart inventory management, Flipkart Seller Hub, Flipkart seller operations, Flipkart OMS, Flipkart multichannel order management, Flipkart orders",
   },
   {
     id: "mp3",
@@ -244,6 +252,38 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "May 3, 2026",
     image: "/Marketplace blog/Marketplace 8-1600.webp",
+  },
+  {
+    id: "mp9",
+    slug: makeSlug("meesho-oms-complete-order-management-guide-for-sellers"),
+    title: "Meesho OMS: Complete Order Management Guide for Sellers",
+    subtitle:
+      "Learn how a Meesho OMS helps sellers manage orders, inventory, warehouse operations, returns, reconciliation, and multichannel ecommerce from one centralized system.",
+    category: "Marketplaces",
+    readTime: "9 min",
+    date: "October 1, 2026",
+    image: "/Marketplace blog/Marketplace 3-1600.webp",
+    seoTitle: "Meesho OMS: Complete Order Management Guide for Sellers | Elitesecom",
+    metaDescription:
+      "Learn how a Meesho OMS helps sellers manage orders, inventory, warehouse operations, returns, reconciliation, and multichannel ecommerce efficiently.",
+    seoKeywords:
+      "Meesho OMS, Meesho order management, Meesho seller operations, Meesho inventory management, Meesho Seller Panel, Meesho returns, Meesho reconciliation, Meesho order management system, ecommerce order management, multichannel order management",
+  },
+  {
+    id: "mp10",
+    slug: makeSlug("amazon-inventory-management-buy-box"),
+    title: "Amazon Inventory Management and Buy Box: What Sellers Need to Know",
+    subtitle:
+      "Amazon inventory management can affect much more than stock availability. Poor inventory planning can lead to stockouts, fulfillment delays, and missed sales opportunities — making inventory visibility an important part of maintaining a healthy Amazon selling operation.",
+    category: "Marketplaces",
+    readTime: "8 min",
+    date: "October 1, 2026",
+    image: "/Marketplace blog/Marketplace 1-1600.webp",
+    seoTitle: "Amazon Inventory Management & Buy Box: Guide for Sellers | Elitesecom",
+    metaDescription:
+      "Learn how Amazon inventory management affects product availability, fulfillment, and Buy Box operations. Discover inventory best practices for Amazon sellers.",
+    seoKeywords:
+      "Amazon inventory management Buy Box, Amazon inventory management, Amazon Buy Box, Amazon inventory management system, Amazon seller inventory management, Amazon inventory optimization, Amazon Buy Box eligibility, Amazon FBA inventory management, Amazon FBM inventory management, Amazon stock management, Amazon order management, Amazon seller operations, Amazon multichannel inventory management",
   },
 
   // Shopify & D2C (8)

@@ -4,8 +4,6 @@ import {
   Check,
   Calendar as CalendarIcon,
   Clock,
-  Video,
-  Phone,
   Sparkles,
   Building2,
   User,
@@ -43,30 +41,14 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
     phone: "",
     preferredDate: todayKey,
     preferredTime: "",
-    demoType: "",
     message: "",
   });
+  const [submittedName, setSubmittedName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState<{
-    demoType?: string;
     preferredTime?: string;
   }>({});
-
-  const demoOptions = [
-    {
-      id: "video",
-      title: "Video Call",
-      subtitle: "Zoom / Google Meet",
-      icon: Video,
-    },
-    {
-      id: "phone",
-      title: "Phone Call",
-      subtitle: "We'll call you directly",
-      icon: Phone,
-    },
-  ];
 
   const timeOptions = [
     {
@@ -197,10 +179,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const newErrors: { demoType?: string; preferredTime?: string } = {};
-    // if (!formData.demoType) {
-    //   newErrors.demoType = "Please choose how you'd like your demo.";
-    // }
+    const newErrors: { preferredTime?: string } = {};
     if (!formData.preferredTime) {
       newErrors.preferredTime = "Please select a time slot.";
     }
@@ -232,6 +211,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
       const response = await axios.post(url, payload);
       if (response.status === 200) {
         toast.success("Thank you! We'll get back to you shortly.");
+        setSubmittedName(formData.name);
         setFormData({
           name: "",
           email: "",
@@ -239,7 +219,6 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
           phone: "",
           preferredDate: todayKey,
           preferredTime: "",
-          demoType: "",
           message: "",
         });
 
@@ -352,7 +331,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                     <p className="text-slate-600 text-xs leading-relaxed mb-6">
                       Thank you,{" "}
                       <span className="font-semibold text-slate-800">
-                        {formData.name}
+                        {submittedName}
                       </span>
                       . Our team will reach out to confirm your slot soon.
                     </p>
@@ -377,8 +356,7 @@ export function DemoPage({ onNavigate }: DemoPageProps) {
                             Incomplete Form
                           </AlertTitle>
                           <AlertDescription className="text-[11px] text-rose-700 font-medium">
-                            Please choose how you'd like your demo and a time
-                            slot before proceeding.Send us a Message
+                            Please select a time slot before proceeding.
                           </AlertDescription>
                         </div>
                       </Alert>

@@ -364,7 +364,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-warehouse-automation-improves-accuracy"),
     title: "How Warehouse Automation Improves Accuracy",
     subtitle:
-      "Explore automation technologies that reduce errors and increase warehouse efficiency.",
+      "Most picking errors don't come from careless staff — they come from a warehouse layout and process that makes the wrong item easy to grab by mistake, which automation is specifically designed to prevent.",
     category: "Warehouse",
     readTime: "6 min",
     date: "May 11, 2026",
@@ -375,7 +375,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("order-fulfillment-workflow-explained"),
     title: "Order Fulfillment Workflow Explained",
     subtitle:
-      "Step-by-step guide through the complete order fulfillment process.",
+      "Order fulfillment breaks down into five distinct stages — and most fulfillment problems trace back to a weak handoff between two specific stages, not a failure within any single one.",
     category: "Warehouse",
     readTime: "5 min",
     date: "May 9, 2026",
@@ -386,7 +386,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("pick-pack-ship-process-guide"),
     title: "Pick, Pack & Ship Process Guide",
     subtitle:
-      "Master the three core warehouse operations that power every ecommerce delivery.",
+      "Pick, pack, and ship look like three simple steps — but each has a specific failure mode that compounds if the previous step wasn't done correctly, which is why fixing pack errors often starts with fixing pick errors first.",
     category: "Warehouse",
     readTime: "6 min",
     date: "May 7, 2026",
@@ -397,7 +397,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("warehouse-kpis-every-seller-should-track"),
     title: "Warehouse KPIs Every Seller Should Track",
     subtitle:
-      "The essential metrics that reveal your warehouse performance and efficiency.",
+      "Order accuracy rate and pick time per order are the two warehouse metrics most directly tied to customer experience and cost — and the two most commonly left untracked by growing sellers.",
     category: "Warehouse",
     readTime: "7 min",
     date: "May 5, 2026",
@@ -408,7 +408,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("fulfillment-challenges-in-ecommerce"),
     title: "Fulfillment Challenges in eCommerce",
     subtitle:
-      "Common fulfillment obstacles and proven strategies to overcome them.",
+      "The same three fulfillment challenges show up across nearly every growing ecommerce seller — inventory accuracy, peak-period capacity, and multi-channel coordination — and each has a specific, addressable cause.",
     category: "Warehouse",
     readTime: "5 min",
     date: "May 3, 2026",
@@ -419,7 +419,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("smart-warehouse-management-strategies"),
     title: "Warehouse Management Best Practices",
     subtitle:
-      "Implement smart strategies that transform your warehouse into a competitive advantage.",
+      "The warehouses that run smoothly aren't necessarily the most automated — they're the ones with a clear, consistently followed layout and process, which automation then makes faster rather than creates from scratch.",
     category: "Warehouse",
     readTime: "6 min",
     date: "May 1, 2026",
@@ -432,7 +432,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("inventory-turnover-ratio-explained"),
     title: "Inventory Turnover Ratio Explained",
     subtitle:
-      "Learn how to calculate and optimize your inventory turnover for better cash flow.",
+      "A low inventory turnover ratio doesn't just mean slow sales — it means cash sitting on a shelf instead of being available to reinvest in your business.",
     category: "Inventory",
     readTime: "5 min",
     date: "May 14, 2026",
@@ -454,7 +454,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("abc-inventory-analysis-guide"),
     title: "ABC Inventory Analysis Guide",
     subtitle:
-      "Classify your inventory using the ABC method to focus efforts where they matter most.",
+      "Roughly 20% of your SKUs typically generate 80% of your revenue — ABC analysis is how you identify which 20%, so you can manage them with the attention they deserve.",
     category: "Inventory",
     readTime: "5 min",
     date: "May 10, 2026",
@@ -476,7 +476,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("inventory-planning-during-sale-seasons"),
     title: "Sale Season Inventory Planning",
     subtitle:
-      "Strategies for preparing your inventory before major sale events and festive seasons.",
+      "Sale-season stockouts don't usually happen because sellers didn't order enough stock overall — they happen because the wrong SKUs were prioritized for the extra inventory.",
     category: "Inventory",
     readTime: "6 min",
     date: "May 6, 2026",
@@ -487,7 +487,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("overstocking-vs-understocking"),
     title: "Overstocking vs Understocking",
     subtitle:
-      "Find the sweet spot between too much and too little inventory for your business.",
+      "Overstocking and understocking feel like opposite problems, but they usually come from the same root cause: forecasting based on gut feeling instead of actual demand data.",
     category: "Inventory",
     readTime: "5 min",
     date: "May 4, 2026",
@@ -498,7 +498,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("inventory-audit-best-practices"),
     title: "Inventory Audit Best Practices",
     subtitle:
-      "Implement systematic inventory audits that keep your stock records accurate.",
+      "Most inventory discrepancies aren't discovered during a scheduled audit — they're discovered when a customer order can't be fulfilled, which means the audit happened too late to prevent the problem.",
     category: "Inventory",
     readTime: "6 min",
     date: "May 2, 2026",
@@ -509,7 +509,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("real-time-inventory-tracking-benefits"),
     title: "Real-Time Inventory Tracking Guide",
     subtitle:
-      "Discover how real-time inventory visibility transforms your operational efficiency.",
+      "'Real-time' inventory tracking is often not actually real-time — many systems update on a batch schedule (every 30-60 minutes), and that gap is exactly where overselling happens.",
     category: "Inventory",
     readTime: "5 min",
     date: "Apr 30, 2026",
@@ -713,7 +713,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("building-an-operations-team-for-ecommerce"),
     title: "eCommerce Operations Team Guide",
     subtitle:
-      "Structure and hire the right operations team as your ecommerce business grows.",
+      "Most ecommerce teams don't fail from having too few people — they fail from having no one who owns inventory, no one who owns fulfillment, and everyone assuming someone else is watching the details.",
     category: "Growth",
     readTime: "7 min",
     date: "May 9, 2026",
@@ -724,7 +724,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("key-metrics-every-ecommerce-business-should-monitor"),
     title: "Essential eCommerce Business KPIs",
     subtitle:
-      "The essential KPIs that tell you if your operations are healthy and scalable.",
+      "Revenue tells you if you're growing — it doesn't tell you if your operations can actually support that growth. These are the metrics that do.",
     category: "Growth",
     readTime: "6 min",
     date: "May 7, 2026",
@@ -735,7 +735,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-automation-increases-profit-margins"),
     title: "Automation for Higher Profit Margins",
     subtitle:
-      "Quantify the financial impact of operational automation on your bottom line.",
+      "Automation's impact on profit margin isn't just 'saved labor cost' — it's the errors, refunds, and missed sales that manual processes quietly cause, which are often larger than the labor cost itself.",
     category: "Growth",
     readTime: "5 min",
     date: "May 5, 2026",
@@ -746,7 +746,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("ecommerce-growth-strategies-for-indian-sellers"),
     title: "Growth Strategies for Indian eCommerce Sellers",
     subtitle:
-      "Tailored growth strategies for sellers operating in the Indian ecommerce market.",
+      "Growth strategies that work for global D2C brands often don't translate directly to Indian sellers — COD dominance, Tier 2/3 city demand, and marketplace-first buying habits change what actually drives growth here.",
     category: "Growth",
     readTime: "7 min",
     date: "May 3, 2026",
@@ -757,7 +757,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("scaling-without-operational-chaos"),
     title: "Scaling Without Operational Chaos",
     subtitle:
-      "Grow your business while maintaining operational order and team sanity.",
+      "Operational chaos during scaling isn't usually caused by growing too fast — it's caused by growing without deciding in advance which processes need to change at each stage.",
     category: "Growth",
     readTime: "6 min",
     date: "May 1, 2026",
@@ -768,7 +768,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("operational-efficiency-framework-for-sellers"),
     title: "Operational Efficiency Guide",
     subtitle:
-      "A systematic framework for measuring and improving operational efficiency.",
+      "Operational efficiency isn't about doing everything faster — it's about knowing which specific process, if improved, would actually move your bottom line, and focusing there first.",
     category: "Growth",
     readTime: "7 min",
     date: "Apr 29, 2026",
@@ -779,7 +779,7 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("how-successful-brands-manage-growth"),
     title: "How Successful Brands Scale",
     subtitle:
-      "Case study insights from brands that scaled successfully without breaking operations.",
+      "The brands that scale successfully aren't the ones that grow fastest — they're the ones whose operations grow at the same pace as their revenue, not months behind it.",
     category: "Growth",
     readTime: "6 min",
     date: "Apr 27, 2026",

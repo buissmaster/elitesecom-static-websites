@@ -230,7 +230,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                 <div className="relative h-60 overflow-hidden">
                   <img
                     src="/oms-blog.png"
-                    srcSet="/oms-blog.png 1920w"
+                    srcSet="/oms_blog.png 1920w"
                     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1600px"
                     alt={featuredPost.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

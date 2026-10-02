@@ -59,7 +59,7 @@ export const allBlogEntries: BlogEntry[] = [
   {
     id: "feature-oms-guide",
     slug: makeSlug("what-is-an-order-management-system"),
-    title: "What Is an Order Management System (OMS)? Complete Guide",
+    title: "What Is an Order Management System (OMS)?",
     subtitle:
       "An Order Management System (OMS) is software that helps ecommerce businesses manage orders across sales channels from a centralized system. Instead of handling orders, inventory, fulfillment, returns, and reconciliation separately across different marketplace panels and internal tools, an OMS connects these processes into one operational workflow. As businesses sell across Amazon, Flipkart, Meesho, Myntra, Shopify, AJIO, and other channels, managing orders manually becomes increasingly complex. An OMS provides a centralized way to monitor and process orders while keeping inventory and fulfillment operations connected.",
     category: "Feature Guide",
@@ -288,7 +288,7 @@ export const allBlogEntries: BlogEntry[] = [
   {
     id: "mp10",
     slug: makeSlug("amazon-inventory-management-buy-box"),
-    title: "Amazon Inventory Management and Buy Box: What Sellers Need to Know",
+    title: "Amazon Inventory Management and Buy Box Guide",
     subtitle:
       "Amazon inventory management can affect much more than stock availability. Poor inventory planning can lead to stockouts, fulfillment delays, and missed sales opportunities — making inventory visibility an important part of maintaining a healthy Amazon selling operation.",
     category: "Marketplaces",
@@ -300,6 +300,38 @@ export const allBlogEntries: BlogEntry[] = [
       "Learn how Amazon inventory management affects product availability, fulfillment, and Buy Box operations. Discover inventory best practices for Amazon sellers.",
     seoKeywords:
       "Amazon inventory management Buy Box, Amazon inventory management, Amazon Buy Box, Amazon inventory management system, Amazon seller inventory management, Amazon inventory optimization, Amazon Buy Box eligibility, Amazon FBA inventory management, Amazon FBM inventory management, Amazon stock management, Amazon order management, Amazon seller operations, Amazon multichannel inventory management",
+  },
+  {
+    id: "mp11",
+    slug: makeSlug("myntra-seller-operations-guide"),
+    title: "Myntra Seller Operations Guide",
+    subtitle:
+      "Myntra's seller rating directly affects catalog visibility — sellers with strong on-time dispatch and low return rates get surfaced more prominently in search and category pages, making operations a direct growth lever, not just a cost center.",
+    category: "Marketplaces",
+    readTime: "4 min",
+    date: "October 2, 2026",
+    image: "/Marketplace blog/Marketplace 11.png",
+    seoTitle: "Myntra Seller Operations Guide: Orders, Inventory & Returns | Elitesecom",
+    metaDescription:
+      "Learn Myntra seller operations best practices for order management, inventory sync, dispatch, catalog quality, sizing, returns, and fashion marketplace performance.",
+    seoKeywords:
+      "Myntra seller operations, Myntra seller operations guide, Myntra order management, Myntra seller management, Myntra inventory management, Myntra order processing, Myntra seller performance, Myntra returns management, Myntra catalog management, fashion marketplace operations, Myntra seller",
+  },
+  {
+    id: "mp12",
+    slug: makeSlug("ajio-order-management-guide"),
+    title: "Ajio Order Management Guide",
+    subtitle:
+      "Ajio's fashion-focused catalog and Reliance-backed logistics network create a different operational profile than general marketplaces — sellers who treat it identically to Amazon or Flipkart often miss category-specific requirements that affect visibility and performance scores.",
+    category: "Marketplaces",
+    readTime: "4 min",
+    date: "October 2, 2026",
+    image: "/Marketplace blog/Marketplace 12.png",
+    seoTitle: "Ajio Order Management Guide: Orders, Inventory & Returns | Elitesecom",
+    metaDescription:
+      "Learn Ajio order management best practices for inventory sync, order processing, dispatch, returns, product listings, and fashion marketplace operations.",
+    seoKeywords:
+      "Ajio order management, Ajio order management guide, Ajio seller operations, Ajio inventory management, Ajio order processing, Ajio seller management, Ajio returns management, Ajio inventory sync, Ajio seller performance, Ajio marketplace, fashion marketplace order management",
   },
 
   // Shopify & D2C (8)

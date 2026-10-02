@@ -1355,6 +1355,56 @@ function getArticleContent(entry: BlogEntry) {
       },
     },
     Marketplaces: {
+      "myntra-seller-operations-guide": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: `<p>Myntra operates primarily as a fashion marketplace with stricter quality and packaging standards than general marketplaces, reflecting its premium positioning. Three factors shape Myntra seller operations specifically: dispatch SLA compliance (tracked closely and tied to catalog ranking), return rate management (fashion categories typically see higher return rates than other product types, making return handling a bigger operational factor here than on most marketplaces), and catalog quality (product images, sizing information, and descriptions are weighted heavily in Myntra's own search algorithm, making content quality an operational concern, not just a marketing one).</p>`,
+          },
+          {
+            title: "Best Practices",
+            text: `<p>Treat dispatch SLA as a ranking factor, not just a compliance checkbox — consistently fast dispatch measurably improves catalog visibility over time. Build size-chart accuracy and clear product imagery into your standard listing process, since fashion returns are disproportionately driven by sizing mismatches, and reducing this at the listing stage prevents returns before they happen. Track return reasons specifically (size, quality, changed mind) rather than just the return rate number, since the fix differs depending on which reason dominates.</p>`,
+          },
+          {
+            title: "Implementation",
+            text: `<p>Pull your current Myntra return data and categorize by reason — if sizing mismatches dominate, the fix is in your size chart and product descriptions, not inventory or fulfillment. Separately, check your current dispatch time against Myntra's stated SLA window and identify any consistent lag, since this directly affects your catalog's search ranking on the platform.</p>`,
+          },
+        ],
+        proTip:
+          "On Myntra specifically, reducing size-related returns through better size charts and imagery often has a bigger operational and financial impact than any fulfillment speed improvement, since fashion return rates are typically the larger cost driver.",
+        takeaways: [
+          "Myntra's catalog visibility is directly tied to dispatch SLA and return rate performance",
+          "Fashion returns are often driven by sizing mismatches — fix at the listing stage, not just fulfillment",
+          "Track return reasons specifically, not just the overall rate, to identify the right fix",
+          "Catalog quality (images, sizing, descriptions) functions as an operational lever, not just marketing",
+          "Consistent SLA compliance compounds into better long-term catalog ranking on the platform",
+        ],
+      },
+      "ajio-order-management-guide": {
+        sections: [
+          {
+            title: "Key Concepts",
+            text: `<p>Ajio, as part of the Reliance Retail ecosystem, has its own seller performance metrics covering dispatch time, order cancellation rate, and return rate, with particular emphasis on fashion-category quality standards (fabric description accuracy, size consistency, authentic brand representation). Order management on Ajio requires the same core disciplines as other marketplaces — accurate inventory sync, timely confirmation, reliable fulfillment — but with fashion-specific attention to sizing and quality documentation that reduces disputes and returns before they occur.</p>`,
+          },
+          {
+            title: "Best Practices",
+            text: `<p>Maintain tight inventory sync specifically for fast-moving fashion SKUs (seasonal items, trending styles), since fashion demand can spike and deplete stock faster than slower-moving categories, increasing overselling risk if sync isn't near real-time. Document product quality details (fabric, fit, care instructions) thoroughly at listing time, since incomplete documentation is a common source of fashion-category disputes and returns. Monitor your Ajio-specific seller performance dashboard regularly, since standards and thresholds can differ from other marketplaces you may already be tracking.</p>`,
+          },
+          {
+            title: "Implementation",
+            text: `<p>Audit your current Ajio listings for completeness of sizing and fabric information — gaps here are often an easy, low-cost fix that reduces return volume without any operational process change. Separately, confirm your inventory sync frequency for your Ajio-listed SKUs specifically, since fashion categories benefit most from tighter sync given faster demand swings.</p>`,
+          },
+        ],
+        proTip:
+          "Treating every marketplace as operationally identical is a common mistake — Ajio's fashion-category emphasis means listing quality and sizing accuracy often prevent more problems than fulfillment speed alone.",
+        takeaways: [
+          "Ajio's seller performance metrics emphasize fashion-specific quality standards alongside standard dispatch/cancellation metrics",
+          "Fast-moving fashion SKUs need tighter inventory sync due to faster demand swings",
+          "Complete, accurate product documentation (fabric, fit, sizing) reduces disputes and returns at the source",
+          "Monitor Ajio's specific seller dashboard rather than assuming identical standards to other marketplaces",
+          "Listing quality often prevents more operational problems than fulfillment speed improvements alone",
+        ],
+      },
       "meesho-oms-complete-order-management-guide-for-sellers": {
         sections: [
           {

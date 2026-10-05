@@ -477,7 +477,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
           </div>
         </div>
       </section>
-
+ 
       {/* ═══ CTA SECTION ═══ */}
       <section className="py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#FEF9E7]" />

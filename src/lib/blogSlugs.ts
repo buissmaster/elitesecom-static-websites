@@ -77,11 +77,17 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("Solution for Growing Businesses"),
     title: "Manage Multi-Channel Orders from One Dashboard",
     subtitle:
-      "Sellers running Amazon, Flipkart, Meesho, and Shopify side by side typically lose 3-5% of potential revenue to overselling and missed orders caused by switching between four separate dashboards — here's how a unified view fixes that.",
+      "Learn how multi-channel order management helps ecommerce sellers manage Amazon, Flipkart, Meesho, and Shopify orders, inventory, and fulfillment from one centralized workflow.",
     category: "Feature Guide",
     readTime: "8 min",
     date: "June 17, 2026",
     image: "/Blog page main-1600.webp",
+    seoTitle:
+      "Multi-Channel Order Management: Manage Orders from One Dashboard | Elitesecom",
+    metaDescription:
+      "Learn how multi-channel order management helps ecommerce sellers manage Amazon, Flipkart, Meesho, and Shopify orders, inventory, and fulfillment from one centralized workflow.",
+    seoKeywords:
+      "multi-channel order management, multichannel order management, multi-channel ecommerce, ecommerce order management, marketplace order management, order management system, centralized order management, centralized order dashboard, inventory synchronization, Amazon order management, Flipkart order management, Meesho order management, Shopify order management, multichannel inventory management, ecommerce order processing, order fulfillment",
   },
   // Seller Problems (8)
   {
@@ -310,7 +316,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "4 min",
     date: "October 2, 2026",
-    image: "/Marketplace blog/Marketplace 11.png",
+    image: "/Marketplace blog/Marketplace 11.webp",
     seoTitle: "Myntra Seller Operations Guide: Orders, Inventory & Returns | Elitesecom",
     metaDescription:
       "Learn Myntra seller operations best practices for order management, inventory sync, dispatch, catalog quality, sizing, returns, and fashion marketplace performance.",
@@ -326,7 +332,7 @@ export const allBlogEntries: BlogEntry[] = [
     category: "Marketplaces",
     readTime: "4 min",
     date: "October 2, 2026",
-    image: "/Marketplace blog/Marketplace 12.png",
+    image: "/Marketplace blog/Marketplace 12.webp",
     seoTitle: "Ajio Order Management Guide: Orders, Inventory & Returns | Elitesecom",
     metaDescription:
       "Learn Ajio order management best practices for inventory sync, order processing, dispatch, returns, product listings, and fashion marketplace operations.",
@@ -610,33 +616,48 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("advanced-oms-features-every-growing-business-needs"),
     title: "Advanced OMS Features Guide",
     subtitle:
-      "The essential OMS features that power scalable ecommerce operations.",
+      "Explore essential and advanced OMS features for ecommerce, including order management, inventory sync, order routing, automation, fulfillment, returns, reconciliation, and analytics.",
     category: "OMS",
     readTime: "7 min",
     date: "May 13, 2026",
     image: "/oms-blog/oms 1-1600.webp",
+    seoTitle: "Advanced OMS Features: Complete Guide for Ecommerce | Elitesecom",
+    metaDescription:
+      "Explore essential and advanced OMS features for ecommerce, including order management, inventory sync, order routing, automation, fulfillment, returns, reconciliation, and analytics.",
+    seoKeywords:
+      "Order Management System features, OMS features, advanced OMS features, order management system, ecommerce order management system, order management software, ecommerce order management, multichannel order management, order processing, order routing, inventory synchronization, inventory management, order fulfillment, fulfillment automation, warehouse management, returns management, payment reconciliation, return reconciliation, ecommerce automation, marketplace order management, multichannel ecommerce",
   },
   {
     id: "oms2",
     slug: makeSlug("ai-in-order-management-systems"),
     title: "AI in Order Management Systems",
     subtitle:
-      "How artificial intelligence is revolutionizing order management and fulfillment.",
+      "Learn how AI in order management can improve demand forecasting, inventory planning, order processing, routing, fulfillment, returns analysis, and ecommerce automation.",
     category: "OMS",
     readTime: "6 min",
     date: "May 11, 2026",
     image: "/oms-blog/oms 2-1600.webp",
+    seoTitle: "AI in Order Management Systems: Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn how AI in order management can improve demand forecasting, inventory planning, order processing, routing, fulfillment, returns analysis, and ecommerce automation.",
+    seoKeywords:
+      "AI in order management, AI in order management systems, AI-powered order management, AI order management system, AI in ecommerce, artificial intelligence in ecommerce, AI ecommerce automation, AI order processing, AI order fulfillment, intelligent order routing, demand forecasting, inventory forecasting, predictive analytics for ecommerce, ecommerce automation, multichannel order management, order management system, ecommerce order management",
   },
   {
     id: "oms3",
     slug: makeSlug("how-oms-improves-customer-experience"),
     title: "How OMS Improves Customer Experience",
     subtitle:
-      "The direct connection between order management excellence and customer satisfaction.",
+      "Learn how an Order Management System (OMS) improves customer experience through accurate inventory, faster fulfillment, order tracking, returns management, and fewer cancellations.",
     category: "OMS",
     readTime: "5 min",
     date: "May 9, 2026",
     image: "/oms-blog/oms 3-1600.webp",
+    seoTitle: "How OMS Improves Customer Experience | Elitesecom",
+    metaDescription:
+      "Learn how an Order Management System (OMS) improves customer experience through accurate inventory, faster fulfillment, order tracking, returns management, and fewer cancellations.",
+    seoKeywords:
+      "how OMS improves customer experience, OMS customer experience, order management system customer experience, ecommerce customer experience, order management system benefits, OMS benefits for ecommerce, ecommerce order management, order fulfillment, inventory synchronization, order tracking, returns management, ecommerce returns, order processing, multichannel order management, customer satisfaction in ecommerce, ecommerce order management system",
   },
   {
     id: "oms4",

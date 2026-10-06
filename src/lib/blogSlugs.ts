@@ -441,6 +441,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "5 min",
     date: "May 15, 2026",
     image: "/Warehouse blog/WH 1-1600.webp",
+    seoTitle: "Warehouse Management: Complete Guide for Ecommerce | Elitesecom",
+    metaDescription:
+      "Learn what warehouse management is, how ecommerce warehouses work, key warehouse processes, WMS, inventory tracking, picking, packing, fulfillment, and optimization.",
+    seoKeywords:
+      "warehouse management, warehouse management system, WMS, warehouse management software, ecommerce warehouse management, warehouse operations, inventory tracking, warehouse inventory management, order fulfillment, picking and packing, warehouse automation, multichannel inventory management",
   },
   {
     id: "wh2",
@@ -452,6 +457,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "May 13, 2026",
     image: "/Warehouse blog/WH 2-1600.webp",
+    seoTitle: "OMS vs WMS: Key Differences for Ecommerce | Elitesecom",
+    metaDescription:
+      "Understand the difference between OMS and WMS, how Order Management and Warehouse Management systems work together, and which system ecommerce businesses may need.",
+    seoKeywords:
+      "OMS vs WMS, Order Management System vs Warehouse Management System, order management system, warehouse management system, ecommerce OMS, ecommerce WMS, order management software, warehouse management software, warehouse operations, order fulfillment, inventory management, inventory synchronization, order routing, warehouse inventory management, multichannel order management, ecommerce order management, order fulfillment system",
   },
   {
     id: "wh3",
@@ -564,6 +574,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "May 8, 2026",
     image: "/Inventory blog/Inv 4-1600.webp",
+    seoTitle: "eCommerce Inventory Forecasting: Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn ecommerce inventory forecasting, including demand planning, seasonality, safety stock, reorder points, multichannel inventory, and forecasting best practices.",
+    seoKeywords:
+      "ecommerce inventory forecasting, inventory forecasting, inventory forecasting for ecommerce, inventory demand forecasting, ecommerce inventory management, inventory planning, inventory optimization, demand forecasting, inventory prediction, stock forecasting, safety stock, reorder point, lead time, multichannel inventory management, inventory synchronization, Amazon inventory management, Flipkart inventory management, Meesho inventory management, order management system",
   },
   {
     id: "inv5",
@@ -669,6 +684,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "May 7, 2026",
     image: "/oms-blog/oms 4-1600.webp",
+    seoTitle: "OMS ERP Integration: Complete Guide for Ecommerce | Elitesecom",
+    metaDescription:
+      "Learn how OMS ERP integration connects order management with enterprise systems to synchronize orders, inventory, fulfillment, returns, and ecommerce operations.",
+    seoKeywords:
+      "OMS integration with ERP systems, OMS ERP integration, ERP and OMS integration, order management system ERP integration, ecommerce ERP integration, ecommerce order management, inventory synchronization, order processing, order fulfillment, inventory management, multichannel order management, API integration",
   },
   {
     id: "oms5",
@@ -708,11 +728,16 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("choosing-the-right-oms-for-your-business"),
     title: "Choosing the Right OMS for Your Business",
     subtitle:
-      "A practical framework for evaluating and selecting the best OMS for your needs.",
+      "Learn how to choose the right OMS for ecommerce. Compare integrations, inventory, order processing, fulfillment, returns, reconciliation, warehouse operations, and scalability.",
     category: "OMS",
     readTime: "7 min",
     date: "Apr 29, 2026",
     image: "/oms-blog/oms 8-1600.webp",
+    seoTitle: "How to Choose the Right OMS for Ecommerce | Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn how to choose the right OMS for ecommerce. Compare integrations, inventory, order processing, fulfillment, returns, reconciliation, warehouse operations, and scalability.",
+    seoKeywords:
+      "choosing the right OMS, choosing an OMS, how to choose an OMS, best OMS for ecommerce, best order management system, order management system for ecommerce, ecommerce order management system, OMS software, order management software, multichannel order management, marketplace order management, inventory management, inventory synchronization, order fulfillment, returns management, payment reconciliation, return reconciliation, warehouse management, ecommerce automation, OMS features",
   },
 
   // Returns (8)
@@ -726,6 +751,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "May 12, 2026",
     image: "/Returns blog/Return 1-1600.webp",
+    seoTitle: "How to Reduce Product Returns: Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn how to reduce product returns in ecommerce with better product information, order accuracy, quality control, packaging, return analysis, and customer-focused processes.",
+    seoKeywords:
+      "how to reduce product returns, reduce ecommerce returns, ecommerce return management, product returns, reduce return rate, ecommerce returns management, return prevention, product quality, product descriptions, size guide, order accuracy, return reasons, customer satisfaction, returns management, ecommerce order management",
   },
   {
     id: "ret2",
@@ -770,6 +800,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "May 4, 2026",
     image: "/Returns blog/Return 5-1600.webp",
+    seoTitle: "Common Return Fraud Scenarios: Prevention Guide | Elitesecom",
+    metaDescription:
+      "Learn about common ecommerce return fraud scenarios, warning signs, prevention strategies, return verification, and effective return management practices.",
+    seoKeywords:
+      "common return fraud scenarios, ecommerce return fraud, return fraud prevention, ecommerce return management, fraudulent returns, return abuse, ecommerce fraud prevention, return verification, return inspection, refund fraud, return management, ecommerce returns, customer returns, order management system",
   },
   {
     id: "ret6",
@@ -803,6 +838,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "Apr 28, 2026",
     image: "/Returns blog/Return 8-1600.webp",
+    seoTitle: "Return Rate Reduction: Complete Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn how to reduce ecommerce return rates through better product information, order accuracy, quality control, packaging, return analysis, and effective returns management.",
+    seoKeywords:
+      "return rate reduction, ecommerce return rate reduction, reduce ecommerce returns, how to reduce return rate, ecommerce return management, reduce product returns, return prevention, ecommerce returns, return rate optimization, product return reduction, order accuracy, product descriptions, size guide, inventory management, order fulfillment, returns management, ecommerce order management, multichannel ecommerce",
   },
 
   // Growth (8)
@@ -816,6 +856,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "8 min",
     date: "May 11, 2026",
     image: "/Growth blog/GR 1-1600.webp",
+    seoTitle: "How to Scale Ecommerce Orders Efficiently | Elitesecom",
+    metaDescription:
+      "Learn how to scale ecommerce orders efficiently with better inventory management, centralized order processing, fulfillment workflows, automation, and an effective OMS.",
+    seoKeywords:
+      "scale ecommerce orders, scaling ecommerce orders, ecommerce order scaling, scale ecommerce business, ecommerce order management, order management system, ecommerce OMS, multichannel order management, order processing, inventory management, inventory synchronization, order fulfillment, fulfillment automation, ecommerce operations, ecommerce automation, order volume management, multichannel ecommerce",
   },
   {
     id: "gr2",
@@ -860,6 +905,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "May 3, 2026",
     image: "/Growth blog/GR 5-1600.webp",
+    seoTitle: "Growth Strategies for Indian Ecommerce Sellers | Elitesecom",
+    metaDescription:
+      "Discover practical growth strategies for Indian ecommerce sellers, including marketplace expansion, COD and RTO management, inventory, fulfillment, and multichannel operations.",
+    seoKeywords:
+      "growth strategies for Indian ecommerce sellers, ecommerce growth strategies India, Indian ecommerce sellers, ecommerce business growth, ecommerce growth strategy, India ecommerce market, marketplace sellers India, multichannel ecommerce India, Amazon seller growth, Flipkart seller growth, Meesho seller growth, D2C ecommerce India, COD ecommerce India, RTO management, ecommerce order management, inventory management, multichannel order management, ecommerce operations",
   },
   {
     id: "gr6",
@@ -893,6 +943,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "Apr 27, 2026",
     image: "/Growth blog/GR 8-1600.webp",
+    seoTitle: "How Successful Ecommerce Brands Scale Operations | Elitesecom",
+    metaDescription:
+      "Learn how successful ecommerce brands scale operations with better inventory management, order processing, fulfillment, automation, and multichannel visibility.",
+    seoKeywords:
+      "how successful brands scale, how ecommerce brands scale, ecommerce scaling strategies, scaling ecommerce business, ecommerce growth, ecommerce operations, scale ecommerce operations, ecommerce order management, order management system, ecommerce OMS, multichannel order management, inventory management, inventory synchronization, order processing, order fulfillment, ecommerce automation, operational scalability, ecommerce business growth",
   },
 
   // Comparisons (4)
@@ -951,6 +1006,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "9 min",
     date: "July 15, 2026",
     image: "/Reco blogs/Reco 1-1600.webp",
+    seoTitle: "Amazon Payment Reconciliation: Complete Guide for Sellers | Elitesecom",
+    metaDescription:
+      "Learn how Amazon payment reconciliation works, including settlement matching, fees, refunds, adjustments, payout discrepancies, and reconciliation best practices.",
+    seoKeywords:
+      "Amazon payment reconciliation, Amazon payment reconciliation guide, Amazon settlement reconciliation, Amazon seller payment reconciliation, Amazon settlement report, Amazon seller payments, Amazon payout reconciliation, Amazon fees reconciliation, Amazon transaction reconciliation, Amazon order reconciliation, Amazon seller accounting, ecommerce payment reconciliation, payment reconciliation, order management system, Amazon seller operations, Amazon marketplace reconciliation",
   },
   {
     id: "rec2",
@@ -962,6 +1022,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "8 min",
     date: "July 12, 2026",
     image: "/Reco blogs/Reco 2-1600.webp",
+    seoTitle: "Flipkart Settlement & Reconciliation: Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn how Flipkart settlement reconciliation works, including payments, commissions, deductions, returns, refunds, adjustments, and reconciliation best practices.",
+    seoKeywords:
+      "Flipkart settlement reconciliation, Flipkart settlement, Flipkart reconciliation, Flipkart payment reconciliation, Flipkart seller settlement, Flipkart seller payments, Flipkart settlement report, Flipkart payout reconciliation, Flipkart commission reconciliation, Flipkart fee reconciliation, Flipkart order reconciliation, Flipkart returns reconciliation, ecommerce payment reconciliation, marketplace reconciliation, payment reconciliation, order management system, Flipkart seller operations",
   },
   {
     id: "rec3",
@@ -973,6 +1038,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "7 min",
     date: "July 10, 2026",
     image: "/Reco blogs/Reco 3-1600.webp",
+    seoTitle: "Meesho Payout Reconciliation: Complete Guide for Sellers | Elitesecom",
+    metaDescription:
+      "Learn how Meesho payout reconciliation works, including order matching, fees, returns, adjustments, pending payouts, discrepancies, and reconciliation best practices.",
+    seoKeywords:
+      "Meesho payout reconciliation, Meesho payout, Meesho payment reconciliation, Meesho payout reconciliation guide, Meesho settlement reconciliation, Meesho seller payments, Meesho payment cycle, Meesho settlement, Meesho fee reconciliation, Meesho order reconciliation, Meesho return reconciliation, Meesho payout mismatch, Meesho payment discrepancy, ecommerce payment reconciliation, marketplace reconciliation, payment reconciliation, order management system, Meesho seller operations",
   },
   {
     id: "rec4",
@@ -984,6 +1054,11 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "July 8, 2026",
     image: "/Reco blogs/Reco 4-1600.webp",
+    seoTitle: "Return Reconciliation vs Payment Reconciliation: Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn the difference between return reconciliation and payment reconciliation, including payouts, refunds, returns, fees, discrepancies, and ecommerce reconciliation best practices.",
+    seoKeywords:
+      "return reconciliation vs payment reconciliation, return reconciliation, payment reconciliation, ecommerce reconciliation, payment reconciliation for ecommerce, return reconciliation for ecommerce, marketplace reconciliation, ecommerce payment reconciliation, ecommerce return management, payout reconciliation, refund reconciliation, order reconciliation, payment discrepancy, return discrepancy, order management system, ecommerce order management, multichannel ecommerce",
   },
   {
     id: "rec5",
@@ -996,6 +1071,11 @@ export const allBlogEntries: BlogEntry[] = [
 
     date: "July 5, 2026",
     image: "/Reco blogs/Reco 5-1600.webp",
+    seoTitle: "GST Reconciliation for Marketplace Sellers: Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn GST reconciliation for marketplace sellers, including TCS, invoices, returns, credit notes, marketplace transactions, and ecommerce reconciliation best practices.",
+    seoKeywords:
+      "GST reconciliation for marketplace sellers, GST reconciliation ecommerce, marketplace GST reconciliation, Amazon GST reconciliation, Flipkart GST reconciliation, GST reconciliation for ecommerce sellers, TCS reconciliation ecommerce, marketplace TCS reconciliation, GST invoice reconciliation, ecommerce invoice reconciliation, GST return reconciliation, marketplace seller GST, ecommerce tax reconciliation, payment reconciliation, return reconciliation, order management system, marketplace reconciliation",
   },
 ];
 

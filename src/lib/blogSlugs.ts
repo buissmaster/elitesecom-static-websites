@@ -100,6 +100,12 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "6 min",
     date: "May 18, 2026",
     image: "/seller problem blog/sp 1-1600.webp",
+    seoTitle:
+      "Why Sellers Lose Orders During Sale Events | Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn why ecommerce sellers lose orders during major sale events and how to prevent stockouts, inventory sync issues, processing delays, listing errors, and fulfillment bottlenecks.",
+    seoKeywords:
+      "lost orders during sale events, ecommerce sale events, sale event order management, ecommerce peak sales, peak season ecommerce, ecommerce order management, order management system, sale event inventory management, inventory synchronization, marketplace order management, ecommerce order processing, order fulfillment, stockouts during sales, ecommerce inventory management, Amazon sale events, Flipkart sale events, Meesho sale events, multichannel ecommerce",
   },
   {
     id: "sp2",
@@ -113,6 +119,12 @@ export const allBlogEntries: BlogEntry[] = [
     readTime: "8 min",
     date: "May 16, 2026",
     image: "/seller problem blog/sp 2-1600.webp",
+    seoTitle:
+      "How to Handle 1000+ Orders Per Day: Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn how to handle 1000+ ecommerce orders per day with centralized order management, inventory synchronization, automation, batch processing, and efficient fulfillment workflows.",
+    seoKeywords:
+      "how to handle 1000+ orders per day, 1000 orders per day ecommerce, handling high order volume, ecommerce order processing, high volume order management, ecommerce order management, order management system, order processing automation, ecommerce automation, batch order processing, order fulfillment, inventory management, inventory synchronization, warehouse order processing, multichannel order management, scaling ecommerce operations",
   },
   {
     id: "sp3",
@@ -130,22 +142,34 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("why-your-inventory-never-matches-marketplace-stock"),
     title: "Marketplace Inventory Mismatch",
     subtitle:
-      "If your system says 20 units are in stock but you can only find 14 on the shelf, the gap isn't a counting error — it's usually one of three specific process failures.",
+      "Learn why system and physical stock can differ, how to trace inventory discrepancies, and practical ways to improve accuracy across sales channels.",
     category: "Seller Problems",
     readTime: "7 min",
     date: "May 12, 2026",
     image: "/seller problem blog/sp 4-1600.webp",
+    seoTitle:
+      "Marketplace Inventory Mismatch: Causes & Prevention Guide | Elitesecom",
+    metaDescription:
+      "Learn what causes marketplace inventory mismatches and how ecommerce sellers can improve inventory accuracy through synchronization, cycle counts, SKU management, and reconciliation.",
+    seoKeywords:
+      "marketplace inventory mismatch, inventory mismatch, ecommerce inventory mismatch, marketplace inventory management, inventory discrepancy, inventory reconciliation, inventory synchronization, ecommerce inventory management, multichannel inventory management, stock mismatch, inventory accuracy, marketplace stock management, Amazon inventory management, Flipkart inventory management, Meesho inventory management, ecommerce order management, order management system",
   },
   {
     id: "sp5",
     slug: makeSlug("the-hidden-cost-of-manual-order-processing"),
     title: "The Hidden Cost of Manual Order Processing",
     subtitle:
-      "Manual order processing doesn't show up as a line item on your P&L — but it costs real money through three specific, measurable leaks most sellers never calculate.",
+      "Learn how to evaluate staff time, processing errors, and operational bottlenecks created by manual ecommerce order workflows.",
     category: "Seller Problems",
     readTime: "6 min",
     date: "May 10, 2026",
     image: "/seller problem blog/sp 5-1600.webp",
+    seoTitle:
+      "The Hidden Cost of Manual Order Processing | Ecommerce Guide | Elitesecom",
+    metaDescription:
+      "Learn the hidden costs of manual order processing, including staff time, fulfillment errors, operational bottlenecks, and opportunity cost, plus ways to automate ecommerce workflows.",
+    seoKeywords:
+      "cost of manual order processing, manual order processing, hidden cost of manual processing, ecommerce order processing, manual ecommerce operations, order processing automation, ecommerce automation, order management system, ecommerce order management, manual order management, order processing errors, fulfillment errors, order processing efficiency, multichannel order management, ecommerce operations, order fulfillment",
   },
   {
     id: "sp6",

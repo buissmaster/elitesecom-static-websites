@@ -122,6 +122,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
   const categories = [
     { name: "All", icon: LayoutGrid },
     { name: "Seller Problems", icon: ShoppingCart },
+    { name: "Feature Guide", icon: Zap },
     { name: "Marketplaces", icon: Store },
     { name: "Shopify & D2C", icon: Tag },
     { name: "Warehouse", icon: Package },
@@ -135,6 +136,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
 
   const catColors: Record<string, { color: string; bg: string }> = {
     "Seller Problems": { color: "#EA580C", bg: "#bddaf2" },
+    "Feature Guide": { color: "#9333EA", bg: "#ede9fe" },
     Marketplaces: { color: "#2563EB", bg: "#d0e3d6" },
     "Shopify & D2C": { color: "#16A34A", bg: "#d0b8ea" },
     Warehouse: { color: "#EA580C", bg: "#e9e8e9" },

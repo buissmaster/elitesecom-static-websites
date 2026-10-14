@@ -44,8 +44,14 @@ function resolveBlogEntry(slug: string | null): BlogEntry | null {
 }
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
-  const [blogEntry, setBlogEntry] = useState<BlogEntry | null>(null);
+  const [currentPage, setCurrentPage] = useState(() =>
+    getPageFromPath(window.location.pathname),
+  );
+  const [blogEntry, setBlogEntry] = useState<BlogEntry | null>(() => {
+    if (getPageFromPath(window.location.pathname) !== "blogdetail") return null;
+    const slug = getBlogSlugFromPath(window.location.pathname);
+    return resolveBlogEntry(slug);
+  });
 
   const heroImagePreload = (() => {
     switch (currentPage) {

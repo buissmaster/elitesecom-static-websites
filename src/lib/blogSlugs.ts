@@ -89,6 +89,23 @@ export const allBlogEntries: BlogEntry[] = [
     seoKeywords:
       "multi-channel order management, multichannel order management, multi-channel ecommerce, ecommerce order management, marketplace order management, order management system, centralized order management, centralized order dashboard, inventory synchronization, Amazon order management, Flipkart order management, Meesho order management, Shopify order management, multichannel inventory management, ecommerce order processing, order fulfillment",
   },
+  {
+    id: "marketplace-ecommerce-oms-guide",
+    slug: makeSlug("order-management-system-for-ecommerce"),
+    title: "Order Management System for Ecommerce",
+    subtitle:
+      "A practical guide to using an order management system for ecommerce to coordinate multichannel orders, inventory, fulfillment, returns, and reconciliation in daily seller operations.",
+    category: "Feature Guide",
+    readTime: "9 min",
+    date: "October 7, 2026",
+    image: "/feature 3 blog.png",
+    seoTitle:
+      "Order Management System for Ecommerce: Complete Guide | Elitesecom",
+    metaDescription:
+      "Learn how an order management system for ecommerce helps sellers manage orders, inventory, fulfillment, returns, reconciliation, and multichannel ecommerce operations.",
+    seoKeywords:
+      "order management system for ecommerce, ecommerce order management system, order management system for ecommerce sellers, ecommerce order management, order management software, OMS for ecommerce, order management system, multichannel order management, marketplace order management, ecommerce order processing, ecommerce order fulfillment, inventory synchronization, ecommerce inventory management, multichannel ecommerce, order management software for ecommerce, best order management system for ecommerce",
+  },
   // Seller Problems (8)
   {
     id: "sp1",
@@ -375,24 +392,6 @@ export const allBlogEntries: BlogEntry[] = [
     seoKeywords:
       "Ajio order management, Ajio order management guide, Ajio seller operations, Ajio inventory management, Ajio order processing, Ajio seller management, Ajio returns management, Ajio inventory sync, Ajio seller performance, Ajio marketplace, fashion marketplace order management",
   },
-  {
-    id: "marketplace-ecommerce-oms-guide",
-    slug: makeSlug("order-management-system-for-ecommerce"),
-    title: "Order Management System for Ecommerce: Complete Guide for Sellers",
-    subtitle:
-      "A practical guide to using an order management system for ecommerce to coordinate multichannel orders, inventory, fulfillment, returns, and reconciliation in daily seller operations.",
-    category: "Marketplaces",
-    readTime: "9 min",
-    date: "October 7, 2026",
-    image: "/Marketplace blog/Marketplaces 13.webp",
-    seoTitle:
-      "Order Management System for Ecommerce: Complete Guide | Elitesecom",
-    metaDescription:
-      "Learn how an order management system for ecommerce helps sellers manage orders, inventory, fulfillment, returns, reconciliation, and multichannel ecommerce operations.",
-    seoKeywords:
-      "order management system for ecommerce, ecommerce order management system, order management system for ecommerce sellers, ecommerce order management, order management software, OMS for ecommerce, order management system, multichannel order management, marketplace order management, ecommerce order processing, ecommerce order fulfillment, inventory synchronization, ecommerce inventory management, multichannel ecommerce, order management software for ecommerce, best order management system for ecommerce",
-  },
-
   // Shopify & D2C (8)
   {
     id: "sd1",

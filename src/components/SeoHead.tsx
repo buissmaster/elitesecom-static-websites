@@ -92,6 +92,10 @@ export function SeoHead({ page, blogEntry, heroImagePreload }: SeoHeadProps) {
         heroImagePreload.imagesrcset,
         heroImagePreload.imagesizes,
       );
+    } else {
+      document
+        .querySelectorAll('link[rel="preload"][as="image"][data-seo-managed="true"]')
+        .forEach((preload) => preload.remove());
     }
 
     if (seo.noindex) {

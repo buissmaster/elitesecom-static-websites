@@ -174,9 +174,6 @@ export function SecurityPage({ onNavigate }: SecurityPageProps) {
                 transition={{ delay: 0.4 }}
                 className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow relative"
               >
-                <span className="absolute top-4 right-4 inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">
-                  In Progress
-                </span>
                 <div className="flex items-center justify-center mx-auto mb-4">
                   <img
                     src="/gdpr icon.png"

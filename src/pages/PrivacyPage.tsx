@@ -1,504 +1,819 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
 import { AppLink } from "@/components/AppLink";
-import { Database } from "lucide-react";
+import { getPathForPage } from "@/lib/routes";
+import { toast } from "sonner";
+import {
+  Archive,
+  ArrowUp,
+  Baby,
+  BookOpen,
+  CalendarDays,
+  Check,
+  CheckCircle2,
+  ClipboardList,
+  Copy,
+  Database,
+  ExternalLink,
+  Globe,
+  Info,
+  Lock,
+  Mail,
+  MapPin,
+  Phone,
+  RefreshCw,
+  Scale,
+  Share2,
+  ShieldCheck,
+  Store,
+  User,
+  UserCheck,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 
 interface PrivacyPageProps {
   onNavigate?: (page: string) => void;
 }
 
+const tocSections = [
+  { id: "introduction", label: "Introduction & Overview" },
+  { id: "gdpr-role", label: "Our Role Under GDPR" },
+  { id: "information-collected", label: "Information We Collect" },
+  { id: "legal-bases", label: "Legal Bases & Purposes" },
+  { id: "marketplace-safeguards", label: "Marketplace Data Safeguards" },
+  { id: "subprocessors", label: "Sub-processors & Sharing" },
+  { id: "international-transfers", label: "International Data Transfers" },
+  { id: "data-security", label: "Data Security" },
+  { id: "data-retention", label: "Data Retention & Deletion" },
+  { id: "data-subject-rights", label: "Data Subject Rights" },
+  { id: "childrens-privacy", label: "Children's Privacy" },
+  { id: "policy-updates", label: "Updates to This Policy" },
+  { id: "contact", label: "Contact Us & DPO" },
+];
+
+function InternalLink({
+  page,
+  onNavigate,
+  children,
+}: {
+  page: string;
+  onNavigate?: (page: string) => void;
+  children: ReactNode;
+}) {
+  const className = "text-gold-600 hover:text-gold-700 underline";
+  return onNavigate ? (
+    <AppLink page={page} onNavigate={onNavigate} className={className}>
+      {children}
+    </AppLink>
+  ) : (
+    <a href={getPathForPage(page)} className={className}>
+      {children}
+    </a>
+  );
+}
+
+function SectionHeading({
+  icon: Icon,
+  title,
+}: {
+  icon: LucideIcon;
+  title: string;
+}) {
+  return (
+    <div className="flex items-center gap-3 sm:gap-4 mb-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold-200 bg-gold-50 text-gold-600">
+        <Icon className="h-5 w-5" />
+      </span>
+      <h2 className="text-xl sm:text-2xl font-bold">{title}</h2>
+    </div>
+  );
+}
+
+function SubHeading({ children }: { children: ReactNode }) {
+  return (
+    <h3 className="flex items-center gap-2 text-base sm:text-lg font-semibold text-slate-800 mb-3">
+      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
+      {children}
+    </h3>
+  );
+}
+
+function InfoBox({ children }: { children: ReactNode }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6 mb-6 last:mb-0">
+      {children}
+    </div>
+  );
+}
+
+function Callout({ children }: { children: ReactNode }) {
+  return (
+    <div className="rounded-xl border border-gold-200 bg-gold-50 p-4 sm:p-5">
+      <div className="flex gap-3">
+        <Info className="h-5 w-5 shrink-0 text-gold-600 mt-0.5" />
+        <div className="space-y-3 text-slate-700">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function ContactCard({
+  icon: Icon,
+  label,
+  value,
+  href,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: ReactNode;
+  href?: string;
+}) {
+  const inner = (
+    <>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-gold-600">
+        <Icon className="h-4 w-4" />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-semibold text-slate-800">
+          {label}
+        </span>
+        <span className="block break-words text-sm text-slate-600">
+          {value}
+        </span>
+      </span>
+    </>
+  );
+
+  const base =
+    "flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4";
+
+  return href ? (
+    <a
+      href={href}
+      className={`${base} transition-colors hover:border-gold-300 hover:bg-gold-50`}
+    >
+      {inner}
+    </a>
+  ) : (
+    <div className={base}>{inner}</div>
+  );
+}
+
+const listClass = "list-disc pl-5 text-slate-600 space-y-2 marker:text-gold-400";
+const sectionClass = "scroll-mt-28";
+
+const postalAddress =
+  "No. 507-508, Pragati IT Park, Building-B, Mota Varachha, Surat, Gujarat 394105";
+const postalMapsUrl = "https://maps.app.goo.gl/tLAjVWhxvMSBPa969";
+
 export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [addressCopied, setAddressCopied] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
     window.scrollTo(0, 0);
   }, []);
 
+  const handleCopyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(postalAddress);
+      setAddressCopied(true);
+      toast.success("Address copied to clipboard");
+      setTimeout(() => setAddressCopied(false), 2000);
+    } catch {
+      toast.error("Could not copy address");
+    }
+  };
+
+  const handleTocClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    event.preventDefault();
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <>
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
+      <section className="relative py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-white to-gold-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-          >
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl  mb-6">
+          <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-200 bg-gold-50 text-gold-600 shadow-sm">
+              <ShieldCheck className="h-7 w-7" />
+            </div>
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl mb-6">
               Privacy <span className="text-gold-500">Policy</span>
             </h1>
-            <p className="text-lg text-slate-600">
-              How we collect, use, and protect your information
+            <p className="text-lg text-slate-600 mb-6">
+              How we collect, process, safeguard, and manage your personal data
+            </p>
+            <p className="inline-flex items-center gap-2 rounded-full bg-gold-50 border border-gold-200 px-4 py-1.5 text-sm font-medium text-gold-700">
+              <CalendarDays className="w-4 h-4" />
+              Effective Date: October 10, 2026
             </p>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-0">
+      <section className="pb-16 sm:pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
-            <div className="bg-white rounded-2xl p-8 shadow-sm space-y-8">
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Introduction</h4>
+            {/* Table of Contents */}
+            <nav
+              aria-label="Table of contents"
+              className="bg-slate-50 rounded-2xl p-6 sm:p-8 mb-8"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-4">
+                On this page
+              </p>
+              <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                {tocSections.map((item, index) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      onClick={(e) => handleTocClick(e, item.id)}
+                      className="flex items-baseline gap-2 text-sm text-slate-600 hover:text-gold-600 transition-colors"
+                    >
+                      <span className="text-gold-500 font-semibold shrink-0">
+                        {index + 1}.
+                      </span>
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+
+            <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm space-y-10">
+              <section id="introduction" className={sectionClass}>
+                <SectionHeading
+                  icon={BookOpen}
+                  title="1. Introduction & Overview"
+                />
+                <p className="text-slate-600 mb-4">
+                  Elitesecom (OMS Vision Solutions LLP) provides a multichannel
+                  Order Management System (OMS) and Warehouse Management System
+                  (WMS) platform designed for e-commerce sellers. We are
+                  committed to safeguarding personal data in accordance with
+                  applicable global data privacy regulations, including the
+                  European Union General Data Protection Regulation (Regulation
+                  (EU) 2016/679) (&ldquo;GDPR&rdquo;).
+                </p>
                 <p className="text-slate-600">
-                  Elitesecom is committed to protecting
-                  your privacy. This Privacy Policy explains how we collect,
-                  use, disclose, and safeguard your information when you use our
-                  services.
+                  This Privacy Policy explains how we collect, process,
+                  safeguard, and manage personal data across our operations,
+                  website, mobile application, and SaaS platform integrations.
                 </p>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Information We Collect
-                </h4>
-                <p className="text-slate-600 mb-4">
-                  We collect the following types of information:
+              <section id="gdpr-role" className={sectionClass}>
+                <SectionHeading
+                  icon={Users}
+                  title="2. Our Role Under GDPR: Data Processor"
+                />
+                <p className="text-slate-600">
+                  When e-commerce sellers connect marketplaces (such as Amazon,
+                  Flipkart, Shopify, Meesho, Myntra, Nykaa, Ajio, and Snapdeal)
+                  or courier partners to our platform, we process transaction
+                  data, order records, customer fulfillment details, and
+                  shipping information strictly as a{" "}
+                  <strong>Data Processor</strong> on behalf of and under the
+                  documented instructions of our clients (the{" "}
+                  <strong>Data Controllers</strong>).
                 </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2">
-                  <li>
-                    <strong>Personal Information:</strong> Name, email address,
-                    phone number, company name
-                  </li>
-                  <li>
-                    <strong>Business Information:</strong> Order data, inventory
-                    data, customer data
-                  </li>
-                  <li>
-                    <strong>Usage Data:</strong> How you interact with our
-                    platform
-                  </li>
-                  <li>
-                    <strong>Technical Data:</strong> IP address, browser type,
-                    device information
-                  </li>
-                </ul>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ How We Use Your Information
-                </h4>
-                <p className="text-slate-600 mb-4">
-                  We use your information to:
-                </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2">
-                  <li>Provide and maintain our services</li>
-                  <li>Process your orders and transactions</li>
-                  <li>Communicate with you about our services</li>
-                  <li>Improve our platform and user experience</li>
-                  <li>Comply with legal obligations</li>
-                </ul>
+              <section id="information-collected" className={sectionClass}>
+                <SectionHeading
+                  icon={ClipboardList}
+                  title="3. Information We Collect"
+                />
+                <InfoBox>
+                  <SubHeading>
+                    A. Information Collected as a Data Controller (Account &amp;
+                    Platform Users)
+                  </SubHeading>
+                  <ul className={listClass}>
+                    <li>
+                      <strong>Account &amp; Contact Data:</strong> Name,
+                      business email address, phone number, company name,
+                      billing address, and job title.
+                    </li>
+                    <li>
+                      <strong>Credentials:</strong> Usernames, encrypted
+                      passwords, and multi-factor authentication preferences.
+                    </li>
+                    <li>
+                      <strong>Billing Information:</strong> Payment details,
+                      GST/tax identification numbers, and subscription
+                      transaction history (processed through secure
+                      PCI-DSS-compliant gateways).
+                    </li>
+                    <li>
+                      <strong>Technical &amp; Usage Data:</strong> IP address,
+                      browser type, operating system, login timestamps, device
+                      identifiers, and platform activity logs.
+                    </li>
+                  </ul>
+                </InfoBox>
+                <InfoBox>
+                  <SubHeading>
+                    B. Information Processed as a Data Processor (Marketplace
+                    &amp; End-Customer Data)
+                  </SubHeading>
+                  <ul className={listClass}>
+                    <li>
+                      <strong>Order &amp; Fulfillment Data:</strong> Buyer name,
+                      shipping address, contact phone number, order ID, items
+                      ordered, and delivery tracking references received via
+                      connected APIs solely for fulfillment and shipping label
+                      generation.
+                    </li>
+                    <li>
+                      <strong>Inventory &amp; Catalog Data:</strong> SKU data,
+                      stock quantities, warehouse bin allocations, and product
+                      pricing.
+                    </li>
+                    <li>
+                      <strong>Financial Reconciliation Data:</strong> Payout
+                      statements, marketplace commission breakdowns, and
+                      return/refund records.
+                    </li>
+                  </ul>
+                </InfoBox>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Amazon Selling Partner API (SP-API) Data Handling
-                </h4>
+              <section id="legal-bases" className={sectionClass}>
+                <SectionHeading
+                  icon={Scale}
+                  title="4. Legal Bases and Purposes of Processing"
+                />
                 <p className="text-slate-600 mb-4">
-                  EliteSecom integrates with Amazon's Selling Partner API (SP-API)
-                  to provide order management services for Amazon sellers. When
-                  you authorize EliteSecom to access your Amazon seller account,
-                  we may access the following data:
+                  For data processed as a Data Controller, we rely on the
+                  following GDPR legal bases:
                 </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <ul className={`${listClass} mb-4`}>
                   <li>
-                    <strong>Order Information:</strong> Order details, customer
-                    shipping information, and order status for order processing
+                    <strong>Performance of a Contract (Art. 6(1)(b)):</strong>{" "}
+                    Providing OMS and WMS software services, authenticating
+                    authorized users, managing subscriptions, and providing
+                    technical support.
                   </li>
                   <li>
-                    <strong>Inventory Data:</strong> Product inventory levels and
-                    warehouse information for inventory synchronization
+                    <strong>Legitimate Interests (Art. 6(1)(f)):</strong>{" "}
+                    Ensuring platform availability, monitoring network security,
+                    preventing fraud, generating aggregated operational
+                    performance analytics, and improving platform functionality.
                   </li>
                   <li>
-                    <strong>Settlement Data:</strong> Payment settlement reports
-                    for payment reconciliation purposes
+                    <strong>Legal Obligation (Art. 6(1)(c)):</strong> Complying
+                    with statutory accounting, taxation, company law, and law
+                    enforcement requests.
+                  </li>
+                  <li>
+                    <strong>Consent (Art. 6(1)(a)):</strong> Operating
+                    non-essential website cookies or sending marketing
+                    newsletters (where opted in).
                   </li>
                 </ul>
-                <p className="text-slate-600 mb-4">
-                  <strong>Purpose of Data Access:</strong> This data is accessed
-                  solely to provide the order management, inventory
-                  synchronization, and payment reconciliation services you have
-                  requested. We do not use Amazon data for unrelated purposes.
+                <p className="text-slate-600">
+                  For data processed as a Data Processor, we process personal
+                  data strictly pursuant to Article 28(3)(a) upon the documented
+                  instructions of our merchant clients and applicable Data
+                  Processing Addenda (DPAs).
                 </p>
+              </section>
+
+              <section id="marketplace-safeguards" className={sectionClass}>
+                <SectionHeading
+                  icon={Store}
+                  title="5. Marketplace Data Safeguards (Including Amazon SP-API)"
+                />
                 <p className="text-slate-600 mb-4">
-                  <strong>Data Protection:</strong> Amazon data is protected
-                  through encryption, access controls, and security monitoring.
-                  Access is restricted to authorized personnel based on
-                  role-based access controls. All access to Amazon data is logged
-                  and audited.
+                  In compliance with strict third-party marketplace terms and
+                  privacy standards:
                 </p>
-                <p className="text-slate-600 mb-4">
+                <ul className={`${listClass} mb-4`}>
+                  <li>
+                    <strong>Purpose Limitation:</strong> Marketplace and
+                    customer data are accessed exclusively to provide
+                    multi-channel order processing, real-time inventory
+                    synchronization, automated shipping label generation, and
+                    payment/return reconciliation. We never use marketplace data
+                    for independent commercial, profiling, or advertising
+                    purposes.
+                  </li>
+                  <li>
+                    <strong>Data Minimization:</strong> Platform ingestion APIs
+                    are configured to extract only the minimum data attributes
+                    necessary for order fulfillment and logistics routing.
+                  </li>
+                  <li>
+                    <strong>No Selling of Personal Data:</strong> We do not
+                    sell, rent, or lease any personal data.
+                  </li>
+                </ul>
+                <p className="text-slate-600">
                   For detailed information about Amazon SP-API security and data
                   handling, please see our{" "}
-                  {onNavigate ? (
-                    <button
-                      onClick={() => onNavigate("amazon-sp-api-security")}
-                      className="inline-flex items-center gap-1 text-gold-600 hover:text-gold-700 underline"
-                    >
+                  <InternalLink
+                    page="amazon-sp-api-security"
+                    onNavigate={onNavigate}
+                  >
+                    <span className="inline-flex items-center gap-1">
                       <Database className="w-4 h-4" />
                       Amazon SP-API Security
-                    </button>
-                  ) : (
-                    <a
-                      href="/amazon-sp-api-security"
-                      className="inline-flex items-center gap-1 text-gold-600 hover:text-gold-700 underline"
-                    >
-                      <Database className="w-4 h-4" />
-                      Amazon SP-API Security
-                    </a>
-                  )}{" "}
+                    </span>
+                  </InternalLink>{" "}
                   page.
                 </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Storage:</strong>{" "}
-                  {/* [CONFIRMATION NEEDED: Please confirm Amazon data storage policy] */}
-                  <span className="text-slate-600">
-                    EliteSecom securely stores Amazon data received through SP-API where necessary to provide and support its authorized ecommerce and order management services. Access to stored data is restricted to authorized personnel and systems based on business and operational requirements.
-                  </span>
-                </p>
-                <p className="text-slate-600">
-                  <strong>Sharing with Service Providers:</strong>{" "}
-                  {/* [CONFIRMATION NEEDED: Please confirm third-party sharing policy] */}
-                  <span className="text-slate-600">
-                    EliteSecom does not sell Amazon data or use it for advertising purposes. Where third-party service providers are required to support hosting, infrastructure, security, or other service functionality, Amazon data may be shared only as necessary to provide those services and is subject to appropriate security and confidentiality requirements.
-                  </span>
-                </p>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Amazon Restricted / PII Data
-                </h4>
+              <section id="subprocessors" className={sectionClass}>
+                <SectionHeading
+                  icon={Share2}
+                  title="6. Sub-processors and Third-Party Sharing"
+                />
                 <p className="text-slate-600 mb-4">
-                  Through the Amazon SP-API integration, EliteSecom may process
-                  restricted or personally identifiable information (PII) such as
-                  customer names and shipping addresses necessary for order
-                  fulfillment and shipping label generation.
+                  We engage vetted third-party service providers
+                  (sub-processors) to deliver platform infrastructure under
+                  binding contracts requiring strict confidentiality and
+                  technical security safeguards (Art. 28(4)):
                 </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Why This Information Is Required:</strong> Customer
-                  information is required to fulfill orders, generate shipping
-                  labels, provide customer support, and reconcile payments —
-                  core functions of the order management system.
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>How It Is Used:</strong> This information is used only
-                  for the specific purposes related to order processing and
-                  customer service operations that you have authorized.
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Access Controls:</strong> Access to Amazon PII data is
-                  restricted to authorized EliteSecom personnel based on
-                  role-based access controls. All access is logged and audited.
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Security Protections:</strong> Amazon PII data is
-                  protected through encryption in transit and at rest, access
-                  controls, and security monitoring consistent with our SOC 2
-                  Type II and ISO/IEC 27001:2022 security controls.
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Storage:</strong>{" "}
-                  {/* [CONFIRMATION NEEDED: Please confirm PII storage policy] */}
-                  <span className="text-slate-600">
-                    Amazon PII received through SP-API is retained only when required for the operation and delivery of EliteSecom’s authorized ecommerce services. Such information is protected through appropriate access controls and security measures and is accessible only to authorized systems and personnel.
-                  </span>
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>Transmission:</strong>{" "}
-                  {/* [CONFIRMATION NEEDED: Please confirm PII transmission policy] */}
-                  <span className="text-slate-600">
-                    EliteSecom does not sell Amazon PII data or use it for advertising purposes. Where transmission to authorized third-party service providers is required to provide hosting, infrastructure, security, or other service functionality, Amazon PII data is shared only as necessary and subject to appropriate security and confidentiality requirements.
-                  </span>
-                </p>
-                <p className="text-slate-600">
-                  <strong>Deletion:</strong>{" "}
-                  {/* [CONFIRMATION NEEDED: Please confirm PII deletion process] */}
-                  <span className="text-slate-600">
-                    EliteSecom deletes Amazon PII data when it is no longer required for the purpose for which it was collected or processed, subject to applicable legal, regulatory, contractual, and legitimate business requirements. Where applicable, deletion is performed in accordance with EliteSecom’s data retention and deletion procedures.
-                  </span>
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Data Sharing & Subprocessors
-                </h4>
-                <p className="text-slate-600 mb-4">
-                  We do not sell your personal information. We may share your
-                  data with the following categories of service providers who
-                  help us operate our platform:
-                </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <ul className={`${listClass} mb-4`}>
                   <li>
-                    <strong>Cloud Infrastructure Providers:</strong> For hosting
-                    and platform operations
+                    <strong>Cloud Hosting &amp; Infrastructure:</strong>{" "}
+                    Dedicated cloud hosting provided across Amazon Web Services
+                    (AWS) data centers.
                   </li>
                   <li>
-                    <strong>Shipping/Label Providers:</strong> For generating
-                    shipping labels and tracking shipments
+                    <strong>Logistics &amp; Courier Gateways:</strong>{" "}
+                    Integrated logistics providers and courier aggregators
+                    strictly for transmitting destination details to print
+                    shipping labels and retrieve real-time tracking numbers.
                   </li>
                   <li>
-                    <strong>Monitoring & Analytics:</strong> For system
-                    monitoring, performance analytics, and error tracking
-                  </li>
-                  <li>
-                    <strong>Support Services:</strong> For customer support and
-                    communication tools
-                  </li>
-                </ul>
-              
-                <p className="text-slate-600 mb-4">
-                  All third-party service providers are subject to contractual
-                  obligations to protect your data and are only permitted to
-                  process data for the specific purposes for which they were
-                  engaged.
-                </p>
-                <p className="text-slate-600">
-                  We may also share data with legal authorities when required by
-                  law, and with business partners when you have provided consent.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Data Retention</h4>
-                <p className="text-slate-600 mb-4">
-                  We retain different types of data for different periods based
-                  on business needs and legal requirements:
-                </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
-                  <li>
-                    <strong>Account Data:</strong> Retained while your account is
-                    active and for a period after account termination as
-                    required for legal and business purposes.
-                    
-                  </li>
-                  <li>
-                    <strong>Order Data:</strong> Retained for order processing,
-                    reconciliation, and support purposes.
-                  </li>
-                  <li>
-                    <strong>Transaction Data:</strong> Retained for accounting,
-                    tax, and legal compliance purposes.
-                  </li>
-                </ul>
-                <p className="text-slate-600 mb-4">
-                  When the retention period ends, data is securely deleted or
-                  anonymized in accordance with our data deletion policies.
-                </p>
-                <p className="text-slate-600">
-                  Certain data may be retained for longer periods when required
-                  by applicable laws, regulations, or legitimate business
-                  interests.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Data Deletion</h4>
-                <p className="text-slate-600 mb-4">
-                  You have the right to request deletion of your personal data.
-                  When you request deletion:
-                </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
-                  <li>
-                    We will delete your personal data from our active systems
-                    within a reasonable timeframe, subject to legal and business
-                    exceptions
-                  </li>
-                  <li>
-                    Amazon data accessed through SP-API will be handled in
-                    accordance with Amazon's data deletion requirements and our
-                    data retention policies.
-                  </li>
-                  <li>
-                    Account termination results in deletion of account access
-                    and, where feasible, associated personal data
-                  </li>
-                  <li>
-                    Backup data may be retained for disaster recovery purposes
-                    and will be securely deleted according to backup retention
-                    schedules.
+                    <strong>Professional &amp; Legal Advisors:</strong> Legal,
+                    auditing, and compliance advisors under professional duties
+                    of confidentiality.
                   </li>
                 </ul>
                 <p className="text-slate-600">
-                  We may retain certain data when required by law, for fraud
-                  prevention, security purposes, or to exercise or defend legal
-                  claims.
+                  We ensure that all sub-processors are subject to data
+                  protection obligations no less protective than those set out
+                  in this Policy and our Data Processing Agreements.
                 </p>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Data Security</h4>
+              <section id="international-transfers" className={sectionClass}>
+                <SectionHeading
+                  icon={Globe}
+                  title="7. International Data Transfers"
+                />
                 <p className="text-slate-600 mb-4">
-                  We implement appropriate technical and organizational measures
-                  to protect your data against unauthorized access, alteration,
-                  disclosure, or destruction. Our security measures include:
+                  Elitesecom operates from India and hosts infrastructure on
+                  dedicated AWS cloud servers. When personal data originating in
+                  the European Economic Area (EEA), the United Kingdom, or
+                  Switzerland is transferred outside these territories to
+                  jurisdictions without an adequacy decision:
                 </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
+                <ul className={`${listClass} mb-4`}>
                   <li>
-                    <strong>Encryption:</strong> Data encryption in transit
-                    (TLS 1.2+) and at rest using industry-standard encryption
-                    protocols
+                    Transfers are governed by the European Commission&rsquo;s
+                    approved Standard Contractual Clauses (SCCs) (Module 2:
+                    Controller-to-Processor; Module 3: Processor-to-Processor).
                   </li>
                   <li>
-                    <strong>Access Controls:</strong> Strict access controls with
-                    principle of least privilege and regular access reviews
-                  </li>
-                  <li>
-                    <strong>Role-Based Access Control (RBAC):</strong> Granular
-                    permissions based on user roles and responsibilities
-                  </li>
-                  
-                  <li>
-                    <strong>Monitoring & Logging:</strong> Comprehensive logging,
-                    monitoring, and alerting for security events
-                  </li>
-                  <li>
-                    <strong>Vulnerability Management:</strong> Regular security
-                    assessments, patch management, and vulnerability remediation
-                  </li>
-                  <li>
-                    <strong>Security Testing:</strong> Regular penetration testing
-                    and security audits, including VAPT assessments
-                  </li>
-                  <li>
-                    <strong>Incident Response:</strong> Established procedures for
-                    detecting, responding to, and recovering from security
-                    incidents
+                    Transfers are supplemented by technical safeguards,
+                    including data encryption in transit (TLS 1.2+) and at rest
+                    (AES-256), restricted role-based administrative access, and
+                    vulnerability management.
                   </li>
                 </ul>
                 <p className="text-slate-600">
-                  Our security controls are validated through SOC 2 Type II and
-                  ISO/IEC 27001:2022 certifications. For detailed information
-                  about our security practices, please see our{" "}
-                  {onNavigate ? (
+                  Clients subject to GDPR can execute our standard Data
+                  Processing Addendum incorporating EU SCCs upon request.
+                </p>
+              </section>
+
+              <section id="data-security" className={sectionClass}>
+                <SectionHeading
+                  icon={Lock}
+                  title="8. Data Security and Organizational Measures"
+                />
+                <p className="text-slate-600 mb-4">
+                  We have implemented technical and organizational measures
+                  (TOMs) aligned with ISO/IEC 27001:2022 and SOC 2 Type II
+                  principles:
+                </p>
+                <ul className={`${listClass} mb-4`}>
+                  <li>
+                    <strong>Encryption:</strong> Strong encryption of data in
+                    transit using modern TLS protocols and data at rest
+                    utilizing industry-standard cryptographic algorithms
+                    (AES-256).
+                  </li>
+                  <li>
+                    <strong>Access Control:</strong> Multi-tenant logical
+                    isolation, strict role-based access control (RBAC),
+                    multi-factor authentication (MFA), and least-privilege
+                    administrative access policies.
+                  </li>
+                  <li>
+                    <strong>Security Testing:</strong> Continuous monitoring,
+                    routine patch management, periodic external Vulnerability
+                    Assessment and Penetration Testing (VAPT), and immutable
+                    audit logging.
+                  </li>
+                  <li>
+                    <strong>Breach Notification:</strong> Documented Security
+                    Incident Response Procedures mandating that in the event of
+                    a verified personal data breach impacting client data,
+                    Elitesecom will notify affected Data Controllers without
+                    undue delay (Art. 33(2)) to support their statutory
+                    obligations.
+                  </li>
+                </ul>
+                <p className="text-slate-600">
+                  For detailed information about our security practices, please
+                  see our{" "}
+                  <InternalLink page="security" onNavigate={onNavigate}>
+                    Security &amp; Compliance
+                  </InternalLink>{" "}
+                  page.
+                </p>
+              </section>
+
+              <section id="data-retention" className={sectionClass}>
+                <SectionHeading
+                  icon={Archive}
+                  title="9. Data Retention & Deletion"
+                />
+                <p className="text-slate-600 mb-4">
+                  We retain personal data strictly in accordance with business
+                  requirements, contractual commitments, and statutory
+                  obligations:
+                </p>
+                <ul className={listClass}>
+                  <li>
+                    <strong>Account Records:</strong> Retained for the duration
+                    of the active subscription and for a statutory period
+                    post-termination to satisfy legal, tax, and audit
+                    obligations.
+                  </li>
+                  <li>
+                    <strong>Order &amp; Transaction Data:</strong> Retained
+                    throughout the contracted service term for active order
+                    processing and reconciliation, or as contractually
+                    instructed by the client.
+                  </li>
+                  <li>
+                    <strong>Contract Termination &amp; Purging:</strong> Upon
+                    contract termination or explicit controller request,
+                    personal data processed on behalf of the client is either
+                    securely returned or irreversibly deleted/anonymized from
+                    production systems in accordance with Art. 28(3)(g) and our
+                    sanitization schedules.
+                  </li>
+                </ul>
+              </section>
+
+              <section id="data-subject-rights" className={sectionClass}>
+                <SectionHeading
+                  icon={UserCheck}
+                  title="10. Data Subject Rights"
+                />
+                <InfoBox>
+                  <SubHeading>
+                    A. For Direct Users &amp; Website Visitors (Controller Data)
+                  </SubHeading>
+                  <p className="text-slate-600 mb-4">
+                    If you are a direct client account holder or website
+                    visitor, you may exercise your rights under GDPR Articles
+                    15&ndash;22 by contacting our privacy team:
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Access:
+                        </strong>{" "}
+                        Request confirmation and copies of your personal data.
+                      </span>
+                    </li>
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Rectification:
+                        </strong>{" "}
+                        Request correction of inaccurate or incomplete personal
+                        records.
+                      </span>
+                    </li>
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Erasure:
+                        </strong>{" "}
+                        Request deletion of your personal data, subject to
+                        statutory retention obligations.
+                      </span>
+                    </li>
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Restriction:
+                        </strong>{" "}
+                        Request temporary restriction of data processing under
+                        certain legal grounds.
+                      </span>
+                    </li>
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Data Portability:
+                        </strong>{" "}
+                        Request transfer of your data in a structured, commonly
+                        used, machine-readable format.
+                      </span>
+                    </li>
+                    <li className="flex gap-2.5 text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-500 mt-0.5" />
+                      <span>
+                        <strong className="text-slate-800">
+                          Right to Object:
+                        </strong>{" "}
+                        Object to processing based on legitimate interests or
+                        direct marketing.
+                      </span>
+                    </li>
+                  </ul>
+                </InfoBox>
+                <SubHeading>
+                  B. For End-Consumers / Marketplace Shoppers (Processor Data)
+                </SubHeading>
+                <Callout>
+                  <p>
+                    If you are an end-consumer whose order was placed on an
+                    e-commerce marketplace (e.g., Amazon, Flipkart, Shopify) and
+                    processed via Elitesecom:
+                  </p>
+                  <p>
+                    Please submit your data protection request directly to the
+                    merchant or marketplace from whom you purchased the goods.
+                  </p>
+                  <p>
+                    Elitesecom processes your personal data strictly as a Data
+                    Processor on behalf of the merchant (the Data Controller).
+                    We cannot unilaterally modify or delete order records
+                    without documented instructions from the relevant seller,
+                    but we will fully assist the merchant in fulfilling your
+                    verified request.
+                  </p>
+                </Callout>
+              </section>
+
+              <section id="childrens-privacy" className={sectionClass}>
+                <SectionHeading icon={Baby} title="11. Children's Privacy" />
+                <p className="text-slate-600">
+                  Our SaaS solutions are intended exclusively for commercial
+                  business operations and are not directed to individuals under
+                  the age of 18. We do not knowingly collect personal data from
+                  children.
+                </p>
+              </section>
+
+              <section id="policy-updates" className={sectionClass}>
+                <SectionHeading
+                  icon={RefreshCw}
+                  title="12. Updates to This Policy"
+                />
+                <p className="text-slate-600">
+                  We review and update this Privacy Policy periodically to
+                  reflect technological changes, product enhancements, or
+                  updated regulatory requirements. When material changes occur,
+                  we will notify registered account holders via our platform
+                  dashboard or registered email prior to the changes taking
+                  effect.
+                </p>
+              </section>
+
+              <section id="contact" className={sectionClass}>
+                <SectionHeading
+                  icon={Mail}
+                  title="13. Contact Us & Data Protection Officer"
+                />
+                <p className="text-slate-600 mb-5">
+                  For questions regarding this policy, exercising data
+                  protection rights, or executing a Data Processing Addendum
+                  (DPA), please contact our privacy office:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <ContactCard
+                    icon={User}
+                    label="Data Protection Officer (DPO)"
+                    value="Meet Vaghasiya"
+                  />
+                  <ContactCard
+                    icon={Mail}
+                    label="Privacy & DPO Email"
+                    value={
+                      <>
+                        <a
+                          href="mailto:dpo@elitesecom.ai"
+                          className="block text-gold-600 underline hover:text-gold-700"
+                        >
+                          dpo@elitesecom.ai
+                        </a>
+                        <a
+                          href="mailto:security@elitesecom.ai"
+                          className="block text-gold-600 underline hover:text-gold-700"
+                        >
+                          security@elitesecom.ai
+                        </a>
+                      </>
+                    }
+                  />
+                  <ContactCard
+                    icon={Mail}
+                    label="General Inquiries"
+                    value="contact@elitesecom.ai"
+                    href="mailto:contact@elitesecom.ai"
+                  />
+                  <ContactCard
+                    icon={Phone}
+                    label="Phone"
+                    value="+91 94038 93414"
+                    href="tel:+919403893414"
+                  />
+                  <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-gold-300 hover:bg-gold-50 sm:col-span-2">
+                    <a
+                      // href={postalMapsUrl}
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      title="Open in Google Maps"
+                      className="flex min-w-0 flex-1 items-start gap-3"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-gold-600">
+                        <MapPin className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm font-semibold text-slate-800">
+                          Postal Address
+                        </span>
+                        <span className="block break-words text-sm text-slate-600">
+                          {postalAddress}
+                        </span>
+                        {/* <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-gold-600">
+                          <ExternalLink className="h-3 w-3" />
+                          Open in Maps
+                        </span> */}
+                      </span>
+                    </a>
                     <button
-                      onClick={() => onNavigate("security")}
-                      className="text-gold-600 hover:text-gold-700 underline"
+                      type="button"
+                      onClick={handleCopyAddress}
+                      title="Copy address"
+                      aria-label="Copy address"
+                      className="ml-auto flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 transition-colors hover:border-gold-300 hover:text-gold-600"
                     >
-                      Security & Compliance
+                      {addressCopied ? (
+                        <Check className="h-4 w-4 text-green-600" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </button>
-                  ) : (
-                    <a
-                      href="/security"
-                      className="text-gold-600 hover:text-gold-700 underline"
-                    >
-                      Security & Compliance
-                    </a>
-                  )}{" "}
-                  page.
-                </p>
+                  </div>
+                </div>
               </section>
 
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Your Rights</h4>
-                <p className="text-slate-600 mb-4">
-                  Depending on applicable data protection laws, you may have the
-                  following rights regarding your personal data:
-                </p>
-                <ul className="list-disc list-inside text-slate-600 space-y-2 mb-4">
-                  <li>
-                    <strong>Access:</strong> Request access to the personal data we
-                    hold about you
-                  </li>
-                  <li>
-                    <strong>Correction:</strong> Request correction of inaccurate
-                    or incomplete personal data
-                  </li>
-                  <li>
-                    <strong>Deletion:</strong> Request deletion of your personal
-                    data, subject to legal and business exceptions
-                  </li>
-                  <li>
-                    <strong>Object:</strong> Object to processing of your
-                    personal data in certain circumstances
-                  </li>
-                  <li>
-                    <strong>Portability:</strong> Request transfer of your
-                    personal data to another service provider where technically
-                    feasible
-                  </li>
-                  <li>
-                    <strong>Restrict:</strong> Request restriction of processing of
-                    your personal data in certain circumstances
-                  </li>
-                </ul>
-                <p className="text-slate-600">
-                  To exercise these rights, please contact us using the information
-                  provided in the Contact Us section below.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Cookies</h4>
-                <p className="text-slate-600">
-                  We use cookies to enhance your experience on our platform. You
-                  can control cookie settings through your browser preferences.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Third-Party Services
-                </h4>
-                <p className="text-slate-600">
-                  Our platform may contain links to third-party websites. We are
-                  not responsible for the privacy practices of these websites.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Children's Privacy
-                </h4>
-                <p className="text-slate-600">
-                  Our services are not intended for children under 13. We do not
-                  knowingly collect personal information from children.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">
-                  ❖ Changes to This Policy
-                </h4>
-                <p className="text-slate-600">
-                  We may update this Privacy Policy from time to time. We will
-                  notify you of any changes by posting the new policy on this
-                  page.
-                </p>
-              </section>
-
-              <section>
-                <h4 className="text-[20px] font-bold  mb-4">❖ Contact Us</h4>
-                <p className="text-slate-600 mb-4">
-                  If you have any questions about this Privacy Policy or our data
-                  practices, please contact us at:
-                </p>
-                <p className="text-slate-600 mb-4">
-                  <strong>General Privacy Inquiries:</strong>
-                  <br />
-                  Email: contact@elitesecom.ai
-                  <br />
-                  Phone: +91 94038 93414
-                </p>
-                <p className="text-slate-600">
-                  <strong>Security & Vulnerability Reporting:</strong>
-                  <br />
-                  Email: security@elitesecom.ai
-                </p>
-              </section>
-
-              <div className="pt-8 border-t border-slate-200">
+              <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <p className="text-sm text-slate-500">
-                  Last updated: September 15, 2026
+                  Last updated: October 10, 2026
                 </p>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-gold-600"
+                >
+                  <ArrowUp className="h-4 w-4" />
+                  Back to top
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-   </> 
   );
 }

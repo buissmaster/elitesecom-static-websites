@@ -398,11 +398,16 @@ export const allBlogEntries: BlogEntry[] = [
     slug: makeSlug("shopify-inventory-management-explained"),
     title: "Shopify Inventory Management Explained",
     subtitle:
-      "Shopify's native inventory tracking works well for a single-channel store — the problems start the moment you also sell on Amazon, Flipkart, or in a physical location alongside it.",
+      "Learn how Shopify inventory tracking works, how to manage stock across multiple sales channels, and how to reduce inventory mismatches and overselling.",
     category: "Shopify & D2C",
     readTime: "6 min",
     date: "May 16, 2026",
     image: "/Shopify & D2C blog/Shopify & D2C 1-1600.webp",
+    seoTitle: "Shopify Inventory Management Explained | Elitesecom",
+    metaDescription:
+      "Learn how Shopify inventory management works, manage stock across multiple sales channels, improve inventory accuracy, and reduce overselling risks.",
+    seoKeywords:
+      "Shopify inventory management, Shopify inventory tracking, Shopify multichannel inventory management, Shopify stock management, inventory synchronization, Shopify inventory management for multiple channels",
   },
   {
     id: "sd2",
@@ -812,35 +817,50 @@ export const allBlogEntries: BlogEntry[] = [
   {
     id: "ret2",
     slug: makeSlug("reverse-logistics-explained"),
-    title: "Reverse Logistics Explained",
+    title: "Reverse Logistics in Ecommerce",
     subtitle:
-      "Understanding the complete reverse logistics process for ecommerce businesses.",
+      "Understand how reverse logistics helps ecommerce sellers manage returned products, product inspections, inventory recovery, and return-related operations.",
     category: "Returns",
     readTime: "5 min",
     date: "May 10, 2026",
     image: "/Returns blog/Return 2-1600.webp",
+    seoTitle: "Reverse Logistics in Ecommerce: Process and Best Practices | Elitesecom",
+    metaDescription:
+      "Learn how reverse logistics in ecommerce works, from product returns and inspections to inventory recovery, restocking, and return-related cost management.",
+    seoKeywords:
+      "reverse logistics in ecommerce, reverse logistics process, ecommerce reverse logistics, ecommerce returns process, reverse logistics management, reverse supply chain",
   },
   {
     id: "ret3",
     slug: makeSlug("why-return-management-matters"),
-    title: "Why Return Management Matters",
+    title: "Return Management in Ecommerce",
     subtitle:
-      "The business impact of effective return management on profitability and loyalty.",
+      "Learn how ecommerce return management helps sellers handle returns, reverse logistics, inventory updates, refunds, and return-related discrepancies more efficiently.",
     category: "Returns",
     readTime: "6 min",
     date: "May 8, 2026",
     image: "/Returns blog/Return 3-1600.webp",
+    seoTitle: "Return Management in Ecommerce: Best Practices | Elitesecom",
+    metaDescription:
+      "Learn how ecommerce return management helps sellers handle returns, reverse logistics, inventory updates, refund tracking, and return-related costs more efficiently.",
+    seoKeywords:
+      "return management in ecommerce, ecommerce returns management, ecommerce return process, reverse logistics in ecommerce, return management for online sellers, return reconciliation",
   },
   {
     id: "ret4",
     slug: makeSlug("managing-refunds-efficiently"),
     title: "Refund Management Guide",
     subtitle:
-      "Streamline your refund process to improve cash flow and customer experience.",
+      "Streamline your ecommerce refund process to improve refund tracking, financial accuracy, cash flow visibility, and customer experience.",
     category: "Returns",
     readTime: "5 min",
     date: "May 6, 2026",
     image: "/Returns blog/Return 4-1600.webp",
+    seoTitle: "Refund Management Guide for Ecommerce Sellers | Elitesecom",
+    metaDescription:
+      "Learn how ecommerce refund management helps sellers track refunds, investigate settlement discrepancies, improve financial accuracy, and manage refund workflows.",
+    seoKeywords:
+      "refund management in ecommerce, ecommerce refund process, refund reconciliation, marketplace refund tracking, refund management for online sellers, ecommerce payment reconciliation",
   },
   {
     id: "ret5",

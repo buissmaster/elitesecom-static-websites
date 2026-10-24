@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Briefcase,
   Package,
+  ShoppingCart,
   Users,
   Info,
   Rss,
@@ -99,6 +100,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                   {[
                     { name: "Services", page: "services", icon: Briefcase },
                     { name: "Integration", page: "integration", icon: Package },
+                    { name: "Amazon Integration", page: "amazon-integration", icon: ShoppingCart },
                     { name: "Our Clients", page: "customers", icon: Users },
                     { name: "About us", page: "about", icon: Info },
                     { name: "Blog", page: "blog", icon: Rss },
@@ -236,11 +238,27 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
       {/* Bottom Bar — Sub-footer with Copyright & Socials */}
       <div className="border-t border-slate-900 bg-zinc-950/40">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500 tracking-wide text-center sm:text-left">
-            Copyright &copy; 2026{" "}
-            <span className="text-gold font-medium">Elitesecom.ai</span>. All
-            Rights Reserved.
-          </p>
+          <div className="text-center sm:text-left">
+            <p className="text-xs text-slate-500 tracking-wide">
+              Copyright &copy; 2026{" "}
+              <span className="text-gold font-medium">
+                OMS Vision Solutions LLP
+              </span>
+              . All Rights Reserved.
+            </p>
+            <p className="text-xs text-slate-600 tracking-wide mt-1">
+              No. 507-508, Pragati IT Park, Building-B, Mota Varachha, Surat,
+              Gujarat 394105, India
+            </p>
+            <p className="text-[11px] text-slate-600 leading-relaxed mt-2 max-w-xl">
+              Amazon, Amazon Seller Central, and Amazon Selling Partner API are
+              trademarks of Amazon.com, Inc. or its affiliates. All other
+              marketplace and platform names and logos are trademarks of their
+              respective owners. Elitesecom is an independent software
+              application and is not affiliated with, endorsed, or sponsored by
+              Amazon or any other marketplace referenced on this site.
+            </p>
+          </div>
 
           <div className="flex items-center gap-5">
             {FOOTER_SOCIAL_LINKS.map((social) => (

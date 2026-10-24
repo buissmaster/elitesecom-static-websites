@@ -468,6 +468,19 @@ export function AmazonSpApiSecurityPage({
                     <Mail className="w-5 h-5" />
                     security@elitesecom.ai
                   </a>
+                  {onNavigate && (
+                    <p className="mt-6 text-sm text-slate-500">
+                      To see what the integration does, visit our{" "}
+                      <button
+                        type="button"
+                        onClick={() => onNavigate("amazon-integration")}
+                        className="text-gold-600 underline hover:text-gold-700"
+                      >
+                        Amazon Integration
+                      </button>{" "}
+                      page.
+                    </p>
+                  )}
                 </CardContent>
               </Card>
             </div>

@@ -18,7 +18,7 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Multichannel Order Management",
     description:
-      "Seamlessly manage orders across multiple sales channels from one platform. Streamline inventory, track shipments, and ensure timely deliveries. Reduce errors and improve customer satisfaction with centralized order processing. Perfect for scaling businesses and maximizing efficiency.",
+      "Seamlessly manage orders across multiple sales channels from one platform. Streamline inventory, track shipments, and ensure timely deliveries. Reduce errors and improve customer satisfaction with centralized order processing. Designed for scaling businesses and operational efficiency.",
     features: [
       "Centralized order processing",
       "Real-time order tracking",
@@ -130,7 +130,7 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Security & Compliance",
     description:
-      "Enterprise-grade security with 99.9% uptime guarantee. Your data is protected with industry-standard encryption and security protocols. Stay compliant with all regulations.",
+      "Enterprise-grade security designed for high availability. Your data is protected with industry-standard encryption and security protocols. Built to support regulatory compliance.",
     features: [
       "SSL encryption",
       "Role-based access",

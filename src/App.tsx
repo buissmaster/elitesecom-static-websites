@@ -20,6 +20,7 @@ import { PrivacyPage } from "./pages/PrivacyPage";
 import { TeamPage } from "./pages/TeamPage";
 import { SecurityPage } from "./pages/SecurityPage";
 import { AmazonSpApiSecurityPage } from "./pages/AmazonSpApiSecurityPage";
+import { AmazonIntegrationPage } from "./pages/AmazonIntegrationPage";
 import { Toaster } from "./components/ui/sonner";
 import {
   allBlogEntries,
@@ -175,6 +176,8 @@ function App() {
         return <SecurityPage onNavigate={handleNavigate} />;
       case "amazon-sp-api-security":
         return <AmazonSpApiSecurityPage onNavigate={handleNavigate} />;
+      case "amazon-integration":
+        return <AmazonIntegrationPage onNavigate={handleNavigate} />;
       // case "comparisonsHub":
       //   return <ComparisonsHubPage onNavigate={handleNavigate} />;
       default:

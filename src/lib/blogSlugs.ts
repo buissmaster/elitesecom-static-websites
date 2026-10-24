@@ -70,7 +70,7 @@ export const allBlogEntries: BlogEntry[] = [
     metaDescription:
       "Learn what an Order Management System (OMS) is, how it works, key features, benefits, and how OMS software helps ecommerce businesses manage orders, inventory, fulfillment, returns, and reconciliation.",
     seoKeywords:
-      "Order Management System, Order Management System (OMS), what is an order management system, OMS software, ecommerce order management system, ecommerce OMS, order management software, order processing system, multichannel order management, omnichannel order management, inventory management, order fulfillment, warehouse management, returns management, payment reconciliation, return reconciliation, ecommerce order processing, marketplace order management, multichannel ecommerce, order management system for ecommerce, best order management system for ecommerce",
+      "Order Management System, Order Management System (OMS), what is an order management system, OMS software, ecommerce order management system, ecommerce OMS, order management software, order processing system, multichannel order management, omnichannel order management, inventory management, order fulfillment, warehouse management, returns management, payment reconciliation, return reconciliation, ecommerce order processing, marketplace order management, multichannel ecommerce, order management system for ecommerce",
   },
   {
     id: "hp1",
@@ -104,7 +104,7 @@ export const allBlogEntries: BlogEntry[] = [
     metaDescription:
       "Learn how an order management system for ecommerce helps sellers manage orders, inventory, fulfillment, returns, reconciliation, and multichannel ecommerce operations.",
     seoKeywords:
-      "order management system for ecommerce, ecommerce order management system, order management system for ecommerce sellers, ecommerce order management, order management software, OMS for ecommerce, order management system, multichannel order management, marketplace order management, ecommerce order processing, ecommerce order fulfillment, inventory synchronization, ecommerce inventory management, multichannel ecommerce, order management software for ecommerce, best order management system for ecommerce",
+      "order management system for ecommerce, ecommerce order management system, order management system for ecommerce sellers, ecommerce order management, order management software, OMS for ecommerce, order management system, multichannel order management, marketplace order management, ecommerce order processing, ecommerce order fulfillment, inventory synchronization, ecommerce inventory management, multichannel ecommerce, order management software for ecommerce",
   },
   // Seller Problems (8)
   {
@@ -794,7 +794,7 @@ export const allBlogEntries: BlogEntry[] = [
     metaDescription:
       "Learn how to choose the right OMS for ecommerce. Compare integrations, inventory, order processing, fulfillment, returns, reconciliation, warehouse operations, and scalability.",
     seoKeywords:
-      "choosing the right OMS, choosing an OMS, how to choose an OMS, best OMS for ecommerce, best order management system, order management system for ecommerce, ecommerce order management system, OMS software, order management software, multichannel order management, marketplace order management, inventory management, inventory synchronization, order fulfillment, returns management, payment reconciliation, return reconciliation, warehouse management, ecommerce automation, OMS features",
+      "choosing the right OMS, choosing an OMS, how to choose an OMS, order management system for ecommerce, ecommerce order management system, OMS software, order management software, multichannel order management, marketplace order management, inventory management, inventory synchronization, order fulfillment, returns management, payment reconciliation, return reconciliation, warehouse management, ecommerce automation, OMS features",
   },
 
   // Returns (8)

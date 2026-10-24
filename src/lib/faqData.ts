@@ -20,7 +20,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "What is Elitesecom OMS?",
-        a: "Elitesecom OMS is India's leading ecommerce order management system built for multichannel sellers. It combines order management, inventory sync, warehouse management (WMS), payment reconciliation, and return reconciliation in one platform.",
+        a: "Elitesecom OMS is an ecommerce order management system built for multichannel sellers. It combines order management, inventory sync, warehouse management (WMS), payment reconciliation, and return reconciliation in one platform.",
       },
       {
         q: "Who should use an order management system?",

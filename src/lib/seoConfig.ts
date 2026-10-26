@@ -141,7 +141,7 @@ const pageSeo: Record<
     path: "/",
     title: "Order Management System (OMS) for Multichannel Ecommerce | Elitesecom",
     description:
-Elitesecom is an ecommerce order management system (OMS) for multichannel sellers. Manage orders, payment reconciliation, return reconciliation, inventory, and warehouse operations from one dashboard.
+      "Elitesecom is an ecommerce order management system (OMS) for multichannel sellers. Manage orders, payment reconciliation, return reconciliation, inventory, and warehouse operations from one dashboard.",
     keywords: HOME_KEYWORDS,
   },
   services: {

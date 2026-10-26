@@ -139,10 +139,9 @@ const pageSeo: Record<
 > = {
   home: {
     path: "/",
-    title:
-      "Order Management System (OMS) | Payment & Return Reconciliation | Elitesecom",
+    title: "Order Management System (OMS) for Multichannel Ecommerce | Elitesecom",
     description:
-      "Elitesecom is India's leading ecommerce order management system (OMS). Manage multichannel orders, payment reconciliation, return reconciliation, inventory & warehouse operations from one dashboard.",
+      "Elitesecom's order management system helps ecommerce sellers manage multichannel orders, inventory, warehouse operations, payment reconciliation, and returns.",
     keywords: HOME_KEYWORDS,
   },
   services: {

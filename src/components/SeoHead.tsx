@@ -77,6 +77,7 @@ export function SeoHead({ page, blogEntry, heroImagePreload }: SeoHeadProps) {
     upsertMeta("name", "keywords", seo.keywords);
     upsertMeta("property", "og:title", seo.title);
     upsertMeta("property", "og:description", seo.description);
+    upsertMeta("property", "og:site_name", "Elitesecom");
     upsertMeta("property", "og:type", page === "blogdetail" ? "article" : "website");
     upsertMeta("property", "og:url", seo.canonical);
     upsertMeta("property", "og:image", seo.ogImage ?? seo.canonical);

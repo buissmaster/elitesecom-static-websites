@@ -304,7 +304,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold-700 text-sm font-medium">
                   <Zap className="w-4 h-4" />
-                  #1 Order Management System in India
+                  MULTICHANNEL ORDER MANAGEMENT SYSTEM
                 </div>
               </div>
 
@@ -313,7 +313,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className={`transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[1.15] ">
-                  Best <span className="text-gold-500">Order Management System</span>{" "}
+                  <span className="text-gold-500">Order Management System</span>{" "}
                   (OMS) for Multichannel Ecommerce
                 </h1>
               </div>
@@ -323,10 +323,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Elitesecom OMS helps ecommerce sellers manage multichannel
-                  orders, payment reconciliation, return reconciliation,
-                  inventory, and warehouse operations — all from one dashboard.
-                  Integrate Amazon, Flipkart, Shopify, Meesho & more.
+                  Manage orders, inventory, payment reconciliation, returns,
+                  and warehouse operations across your ecommerce sales channels
+                  from one platform.
+                </p>
+                <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed mt-3">
+                  Connect your Amazon, Flipkart, Meesho, Myntra, Shopify, AJIO,
+                  and other supported channels to simplify order processing and
+                  manage ecommerce operations more efficiently.
                 </p>
               </div>
 
@@ -346,7 +350,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     onClick={() => onNavigate("services")}
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-slate-200 text-slate-700 font-semibold hover:border-gold hover:text-gold-600 transition-all duration-300 w-full sm:w-auto"
                   >
-                    Learn More
+                    Explore Features
                   </button>
                 </div>
               </div>
@@ -477,7 +481,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   onClick={() => onNavigate("services")}
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-slate-200 text-slate-700 font-semibold hover:border-gold hover:text-gold-600 transition-all duration-300 w-full sm:w-auto"
                 >
-                  Learn More
+                  Explore Features
                 </button>
               </div>
             </div>
@@ -540,8 +544,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <span className="text-gold-500">One Platform</span>
             </h2>
             <p className="text-lg text-slate-600">
-              Strong e-commerce API interfaces with all major marketplaces and
-              platforms. Connect once, sell everywhere.
+              Bring marketplace and D2C orders into a shared workflow, keep
+              inventory aligned across channels, and coordinate fulfillment,
+              reconciliation, and warehouse tasks from one platform.
             </p>
           </div>
 
@@ -685,7 +690,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Why Choose <span className="text-gold-500">Elitesecom?</span>
             </h2>
             <p className="text-lg text-slate-600">
-              Powerful features designed to transform your e-commerce operations
+              Tools to coordinate orders, inventory, fulfillment, and ecommerce operations.
             </p>
           </div>
 
@@ -733,7 +738,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                         <div
                           className={`mt-3 transition-opacity duration-100 ${isExpanded ? "opacity-0 pointer-events-none absolute" : "opacity-100"}`}
                         >
-                          <h4
+                          <h3
                             className="font-bold text-slate-900 text-xs text-center leading-tight"
                             style={{
                               writingMode: "vertical-rl",
@@ -743,7 +748,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             }}
                           >
                             {feature.title}
-                          </h4>
+                          </h3>
                         </div>
 
                         <div
@@ -752,9 +757,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                             transitionDelay: isExpanded ? "0.15s" : "0s",
                           }}
                         >
-                          <h4 className="font-bold text-slate-900 text-xl text-center">
+                          <h3 className="font-bold text-slate-900 text-xl text-center">
                             {feature.title}
-                          </h4>
+                          </h3>
                           <p className="text-slate-500 text-[13px] text-center leading-snug px-3 max-w-[210px] mt-3">
                             {feature.description}
                           </p>
@@ -783,9 +788,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       <div className="w-10 h-10 rounded-lg bg-gold-100 flex items-center justify-center mb-2">
                         <FeatureIcon className="w-5 h-5 text-gold-600" />
                       </div>
-                      <h4 className="font-bold text-slate-900 text-sm leading-tight mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm leading-tight mb-1">
                         {feature.title}
-                      </h4>
+                      </h3>
                       <p className="text-slate-500 text-xs leading-relaxed">
                         {feature.description}
                       </p>
@@ -807,8 +812,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <span className="text-gold-500">Order Management System</span>
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              A complete ecommerce OMS built for Indian multichannel sellers —
-              from order processing to reconciliation.
+              Coordinate channel orders, settlement and return checks, and
+              inventory movement between your sales channels and warehouse.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -816,17 +821,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {
                 title: "Multichannel Order Management",
                 description:
-                  "Centralize orders from Amazon, Flipkart, Meesho, Shopify, and 20+ channels in one order management system. Route, fulfill, and track every order without switching dashboards.",
+                  "Bring orders from connected marketplaces and stores into one queue, then manage fulfillment and tracking in a shared workflow.",
               },
               {
                 title: "Payment & Return Reconciliation",
                 description:
-                  "Automate payment reconciliation against marketplace settlements and handle return reconciliation with accurate refund tracking. Reduce financial discrepancies and save hours of manual work.",
+                  "Compare marketplace settlements with order and return records to review payment differences and refund activity in one workflow.",
               },
               {
                 title: "Inventory & Warehouse Management",
                 description:
-                  "Sync inventory across channels in real time and run warehouse operations with built-in WMS — pick, pack, ship, and prevent overselling during peak sale events.",
+                  "Keep channel stock and warehouse fulfillment workflows coordinated, from picking and packing through shipment processing.",
               },
             ].map((item) => (
               <div
@@ -861,11 +866,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {/* TEXT — mobile: order-1, desktop: col 1 row 1 */}
             <div className="order-1 lg:order-none text-center lg:text-left">
               <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl  mb-4 lg:mb-6">
-                Stop Wasting Time On Stubborn Management
+                Simplify Your Ecommerce Operations as You Scale
               </h2>
               <p className="text-base sm:text-lg text-slate-600">
-                Sign Up With Elitesecom & Elites Your E-Commerce Business. Get
-                started today and see the difference.
+                Manage your ecommerce operations more efficiently with
+                Elitesecom. Request a demo to explore the platform.
               </p>
             </div>
 

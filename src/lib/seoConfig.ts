@@ -141,7 +141,7 @@ const pageSeo: Record<
     path: "/",
     title: "Order Management System (OMS) for Multichannel Ecommerce | Elitesecom",
     description:
-      "Elitesecom's order management system helps ecommerce sellers manage multichannel orders, inventory, warehouse operations, payment reconciliation, and returns.",
+Elitesecom is an ecommerce order management system (OMS) for multichannel sellers. Manage orders, payment reconciliation, return reconciliation, inventory, and warehouse operations from one dashboard.
     keywords: HOME_KEYWORDS,
   },
   services: {
@@ -176,7 +176,7 @@ const pageSeo: Record<
     title:
       "About Elitesecom | Ecommerce Order Management System (OMS) Company",
     description:
-      "Elitesecom builds India's trusted order management system (OMS) for ecommerce sellers — with ISO-certified security, reconciliation automation, and multichannel operations support.",
+      "Elitesecom builds an order management system (OMS) for ecommerce sellers — with ISO-certified security, reconciliation automation, and multichannel operations support.",
     keywords:
       "about Elitesecom, OMS company India, order management system provider, ecommerce operations platform",
   },
@@ -261,6 +261,14 @@ const pageSeo: Record<
       "Learn how Elitesecom protects and handles Amazon SP-API data, including Amazon PII, storage, transmission, access controls, retention, and deletion.",
     keywords:
       "Amazon SP-API security, Amazon data protection, Amazon PII, data retention, data deletion, access control, Elitesecom",
+  },
+  "amazon-integration": {
+    path: "/amazon-integration",
+    title: "Amazon Integration | Amazon SP-API Order & Inventory Sync | Elitesecom",
+    description:
+      "Connect your Amazon seller account to Elitesecom via SP-API. Sync Amazon orders, push inventory and listings, generate shipping labels and invoices, process returns, and reconcile settlements.",
+    keywords:
+      "Amazon integration, Amazon SP-API, Amazon order management, Amazon inventory sync, Amazon shipping labels, settlement reconciliation, Elitesecom",
   },
 };
 

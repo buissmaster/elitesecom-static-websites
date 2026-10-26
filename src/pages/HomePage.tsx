@@ -159,7 +159,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Amazon",
       subtitle: "Global Marketplace",
-      logo: "/logo-amazon.webp",
+      logo: undefined,
       bg: "#FFF7ED",
       border: "#FED7AA",
       text: "#EA580C",
@@ -304,7 +304,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold-700 text-sm font-medium">
                   <Zap className="w-4 h-4" />
-                  MULTICHANNEL ORDER MANAGEMENT SYSTEM
+Multichannel Order Management System
                 </div>
               </div>
 
@@ -567,14 +567,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <div className="flex flex-col items-center">
                       {/* Logo Badge — ~25% outside, ~75% inside */}
                       <div className="w-[60px] h-[60px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-[32px] p-1.5">
-                        <img
-                          src={i.logo}
-                          alt={i.name}
-                          className="w-full h-full object-contain"
-                          style={{ filter: i.logoShadow || "none" }}
-                          loading="lazy"
-                          draggable={false}
-                        />
+                        {i.logo ? (
+                          <img
+                            src={i.logo}
+                            alt={i.name}
+                            className="w-full h-full object-contain"
+                            style={{ filter: i.logoShadow || "none" }}
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        ) : (
+                          <span
+                            className="font-bold text-sm text-center leading-tight"
+                            style={{ color: i.text }}
+                          >
+                            {i.name}
+                          </span>
+                        )}
                       </div>
                       {/* Card */}
                       <div
@@ -619,14 +628,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <div className="flex flex-col items-center">
                       {/* Logo Badge — ~25% outside, ~75% inside */}
                       <div className="w-[60px] h-[60px] bg-white rounded-2xl flex items-center justify-center shadow-[0_6px_24px_rgba(0,0,0,0.10)] border border-slate-100/80 z-10 -mb-[32px] p-1.5">
-                        <img
-                          src={i.logo}
-                          alt={i.name}
-                          className="w-full h-full object-contain"
-                          style={{ filter: i.logoShadow || "none" }}
-                          loading="lazy"
-                          draggable={false}
-                        />
+                        {i.logo ? (
+                          <img
+                            src={i.logo}
+                            alt={i.name}
+                            className="w-full h-full object-contain"
+                            style={{ filter: i.logoShadow || "none" }}
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        ) : (
+                          <span
+                            className="font-bold text-sm text-center leading-tight"
+                            style={{ color: i.text }}
+                          >
+                            {i.name}
+                          </span>
+                        )}
                       </div>
                       {/* Card */}
                       <div

@@ -412,6 +412,16 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
                     necessary for order fulfillment and logistics routing.
                   </li>
                   <li>
+                    <strong>Amazon Buyer PII:</strong> Buyer names, shipping
+                    addresses, and contact details received through the Amazon
+                    Selling Partner API are used solely for order fulfillment,
+                    shipping label and invoice generation, and order-related
+                    customer support. Amazon buyer PII is encrypted in transit
+                    and at rest, retained only for the contracted service term
+                    or as instructed by the seller, and deleted or anonymized on
+                    contract termination or verified request.
+                  </li>
+                  <li>
                     <strong>No Selling of Personal Data:</strong> We do not
                     sell, rent, or lease any personal data.
                   </li>

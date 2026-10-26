@@ -17,13 +17,14 @@ const integrations = [
   {
     name: "Amazon",
     description:
-      "Sync your store to Amazon seller platform and manage inventory with unified dashboard.",
+      "Sync orders, inventory, listings, shipping labels, returns, and settlements from your Amazon seller account with a unified dashboard.",
     color: "#FF9900",
     bgColor: "#FFF7ED",
     borderColor: "#FED7AA",
     cardAccent: "bg-orange-400",
-    logo: "/logo-amazon.webp",
+    logo: undefined,
     category: "Marketplace",
+    detailPage: "amazon-integration",
   },
   {
     name: "Flipkart",
@@ -276,13 +277,22 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
                   {/* Logo + Name row */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
-                      <img
-                        src={integration.logo}
-                        alt={`${integration.name} logo`}
-                        className="w-[82%] h-[82%] object-contain"
-                        loading="lazy"
-                        draggable={false}
-                      />
+                      {integration.logo ? (
+                        <img
+                          src={integration.logo}
+                          alt={`${integration.name} logo`}
+                          className="w-[82%] h-[82%] object-contain"
+                          loading="lazy"
+                          draggable={false}
+                        />
+                      ) : (
+                        <span
+                          className="font-bold text-xs text-center leading-tight px-1"
+                          style={{ color: integration.color }}
+                        >
+                          {integration.name}
+                        </span>
+                      )}
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-semibold text-base ">
@@ -297,6 +307,16 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
                   <p className="text-slate-600 text-sm leading-relaxed flex-1">
                     {integration.description}
                   </p>
+                  {"detailPage" in integration && integration.detailPage ? (
+                    <button
+                      type="button"
+                      onClick={() => onNavigate(integration.detailPage)}
+                      className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-gold-700 hover:text-gold transition-colors self-start"
+                    >
+                      View integration details
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  ) : null}
                 </div>
                 {/* Bottom colored accent line — always at the bottom edge */}
                 <div
@@ -428,7 +448,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
                 icon: GitBranch,
                 title: "Smart Routing",
                 description:
-                  "Automatically route orders to the best fulfillment location.",
+                  "Automatically route orders to a suitable fulfillment location.",
               },
             ].map((feature) => (
               <div

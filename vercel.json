@@ -22,6 +22,9 @@
     { "source": "/terms", "destination": "/terms/index.html" },
     { "source": "/privacy", "destination": "/privacy/index.html" },
     { "source": "/team", "destination": "/team/index.html" },
+    { "source": "/security", "destination": "/security/index.html" },
+    { "source": "/amazon-sp-api-security", "destination": "/amazon-sp-api-security/index.html" },
+    { "source": "/amazon-integration", "destination": "/amazon-integration/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

@@ -114,7 +114,7 @@ const plans: Plan[] = [
       "B2B App",
       "Dedicated account manager",
       "Custom integrations",
-      "SLA guarantee",
+      "SLA-backed uptime commitment",
       "On-premise option",
     ],
     cta: "Contact Sales",

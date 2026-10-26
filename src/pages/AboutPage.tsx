@@ -69,7 +69,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       icon: Target,
       title: "Mission",
       description:
-        "Providing your e-commerce business with the best management services. We connect with businesses and fulfill their needs through innovative solutions.",
+        "Providing your e-commerce business with reliable management services. We connect with businesses and fulfill their needs through innovative solutions.",
       iconBg: "bg-amber-100",
       iconColor: "text-amber-500",
       barColor: "bg-amber-400",
@@ -80,7 +80,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       icon: TrendingUp,
       title: "Vision",
       description:
-        "To become India's most trusted e-commerce enablement platform, empowering businesses of all sizes to achieve their full potential.",
+        "To become a trusted e-commerce enablement platform, empowering businesses of all sizes to achieve their full potential.",
       iconBg: "bg-purple-100",
       iconColor: "text-purple-500",
       barColor: "bg-purple-400",
@@ -102,7 +102,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       icon: Award,
       title: "Achievement",
       description:
-        "India's largest e-commerce enablement SaaS platform in transaction processing by revenue for FY ended March 31, 2022.",
+        "ISO/IEC 27001:2022 certified. An e-commerce enablement SaaS platform processing multichannel orders for sellers across India.",
       iconBg: "bg-emerald-100",
       iconColor: "text-emerald-500",
       barColor: "bg-emerald-400",
@@ -161,9 +161,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </h1>
               <div className="space-y-5 leading-[1.7] text-[15px]">
                 <p>
-                  Incorporated in July 2021, Elitesecom is India's largest
-                  e-commerce enablement SaaS platform in transaction processing
-                  by revenue for FY 2022. We enable end-to-end management of
+                  Incorporated in July 2021, Elitesecom is an e-commerce
+                  enablement SaaS platform operated by OMS Vision Solutions LLP.
+                  We enable end-to-end management of
                   e-commerce operations for brands, sellers, and logistics
                   service providers.
                 </p>
@@ -474,7 +474,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </span>
           </h2>
           <p className="text-lg text-slate-500 mb-10">
-            Be part of India's largest e-commerce enablement platform
+            Be part of a growing e-commerce enablement platform
           </p>
           <button
             onClick={() => onNavigate("demo")}

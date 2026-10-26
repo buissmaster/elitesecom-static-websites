@@ -44,7 +44,14 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       //   { name: "Compare", page: "comparisonsHub" },
       // ],
     },
-    { name: "Integration", page: "integration" },
+    {
+      name: "Integration",
+      page: "integration",
+      children: [
+        { name: "All Integrations", page: "integration" },
+        { name: "Amazon Integration", page: "amazon-integration" },
+      ],
+    },
     { name: "Customer", page: "customers" },
     { name: "About Us", page: "about" },
     { name: "Our Team", page: "team" },
@@ -63,7 +70,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
 
   const isLinkActive = (link: NavLink) =>
     currentPage === link.page ||
-    (currentPage === "blogdetail" && link.page === "blog");
+    (currentPage === "blogdetail" && link.page === "blog") ||
+    !!link.children?.some((child) => child.page === currentPage);
 
   const isChildActive = (child: NavChild) => {
     if (child.page === "services") return currentPage === "services";

@@ -141,7 +141,7 @@ const pageSeo: Record<
     path: "/",
     title: "Order Management System (OMS) for Multichannel Ecommerce | Elitesecom",
     description:
-      "Elitesecom is an ecommerce order management system (OMS) for multichannel sellers. Manage orders, payment reconciliation, return reconciliation, inventory, and warehouse operations from one dashboard.",
+      "Elitesecom's ecommerce order management system connects multichannel orders, inventory, warehouse and fulfillment workflows, payment and return reconciliation, and operational reports.",
     keywords: HOME_KEYWORDS,
   },
   services: {
@@ -149,7 +149,7 @@ const pageSeo: Record<
     title:
       "OMS Features | Order Management, Reconciliation, Inventory & WMS",
     description:
-      "Explore Elitesecom OMS features: multichannel order management, payment reconciliation, return reconciliation, inventory management, warehouse management (WMS), and shipping label automation.",
+      "Explore Elitesecom OMS tools for multichannel orders, inventory coordination, warehouse and fulfillment workflows, shipping labels, reconciliation, listings, and operational reports.",
     keywords:
       "OMS features, order management system features, payment reconciliation software, return reconciliation, inventory management, warehouse management system, WMS, Elitesecom",
   },
@@ -158,7 +158,7 @@ const pageSeo: Record<
     title:
       "OMS Marketplace Integrations | Amazon, Flipkart, Shopify Order Sync",
     description:
-      "Connect your order management system to Amazon, Flipkart, Meesho, Shopify, Myntra & 20+ channels. Real-time order sync, inventory reconciliation, and multichannel OMS dashboard.",
+      "Explore Elitesecom OMS integrations for supported marketplaces and ecommerce platforms, with channel-specific order, inventory, listing, shipping, return, and settlement workflows.",
     keywords:
       "OMS integrations, marketplace order management, Amazon OMS, Flipkart order management, Shopify OMS integration, multichannel order sync, inventory reconciliation",
   },
@@ -167,7 +167,7 @@ const pageSeo: Record<
     title:
       "OMS Customer Success | Ecommerce Order Management Case Studies",
     description:
-      "See how 2500+ sellers use Elitesecom OMS for order management, payment reconciliation, and multichannel operations across Amazon, Flipkart, and D2C stores.",
+      "Explore Elitesecom customer stories and logos related to multichannel order management, reconciliation, and ecommerce operations.",
     keywords:
       "OMS customers, order management system reviews, ecommerce reconciliation software, multichannel seller OMS, Elitesecom clients",
   },
@@ -176,7 +176,7 @@ const pageSeo: Record<
     title:
       "About Elitesecom | Ecommerce Order Management System (OMS) Company",
     description:
-      "Elitesecom builds an order management system (OMS) for ecommerce sellers — with ISO-certified security, reconciliation automation, and multichannel operations support.",
+      "Learn how Elitesecom builds ecommerce order management software for marketplace sellers, D2C brands, and operations teams across supported sales channels.",
     keywords:
       "about Elitesecom, OMS company India, order management system provider, ecommerce operations platform",
   },

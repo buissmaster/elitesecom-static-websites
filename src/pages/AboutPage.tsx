@@ -69,7 +69,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       icon: Target,
       title: "Mission",
       description:
-        "Providing your e-commerce business with reliable management services. We connect with businesses and fulfill their needs through innovative solutions.",
+        "Help ecommerce businesses simplify multichannel operations through connected technology, automation, and better operational visibility.",
       iconBg: "bg-amber-100",
       iconColor: "text-amber-500",
       barColor: "bg-amber-400",
@@ -161,23 +161,25 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               </h1>
               <div className="space-y-5 leading-[1.7] text-[15px]">
                 <p>
-                  Incorporated in July 2021, Elitesecom is an e-commerce
+                  Incorporated in July 2021, Elitesecom is an ecommerce
                   enablement SaaS platform operated by OMS Vision Solutions LLP.
-                  We enable end-to-end management of
-                  e-commerce operations for brands, sellers, and logistics
-                  service providers.
+                  Its order management system helps marketplace sellers, D2C
+                  brands, and ecommerce operations teams coordinate work across
+                  supported sales channels.
                 </p>
                 <p>
-                  Our comprehensive suite of SaaS products acts as the nerve
-                  center for e-commerce fulfillment — managing inventory across
-                  multiple locations, minimizing fulfillment costs, processing
-                  orders across channels, handling returns, generating invoices,
-                  reconciling payments, and ensuring regulatory compliance.
+                  Elitesecom connects multichannel order processing with
+                  inventory visibility, warehouse and fulfillment workflows,
+                  marketplace payment and return reconciliation, and
+                  operational reporting. This shared view helps teams follow
+                  order handoffs and review records without relying on
+                  disconnected channel dashboards for every task.
                 </p>
                 <p>
-                  Our product suite is sector and size-agnostic, designed to
-                  meet the needs of various retail and e-commerce enterprises,
-                  both online and offline.
+                  Based in Surat, Gujarat, Elitesecom serves ecommerce
+                  businesses across India, including owners, marketplace
+                  sellers, operations teams, warehouse teams, and finance
+                  staff coordinating online orders and reconciliations.
                 </p>
               </div>
             </div>
@@ -334,20 +336,20 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                text: "Warehouse and inventory management system",
+                text: "Coordinate warehouse workflows and inventory visibility",
                 icon: Package,
               },
-              { text: "Multi-channel order management system", icon: Store },
-              { text: "Omni-channel retail management system", icon: Globe },
+              { text: "Process orders across supported sales channels", icon: Store },
+              { text: "Connect marketplaces and ecommerce stores", icon: Globe },
               {
-                text: "Seller management panel for marketplaces",
+                text: "Maintain product listings across connected marketplaces",
                 icon: FileText,
               },
-              { text: "Shipment tracking for customers", icon: Truck },
-              { text: "Taxation and regulatory compliances", icon: Receipt },
-              { text: "Payment reconciliation", icon: CreditCard },
-              { text: "Returns management", icon: RotateCcw },
-              { text: "Analytics and reporting", icon: BarChart3 },
+              { text: "Coordinate shipment and fulfillment workflows", icon: Truck },
+              { text: "Review operational records and invoices", icon: Receipt },
+              { text: "Compare marketplace payment settlements", icon: CreditCard },
+              { text: "Track return and refund workflows", icon: RotateCcw },
+              { text: "Review sales, inventory, and channel reports", icon: BarChart3 },
             ].map((feature, index) => (
               <div
                 key={feature.text}

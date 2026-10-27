@@ -44,55 +44,55 @@ const features: Feature[] = [
     icon: Package,
     title: "Multichannel Order Management",
     description:
-      "Manage orders across all sales channels from one platform. Track shipments, sync inventory, and ensure timely deliveries with centralized processing.",
+      "Review orders from supported marketplaces and ecommerce stores in a shared workspace, track order status, and coordinate fulfillment without switching between every seller portal.",
   },
   {
     icon: Layers,
     title: "Inventory Management",
     description:
-      "Track and optimize inventory in real time. Reduce stockouts, minimize waste, and keep procurement seamless with smart automation.",
+      "Coordinate stock visibility and inventory updates across connected sales channels so teams can review availability and investigate mismatches.",
   },
   {
     icon: Truck,
     title: "Warehouse Management",
     description:
-      "Streamline warehouse operations end-to-end. Improve picking efficiency, reduce errors, and maximize space utilization.",
+      "Coordinate warehouse tasks such as picking, packing, and dispatch alongside multichannel order processing.",
   },
   {
     icon: FileText,
     title: "One Click Label Generation",
     description:
-      "Generate shipping labels instantly across all platforms. Compatible with every major courier — one click, zero hassle.",
+      "Generate shipping labels through supported marketplace and courier integrations as orders move into shipment processing.",
   },
   {
     icon: Calculator,
-    title: "Accounting & Reconciliation",
+    title: "Payment & Return Reconciliation",
     description:
-      "Automate payment reconciliation, return reconciliation, and accounting. Match marketplace payouts to orders and keep financial records accurate with minimal manual effort.",
+      "Compare marketplace settlements with order, return, and refund records so finance teams can identify differences that need review.",
   },
   {
     icon: BarChart3,
-    title: "Smart Analytics",
+    title: "Analytics & Reports",
     description:
-      "Make better decisions with real-time insights and comprehensive reports. Spot growth opportunities at a glance.",
+      "Use available reports and dashboards to review sales, inventory, and channel activity when planning day-to-day operations.",
   },
   {
     icon: Smartphone,
     title: "Mobile App",
     description:
-      "Run your business from anywhere with our powerful mobile app. Access key features and stay connected on the go.",
+      "Access key ecommerce order and inventory information through the Elitesecom mobile application while away from your desk.",
   },
   {
     icon: Shield,
     title: "Secure & Reliable",
     description:
-      "Enterprise-grade security with 99.9% uptime. Your data stays protected with full regulatory compliance.",
+      "Review Elitesecom's documented security practices, data handling information, and certifications on the Security & Compliance page.",
   },
   {
     icon: Server,
-    title: "Dedicated Server Infrastructure",
+    title: "Marketplace & Ecommerce Integrations",
     description:
-      "Powered by 20+ dedicated AWS servers to ensure high uptime, fast processing, enterprise-grade security, and reliable performance for your growing ecommerce business.",
+      "Connect supported marketplaces and ecommerce stores to bring available order and inventory workflows into the OMS. Integration capabilities vary by channel.",
   },
 ];
 
@@ -159,7 +159,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       name: "Amazon",
       subtitle: "Global Marketplace",
-      logo: undefined,
+      logo: "/logo-amazon.webp",
       bg: "#FFF7ED",
       border: "#FED7AA",
       text: "#EA580C",
@@ -304,7 +304,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold-700 text-sm font-medium">
                   <Zap className="w-4 h-4" />
-Multichannel Order Management System
+                  One Platform. Connected Ecommerce Operations.
                 </div>
               </div>
 
@@ -323,14 +323,16 @@ Multichannel Order Management System
                 className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Manage orders, inventory, payment reconciliation, returns,
-                  and warehouse operations across your ecommerce sales channels
-                  from one platform.
+                  Elitesecom ecommerce order management software connects
+                  multichannel orders with inventory, warehouse and fulfillment
+                  workflows, payment and return reconciliation, and operational
+                  reporting.
                 </p>
                 <p className="text-base lg:text-lg text-slate-600 max-w-xl leading-relaxed mt-3">
-                  Connect your Amazon, Flipkart, Meesho, Myntra, Shopify, AJIO,
-                  and other supported channels to simplify order processing and
-                  manage ecommerce operations more efficiently.
+                  Connect supported marketplaces and ecommerce stores to review
+                  orders and stock in a shared workflow. Elitesecom is designed
+                  for marketplace sellers, D2C brands, and operations teams
+                  coordinating multiple sales channels.
                 </p>
               </div>
 
@@ -383,8 +385,7 @@ Multichannel Order Management System
                       ))}
                     </div>
                     <p className="text-sm text-slate-600">
-                      Trusted by <span className="font-semibold ">2500+</span>{" "}
-                      businesses
+                      Ecommerce operations for teams across India
                     </p>
                   </div>
                 </div>
@@ -420,7 +421,7 @@ Multichannel Order Management System
                   fetchPriority="high"
                 />
 
-                {/* Top Floating Card: +47% Efficiency — near upper-right of character, ~24px gap */}
+                {/* Top Floating Card — near upper-right of character, ~24px gap */}
                 <div
                   className="absolute z-20 bg-white rounded-2xl shadow-lg p-3 lg:p-3.5 animate-float hidden lg:flex items-center gap-2.5"
                   style={{
@@ -436,13 +437,13 @@ Multichannel Order Management System
                   </div>
                   <div>
                     <p className="text-base lg:text-lg font-bold  leading-none">
-                      +47%
+                    Order flow
                     </p>
-                    <p className="text-[11px] text-slate-500">Efficiency</p>
+                    <p className="text-[11px] text-slate-500">Across channels</p>
                   </div>
                 </div>
 
-                {/* Bottom Floating Card: 50M+ Orders — near lower-right of character, ~24px gap */}
+                {/* Bottom Floating Card — near lower-right of character, ~24px gap */}
                 <div
                   className="absolute z-20 bg-white rounded-2xl shadow-lg p-3 lg:p-3.5 animate-float hidden lg:flex items-center gap-2.5"
                   style={{
@@ -458,9 +459,9 @@ Multichannel Order Management System
                   </div>
                   <div>
                     <p className="text-lg lg:text-xl font-bold  leading-none">
-                      50M+
+                      Shared view
                     </p>
-                    <p className="text-xs text-slate-500">Orders Processed</p>
+                    <p className="text-xs text-slate-500">Orders & inventory</p>
                   </div>
                 </div>
               </div>
@@ -514,8 +515,7 @@ Multichannel Order Management System
                     ))}
                   </div>
                   <p className="text-sm text-slate-600">
-                    Trusted by <span className="font-semibold ">2500+</span>{" "}
-                    businesses
+                    Ecommerce operations for teams across India
                   </p>
                 </div>
               </div>
@@ -544,9 +544,10 @@ Multichannel Order Management System
               <span className="text-gold-500">One Platform</span>
             </h2>
             <p className="text-lg text-slate-600">
-              Bring marketplace and D2C orders into a shared workflow, keep
-              inventory aligned across channels, and coordinate fulfillment,
-              reconciliation, and warehouse tasks from one platform.
+              Built for marketplace sellers and brands selling across online
+              channels, Elitesecom brings orders into a shared workflow, keeps
+              stock visible across channels, and connects fulfillment,
+              reconciliation, and warehouse tasks.
             </p>
           </div>
 
@@ -700,20 +701,21 @@ Multichannel Order Management System
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className=" bg-gradient-to-b from-slate-50 to-white">
+      {/* Primary OMS features */}
+      <section className="bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mb-6">
-              Why Choose <span className="text-gold-500">Elitesecom?</span>
+              Why Choose Elitesecom OMS?
             </h2>
             <p className="text-lg text-slate-600">
-              Tools to coordinate orders, inventory, fulfillment, and ecommerce operations.
+              Coordinate orders, inventory, fulfillment, payment settlements,
+              and return workflows across your connected ecommerce channels.
             </p>
           </div>
 
           <div ref={featuresRef}>
-            {/* Desktop: Accordion Cards Row */}
+            {/* Desktop accordion, restored from the previous implementation. */}
             <div
               className="hidden lg:flex flex-row gap-2 lg:gap-3 items-stretch justify-center h-[300px]"
               onMouseEnter={() => setIsHoveredFeatures(true)}
@@ -789,31 +791,25 @@ Multichannel Order Management System
               })}
             </div>
 
-            {/* Mobile Grid */}
-            <div className="grid grid-cols-2 gap-3 lg:hidden">
-              {features.map((feature, index) => {
+            {/* Keep the current grid presentation for mobile and tablet. */}
+            <div className="grid gap-4 sm:grid-cols-2 lg:hidden">
+              {features.map((feature) => {
                 const FeatureIcon = feature.icon;
                 return (
-                  <div
+                  <article
                     key={feature.title}
-                    className={`relative rounded-xl border border-slate-100 overflow-hidden bg-white p-4 shadow-sm ${featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-                    style={{
-                      transitionDelay: `${200 + index * 60}ms`,
-                      transition: "all 0.5s ease",
-                    }}
+                    className="h-full rounded-2xl border border-slate-100 bg-white p-5 sm:p-6 shadow-sm"
                   >
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-10 h-10 rounded-lg bg-gold-100 flex items-center justify-center mb-2">
-                        <FeatureIcon className="w-5 h-5 text-gold-600" />
-                      </div>
-                      <h3 className="font-bold text-slate-900 text-sm leading-tight mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-slate-500 text-xs leading-relaxed">
-                        {feature.description}
-                      </p>
+                    <div className="w-11 h-11 rounded-xl bg-gold-100 flex items-center justify-center mb-4">
+                      <FeatureIcon className="w-5 h-5 text-gold-700" aria-hidden="true" />
                     </div>
-                  </div>
+                    <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </article>
                 );
               })}
             </div>
@@ -821,50 +817,69 @@ Multichannel Order Management System
         </div>
       </section>
 
-      {/* OMS & Reconciliation — keyword-rich content for SEO */}
-      <section className="py-16 bg-white border-t border-slate-100">
+      {/* End-to-end ecommerce operations workflow */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4">
-              Why Sellers Choose Elitesecom{" "}
-              <span className="text-gold-500">Order Management System</span>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mb-4">
+              From Order to Reconciliation — One Connected Workflow
             </h2>
-            <p className="text-slate-600 leading-relaxed">
-              Coordinate channel orders, settlement and return checks, and
-              inventory movement between your sales channels and warehouse.
+            <p className="text-lg text-slate-600">
+              Understand how Elitesecom connects the essential stages of
+              multichannel ecommerce operations.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+
+          <ol className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              aria-hidden="true"
+              className="hidden lg:block absolute left-[12.5%] right-[12.5%] top-7 border-t border-gold/40"
+            />
             {[
               {
-                title: "Multichannel Order Management",
+                title: "Connect Your Channels",
                 description:
-                  "Bring orders from connected marketplaces and stores into one queue, then manage fulfillment and tracking in a shared workflow.",
+                  "Bring orders from supported marketplaces and ecommerce stores into one place.",
+                icon: Store,
               },
               {
-                title: "Payment & Return Reconciliation",
+                title: "Coordinate Inventory",
                 description:
-                  "Compare marketplace settlements with order and return records to review payment differences and refund activity in one workflow.",
+                  "Keep stock visibility and order processing aligned across connected channels.",
+                icon: Package,
               },
               {
-                title: "Inventory & Warehouse Management",
+                title: "Fulfill Orders",
                 description:
-                  "Keep channel stock and warehouse fulfillment workflows coordinated, from picking and packing through shipment processing.",
+                  "Coordinate picking, packing, shipping labels, and dispatch workflows.",
+                icon: Truck,
               },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="group h-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <h3 className="font-heading font-bold text-xl mb-3 text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+              {
+                title: "Reconcile Records",
+                description:
+                  "Review marketplace payment settlements, returns, refunds, and discrepancies.",
+                icon: Calculator,
+              },
+            ].map((step, index) => {
+              const StepIcon = step.icon;
+              return (
+                <li key={step.title} className="relative text-center">
+                  <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-white text-gold-700 shadow-sm">
+                    <StepIcon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gold-700">
+                    Step {index + 1}
+                  </p>
+                  <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {step.description}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </section>
 
@@ -938,10 +953,10 @@ Multichannel Order Management System
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4 text-slate-900">
-              Looking Beyond Order Management?
+              Related Ecommerce Products
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              Explore more solutions built to support every stage of your ecommerce operations.
+              Elitesecom OMS is our ecommerce operations platform. Explore Kedara and Elites Studio as separate products for related business needs.
             </p>
           </div>
 

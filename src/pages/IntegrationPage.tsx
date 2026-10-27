@@ -17,19 +17,19 @@ const integrations = [
   {
     name: "Amazon",
     description:
-      "Sync orders, inventory, listings, shipping labels, returns, and settlements from your Amazon seller account with a unified dashboard.",
+      "Connect supported Amazon seller workflows for orders, inventory, listings, labels, returns, and settlement records in Elitesecom OMS.",
     color: "#FF9900",
     bgColor: "#FFF7ED",
     borderColor: "#FED7AA",
     cardAccent: "bg-orange-400",
-    logo: undefined,
+    logo: "/logo-amazon.webp",
     category: "Marketplace",
     detailPage: "amazon-integration",
   },
   {
     name: "Flipkart",
     description:
-      "Indian e-commerce leader. Manage orders and inventory seamlessly.",
+      "Bring supported Flipkart order and inventory workflows into your shared OMS workspace.",
     color: "#2874F0",
     bgColor: "#EFF6FF",
     borderColor: "#BFDBFE",
@@ -40,7 +40,7 @@ const integrations = [
   {
     name: "Myntra",
     description:
-      "Leading fashion marketplace. Manage fashion inventory and orders.",
+      "Coordinate supported Myntra orders and fashion inventory through Elitesecom OMS.",
     color: "#FF3F6C",
     bgColor: "#FFF1F2",
     borderColor: "#FECDD3",
@@ -51,7 +51,7 @@ const integrations = [
   {
     name: "Shopify",
     description:
-      "Manage Shopify inventory, listings, and orders from one dashboard.",
+      "Connect Shopify orders, inventory, and listing workflows supported by the integration.",
     color: "#96BF48",
     bgColor: "#F0FDF4",
     borderColor: "#BBF7D0",
@@ -61,7 +61,7 @@ const integrations = [
   },
   {
     name: "Ajio",
-    description: "Fashion-focused e-commerce platform with wide reach.",
+    description: "Review the available AJIO order and inventory workflows supported by Elitesecom OMS.",
     color: "#2C3E50",
     bgColor: "#F8FAFC",
     borderColor: "#E2E8F0",
@@ -71,7 +71,7 @@ const integrations = [
   },
   {
     name: "Meesho",
-    description: "Social commerce platform with 50+ Lakh SKUs.",
+    description: "Bring supported Meesho marketplace activity into a shared order operations workflow.",
     color: "#F43397",
     bgColor: "#FDF2F8",
     borderColor: "#FBCFE8",
@@ -81,7 +81,7 @@ const integrations = [
   },
   {
     name: "Snapdeal",
-    description: "Massive marketplace with 500K+ sellers across categories.",
+    description: "Connect supported Snapdeal workflows with your broader multichannel operations.",
     color: "#E74C3C",
     bgColor: "#FEF2F2",
     borderColor: "#FECACA",
@@ -91,7 +91,7 @@ const integrations = [
   },
   {
     name: "FirstCry",
-    description: "Baby care marketplace for products and parenting essentials.",
+    description: "Coordinate available FirstCry order workflows alongside your other connected channels.",
     color: "#F7941D",
     bgColor: "#FFFBEB",
     borderColor: "#FDE68A",
@@ -101,7 +101,7 @@ const integrations = [
   },
   {
     name: "Nykaa",
-    description: "Beauty and personal care marketplace with video reviews.",
+    description: "Manage supported Nykaa marketplace workflows from the Elitesecom OMS workspace.",
     color: "#FC2779",
     bgColor: "#FFF1F2",
     borderColor: "#FECDD3",
@@ -111,7 +111,7 @@ const integrations = [
   },
   {
     name: "Paytm",
-    description: "65M+ products in electronics, fashion, and kitchenware.",
+    description: "Explore the Paytm marketplace workflows available through the Elitesecom integration.",
     color: "#00BAF2",
     bgColor: "#F0F9FF",
     borderColor: "#BAE6FD",
@@ -121,7 +121,7 @@ const integrations = [
   },
   {
     name: "Fynd",
-    description: "Multi-platform tech empowering 2,300+ brands.",
+    description: "Connect supported Fynd platform workflows with your multichannel operations.",
     color: "#9B59B6",
     bgColor: "#FAF5FF",
     borderColor: "#E9D5FF",
@@ -131,7 +131,7 @@ const integrations = [
   },
   {
     name: "Tata CLiQ",
-    description: "Luxury marketplace for premium brand experiences.",
+    description: "Review the Tata CLiQ order workflows available through Elitesecom OMS.",
     color: "#3498DB",
     bgColor: "#EFF6FF",
     borderColor: "#BFDBFE",
@@ -170,7 +170,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 text-gold-700 text-sm font-medium">
                 <Link2 className="w-4 h-4 " />
-                20+ Platform Integrations
+                Marketplace & Ecommerce Integrations
               </div>
               <h1 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl  leading-[1.1]">
                 OMS Integrations for{" "}
@@ -178,9 +178,9 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
                 <span className="text-gold">Management</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Connect your order management system to Amazon, Flipkart, Myntra,
-                Shopify and more. Sync orders, inventory reconciliation, and
-                fulfillment from one OMS dashboard.
+                Explore supported connections for marketplaces and ecommerce
+                stores, and bring available order and inventory workflows into
+                one OMS workspace. Integration capabilities vary by platform.
               </p>
             </div>
 
@@ -223,23 +223,23 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
             <div className="order-4 lg:order-none">
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-8 pt-2">
                 <div>
-                  <div className="text-xl sm:text-2xl font-bold ">12+</div>
+                  <div className="text-xl sm:text-2xl font-bold ">Supported</div>
                   <div className="text-xs sm:text-sm text-slate-500">
-                    Marketplaces
+                    Channels
                   </div>
                 </div>
                 <div className="w-px h-10 bg-slate-200 hidden sm:block" />
                 <div>
-                  <div className="text-xl sm:text-2xl font-bold ">50M+</div>
+                  <div className="text-xl sm:text-2xl font-bold ">Connected</div>
                   <div className="text-xs sm:text-sm text-slate-500">
-                    Orders Synced
+                    Order workflows
                   </div>
                 </div>
                 <div className="w-px h-10 bg-slate-200 hidden sm:block" />
                 <div>
-                  <div className="text-xl sm:text-2xl font-bold ">99.9%</div>
+                  <div className="text-xl sm:text-2xl font-bold ">Shared</div>
                   <div className="text-xs sm:text-sm text-slate-500">
-                    Uptime
+                    OMS workspace
                   </div>
                 </div>
               </div>
@@ -419,7 +419,7 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
 
             {/* Subheading */}
             <p className="text-lg text-slate-600">
-              Everything you need to manage multiple sales channels efficiently.
+                Coordinate supported channel workflows from a shared ecommerce operations workspace.
             </p>
           </div>
 
@@ -428,27 +428,27 @@ export function IntegrationPage({ onNavigate }: IntegrationPageProps) {
             {[
               {
                 icon: Zap,
-                title: "Real-time Sync",
+                title: "Connected Workflows",
                 description:
-                  "Instant synchronization across all your connected platforms.",
+                  "Bring available order and inventory information from supported platforms into Elitesecom OMS.",
               },
               {
                 icon: ShieldCheck,
-                title: "99.9% Uptime",
+                title: "Supported Channels",
                 description:
-                  "Reliable connections powered by enterprise-grade infrastructure.",
+                  "Review available marketplace and ecommerce connections; data and actions vary by integration.",
               },
               {
                 icon: LayoutDashboard,
-                title: "One Dashboard",
+                title: "Shared OMS Workspace",
                 description:
-                  "Manage every marketplace and sales channel from a single interface.",
+                  "Review connected channel activity in one ecommerce operations workspace.",
               },
               {
                 icon: GitBranch,
-                title: "Smart Routing",
+                title: "Order-to-Fulfillment Flow",
                 description:
-                  "Automatically route orders to a suitable fulfillment location.",
+                  "Coordinate supported order processing and fulfillment tasks across connected channels.",
               },
             ].map((feature) => (
               <div

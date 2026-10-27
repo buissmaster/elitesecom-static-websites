@@ -18,12 +18,12 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Multichannel Order Management",
     description:
-      "Seamlessly manage orders across multiple sales channels from one platform. Streamline inventory, track shipments, and ensure timely deliveries. Reduce errors and improve customer satisfaction with centralized order processing. Designed for scaling businesses and operational efficiency.",
+      "Bring orders from supported marketplaces and ecommerce stores into a shared workflow. Review order status and coordinate fulfillment without checking each channel separately.",
     features: [
-      "Centralized order processing",
-      "Real-time order tracking",
-      "Automated order routing",
-      "Multi-channel synchronization",
+      "Centralized order view",
+      "Order status tracking",
+      "Fulfillment coordination",
+      "Supported channel connections",
     ],
     hero: "/services-1.webp",
     color: "#F5B800",
@@ -32,12 +32,12 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Inventory Management",
     description:
-      "Effortlessly track, manage, and optimize your inventory in real time. Reduce stockouts, minimize waste, and ensure seamless operations. Streamline procurement, storage, and distribution with smart solutions. Keep your inventory accurate, efficient, and under control.",
+      "Review stock across connected sales channels and coordinate inventory updates. Shared inventory visibility helps teams investigate mismatches before acting on availability.",
     features: [
-      "Real-time stock tracking",
-      "Low stock alerts",
-      "Demand forecasting",
-      "Multi-location support",
+      "Stock visibility",
+      "Connected-channel inventory",
+      "Inventory status review",
+      "Inventory synchronization",
     ],
     hero: "/services-2.webp",
     color: "#8B5CF6",
@@ -46,40 +46,39 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Warehouse Management System",
     description:
-      "Optimize your warehouse operations with our comprehensive WMS. From receiving to shipping, manage every aspect of your warehouse with precision. Improve picking efficiency, reduce errors, and maximize space utilization.",
+      "Coordinate warehouse tasks with order fulfillment, from receiving and picking through packing and dispatch. A connected workflow helps teams follow orders as they move through the warehouse.",
     features: [
-      "Barcode scanning",
-      "Pick & pack optimization",
-      "Bin management",
-      "Cycle counting",
+      "Receiving and dispatch workflows",
+      "Pick and pack workflows",
+      "Warehouse stock visibility",
+      "Order-to-fulfillment handoffs",
     ],
     hero: "/services-3.webp",
     color: "#10B981",
     glowColor: "rgba(16,185,129,0.15)",
   },
   {
-    title: "One Click Label Download",
+    title: "Shipping & Label Generation",
     description:
-      "Generate shipping labels across all platforms instantly with one click. Support for all major courier partners and marketplaces. Save time and reduce manual errors in your shipping process.",
+      "Generate shipping labels through supported marketplace and courier integrations. Keeping label processing with order workflows can reduce repeated data entry during dispatch.",
     features: [
-      "Multi-courier support",
-      "Bulk label generation",
-      "Auto-print integration",
-      "Tracking number sync",
+      "Supported courier connections",
+      "Bulk label workflows",
+      "Label generation",
+      "Shipment status coordination",
     ],
     hero: "/1label.webp",
     color: "#3B82F6",
     glowColor: "rgba(59,130,246,0.15)",
   },
   {
-    title: "Accounting & Reconciliation",
+    title: "Payment & Return Reconciliation",
     description:
-      "Automated payment reconciliation, return reconciliation, and accounting for ecommerce sellers. Match marketplace settlements to orders, generate invoices, and keep books accurate with Elitesecom OMS.",
+      "Compare marketplace settlements with order records and review return or refund differences. This gives finance teams a shared place to identify records that need follow-up.",
     features: [
-      "Auto-invoice generation",
+      "Settlement-to-order matching",
       "Payment reconciliation",
-      "GST compliance",
-      "Financial reports",
+      "Return and refund review",
     ],
     hero: "/services-5.webp",
     color: "#EC4899",
@@ -88,7 +87,7 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Smart Analytics & Reports",
     description:
-      "Data-driven insights and comprehensive reports for better decisions. Understand your business performance with detailed analytics. Make informed decisions based on real-time data.",
+      "Use dashboards and reports to review sales, inventory, and channel performance. These views help operations teams find the information they need for routine decisions.",
     features: [
       "Sales analytics",
       "Inventory reports",
@@ -102,12 +101,12 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Mobile App",
     description:
-      "Manage your business on the go with our powerful mobile application. Access all key features from your smartphone. Stay connected to your business anytime, anywhere.",
+      "Access key ecommerce order and inventory information through the mobile application when away from a desktop workspace.",
     features: [
-      "iOS & Android apps",
-      "Push notifications",
-      "Offline mode",
-      "Barcode scanning",
+      "Mobile order access",
+      "Inventory visibility",
+      "Operational information",
+      "Access while away from a desktop",
     ],
     hero: "/phone.webp",
     color: "#F97316",
@@ -116,12 +115,12 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Listing Management",
     description:
-      "Create, update, and manage product listings across multiple marketplaces from one centralized platform. Keep product information consistent, reduce manual effort, and publish listings faster.",
+      "Manage product listings across supported marketplaces from a shared workflow. Centralizing listing tasks helps teams maintain product information without repeating edits in every seller panel.",
     features: [
-      "Bulk listing creation & updates",
-      "marketplace listing sync",
-      "Inventory & price synchronization",
-      "Product attribute optimization",
+      "Bulk listing creation and updates",
+      "Marketplace listing workflows",
+      "Product information management",
+      "Supported listing synchronization",
     ],
     hero: "/listing.webp",
     color: "#F5B800",
@@ -130,12 +129,12 @@ const serviceCards: ServiceCardData[] = [
   {
     title: "Security & Compliance",
     description:
-      "Enterprise-grade security designed for high availability. Your data is protected with industry-standard encryption and security protocols. Built to support regulatory compliance.",
+      "Review Elitesecom's documented security controls, data handling practices, and certifications on the Security & Compliance page.",
     features: [
-      "SSL encryption",
-      "Role-based access",
-      "Audit logs",
-      "GDPR compliant",
+      "Security control information",
+      "Data handling practices",
+      "Published certifications",
+      "Security documentation",
     ],
     hero: "/shield.webp",
     color: "#14B8A6",
@@ -353,9 +352,10 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              Elitesecom provides ecommerce management software designed to 
-              centralize orders, inventory, warehouses, shipping, reconciliation, listings, 
-              analytics, and marketplace operations from one platform.
+              Elitesecom OMS helps marketplace sellers, D2C brands, and ecommerce
+              operations teams coordinate orders, inventory, warehouse
+              workflows, shipping, listings, reconciliation, and reports across
+              supported sales channels.
             </p>
           </div>
         </div>

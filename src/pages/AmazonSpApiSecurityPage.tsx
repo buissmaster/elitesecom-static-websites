@@ -50,7 +50,7 @@ export function AmazonSpApiSecurityPage({
     {
       title: "How It Is Protected",
       description:
-        "Data is protected through encryption, access controls, audit logging, and security monitoring. Protection measures align with our SOC 2 Type II and ISO/IEC 27001:2022 controls.",
+        "Data is protected through encryption, access controls, audit logging, and security monitoring. Protection measures are designed around the principles of SOC 2 Type II and ISO/IEC 27001:2022.",
     },
   ];
 
@@ -388,6 +388,76 @@ export function AmazonSpApiSecurityPage({
           </div>
         </section>
 
+        {/* Section: Data Retention & Deletion */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4">
+                Data Retention &amp; Deletion
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                How long Amazon-related data is kept, and how it is removed.
+              </p>
+            </div>
+
+            <Card className="border-gold/20 shadow-lg max-w-4xl mx-auto">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      <strong className="text-slate-800">
+                        Buyer PII (restricted data):
+                      </strong>{" "}
+                      Buyer names, shipping addresses, and contact details are
+                      retained for a maximum of 30 days after order shipment,
+                      then automatically deleted or anonymized.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Database className="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      <strong className="text-slate-800">
+                        Non-PII order &amp; financial records:
+                      </strong>{" "}
+                      Retained per the seller's contract and applicable
+                      statutory, tax, and audit requirements.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Shield className="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      <strong className="text-slate-800">
+                        Authorization revoked:
+                      </strong>{" "}
+                      If SP-API authorization is revoked in Seller Central, sync
+                      stops immediately and retained Amazon data is deleted or
+                      anonymized per the schedule above.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-5 h-5 text-gold-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      <strong className="text-slate-800">
+                        Deletion requests:
+                      </strong>{" "}
+                      Sellers can request earlier deletion of their data at any
+                      time via{" "}
+                      <a
+                        href="mailto:dpo@elitesecom.ai"
+                        className="text-gold-600 underline hover:text-gold-700"
+                      >
+                        dpo@elitesecom.ai
+                      </a>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Section: Amazon SP-API Compliance */}
         <section className="py-16 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -421,8 +491,8 @@ export function AmazonSpApiSecurityPage({
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                     <p className="text-slate-600 text-sm">
-                      Security controls align with SOC 2 Type II and ISO/IEC
-                      27001:2022 certifications
+                      Security controls are designed around the principles of
+                      SOC 2 Type II and ISO/IEC 27001:2022
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
@@ -437,6 +507,20 @@ export function AmazonSpApiSecurityPage({
                     <p className="text-slate-600 text-sm">
                       Amazon data is not used for advertising purposes or sold to
                       third parties
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm">
+                      Security incidents involving Amazon Information are
+                      reported to{" "}
+                      <a
+                        href="mailto:security@amazon.com"
+                        className="text-gold-600 underline hover:text-gold-700"
+                      >
+                        security@amazon.com
+                      </a>{" "}
+                      within 24 hours of detection
                     </p>
                   </div>
                 </div>

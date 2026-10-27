@@ -230,8 +230,78 @@ export function AmazonIntegrationPage({
         </div>
       </section>
 
-      {/* Data Handling Summary */}
+      {/* Permissions We Request */}
       <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4">
+              SP-API Permissions We Request
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Each permission (role) requested during authorization maps to a
+              specific Elitesecom feature. No permission is used outside its
+              stated purpose.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+            <table className="w-full border-collapse text-left text-sm bg-white">
+              <thead>
+                <tr>
+                  <th className="border-b border-slate-200 bg-slate-50 p-4 font-semibold text-slate-800">
+                    SP-API Role
+                  </th>
+                  <th className="border-b border-slate-200 bg-slate-50 p-4 font-semibold text-slate-800">
+                    Feature It Powers
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-600">
+                {[
+                  ["Product Listing", "Listing creation & SKU mapping"],
+                  ["Pricing", "Price updates to Amazon listings"],
+                  [
+                    "Inventory and Order Tracking",
+                    "Order sync & stock visibility",
+                  ],
+                  [
+                    "Direct-to-Consumer Shipping (Restricted)",
+                    "Shipping label generation — buyer name/address used for fulfillment only",
+                  ],
+                  [
+                    "Tax Invoicing (Restricted)",
+                    "GST-compliant invoice generation",
+                  ],
+                  [
+                    "Finance and Accounting",
+                    "Settlement & payment reconciliation",
+                  ],
+                  [
+                    "Selling Partner Insights",
+                    "Seller account & order insights",
+                  ],
+                ].map(([role, feature]) => (
+                  <tr key={role} className="hover:bg-slate-50">
+                    <td className="border-b border-slate-100 p-4 font-medium text-slate-800">
+                      {role}
+                    </td>
+                    <td className="border-b border-slate-100 p-4">{feature}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-slate-500 mt-4">
+            Restricted roles are requested only because the corresponding
+            features require them. Buyer personal information received under
+            restricted roles is used solely for order fulfillment, shipping, and
+            invoicing as described on this page.
+          </p>
+        </div>
+      </section>
+
+      {/* Data Handling Summary */}
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="border-gold/20 shadow-lg">
             <CardContent className="p-8">

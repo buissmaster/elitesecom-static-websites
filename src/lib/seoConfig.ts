@@ -248,11 +248,11 @@ const pageSeo: Record<
   },
   security: {
     path: "/security",
-    title: "Security & Compliance | SOC 2, ISO 27001 | EliteSecom",
+    title: "Security & Compliance | Elitesecom",
     description:
-      "Learn about EliteSecom's security and compliance practices, including SOC 2 Type II, ISO/IEC 27001:2022, VAPT, Amazon SP-API data protection and privacy.",
+      "Learn about Elitesecom's security and compliance practices, including controls designed around SOC 2 Type II and ISO/IEC 27001:2022 principles, VAPT, Amazon SP-API data protection and privacy.",
     keywords:
-      "EliteSecom security, SOC 2 Type II, ISO 27001, VAPT, Amazon SP-API security, data protection, compliance",
+      "Elitesecom security, data protection, VAPT, Amazon SP-API security, compliance",
   },
   "amazon-sp-api-security": {
     path: "/amazon-sp-api-security",

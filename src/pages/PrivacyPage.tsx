@@ -455,15 +455,16 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
                 </p>
                 <ul className={`${listClass} mb-4`}>
                   <li>
-                    <strong>Cloud Hosting &amp; Infrastructure:</strong>{" "}
-                    Dedicated cloud hosting provided across Amazon Web Services
-                    (AWS) data centers.
+                    <strong>Amazon Web Services (AWS):</strong> Cloud hosting
+                    and object storage (S3) for platform infrastructure, in AWS
+                    India-region data centers.
                   </li>
                   <li>
                     <strong>Logistics &amp; Courier Gateways:</strong>{" "}
-                    Integrated logistics providers and courier aggregators
-                    strictly for transmitting destination details to print
-                    shipping labels and retrieve real-time tracking numbers.
+                    Integrated logistics providers and courier aggregators used
+                    for Amazon and other marketplace orders, strictly for
+                    transmitting destination details to print shipping labels
+                    and retrieve real-time tracking numbers.
                   </li>
                   <li>
                     <strong>Professional &amp; Legal Advisors:</strong> Legal,
@@ -568,6 +569,13 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
                   obligations:
                 </p>
                 <ul className={listClass}>
+                  <li>
+                    <strong>Marketplace Buyer PII (including Amazon):</strong>{" "}
+                    Buyer names, shipping addresses, and contact details
+                    received through marketplace APIs are retained for a maximum
+                    of 30 days after order shipment, then automatically deleted
+                    or anonymized.
+                  </li>
                   <li>
                     <strong>Account Records:</strong> Retained for the duration
                     of the active subscription and for a statutory period
